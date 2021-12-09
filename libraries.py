@@ -28,3 +28,33 @@ def clear_screen(lines=100):
 # PRINT WITH TAB
 def print_tab(text):
     print("\t" + text)
+
+# PAUSE FUNCTION 
+def pause():
+    input("\n\tHit Enter to Continue...")
+    
+# Silent PAUSE FUNCTION 
+def s_pause():
+    input("...")
+    
+
+if __name__ == "__main__":
+    
+    print("\nFORMAT OUTPUTS \n")
+    
+    # TEST PR_COLOUR
+    print("\nTEST pr_colour Examples:")
+    print(pr_colour(1,"1 RED"))
+    print(pr_colour(2,"2 GREEN"))
+    print(pr_colour(3,"3 YELLOW"))
+    print(pr_colour(4,"4 BLUE"))
+    print(pr_colour(5,"5 PINK"))
+    print(pr_colour(6,"6 CYAN"))
+    print(pr_colour(7,"7 LIGHT GREY?"))
+    print(pr_colour(8,"8 BLACK?"))
+    
+
+
+    # TEST PRINT TAB
+    print("\nTEST print_tab Example:")
+    print_tab("<Print Tabbed>")
