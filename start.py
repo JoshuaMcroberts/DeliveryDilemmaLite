@@ -8,7 +8,7 @@ class character:
         self.number_plate = num_plate
         self.inventory = []
         self.gender = gen
-        
+         " + pr_colour(2, courier) + " 
         if gen == "male":
             self.pronoun1 = "his"
             self.pronoun2 = "he"
@@ -152,7 +152,7 @@ def game():
     cur = pc.get_courier()
     
     # Game Intro
-    act_1_intro(char_name, pro_1, pro_2, cur)
+    act_1_intro(char_name, pro_1, pro_2, cur) " + pr_colour(2, courier) + " 
 
 def main():
 
