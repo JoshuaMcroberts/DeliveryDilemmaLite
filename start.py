@@ -18,9 +18,11 @@ class character:
             
         con_cat = play_name + char_name + num_plate + gen
         
-        cur_op = len(con_cat)%4
+        cur_op = len(con_cat)%8
         
-        cur_list = ["Parcel Force", "Fedex", "Amazon Prime Delivery", "UPS" ]
+        # unself this.
+        cur_list = [pr_colour(1, "Parcel Force"), pr_colour(4, "FedEx"), pr_colour(2, "Amazon Prime Delivery"), pr_colour(3, "UPS"), 
+                         pr_colour(1, "Parcel Force"), pr_colour(4, "FedEx"), pr_colour(2, "Amazon Prime Delivery"), pr_colour(3, "UPS") ]
         
         self.courier = cur_list[cur_op]
         
@@ -146,6 +148,7 @@ def game():
     pc = character(p_name, c_name, num_p, c_gen)
     # pc.print_all()
     # pause()
+    pause()
     
     char_name = pc.get_char_name()
     pro_1, pro_2 = pc.get_pronouns()
