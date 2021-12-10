@@ -14,6 +14,7 @@ def pr_colour(colour, text):
     # 6 Cyan (Light Blue)
     # 7 Light Gray
     # 8 Black
+    
     return '\033[9' + str(colour) + 'm' + text + '\033[00m'
 
 # CLEAR SCREEN
@@ -58,3 +59,9 @@ if __name__ == "__main__":
     # TEST PRINT TAB
     print("\nTEST print_tab Example:")
     print_tab("<Print Tabbed>")
+    
+    
+    words = '\033[33m text \033[00m'
+    print(words)
+    words = '\033[93m text \033[00m'
+    print(words)
