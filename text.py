@@ -60,6 +60,17 @@ def act_1_intro(chac_name, pronoun1, pronoun2, courier):
     print_tab("“I’ve sent a parcel to him, that was meant for me!”")
     pause()
 
+    clear_screen()
+    print_tab("“That’s Christmas Ruined! I must get it on track!")
+    print_tab("I must find a way to get that parcel back!”")
+    print_tab("With fleetest of fingers and no delay,")
+    print_tab("On to the" + courier + "website to try save the day!")
+    pause()
+
+    
+
+
+
 
 if __name__ == "__main__":
     act_1_intro("Bob", "his", "he", " UPS ")
