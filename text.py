@@ -1,5 +1,5 @@
 from libraries import *
-from start import character
+# from start import character
 
 def act_1_intro(chac_name, pronoun1, pronoun2, courier):
       
@@ -12,25 +12,24 @@ def act_1_intro(chac_name, pronoun1, pronoun2, courier):
 
     clear_screen()
     print_tab("The rush was on for the Christmas deadline you see")
-    print_tab("and " + pr_colour( 4, chac_name) + " had left the parcel packing until after " + pronoun1 + " tea.")
+    print_tab("and " + chac_name + " had left the parcel packing until after " + pronoun1 + " tea.")
     print_tab("Each box for a friend would be stacked by the stair,")
-    print_tab("In hopes that in the morning " + courier + " would be there.")
+    print_tab("In hopes that in the morning" + courier + "would be there.")
     pause()
     
     clear_screen()
     print_tab("In the midst of the chaos the doorbell did ring, ")
-    print_tab("“Who could that be?” " + pr_colour( 4, chac_name) + " thought as " + pronoun2 + " tied up a string.")
+    print_tab("“Who could that be?” " + chac_name + " thought as " + pronoun2 + " tied up a string.")
     print_tab("It was a late-night delivery of something unknown,")
     print_tab("Could be a book or a beagle or an old-style gramophone?")
     pause()
 
     clear_screen()
     print_tab("With the parcel signed for, and courier on his way,")
-    print_tab("" + pr_colour( 4, chac_name)+ " went back to " + pronoun1 + " busy wrapping day.")
+    print_tab(chac_name+ " went back to " + pronoun1 + " busy wrapping day.")
     print_tab("With the new delivery almost opened another distraction was at hand,")
     print_tab("From the living room a phone rang, completely unplanned. ")
     pause()
-
 
     clear_screen()
     print_tab("A call from an Auntie that put time off track, ")
@@ -43,7 +42,7 @@ def act_1_intro(chac_name, pronoun1, pronoun2, courier):
     print_tab("Wrenched from a dream as a good bit drew near,")
     print_tab("By a rap on a door? Ah the Courier is here! ")
     print_tab("A swift hustle and bustle of parcels to van,")
-    print_tab("and a thank you mince pie for the " + courier + ", delivery man.")
+    print_tab("and a thank you mince pie for the" + courier + ", delivery man.")
     pause()
 
     clear_screen()
@@ -63,4 +62,4 @@ def act_1_intro(chac_name, pronoun1, pronoun2, courier):
 
 
 if __name__ == "__main__":
-    act_1_intro("Bob", "his", "he")
+    act_1_intro("Bob", "his", "he", " UPS ")
