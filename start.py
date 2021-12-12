@@ -13,9 +13,11 @@ class character:
         if gen == "male":
             self.pronoun1 = "his"
             self.pronoun2 = "he"
+            self.pronoun3 = "him"
         else:
             self.pronoun1 = "her"
             self.pronoun2 = "she"
+            self.pronoun3 = "her"
             
         con_cat = play_name + char_name + num_plate + gen
         
@@ -50,7 +52,7 @@ class character:
         return self.number_plate
     
     def get_pronouns(self):
-        return self.pronoun1, self.pronoun2
+        return self.pronoun1, self.pronoun2, self.pronoun3
     
     def get_courier(self):
         return self.courier
@@ -97,9 +99,34 @@ def san_text(text):
 # ENTER PLAYER NAME - CHECK FOR NUMBER PLATE PLAYER
 def enter_name():
     
-    clear_screen()
+  
     tup_list = [("daniel"," PLATE1 "),("rebecca"," PLATE2 "),("andrew"," PLATE3 "),("joel"," PLATE4 "),("nathanael"," PLATE5 ")]
-    en_name = input("\tPlease enter your "+ pr_colour( "l_yellow","First Name") +": ")
+    
+    correct = False
+    while not correct:
+        clear_screen()
+        en_name = input("\tPlease enter your "+ pr_colour( "l_yellow","First Name") +": ")
+        en_name = pr_colour("l_blue", en_name)
+        
+        
+        val2 = False
+        while not val2:
+            clear_screen()
+            print_tab("You have entered: " + en_name)
+            val = input("\tIs this correct? (Y/N): ")
+            
+            if val == "Y":
+                correct = True
+                val2 = True
+            elif val == "N":
+                correct = False
+                val2 = True
+            else:
+                print()
+                print_tab("Enter Y for Yes or N for No")
+                pause()
+    
+    
     plate_name = san_text(en_name)
     
     num_plate = 0
@@ -115,8 +142,32 @@ def enter_name():
 
 # ENTER CHARACTER NAME    
 def enter_character_name():
-    clear_screen()
-    character_name = input("\tPlease enter your "+ pr_colour( "l_yellow","Characters name") +": ")
+    
+    correct = False
+    while not correct:
+        clear_screen()
+        character_name = input("\tPlease enter your "+ pr_colour( "l_yellow","Characters name") +": ")
+        character_name = pr_colour("l_blue", character_name)
+        
+        
+        val2 = False
+        while not val2:
+            clear_screen()
+            print_tab("You have entered: " + character_name)
+            val = input("\tIs this correct? (Y/N): ")
+            
+            if val == "Y":
+                correct = True
+                val2 = True
+            elif val == "N":
+                correct = False
+                val2 = True
+            else:
+                print()
+                print_tab("Enter Y for Yes or N for No")
+                pause()
+    
+    
     return character_name
 
 
@@ -166,11 +217,11 @@ def game():
 
     # uncomment
     char_name = pc.get_char_name()
-    pro_1, pro_2 = pc.get_pronouns()
+    pro_1, pro_2, pro_3 = pc.get_pronouns()
     cur = pc.get_courier()
     
     # Game ACT 1
-    act_1_intro(char_name, pro_1, pro_2, cur)
+    act_1_intro(char_name, pro_1, pro_2, pro_3, cur)
 
 
 # MAIN FUNCTION
