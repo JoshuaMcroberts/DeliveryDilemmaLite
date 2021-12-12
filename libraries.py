@@ -38,7 +38,7 @@ def pr_colour(colour, text):
                ("prime", '\033[0m\033[38;5;166m\033[1m\033[4m'),
                ("del", '\033[38;5;232m\033[48;5;153m\033[1m'),
                ("p_force", '\033[38;5;195m\033[48;5;160m\033[1m'),
-               ("ups", '\033[38;5;178m\033[48;5;52m'),
+               ("ups", '\033[38;5;11m\033[48;5;52m'),
                ("fed", '\033[38;5;18m\033[48;5;153m\033[1m'),
                ("ex", '\033[38;5;166m\033[48;5;153m\033[1m')
                ]
@@ -47,7 +47,7 @@ def pr_colour(colour, text):
         
         if test == 1:
             col_def = col[1]
-            print(col_def + "text")
+            print(col_def + "All of the Colours\033[0m")
             # print("Col(0): {} Col(1): {} Colour: {}".format(col(0), col(1), colour))
             
             
@@ -109,11 +109,11 @@ if __name__ == "__main__":
     
     
     # words = '\033[33  
-    var ='\033[38;5;232m\033[48;5;184m\033[1m ' + " RAM 3467 " + '\033[0m'
+    var ='\033[38;5;232m\033[48;5;184m\033[1m' + " RAM 3467 " + '\033[0m'
     print(var)
     
-    col_fb = '\033[38;5;166m\033[48;5;153m\033[1m A\033[38;5;166m\033[48;5;153m\033[1m\033[4mmaz\033[0m\033[38;5;166m\033[48;5;153m\033[1mon \033[0m'
-    print(col_fb + pr_colour("del","Prime Delivery "))
-    print(pr_colour("fed", " Fed") + pr_colour("ex","Ex ") )
-    print(pr_colour("p_force", " Parcel Force "))
-    print(pr_colour("ups"," UPS "))
+    # col_fb = '\033[38;5;166m\033[48;5;153m\033[1m A\033[38;5;166m\033[48;5;153m\033[1m\033[4mmaz\033[0m\033[38;5;166m\033[48;5;153m\033[1mon \033[0m'
+    # print(col_fb + pr_colour("del","Prime Delivery "))
+    # print(pr_colour("fed", " Fed") + pr_colour("ex","Ex ") )
+    # print(pr_colour("p_force", " Parcel Force "))
+    # print(pr_colour("ups"," UPS "))
