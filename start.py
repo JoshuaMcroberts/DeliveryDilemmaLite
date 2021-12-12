@@ -213,15 +213,36 @@ def game():
     c_gen = enter_char_gender()
 
     pc = character(p_name, c_name, num_p, c_gen)
- 
-
-    # uncomment
+    
     char_name = pc.get_char_name()
     pro_1, pro_2, pro_3 = pc.get_pronouns()
     cur = pc.get_courier()
     
     # Game ACT 1
     act_1_intro(char_name, pro_1, pro_2, pro_3, cur)
+    
+    # Game ACT 2
+    # - Getting in  
+    # - Sec Office
+    # - Reception 
+    # - Outside main enterence
+    # - Outside Firedoor
+    # - Outside loading bay enterence
+    
+    # Game ACT 3 
+    # - Hall 1
+    # -- Admin Offices
+    # - Hall 2
+    # -- Hall 5
+    # - Hall 3
+    # -- Unknown Room
+    # - Hall 4 
+    # -- Stairs
+    # -- Fire door
+    # -- Toilets
+    # - Hall 5
+    # -- Locker Room
+    # -- Canteen/Lounge
 
 
 # MAIN FUNCTION
