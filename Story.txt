@@ -79,7 +79,7 @@ RD - *
 GD - *
 SO - *
 LF - *
-WA -
+WA – *
 The foyer of the building stretches out in a large oval with the narrow ends on the left and right. 
 A semi-circler, tall <reception desk> is prominently placed against the back wall of the room with a 
 large double <glass door> to its left which leads further into the building. 
@@ -89,7 +89,7 @@ nestled to back up against the glass front windows.
 
 
 In reception:
-R1 - Reception Desk(RD)
+R1 - Reception Desk (RD)
 RE -
 PN -
 PH -
@@ -114,7 +114,37 @@ CR -
 You approach the glass door and see next to it on the wall a small electronic pad.
 It looks like a <card reader>. You can see the hallway beyond with a few doors leading off to either side.  
 
-R1 - Waiting area
+R1 - Waiting area (WA)
+W8.1 – *
+W8.2 – *
+W8.3 – *
+W8.4 – *
+W8.5 – *
+W8.6 – *
+The waiting area consists of three tan leather sofas set in a U shape, with the open end facing the main entrance. This gives each sofa a varying view, from the reception to the those entering through the main door and the final facing out the window to the carpark area outside. There are a few magazines laid out on a short coffee table in the middle of the U shape to help pass the <wait> .
+WA – Wait 1 (W8.1) 
+<character> rests in the waiting area for an hour. Nothing happens.
+(Auto go back)
+
+WA – Wait 2 (W8.2)
+<character> rests in the waiting area for an hour. The Receptionist gets up, scans her pass and leaves through the glass door, only to return 5 mins later with a cup of coffee and a small piece of fruit. 
+(Auto go back)
+
+WA – Wait 3 (W8.3)
+<character> rests in the waiting area for an hour. A delivery man enters the reception and drags a sack truck across the floor which appears to have one flat wheel. The security guard emerges from his office and escorts the delivery man through the glass door and then back out again after another 10 minutes has passed.
+(Auto go back)
+
+WA – Wait 4 (W8.4)
+<character> grows tired of waiting. Another hour passes.
+(Auto go back)
+
+WA – Wait 5 (W8.5)
+<character> rests in the waiting area for an hour. Closing time approaches.
+(Auto go back)
+
+WA - Wait 6 (W8.6)
+<character> rests in the waiting area. The Security Guard emerges from his office and escorts <character> out of the building as it is closing time. 
+(game failed) 
 
 R1 – Lift (LF)
 You walk over to the lift to take a closer look. There is a number pad and a card read next to the door 
