@@ -64,6 +64,18 @@ def pr_colour(colour, text):
     else:
         return col_out + text + '\033[00m'
 
+# CLEANS TEXT TO SIMPLE FORM
+def san_text(text):
+    text = text.lower()
+    text = text.replace(" ", "")
+    return text
+
+# TAKES IN INPUT ANS SIMPLIFIES IT
+def san_input():
+    var = input("\n\t> ")
+    var = san_text(var)
+    return var
+    
 # CLEAR SCREEN
 def clear_screen(lines=100):
     if os.name == 'posix':
