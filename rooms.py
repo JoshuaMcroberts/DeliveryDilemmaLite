@@ -10,7 +10,7 @@ def recep():
         print_tab("large double " + pr_colour("l_blue","Glass Door") + " to its left which leads further into the building.")
         print_tab("On the left side of the room there is another door with the name plate on it saying, " + pr_colour("l_blue","Security Office") + ". ")
         print_tab("As you look to the right of the room, you see a " + pr_colour("l_blue","Lift") + " door and a " + pr_colour("l_blue","Waiting Area") + " which is ")
-        print_tab("nestled to back up against the glass front windows. ")
+        print_tab("nestled back up against the glass front windows. ")
         var = san_input()
         
         # print_tab(var)
