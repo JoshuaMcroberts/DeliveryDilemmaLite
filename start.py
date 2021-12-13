@@ -89,12 +89,6 @@ class character:
         self.display_inventory()
 
 
-# CLEANS TEXT TO SIMPLE FORM
-def san_text(text):
-    text = text.lower()
-    text = text.strip()
-    return text
-
 
 # ENTER PLAYER NAME - CHECK FOR NUMBER PLATE PLAYER
 def enter_name():
