@@ -43,16 +43,35 @@ def recep_desk():
     pause()
     
 def glass_door():
+    loop = True
+    while loop:
+        clear_screen()
+        print_tab(pr_colour("l_blue","-- GLASS DOOR --") + "\n")
+        print_tab("You approach the glass door and see next to it on the wall a small electronic pad.")
+        print_tab("It looks like a " + pr_colour("l_blue", "Card Reader") + ". You can see the hallway beyond with a few doors ")
+        print_tab("leading off to either side.")
+        var = san_input()
+        
+        
+        if var == "cardreader":
+            card_reader()
+        elif var == "back":
+            loop = False
+        else:
+            print_tab("Incorrect entry try again")
+            pause()
+
+
+def card_reader():
     clear_screen()
-    print_tab(pr_colour("l_blue","-- GLASS DOOR --") + "\n")
+    print_tab(pr_colour("l_blue","-- CARD READER --") + "\n")
+    
+    if():
+        print()
     print_tab("You approach the glass door and see next to it on the wall a small electronic pad.")
-    print_tab("It looks like a " + pr_colour("l_blue", "Card Reader")+". You can see the hallway beyond with a few doors ")
+    print_tab("It looks like a " + pr_colour("l_blue", "Card Reader") + ". You can see the hallway beyond with a few doors ")
     print_tab("leading off to either side.")
     var = san_input()
-    
-     
-    
-    
 
     
 def sec_office():
@@ -71,8 +90,8 @@ def lift():
 def waiting_area():
     
     wait = 0
-    loop1 = True
-    while loop1:
+    loop = True
+    while loop:
         clear_screen()
         print_tab(pr_colour("l_blue","-- WAITING AREA --") + "\n")
         print_tab("The waiting area consists of three tan leather sofas set in a U shape, with the open")
@@ -123,12 +142,13 @@ def waiting_area():
                 print_tab("<character> rests in the waiting area. The Security Guard emerges from his office and escorts <character>")
                 print_tab("out of the building as it is closing time. ")
                 print_tab("Game Over")
+                # End game here
                 pause()
                 
         elif var == "back":
             # not wait
             print_tab("")    
-            loop1 = False
+            loop = False
         else:
             clear_screen()
             print_tab("Try typing 'Back'")
