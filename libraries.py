@@ -91,7 +91,7 @@ def print_tab(text):
 
 # PAUSE FUNCTION 
 def pause():
-    input("\n\tHit Enter to Continue...")
+    input("\n\tPress Enter to Continue...")
     
 # Silent PAUSE FUNCTION 
 def s_pause():
