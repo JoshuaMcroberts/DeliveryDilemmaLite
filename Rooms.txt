@@ -41,6 +41,7 @@ CR - *
 You approach the glass door and see next to it on the wall a small electronic pad.
 It looks like a <card reader>. You can see the hallway beyond with a few doors leading off to either side.  
 GD – Card Reader (CR)
+** Check inventory method needed
 *if have no card*
 You have no card to scan. 
 (Auto Go Back)
@@ -88,7 +89,7 @@ however above them is a seemly freshly printed piece of paper typed to the wall 
 
 R1 - Security Office (SO)
 SG - 
-SD -
+SD -*
 CR - 
 SL -
 An imposing array of monitors looms large over you on the right wall of the room as you enter. 
@@ -96,8 +97,9 @@ Bathing everything in a pale blue light. Lazily seated at a <desk> below the wal
 lone <security Guard> snacking on a chocolate bar and looking at his phone. Directly opposite 
 the door a <coat rack> bears few garments and along the back wall stands a bank of three <lockers>.
 
-R2 – Sec Guard Conversation Tree
-R2 – Sec Desk (SD)
+SO – Sec Guard Conversation Tree
+
+SO – Sec Desk (SD)
 MO – *
 BI –*
 SP –
@@ -125,6 +127,28 @@ Admin Login Info added into inventory
 *if 2* 
 (Auto Go Back)
 
-
+SD – Security Phone (SP)
 R2 – Sec Lockers (SL) 
+L1 - 
+L2 -
+L3 -
+L4 -
+You walk over to the lockers and take a cursory glance at them. The <Locker 1> and <Locker 4> both their doors slightly open. <Locker 2> and <Locker 3> appear to be closed and locked. There is a thin coat of dust on the top of the lockers and an open cardboard box sits on top of them.
+*if Guard present*
+(Add)
+You shouldn’t try to check the locker with the guard in the room.
+*if Guard not present *
+(freely search)
+
+SL – Locker 1 (L1)
+*if Guard Present*
+When opening the locker it makes a *clunk* noise. The Guard immediately swivels round in his chair and stands. 
+** Guard agro method - 5 levels before game over ** 
+Guard: “Hey, You’re not supposed to be in here! Get out!”
+(Auto Back to Recep)
+
+*if Guard not present* 
+
+SL - Locker 2
+
 R2 – Coat rack (CR)
