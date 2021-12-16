@@ -1,8 +1,13 @@
 from libraries import *
+from mmap import *
+from game import N_game
 
-def recep():
+def recep(game = N_game()):
+   
+    
     loop = True
     while loop:
+        game.game_map.pre = game.game_map.player_enter((4,3),game.game_map.pre)   
         clear_screen()
         print_tab(pr_colour("l_blue","-- RECEPTION --")+"\n")
         print_tab("The foyer of the building stretches out in a large oval with the narrow ends on the left and right.")
@@ -13,36 +18,41 @@ def recep():
         print_tab("nestled back up against the glass front windows. ")
         var = san_input()
         
-        # print_tab(var)
-        
+       
+        # Navigation IF  
         if var  == "receptiondesk":
-            recep_desk()
+            recep_desk(game)
             
         elif var == "glassdoor":
-            glass_door()
+            glass_door(game)
             
         elif var == "securityoffice":
-            sec_office()
+            sec_office(game)
             
         elif var == "lift":
-            lift()
+            lift(game)
             
         elif var == "waitingarea":
-            waiting_area()
+            waiting_area(game)
             
         elif var == "exit":
             loop = False
             
+        elif var == "map":
+            clear_screen()
+            game.game_map.print_map()
+            pause()
+        
         else:
             print_tab("Incorrect entry try again")
             pause()
 
-def recep_desk():
+def recep_desk(game = N_game()):
     clear_screen()
     print_tab("RD")
     pause()
     
-def glass_door():
+def glass_door(game = N_game()):
     loop = True
     while loop:
         clear_screen()
@@ -57,12 +67,18 @@ def glass_door():
             card_reader()
         elif var == "back":
             loop = False
+        
+        elif var == "map":
+            clear_screen()
+            game.game_map.print_map()
+            pause()
+        
         else:
             print_tab("Incorrect entry try again")
             pause()
 
 
-def card_reader():
+def card_reader(game = N_game()):
     clear_screen()
     print_tab(pr_colour("l_blue","-- CARD READER --") + "\n")
     
@@ -74,12 +90,9 @@ def card_reader():
     var = san_input()
 
     
-def sec_office():
-    clear_screen()
-    print_tab("SO")
-    pause()
+
     
-def lift():
+def lift(game = N_game()):
     clear_screen()
     print_tab(pr_colour("l_blue","-- LIFT --") + "\n")
     print_tab("You walk over to the lift to take a closer look. There is a number pad and")
@@ -87,8 +100,8 @@ def lift():
     print_tab("printed piece of paper taped to the wall saying “Out of Order”")
     pause()
     
-def waiting_area():
-    
+def waiting_area(game = N_game()):
+    # 2nd Prioity - gaurd leave office
     wait = 0
     loop = True
     while loop:
@@ -149,15 +162,113 @@ def waiting_area():
             # not wait
             print_tab("")    
             loop = False
+            
+        elif var == "map":
+            clear_screen()
+            game.game_map.print_map()
+            pause()    
+            
         else:
             clear_screen()
             print_tab("Try typing 'Back'")
             pause()
             
              
-             
+def sec_office(game = N_game()):
+    
+    
+    loop = True
+    while loop:
+        game.game_map.pre = game.game_map.player_enter((4,2),game.game_map.pre)
+        clear_screen()
+        print_tab(pr_colour("l_blue","-- SECURITY OFFICE --")+"\n")
+        print_tab("An imposing array of monitors looms large over you on the right wall of the room as you enter.")
+        print_tab("Bathing everything in a pale blue light. Lazily seated at a " + pr_colour("l_blue","Desk") + " below the wall of screens is a")
+        print_tab("lone " + pr_colour("l_blue","Security Guard") + " snacking on a chocolate bar and looking at his phone. Directly opposite ")
+        print_tab("the door a " + pr_colour("l_blue","Coat Rack")+" bears few garments and along the back wall stands a bank of four" +pr_colour("l_blue","Lockers") + ".")
+        print_tab("The door behind you leads you " + pr_colour("l_blue","Back") + " the way you came.")
+        var = san_input()
+       
+        # Navigation IF  
+        if var  == "desk":
+            sec_desk(game)
+       
+        elif var == "securityguard":
+            sec_guard(game)
             
+        elif var == "coatrack":
+            coat_rack(game)
+            
+        elif var == "lockers":
+            sec_lockers(game)
+                        
+        elif var == "back":
+            loop = False
+            
+        elif var == "map":
+            clear_screen()
+            game.game_map.print_map()
+            pause()
+        
+        else:
+            print_tab("Incorrect entry try again")
+            pause()             
 
+
+# Guard must leave room
+def sec_desk(game = N_game()):
+    game.game_map.pre = game.game_map.player_enter((4,2),game.game_map.pre)
+    
+    loop = True
+    while loop:
+        clear_screen()
+        print_tab(pr_colour("l_blue","-- DESK --")+"\n")
+        
+        var = san_input()
+       
+        # # Navigation IF  
+        # if var  == "desk":
+        #     sec_desk(game)
+       
+        # elif var == "securityguard":
+        #     sec_guard(game)
+            
+        # elif var == "coatrack":
+        #     coat_rack(game)
+            
+        # elif var == "lockers":
+        #     sec_lockers(game)
+                        
+        # elif var == "back":
+        #     loop = False
+            
+        # elif var == "map":
+        #     clear_screen()
+        #     game.game_map.print_map()
+        #     pause()
+        
+        # else:
+        #     print_tab("Incorrect entry try again")
+        #     pause()  
+    
+def sec_guard(game = N_game()):
+    print("sg")
+
+def coat_rack(game = N_game()):
+    print("cr")
+    
+def sec_lockers(game = N_game()):
+    print("sl")
+    
+
+
+
+# def sec_desk():
+#     print("")
+    
+# def sec_desk():
+#     print("")
+    
 
 if __name__ == "__main__":
     recep()
