@@ -1,6 +1,6 @@
-# from libraries import *
+from libraries import *
 
-class mind_map:
+class Plan:
     
     def __init__(self):
         self.map_list = [[0, 0, 1, 11, 2],
@@ -21,7 +21,7 @@ class mind_map:
                         [0, 0, 0, 0, 0],
                         [0, 0, 0, 0, 0]]
         
-        self.printable_map = []
+        self.pre = (0,0)
     
     def print_set(self):
         for row in self.set_list:
@@ -74,53 +74,58 @@ class mind_map:
             right = str_bin[4]
             
             # ERROR in THIS LOGIC
+            
             # Bottom Check/Set 
             y_n = c_y + 1
             x_n = c_x 
-            row = self.visited[y_n]
-            bot_val = row[x_n]
-            print(bot_val)
-            
-            if bottom == "1" and bot_val == 0:
-                loc = self.set_list[y_n]
-                loc[x_n] = 4
-            
+            if y_n < len(self.set_list): 
+                
+                row = self.visited[y_n]
+                bot_val = row[x_n]
+                
+                if bottom == "1" and bot_val == 0:
+                    loc = self.set_list[y_n]
+                    loc[x_n] = 4
+                
             # Top Check/Set 
             y_n = c_y - 1
             x_n = c_x 
-            row = self.visited[y_n]
-            top_val = row[x_n]
+            if y_n >= 0: 
             
-            if top == "1" and top_val == 0:
-                loc = self.set_list[y_n]
-                loc[x_n] = 8
+                row = self.visited[y_n]
+                top_val = row[x_n]
+                
+                if top == "1" and top_val == 0:
+                    loc = self.set_list[y_n]
+                    loc[x_n] = 8
             
             # Right Check/Set 
             y_n = c_y
-            x_n = c_x + 1 
-            row = self.visited[y_n]
-            rig_val = row[x_n]
-        
-            if right == "1" and rig_val == 0:
-                loc = self.set_list[y_n]
-                loc[x_n] = 2
+            x_n = c_x + 1
+            if x_n < len(self.set_list[0]): 
                 
-            # Left Check/Set 
+                row = self.visited[y_n]
+                rig_val = row[x_n]
+        
+                if right == "1" and rig_val == 0:
+                    loc = self.set_list[y_n]
+                    loc[x_n] = 2
+                    
+            # Left Check/Set
             y_n = c_y
             x_n = c_x - 1 
-            row = self.visited[y_n]
-            lef_val = row[x_n]
-        
-            if left == "1" and lef_val == 0:
-                loc = self.set_list[y_n]
-                loc[x_n] = 1
+            if x_n >= 0:  
+                
+                row = self.visited[y_n]
+                lef_val = row[x_n]
+            
+                if left == "1" and lef_val == 0:
+                    loc = self.set_list[y_n]
+                    loc[x_n] = 1
         
         # Player Presence
         var = self.set_list[c_y] 
-        self.print_set()
         var[c_x] = var[c_x] + 16
-        print("Mid Meth")
-        self.print_set()
         
         # Exit Previous Room
         p_y = p_tup[0]
@@ -155,7 +160,7 @@ class mind_map:
                 
             self.printable_map.append(n_row)
         
-        p_map = "\t┌─────────────────────────────────────────────────┐\n"
+        p_map = "\t      ────────────────  MAP  ────────────────\n\t┌─────────────────────────────────────────────────┐\n"
         for row in self.printable_map:
             top = "\t│  "
             mid = "\t│  "
@@ -200,15 +205,15 @@ def make_box(num):
     mid_r = " │     ├─"
     mid_2 = "─┤     ├─"
     
-    # p_m_1 = " │  " + pr_colour("l_green","X") +"  │ " 
-    # p_m_l = "─┤  " + pr_colour("l_green","X") +"  │ "
-    # p_m_r = " │  " + pr_colour("l_green","X") +"  ├─"
-    # p_m_2 = "─┤  " + pr_colour("l_green","X") +"  ├─"
+    p_m_1 = " │  " + pr_colour("l_green","X") +"  │ " 
+    p_m_l = "─┤  " + pr_colour("l_green","X") +"  │ "
+    p_m_r = " │  " + pr_colour("l_green","X") +"  ├─"
+    p_m_2 = "─┤  " + pr_colour("l_green","X") +"  ├─"
     
-    p_m_1 = " │  X  │ " 
-    p_m_l = "─┤  X  │ "
-    p_m_r = " │  X  ├─"
-    p_m_2 = "─┤  X  ├─"
+    # p_m_1 = " │  X  │ " 
+    # p_m_l = "─┤  X  │ "
+    # p_m_r = " │  X  ├─"
+    # p_m_2 = "─┤  X  ├─"
     
     bot_1 = " └─────┘ "
     bot_2 = " └──┬──┘ "
@@ -275,7 +280,7 @@ def pause_():
 if __name__ =="__main__":
     
     pre = (0,0)
-    myMap = mind_map()
+    myMap = Plan()
     # myMap.print_map()
     # myMap.player_enter((2,1))
     # clear_screen()
@@ -283,30 +288,21 @@ if __name__ =="__main__":
     # pause_()
     
     pre = myMap.player_enter((3,2), pre)
-    
-    
-    # clear_screen()
+    clear_screen()
     myMap.print_map()
-    
-    # myMap.print_set()
-    # print()
-    # myMap.print_visited()
     pause_()
     
     pre = myMap.player_enter((2,2), pre)
-    
+    clear_screen()
     myMap.print_map()
     pause_()
+    
     pre = myMap.player_enter((2,3), pre)
-    
+    clear_screen()
     myMap.print_map()
     pause_()
+    
     pre = myMap.player_enter((3,3), pre)
-    
+    clear_screen()
     myMap.print_map()
     pause_()
-    # myMap.print_set()
-    # print()
-    # myMap.print_visited()
-    
-    # box_numbers()
