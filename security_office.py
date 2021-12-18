@@ -39,6 +39,7 @@ def sec_office(game = N_game()):
             pause()
         
         else:
+            print("")
             print_tab("Incorrect entry try again")
             pause()             
 
