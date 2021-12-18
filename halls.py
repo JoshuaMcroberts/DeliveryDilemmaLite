@@ -112,16 +112,11 @@ def hall_5(game = N_game()):
         print_tab("leading off to either side.")
         var = san_input()
         
-        
         if var == "canteen":
-            # canteen(game)
-            print("canteen")
-            pause()
+            canteen(game)
             
         elif var == "lockerroom":
-            # locker_room(game)
-            print("locker room")
-            pause()
+            locker_room(game)
             
         elif var == "door":
             # warehouse(game)
