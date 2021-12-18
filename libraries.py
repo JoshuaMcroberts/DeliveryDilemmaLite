@@ -96,7 +96,20 @@ def pause():
 # Silent PAUSE FUNCTION 
 def s_pause():
     input("...")
-    
+
+# READ IN AND PARSE STRING TO STR AND INT
+def item_input():
+    text = input("\n\t> ")
+    text = text.lower()
+    var = text.split(" ")
+    if len(var) == 2:
+        locker = var[0]
+        number = int(var[1])
+    else:
+        locker = var[0]
+        number = int("0")
+    return locker, number
+
 
 if __name__ == "__main__":
     
