@@ -5,7 +5,7 @@ RD - *
 GD - *
 SO - *
 LF - *
-WA – *
+WA - *
 The foyer of the building stretches out in a large oval with the narrow ends on the left and right. 
 A semi-circler, tall <reception desk> is prominently placed against the back wall of the room with a 
 large double <glass door> to its left which leads further into the building. 
@@ -15,39 +15,37 @@ nestled to back up against the glass front windows.
 
 
 In reception:
- 
+
 R1 - Reception Desk (RD)
 RE -
 PN -
 PH -
 NP - 
 As you approach the Reception desk you see a brown haired <receptionist> wearing intelligent 
-looking yet elegant round frame glasses. She appears to be engrossed in her work and doesn’t notice 
+looking yet elegant round frame glasses. She appears to be engrossed in her work and doesn't notice 
 you immediately. You take the opportunity to glance over the top edge of the desk, down at the 
 items on the desk top. There seems to be a number of <post-it notes> scattered around, normally 
 just out of view. A <phone> sits on the far side of the desk, where a second receptionist would more 
 easily be able to answer it and a <notepad>, with something written on it is placed within easy 
 reaching distance of the receptionist.
 
- 
-RD – Receptionist Conversation tree
- 
-RD – Phone
- 
-RD – Post-it notes
- 
-RD – Notepad
+
+RD - Receptionist Conversation tree
+
+RD - Phone
+
+RD - Post-it notes
+
+RD - Notepad
 
 
 
-
- 
 R1 - Glass door (GD)
 CR - *
 You approach the glass door and see next to it on the wall a small electronic pad.
 It looks like a <card reader>. You can see the hallway beyond with a few doors leading off to either side.  
- 
-GD – Card Reader (CR)
+
+GD - Card Reader (CR)
 ** Check inventory method needed
 *if have no card*
 You have no card to scan. 
@@ -57,32 +55,32 @@ You scan the ID Card and the card reader makes a short affirmative *boop*.
 With that the two glass panels glide apart and you pass through. 
 (Auto Hall 1)
 
- 
+
 R1 - Waiting area (WA)
-W8.1 – *
-W8.2 – *
-W8.3 – *
-W8.4 – *
-W8.5 – *
-W8.6 – *
+W8.1 - *
+W8.2 - *
+W8.3 - *
+W8.4 - *
+W8.5 - *
+W8.6 - *
 The waiting area consists of three tan leather sofas set in a U shape, with the open end facing the main entrance. This gives each sofa a varying view, from the reception to the those entering through the main door and the final facing out the window to the carpark area outside. There are a few magazines laid out on a short coffee table in the middle of the U shape to help pass the <wait> .
-WA – Wait 1 (W8.1) 
+WA - Wait 1 (W8.1) 
 <character> rests in the waiting area for an hour. Nothing happens.
 (Auto go back)
 
-WA – Wait 2 (W8.2)
+WA - Wait 2 (W8.2)
 <character> rests in the waiting area for an hour. The Receptionist gets up, scans her pass and leaves through the glass door, only to return 5 mins later with a cup of coffee and a small piece of fruit. 
 (Auto go back)
 
-WA – Wait 3 (W8.3)
+WA - Wait 3 (W8.3)
 <character> rests in the waiting area for an hour. A delivery man enters the reception and drags a sack truck across the floor which appears to have one flat wheel. The security guard emerges from his office and escorts the delivery man through the glass door and then back out again after another 10 minutes has passed.
 (Auto go back)
 
-WA – Wait 4 (W8.4)
+WA - Wait 4 (W8.4)
 <character> grows tired of waiting. Another hour passes.
 (Auto go back)
 
-WA – Wait 5 (W8.5)
+WA - Wait 5 (W8.5)
 <character> rests in the waiting area for an hour. Closing time approaches.
 (Auto go back)
 
@@ -90,13 +88,13 @@ WA - Wait 6 (W8.6)
 <character> rests in the waiting area. The Security Guard emerges from his office and escorts <character> out of the building as it is closing time. 
 (game failed) 
 
- 
-R1 – Lift (LF)
+
+R1 - Lift (LF)
 You walk over to the lift to take a closer look. There is a number pad and a card read next to the door 
 however above them is a seemly freshly printed piece of paper typed to the wall saying “Lift Out of Order”
 (Auto Go Back)
 
- 
+
 R1 - Security Office (SO)
 SG - 
 SD -*
@@ -107,22 +105,28 @@ Bathing everything in a pale blue light. Lazily seated at a <desk> below the wal
 lone <security Guard> snacking on a chocolate bar and looking at his phone. Directly opposite 
 the door a <coat rack> bears few garments and along the back wall stands a bank of three <lockers>.
 
- 
-SO – Sec Guard Conversation Tree
 
- 
-SO – Sec Desk (SD)
-MO – *
-BI –*
-SP –
-A closer look at the desk reveals a scattering of chocolate bar wrappers and empty drinks cans. There is a desk mounted <monitor> that sit in front of a keyboard. It seems to have been recently used. A <bin> sits just to the right of the desk and is completely empty.  A <phone> sits in the centre of the desk on the left of the monitor and keyboard.
+SO - Sec Guard Conversation Tree
 
- 
-SD – Monitor (MO)
+
+SO - Sec Desk (SD)
+MO - *
+BI -*
+SP -
+A closer look at the desk reveals a scattering of chocolate bar wrappers and empty drinks cans. 
+There is a desk mounted <monitor> that sit in front of a keyboard. It seems to have been recently 
+used. A <bin> sits just to the right of the desk and is completely empty.  A <phone> sits in the 
+centre of the desk on the left of the monitor and keyboard.
+
+
+SD - Monitor (MO)
 SN - *
-<character> looks at the monitor and sees a Word Document is opened with the title of ‘How Can Planes Fly Upside Down?’. There doesn’t seem to have been much progress made. A couple of tabs in the browser show some signs of the pursuit of the thesis however the user seems to have been distracted by cat videos on YouTube. There is <sticky note> stuck to the side of the monitor. 
+<character> looks at the monitor and sees a Word Document is opened with the title of 'How Can Planes Fly Upside Down?'. 
+There doesn't seem to have been much progress made. A couple of tabs in the browser show some signs of the pursuit of 
+the thesis however the user seems to have been distracted by cat videos on YouTube. There is <sticky note> stuck to the 
+side of the monitor. 
 
-SD – Bin (BI)
+SD - Bin (BI)
 You have a choice:
 (Tidy the desk)
 (Leave it as it is)
@@ -131,7 +135,7 @@ The desk is tidy and the bin is full. (New default for Bin)
 *if 2*
 (Auto Go Back)
 
-MO – Sticky Note (SN)
+MO - Sticky Note (SN)
 The sticky note has a username and password written on it.
 (Take)
 (Leave)
@@ -140,10 +144,10 @@ Admin Login Info added into inventory
 *if 2* 
 (Auto Go Back)
 
- 
-SD – Security Phone (SP)
- 
-R2 – Sec Lockers (SL) 
+
+SD - Security Phone (SP)
+
+R2 - Sec Lockers (SL) 
 L1 - 
 L2 -
 L3 -
@@ -151,22 +155,22 @@ L4 -
 You walk over to the lockers and take a cursory glance at them. The <Locker 1> and <Locker 4> both their doors slightly open. <Locker 2> and <Locker 3> appear to be closed and locked. There is a thin coat of dust on the top of the lockers and an open cardboard box sits on top of them.
 *if Guard present*
 (Add)
-You shouldn’t try to check the locker with the guard in the room.
+You shouldn't try to check the locker with the guard in the room.
 *if Guard not present *
 (freely search)
 
-SL – Locker 1 (L1)
+SL - Locker 1 (L1)
 *if Guard Present*
 When opening the locker it makes a *clunk* noise. The Guard immediately swivels round in his chair and stands. 
 ** Guard agro method - 5 levels before game over ** 
-Guard: “Hey, You’re not supposed to be in here! Get out!”
+Guard: “Hey, You're not supposed to be in here! Get out!”
 (Auto Back to Recep)
 
 *if Guard not present* 
 
 SL - Locker 2
 
-SL – Locker 3
-SL – Locker 4
- 
-R2 – Coat rack (CR)
+SL - Locker 3
+SL - Locker 4
+
+R2 - Coat rack (CR)
