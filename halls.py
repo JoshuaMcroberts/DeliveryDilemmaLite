@@ -119,9 +119,7 @@ def hall_5(game = N_game()):
             locker_room(game)
             
         elif var == "door":
-            # warehouse(game)
-            print("warehouse")
-            pause()
+            warehouse(game)
              
         elif var == "back":
             loop = False
