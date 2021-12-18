@@ -45,17 +45,7 @@ def locker_room(game = N_game()):
             print_tab("Incorrect entry try again")
             pause()
 
-def locker_input():
-    text = input("\n\t> ")
-    text = text.lower()
-    var = text.split(" ")
-    if len(var) == 2:
-        locker = var[0]
-        number = int(var[1])
-    else:
-        locker = var[0]
-        number = int("0")
-    return locker, number
+
        
 def lockers(game = N_game()):
     
@@ -66,7 +56,7 @@ def lockers(game = N_game()):
         print_tab(pr_colour("l_blue","-- LOCKERS --") + "\n")
         print_tab("locker 1 - locker 30")
         print_tab("Enter the locker number you wish to search by typing: 'Locker <NUMBER>'.")
-        var, num = locker_input()
+        var, num = item_input()
         
         if var == "locker" and num > 0 and num < 31:
         
