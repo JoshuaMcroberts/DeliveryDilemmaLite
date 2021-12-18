@@ -1,0 +1,13 @@
+Locker Room (LR)
+The room is narrow and bordering three walls are a collection of storage lockers. 
+Ten full size lockers are against the right hand wall with a matching Ten opposite 
+them against the left hand wall. The wall towards the back of the room is roughly 
+half the size of the other two walls and therefore had two rows of five half-sized 
+lockers which had been stacked to give in total an additional Ten lockers. 
+Each locker is sequentially numbered.
+
+
+lockers 1-13 & 18-20 - open/empty
+lockers 14-17 - locked
+lockers 22-30 - locked + progression 
+locker 21 - Unlockable
