@@ -45,6 +45,7 @@ def recep(game = N_game()):
             pause()
         
         else:
+            print("")
             print_tab("Incorrect entry try again")
             pause()
 
@@ -75,6 +76,7 @@ def glass_door(game = N_game()):
             pause()
         
         else:
+            print("")
             print_tab("Incorrect entry try again")
             pause()
 
