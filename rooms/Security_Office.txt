@@ -1,0 +1,79 @@
+R1 - Security Office (SO)
+SG - 
+SD -*
+CR - 
+SL -
+An imposing array of monitors looms large over you on the right wall of the room as you enter. 
+Bathing everything in a pale blue light. Lazily seated at a <desk> below the wall of screens is a 
+lone <security Guard> snacking on a chocolate bar and looking at his phone. Directly opposite 
+the door a <coat rack> bears few garments and along the back wall stands a bank of three <lockers>.
+
+
+SO - Sec Guard Conversation Tree
+
+
+SO - Sec Desk (SD)
+MO - *
+BI -*
+SP -
+A closer look at the desk reveals a scattering of chocolate bar wrappers and empty drinks cans. 
+There is a desk mounted <monitor> that sit in front of a keyboard. It seems to have been recently 
+used. A <bin> sits just to the right of the desk and is completely empty.  A <phone> sits in the 
+centre of the desk on the left of the monitor and keyboard.
+
+
+SD - Monitor (MO)
+SN - *
+<character> looks at the monitor and sees a Word Document is opened with the title of 'How Can Planes Fly Upside Down?'. 
+There doesn't seem to have been much progress made. A couple of tabs in the browser show some signs of the pursuit of 
+the thesis however the user seems to have been distracted by cat videos on YouTube. There is <sticky note> stuck to the 
+side of the monitor. 
+
+SD - Bin (BI)
+You have a choice:
+(Tidy the desk)
+(Leave it as it is)
+*if 1*
+The desk is tidy and the bin is full. (New default for Bin)
+*if 2*
+(Auto Go Back)
+
+MO - Sticky Note (SN)
+The sticky note has a username and password written on it.
+(Take)
+(Leave)
+*if 1*
+Admin Login Info added into inventory
+*if 2* 
+(Auto Go Back)
+
+
+SD - Security Phone (SP)
+
+R2 - Sec Lockers (SL) 
+L1 - 
+L2 -
+L3 -
+L4 -
+You walk over to the lockers and take a cursory glance at them. The <Locker 1> and <Locker 4> both their doors slightly open. <Locker 2> and <Locker 3> appear to be closed and locked. There is a thin coat of dust on the top of the lockers and an open cardboard box sits on top of them.
+*if Guard present*
+(Add)
+You shouldn't try to check the locker with the guard in the room.
+*if Guard not present *
+(freely search)
+
+SL - Locker 1 (L1)
+*if Guard Present*
+When opening the locker it makes a *clunk* noise. The Guard immediately swivels round in his chair and stands. 
+** Guard agro method - 5 levels before game over ** 
+Guard: “Hey, You're not supposed to be in here! Get out!”
+(Auto Back to Recep)
+
+*if Guard not present* 
+
+SL - Locker 2
+
+SL - Locker 3
+SL - Locker 4
+
+R2 - Coat rack (CR)
