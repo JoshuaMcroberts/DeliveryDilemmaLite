@@ -1,7 +1,7 @@
 from libraries import *
 from text import *
 from game import *
-from rooms import recep
+from reception import recep
 
 # DISPLAY HELP TEXT
 def help_text():
