@@ -13,7 +13,7 @@ def recep(game = N_game()):
                 print_tab(pr_colour("l_blue","-- LEAVING THE SECURITY OFFICE --")+"\n")
                 print_tab("As you exit the security office you look through the Glass door down the hallway. You see the Security Guard")
                 print_tab("Just rounding the corner into the main corridor on his return journey. That was good timing, another minute")
-                print_tab("and he would have caught you. Step into the centre of the reception as he enters and quickly moves passed you")
+                print_tab("and he would have caught you. Step into the centre of the reception as he enters and quickly moves past you")
                 print_tab("back to the Security Office")
                 pause()
                 
@@ -75,7 +75,8 @@ def recep_desk(game = N_game()):
         var = san_input()
         
         if var == "receptionist":
-            receptionist()
+            # receptionist()
+            print("")
             
         elif var == "notepad":
             notepad()

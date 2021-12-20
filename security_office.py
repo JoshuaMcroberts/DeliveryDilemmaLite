@@ -66,7 +66,7 @@ def sec_desk(game = N_game()):
             clear_screen()
             print_tab(pr_colour("l_blue","-- DESK --")+"\n")
             print_tab("A closer look at the desk reveals a scattering of chocolate bar wrappers and empty drinks cans. ")
-            print_tab("There is a desk mounted" + pr_colour("l_blue","monitor") + "that sit in front of a keyboard. It seems to have been recently")
+            print_tab("There is a desk mounted " + pr_colour("l_blue","monitor") + " that sit in front of a keyboard. It seems to have been recently")
             print_tab("used. A " + pr_colour("l_blue","bin") + " sits just to the right of the desk and is completely empty.  A " + pr_colour("l_blue","phone") + " sits in the ")
             print_tab("centre of the desk on the left of the monitor and keyboard.")
             var = san_input()
@@ -127,7 +127,7 @@ def angry_guard(game = N_game()):
         
     else:
         game.game_over = True
-        print_tab("The Security Guard escorts you off the premises, you got off easy this time, he could ahve called the Police!")
+        print_tab("The Security Guard escorts you off the premises, you got off easy this time, he could have called the Police!")
 
     
 def sec_guard(game = N_game()):
@@ -143,7 +143,7 @@ def coat_rack(game = N_game()):
     else:
         clear_screen()
         print_tab(pr_colour("l_blue","-- COAT RACK --")+"\n")
-        print_tab("You move over to the coat rack but your movement distrubs the guard!\n")
+        print_tab("You move over to the coat rack but your movement disturbs the guard!\n")
         angry_guard(game)
         pause()
     
