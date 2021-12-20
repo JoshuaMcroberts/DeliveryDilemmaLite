@@ -5,8 +5,12 @@ class N_game:
     def __init__(self):
         self.player_name = ""
         self.number_plate = ""
-        self.pc = ""
+        self.pc = Character()
         self.game_map = Plan()
+        self.game_over = False
+        self.sec_gar = True
+        self.sec_gar_level = 0
+        self.wait = 0
         
     def set_player_name(self, p_name):
         self.player_name = pr_colour( "l_blue",p_name)
@@ -142,9 +146,9 @@ class N_game:
 # CHARACTER CLASS
 class Character:
     def __init__(self):
-        self.inventory = []
-        self.gender = ""
-        self.character_name = ""
+        self.inventory = ["Correct Parcel", ]
+        self.gender = "Male"
+        self.character_name = pr_colour("l_blue","Timmy")
         
         
     def set_char_name(self, c_name):
