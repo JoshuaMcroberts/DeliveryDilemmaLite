@@ -5,30 +5,184 @@ from game import N_game
 def sec_office(game = N_game()):
     
     
+        loop = True
+        while loop:
+            if(game.game_over == False):
+                game.game_map.pre = game.game_map.player_enter((4,2),game.game_map.pre)
+                clear_screen()
+                print_tab(pr_colour("l_blue","-- SECURITY OFFICE --")+"\n")
+                print_tab("An imposing array of monitors looms large over you on the right wall of the room as you enter.")
+                print("\tBathing everything in a pale blue light. " ,end="")
+                if(game.sec_gar == True):
+                    print("Lazily seated at a " + pr_colour("l_blue","Desk") + " below the wall of screens is a ")
+                    print("\tlone " + pr_colour("l_blue","Security Guard") + " snacking on a chocolate bar and looking at his phone. Directly opposite\n\t",end="")
+                else:
+                    print("Below the wall of screens sits a fairly unassuming " + pr_colour("l_blue","Desk")+ ".\n\tDirectly opposite ", end="")
+                print("the door a " + pr_colour("l_blue","Coat Rack")+" bears few garments and along the back wall stands a bank of ")
+                print_tab("four " +pr_colour("l_blue","Lockers") + ". The door behind you leads you " + pr_colour("l_blue","Back") + " the way you came.")
+                
+                var = san_input()
+            
+                # Navigation IF  
+                if var  == "desk":
+                    sec_desk(game)
+            
+                elif var == "securityguard":
+                    sec_guard(game)
+                    
+                    
+                elif var == "coatrack":
+                    coat_rack(game)
+                    
+                    
+                elif var == "lockers":
+                    sec_lockers(game)
+                    
+                elif var == "nosec":
+                    # REMOVE FROM FULL GAME
+                    game.sec_gar = False
+                                
+                elif var == "back":
+                    loop = False
+                    
+                elif var == "map":
+                    clear_screen()
+                    game.game_map.print_map()
+                    pause()
+                
+                else:
+                    print("")
+                    print_tab("Incorrect entry try again")
+                    pause()             
+            else: 
+                loop = False
+
+# Guard must leave room
+def sec_desk(game = N_game()):
+    
+    if (game.sec_gar == False):
+        loop = True
+        while loop:
+            clear_screen()
+            print_tab(pr_colour("l_blue","-- DESK --")+"\n")
+            print_tab("A closer look at the desk reveals a scattering of chocolate bar wrappers and empty drinks cans. ")
+            print_tab("There is a desk mounted" + pr_colour("l_blue","monitor") + "that sit in front of a keyboard. It seems to have been recently")
+            print_tab("used. A " + pr_colour("l_blue","bin") + " sits just to the right of the desk and is completely empty.  A " + pr_colour("l_blue","phone") + " sits in the ")
+            print_tab("centre of the desk on the left of the monitor and keyboard.")
+            var = san_input()
+        
+            # Navigation IF  
+            if var  == "monitor":
+                monitor(game)
+                pause()
+                
+            elif var == "bin":
+                print("bin_can(game)")
+                pause()
+                
+            elif var == "phone":
+                print("phone(game)")
+                pause() 
+                            
+            elif var == "back":
+                loop = False
+                
+            elif var == "map":
+                clear_screen()
+                game.game_map.print_map()
+                pause()
+            
+            else:
+                print_tab("Incorrect entry try again")
+                pause()  
+    else:
+        clear_screen()
+        print_tab(pr_colour("l_blue","-- DESK --")+"\n")
+        print_tab("As soon as you step up to the desk the Security guard sees you!\n")
+        angry_guard(game)
+        pause()
+
+def angry_guard(game = N_game()):
+    game.sec_gar_level += 1
+    anger_level = game.sec_gar_level
+    
+    if(anger_level < 2):
+        
+        print_tab('Guard: "Hey who are you and what are you doing in here?"')
+    
+    elif(anger_level < 3):
+        
+        print_tab('Guard: "You shouldn\'t be in here get out!"')
+        
+    elif(anger_level < 4):
+        
+        print_tab('Guard: "What are you doing snooping around in here?!')
+        
+    elif(anger_level < 5):
+        
+        print_tab('Guard: "Stop coming back in here! Get out!"')
+        
+    elif(anger_level < 6):
+        print_tab('Guard: "This is your last chance! If you come in here again I\'ll kick you out!"')
+        
+    else:
+        game.game_over = True
+        print_tab("The Security Guard escorts you off the premises, you got off easy this time, he could ahve called the Police!")
+
+    
+def sec_guard(game = N_game()):
+    clear_screen()
+    print_tab(pr_colour("l_blue","-- SECURITY GUARD --")+"\n")
+    print_tab("You take a few steps toward the Security Guard and clear your throat. He jumps from his seat!\n")
+    angry_guard(game)
+    pause()
+
+def coat_rack(game = N_game()):
+    if (game.sec_gar == False):
+        print("cr")
+    else:
+        clear_screen()
+        print_tab(pr_colour("l_blue","-- COAT RACK --")+"\n")
+        print_tab("You move over to the coat rack but your movement distrubs the guard!\n")
+        angry_guard(game)
+        pause()
+    
+def sec_lockers(game = N_game()):
+    if (game.sec_gar == False):
+            print("sl")
+    else:
+        clear_screen()
+        print_tab(pr_colour("l_blue","-- LOCKERS --")+"\n")
+        print_tab("When opening the locker it makes a *clunk* noise. The Guard immediately swivels round in his chair and stands. \n")
+        angry_guard(game)
+        pause()
+    
+
+
+
+def monitor(game = N_game()):
     loop = True
     while loop:
-        game.game_map.pre = game.game_map.player_enter((4,2),game.game_map.pre)
         clear_screen()
-        print_tab(pr_colour("l_blue","-- SECURITY OFFICE --")+"\n")
-        print_tab("An imposing array of monitors looms large over you on the right wall of the room as you enter.")
-        print_tab("Bathing everything in a pale blue light. Lazily seated at a " + pr_colour("l_blue","Desk") + " below the wall of screens is a")
-        print_tab("lone " + pr_colour("l_blue","Security Guard") + " snacking on a chocolate bar and looking at his phone. Directly opposite ")
-        print_tab("the door a " + pr_colour("l_blue","Coat Rack")+" bears few garments and along the back wall stands a bank of four" +pr_colour("l_blue","Lockers") + ".")
-        print_tab("The door behind you leads you " + pr_colour("l_blue","Back") + " the way you came.")
+        print_tab(pr_colour("l_blue","-- MONITER --")+"\n")
+        print_tab("A closer look at the desk reveals a scattering of chocolate bar wrappers and empty drinks cans. ")
+        print_tab("There is a desk mounted " + pr_colour("l_blue","monitor") + " that sit in front of a keyboard. It seems to have been recently")
+        print_tab("used. A " + pr_colour("l_blue","bin") + " sits just to the right of the desk and is completely empty. A " + pr_colour("l_blue","phone") + " sits in the ")
+        print_tab("centre of the desk on the left of the monitor and keyboard.")
         var = san_input()
-       
+    
         # Navigation IF  
-        if var  == "desk":
-            sec_desk(game)
-       
-        elif var == "securityguard":
-            sec_guard(game)
+        if var  == "monitor":
+            monitor()
+            pause()
             
-        elif var == "coatrack":
-            coat_rack(game)
+        elif var == "bin":
+            print("bin_can(game)")
+            pause()
             
-        elif var == "lockers":
-            sec_lockers(game)
+        elif var == "phone":
+            print("phone(game)")
+            pause() 
                         
         elif var == "back":
             loop = False
@@ -39,66 +193,14 @@ def sec_office(game = N_game()):
             pause()
         
         else:
-            print("")
             print_tab("Incorrect entry try again")
-            pause()             
-
-
-# Guard must leave room
-def sec_desk(game = N_game()):
-    game.game_map.pre = game.game_map.player_enter((4,2),game.game_map.pre)
-    
-    loop = True
-    while loop:
-        clear_screen()
-        print_tab(pr_colour("l_blue","-- DESK --")+"\n")
-        
-        var = san_input()
-       
-        # # Navigation IF  
-        # if var  == "desk":
-        #     sec_desk(game)
-       
-        # elif var == "securityguard":
-        #     sec_guard(game)
-            
-        # elif var == "coatrack":
-        #     coat_rack(game)
-            
-        # elif var == "lockers":
-        #     sec_lockers(game)
-                        
-        # elif var == "back":
-        #     loop = False
-            
-        # elif var == "map":
-        #     clear_screen()
-        #     game.game_map.print_map()
-        #     pause()
-        
-        # else:
-        #     print_tab("Incorrect entry try again")
-        #     pause()  
-    
-def sec_guard(game = N_game()):
-    print("sg")
-
-def coat_rack(game = N_game()):
-    print("cr")
-    
-def sec_lockers(game = N_game()):
-    print("sl")
-    
-
-
-
-# def sec_desk():
-#     print("")
+            pause()  
     
 # def sec_desk():
 #     print("")
     
 
 if __name__ == "__main__":
-    sec_office()
+    game = N_game()
+    sec_office(game)
 
