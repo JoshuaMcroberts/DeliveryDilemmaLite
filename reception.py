@@ -61,10 +61,49 @@ def recep(game = N_game()):
             loop = False
 
 def recep_desk(game = N_game()):
+    loop = True
+    while loop:
+        clear_screen()
+        print_tab(pr_colour("l_blue","-- RECEPTION DESK --") + "\n")
+        print_tab("As you approach the Reception desk you see a brown haired " + pr_colour("l_blue","receptionist") +" wearing intelligent")
+        print_tab("looking yet elegant round frame glasses. She appears to be engrossed in her work and doesn't notice")
+        print_tab("you immediately. You take the opportunity to glance over the top edge of the desk, down at the")
+        print_tab("items on the desk top. There seems to be a number of post-it notes scattered around, normally ")
+        print_tab("just out of view. A phone sits on the far side of the desk, where a second receptionist would more ")
+        print_tab("easily be able to answer it and a " + pr_colour("l_blue","notepad") +", with something written on it is placed within easy ")
+        print_tab("reaching distance of the receptionist.")
+        var = san_input()
+        
+        if var == "receptionist":
+            receptionist()
+            
+        elif var == "notepad":
+            notepad()
+            
+            
+        elif var == "back":
+            loop = False
+        
+        elif var == "map":
+            clear_screen()
+            game.game_map.print_map()
+            pause()
+        
+        else:
+            print("")
+            print_tab("Incorrect entry try again")
+            pause()
+
+def notepad(game = N_game()):
     clear_screen()
-    print_tab("RD")
+    print_tab(pr_colour("l_blue","-- Notepad --") + "\n")
+    print_tab("Reading the notepad upside down and slightly sideways, you see the words written: “Guest Pass for  new ")
+    print_tab("salesman Mr Preston - Expected @14:45”. This gives you an idea! You could call reception and pretend to ")
+    print_tab("be 'Mr Preston'. Now all you have to do is find another phone! ")
+    print_tab("(New objective)")
+    game.preston = True
     pause()
-    
+ 
 def glass_door(game = N_game()):
     loop = True
     while loop:
