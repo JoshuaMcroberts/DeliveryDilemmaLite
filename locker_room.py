@@ -11,11 +11,12 @@ def locker_room(game = N_game()):
         # update text
         print_tab(pr_colour("l_blue","-- LOCKER ROOM --")+"\n")
         print_tab("lockers")
-        print_tab("A semi-circler, tall " + pr_colour("l_blue","Reception Desk") + " is prominently placed against the back wall of the room with a ")
-        print_tab("large double " + pr_colour("l_blue","Glass Door") + " to its left which leads further into the building.")
-        print_tab("On the left side of the room there is another door with the name plate on it saying, " + pr_colour("l_blue","Security Office") + ". ")
-        print_tab("As you look to the right of the room, you see a " + pr_colour("l_blue","Lift") + " door and a " + pr_colour("l_blue","Waiting Area") + " which is ")
-        print_tab("nestled back up against the glass front windows.")
+        print_tab("The room is narrow and bordering three walls are a collection of storage lockers. ")
+        print_tab("Ten full size lockers are against the right-hand wall with a matching Ten opposite ")
+        print_tab("them against the left-hand wall. The wall towards the back of the room is roughly ")
+        print_tab("half the size of the other two walls and therefore has two rows of five half-sized ")
+        print_tab("lockers which had been stacked to give in total an additional Ten lockers. ")
+        print_tab("Each locker is sequentially numbered.")
         var = san_input()
         
        
@@ -62,19 +63,29 @@ def lockers(game = N_game()):
         
             if num < 14:
                 clear_screen()
-                print_tab("below 14")
+                print_tab("You open " + pr_colour("l_blue","'locker ' + num") + " and find that it is empty.")
                 pause()
                            
-            elif num < 18:
+            elif num < 21:
                 clear_screen()
-                print_tab("below 18")
+                print_tab("You go to open " + pr_colour("l_blue","'locker ' + num") + " but it appears to be locked.")
                 pause()
             
             elif num == 21:
                 clear_screen()
                 print_tab("is 21")
                 pause()
-                           
+                
+              elif num < 26:
+                clear_screen()
+                print_tab("As you open " + pr_colour("l_blue","'locker ' + num") + " you hear someone else enter the room. You pretend to be retrieving ")
+                print_tab("something from your non-existent bag in the empty locker. The person passes behind you and goes ")
+                print_tab("further down your row. Out of the corner of your eye you see them take their pass from around ")
+                print_tab("their neck and put it inside the locker. They then take out a lunch box and locking their locker behind ")
+                print_tab("them. As they exit the room they slip their locker key into the pocket of their worn work coat. ")
+                # Progression
+                pause()     
+                
             elif num < 31:
                 clear_screen()
                 print_tab("below 31")
@@ -101,6 +112,8 @@ def lockers(game = N_game()):
             print_tab("Incorrect entry try again")
             pause()
 
+def locker_21()
+    print("")
 
 def hall_5(game = N_game()):
     
