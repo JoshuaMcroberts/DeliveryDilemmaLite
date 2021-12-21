@@ -13,10 +13,9 @@ def hall_1(game = N_game()):
         clear_screen()
         # update text
         print_tab(pr_colour("l_blue","-- HALL WAY (1) --")+"\n")
-        print_tab("forward adminoffice back")
-        print_tab("The walls of this hallway are decorated with commemorative plaques with the names of the employ")
-        print_tab("of the year engraved on them. There is a door on the right with the words " + pr_colour("l_blue","Administration Office"))
-        print_tab("on it. The corridor also continues " + pr_colour("l_blue","forward") +".")
+        print_tab("The walls of the hallway are decorated with commemorative plaques with the names of the employ")
+        print_tab("of the year engraved on them. There is a door on the right with the words " + pr_colour("l_blue","Admin Office"))
+        print_tab("on it. The corridor also continues " + pr_colour("l_blue","Forward") +".")
         var = san_input()
         
        
@@ -62,8 +61,8 @@ def hall_2(game = N_game()):
         # update text
         print_tab(pr_colour("l_blue","-- HALL WAY (2) --") + "\n")
         print_tab("left forward back")
-        print_tab("The hallway continues on until another corridor branches off from it to the " + pr_colour("l_blue", "left") + ".  The corridor also ")
-        print_tab("continues " + pr_colour("l_blue", "forward") + " with pictures on the wall, of the different logos " + game.courier + " had used in the past.")
+        print_tab("The hallway continues on until another corridor branches off from it to the " + pr_colour("l_blue", "Left") + ". The corridor also ")
+        print_tab("continues " + pr_colour("l_blue", "Forward") + " with pictures on the wall, of the different logos " + game.courier + " had used in the past.")
         var = san_input()
         
         
@@ -117,8 +116,8 @@ def hall_5(game = N_game()):
         elif var == "lockerroom":
             locker_room(game)
             
-        elif var == "door":
-            warehouse(game)
+        elif var == "warehouse":
+            warehouse_door(game)
              
         elif var == "back":
             loop = False
@@ -140,7 +139,46 @@ def hall_5(game = N_game()):
             print("")
             print_tab("Incorrect entry try again")
             pause()
+            
+def warehouse_door(game = N_game()):
+    loop = True
+    while loop:
+        clear_screen()
+        print_tab(pr_colour("l_blue","-- WAREHOUSE DOOR --") + "\n")
+        print_tab("As you stand in front of the warehouse do you see an all too familiar " + pr_colour("l_blue", "Card Reader") + " placed on the")
+        print_tab("wall on the left of the door. ")
+        var = san_input()
+                
+        if var == "cardreader":
+            card_reader(game)
+            
+        elif var == "back":
+            loop = False
+        
+        elif var == "map":
+            clear_screen()
+            game.game_map.print_map()
+            pause()
+        
+        else:
+            print("")
+            print_tab("Incorrect entry try again")
+            pause()
 
+def card_reader(game = N_game()):
+    clear_screen()
+    print_tab(pr_colour("l_blue","-- CARD READER --") + "\n")
+    check = game.pc.check_inventory("Warehouse - ID Card")
+    if check:
+        print_tab("You scan the Warehouse ID Card and an affirmative *beep* comes from the Card Reader." )
+        print_tab("Pushing the door open, you enter the Warehouse.")
+        pause()
+        warehouse()
+    else:
+        print_tab("You can try using your Guest ID Card however a down beat *boop* sound tells you that" )
+        print_tab("it doesn't have an access level high enough to enter the Warehouse." )
+        pause()  
+          
 def hall_3(game = N_game()):
     # Not Complete
     loop = True
@@ -150,8 +188,8 @@ def hall_3(game = N_game()):
         # update text
         print_tab(pr_colour("l_blue","-- HALL WAY (3) --") + "\n")
         print_tab("supplycart forward back.")
-        print_tab("It looks like a " + pr_colour("l_blue", "Card Reader") + ". You can see the hallway beyond with a few doors ")
-        print_tab("leading off to either side.")
+        print_tab("")
+        print_tab("")
         var = san_input()
         
         
