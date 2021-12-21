@@ -63,21 +63,22 @@ def lockers(game = N_game()):
         
             if num < 14:
                 clear_screen()
-                print_tab("You open " + pr_colour("l_blue","'locker ' + num") + " and find that it is empty.")
+                print_tab(pr_colour("l_blue","-- LOCKER " + str(num) + " --") + "\n")
+                print_tab("You open " + pr_colour("l_blue","locker " + str(num)) + " and find that it is empty.")
                 pause()
                            
             elif num < 21:
                 clear_screen()
+                print_tab(pr_colour("l_blue","-- LOCKER " + str(num) + " --") + "\n")
                 print_tab("You go to open " + pr_colour("l_blue","'locker ' + num") + " but it appears to be locked.")
                 pause()
             
             elif num == 21:
-                clear_screen()
-                print_tab("is 21")
-                pause()
+                locker_21(game)
                 
-              elif num < 26:
+            elif num < 26:
                 clear_screen()
+                print_tab(pr_colour("l_blue","-- LOCKER " + str(num) + " --") + "\n")
                 print_tab("As you open " + pr_colour("l_blue","'locker ' + num") + " you hear someone else enter the room. You pretend to be retrieving ")
                 print_tab("something from your non-existent bag in the empty locker. The person passes behind you and goes ")
                 print_tab("further down your row. Out of the corner of your eye you see them take their pass from around ")
@@ -112,58 +113,28 @@ def lockers(game = N_game()):
             print_tab("Incorrect entry try again")
             pause()
 
-def locker_21()
-    print("")
-
-def hall_5(game = N_game()):
+def locker_21(game = N_game()):
     
-    loop = True
-    while loop:
-        game.game_map.pre = game.game_map.player_enter((2,2),game.game_map.pre)   
-        clear_screen()
-        # update text
-        print_tab(pr_colour("l_blue","-- HALL WAY (5) --") + "\n")
-        print_tab("canteen lockerroom door back.")
-        print_tab("It looks like a " + pr_colour("l_blue", "Card Reader") + ". You can see the hallway beyond with a few doors ")
-        print_tab("leading off to either side.")
-        var = san_input()
-        
-        
-        if var == "canteen":
-            # canteen(game)
-            print("canteen")
-            pause()
-            
-        elif var == "lockerroom":
-            # locker_room(game)
-            print("locker room")
-            pause()
-            
-        elif var == "door":
-            # warehouse(game)
-            print("warehouse")
-            pause()
-             
-        elif var == "back":
-            loop = False
-            # loop break value
-        
-        elif var == "<playername>":
-            print("inventory")
-        
-        elif var == "map":
-            clear_screen()
-            game.game_map.print_map()
-            pause()
-        
-        elif var == "hint":
-            clear_screen()
-            # custom help text for room
-        
-        else:
-            print("")
-            print_tab("Incorrect entry try again")
-            pause()
+    clear_screen()
+    print_tab(pr_colour("l_blue","-- LOCKER 21 --") + "\n")
+    
+    if 1 == 2 and 3 == 3:
+        print_tab("You slide the key for locker 21 into the lock and open it. Inside the locker is a black backpack which is ")
+        print_tab("open and a security pass with the words ‘ Marvin Bleak – Warehouse Opts ’ on it. You take the pass ")
+        print_tab("and relock the locker. ")
+        inventory # add ware house id pass to inventory
+   
+    elif 1 == 2 and 3 == 4:
+        print_tab("You slide the key for locker 21 into the lock and open it. Inside the locker is a black backpack which is ")
+        print_tab("open and seems to have had a box removed from it. Nothing useful here, you close and relock the locker.")
+    
+    else:
+        print_tab("You go to open " + pr_colour("l_blue","'locker ' + num") + " but it appears to be locked.")
+    ## Locked
+    
+    pause()
+    
+      
 
 def hall_3(game = N_game()):
     
