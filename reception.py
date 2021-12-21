@@ -2,6 +2,7 @@ from libraries import *
 from mmap import *
 from game import N_game
 from security_office import *
+from halls import hall_1
 
 def recep(game = N_game()):
     loop = True
@@ -117,7 +118,8 @@ def glass_door(game = N_game()):
         
         
         if var == "cardreader":
-            card_reader()
+            card_reader(game)
+            
         elif var == "back":
             loop = False
         
@@ -135,14 +137,17 @@ def glass_door(game = N_game()):
 def card_reader(game = N_game()):
     clear_screen()
     print_tab(pr_colour("l_blue","-- CARD READER --") + "\n")
-    
-    if():
-        print()
-    print_tab("You approach the glass door and see next to it on the wall a small electronic pad.")
-    print_tab("It looks like a " + pr_colour("l_blue", "Card Reader") + ". You can see the hallway beyond with a few doors ")
-    print_tab("leading off to either side.")
-    var = san_input()
-
+    check = game.pc.check_inventory("Guest - ID Card")
+    if check:
+        print_tab("You scan the ID Card and the card reader makes a short affirmative *beep*." )
+        print_tab("With that the two glass panels glide apart and you pass through into the" )
+        print_tab("hallway beyond.")
+        pause()      
+        hall_1(game)
+    else:
+        print_tab("You have no card to scan." )
+        pause()
+        
     
 
     
@@ -250,5 +255,7 @@ def waiting_area(game = N_game()):
     
 
 if __name__ == "__main__":
-    recep()
+    game = N_game()
+    game.pc.add_inventory("Guest - ID Card")
+    recep(game)
 
