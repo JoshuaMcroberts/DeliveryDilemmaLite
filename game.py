@@ -13,6 +13,7 @@ class N_game:
         self.wait = 0
         self.preston = False
         self.courier = pr_colour("orange","Amazon")
+        self.locker_21_empty = False
         
     def set_player_name(self, p_name):
         self.player_name = pr_colour( "l_blue",p_name)
