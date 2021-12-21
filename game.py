@@ -14,6 +14,7 @@ class N_game:
         self.preston = False
         self.courier = pr_colour("orange","Amazon")
         self.locker_21_empty = False
+        self.get_key = False
         
     def set_player_name(self, p_name):
         self.player_name = pr_colour( "l_blue",p_name)
@@ -152,10 +153,12 @@ class Character:
         self.inventory = ["Correct Parcel", ]
         self.gender = "Male"
         self.character_name = pr_colour("l_blue","Timmy")
+        self.char_name = "Timmy"
         
         
     def set_char_name(self, c_name):
         self.character_name = pr_colour( "l_blue" , c_name )
+        self.char_name = c_name
 
     def get_char_name(self):
         return self.character_name
@@ -177,7 +180,7 @@ class Character:
     
     def add_inventory(self, item):
         self.inventory.append(item)
-        print_tab("{} has been added to your inventory".format(item))
+        print_tab(pr_colour("yellow","\n\t+1 [{}] has been added to your inventory".format(item)))
 
     def remove_inventory(self, item):
         try:
@@ -189,16 +192,24 @@ class Character:
         finally:
             return use_item
 
+    def check_inventory(self, item_name):
+        check = False
+        for item in self.inventory:
+            if item == item_name:
+                check = True
+        
+        return check
+
     def display_inventory(self):
-        print_tab("INVENTROY")
+        print_tab("-- INVENTROY --\n")
         if len(self.inventory) > 0:
 
             for item in self.inventory:
-                print_tab(pr_colour(2,item))
-            pause()
+                print_tab(pr_colour("yellow",item))
+            
         else:
             print_tab("Inventory is empty")
-            pause()
+           
 
     def print_all(self):
         clear_screen()
