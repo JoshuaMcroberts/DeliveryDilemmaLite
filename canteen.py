@@ -10,11 +10,11 @@ def canteen(game = N_game()):
         # update text
         print_tab(pr_colour("l_blue","-- CANTEEN --")+"\n")
         print_tab("worker1 worker2 fridge coatrack bench ")
-        print_tab("A semi-circler, tall " + pr_colour("l_blue","Reception Desk") + " is prominently placed against the back wall of the room with a ")
-        print_tab("large double " + pr_colour("l_blue","Glass Door") + " to its left which leads further into the building.")
-        print_tab("On the left side of the room there is another door with the name plate on it saying, " + pr_colour("l_blue","Security Office") + ". ")
-        print_tab("As you look to the right of the room, you see a " + pr_colour("l_blue","Lift") + " door and a " + pr_colour("l_blue","Waiting Area") + " which is ")
-        print_tab("nestled back up against the glass front windows.")
+        print_tab("The Canteen is a small room with a " + pr_colour("l_blue","Bench") + " that starts against the right-hand wall and wraps around ")
+        print_tab("the edge of the room to the back wall. A " + pr_colour("l_blue","Fridge") + " stands up-right against the back wall, pushed into ")
+        print_tab("the left corner of the room. A " + pr_colour("l_blue","Coat Rack") + " seems to have been haphazardly attached to the wall on ")
+        print_tab("the left of the door as you enter the room. Two workers sit in the at one of the two tables in the ")
+        print_tab("room staring at their phones. ")
         var = san_input()
         
        
@@ -45,6 +45,7 @@ def canteen(game = N_game()):
             clear_screen()
             game.game_map.print_map()
             pause()
+            
         elif var == "hint":
             clear_screen()
             # custom help text for room
@@ -63,11 +64,8 @@ def worker_1(game = N_game()):
         # update text
         print_tab(pr_colour("l_blue","-- Worker 1 --")+"\n")
         print_tab("worker1 worker2 fridge coatrack bench ")
-        print_tab("A semi-circler, tall " + pr_colour("l_blue","Reception Desk") + " is prominently placed against the back wall of the room with a ")
-        print_tab("large double " + pr_colour("l_blue","Glass Door") + " to its left which leads further into the building.")
-        print_tab("On the left side of the room there is another door with the name plate on it saying, " + pr_colour("l_blue","Security Office") + ". ")
-        print_tab("As you look to the right of the room, you see a " + pr_colour("l_blue","Lift") + " door and a " + pr_colour("l_blue","Waiting Area") + " which is ")
-        print_tab("nestled back up against the glass front windows.")
+        print_tab("")
+        print_tab("")
         var = san_input()
         
        
@@ -75,18 +73,6 @@ def worker_1(game = N_game()):
         if var  == "talk":
             print("Convo Tree")
             pause()
-            
-        # elif var == "worker2":
-        #     worker_2(game)
-        
-        # elif var == "fridge":
-        #     fridge(game)
-            
-        # elif var == "bench":
-        #     bench(game)
-            
-        # elif var == "coatrack":
-        #     coat_rack(game)
         
         elif var == "back":
             loop = False                # Back value
@@ -99,6 +85,7 @@ def worker_1(game = N_game()):
             clear_screen()
             game.game_map.print_map()
             pause()
+            
         elif var == "hint":
             clear_screen()
             # custom help text for room
@@ -121,11 +108,8 @@ def fridge(game = N_game()):
         # update text
         print_tab(pr_colour("l_blue","-- FRIDGE --")+"\n")
         print_tab("egg lunchbox back ")
-        print_tab("A semi-circler, tall " + pr_colour("l_blue","Reception Desk") + " is prominently placed against the back wall of the room with a ")
-        print_tab("large double " + pr_colour("l_blue","Glass Door") + " to its left which leads further into the building.")
-        print_tab("On the left side of the room there is another door with the name plate on it saying, " + pr_colour("l_blue","Security Office") + ". ")
-        print_tab("As you look to the right of the room, you see a " + pr_colour("l_blue","Lift") + " door and a " + pr_colour("l_blue","Waiting Area") + " which is ")
-        print_tab("nestled back up against the glass front windows.")
+        print_tab("")
+        print_tab("")
         var = san_input()
         
        
@@ -164,17 +148,13 @@ def egg(game = N_game()):
     clear_screen()
     # need to be able to take
     print_tab(pr_colour("l_blue","-- EGG --") + "\n")
-    print_tab("You walk over to the lift to take a closer look. There is a number pad and")
-    print_tab("a card reader next to the door however above them is a seemingly freshly")
-    print_tab("printed piece of paper taped to the wall saying “Out of Order”")
+    print_tab("")
     pause()
 
 def lunch_box(game = N_game()):
     clear_screen()
     print_tab(pr_colour("l_blue","-- LUNCH BOX --") + "\n")
-    print_tab("You walk over to the lift to take a closer look. There is a number pad and")
-    print_tab("a card reader next to the door however above them is a seemingly freshly")
-    print_tab("printed piece of paper taped to the wall saying “Out of Order”")
+    print_tab("")
     pause()
 
 
@@ -186,8 +166,8 @@ def bench(game = N_game()):
         # update text
         print_tab(pr_colour("l_blue","-- Bench --") + "\n")
         print_tab("microwave toaster back")
-        print_tab("It looks like a " + pr_colour("l_blue", "Card Reader") + ". You can see the hallway beyond with a few doors ")
-        print_tab("leading off to either side.")
+        print_tab("")
+        print_tab("")
         var = san_input()
         
         
@@ -276,15 +256,14 @@ def coat_rack_canteen(game = N_game()):
         # update text
         print_tab(pr_colour("l_blue","-- COAT RACK --") + "\n")
         print_tab("coat back")
-        print_tab("It looks like a " + pr_colour("l_blue", "Card Reader") + ". You can see the hallway beyond with a few doors ")
-        print_tab("leading off to either side.")
+        print_tab("A brief glace at the coat rack informs you that there are two items of clothing hanging there. The ")
+        print_tab("first of which being an old tattered high-vis vest and the second of which being a work " + pr_colour("l_blue","Coat") + ".")
         var = san_input()
         
         
         if var == "coat":
             coat(game)
             
-             
         elif var == "back":
             loop = False
             # loop break value
@@ -315,8 +294,8 @@ def coat(game = N_game()):
         # update text
         print_tab(pr_colour("l_blue","-- Coat --") + "\n")
         print_tab("leftpocket rightpocket")
-        print_tab("It looks like a " + pr_colour("l_blue", "Card Reader") + ". You can see the hallway beyond with a few doors ")
-        print_tab("leading off to either side.")
+        print_tab("The coat looks like it has been in use for some time. It has high-vis strips strategically sown onto it. It ")
+        print_tab("seems to be a straight-forward design with a " + pr_colour("l_blue","Left Pocket") + " and " + pr_colour("l_blue","Right Pocket") + " the only two places ")
         var = san_input()
         
         
@@ -352,71 +331,19 @@ def coat(game = N_game()):
 def left_pocket(game = N_game()):
     clear_screen()
     print_tab(pr_colour("l_blue","-- LEFT POCKET --") + "\n")
-    print_tab("You walk over to the lift to take a closer look. There is a number pad and")
-    print_tab("a card reader next to the door however above them is a seemingly freshly")
-    print_tab("printed piece of paper taped to the wall saying “Out of Order”")
+    print_tab("key back")
+    print_tab("When you simple your hand into the left pocket of the coat it immediately comes into contact with ")
+    print_tab("something cold and metallic. You withdraw your hand to find clutched in it a locker key with the ")
+    print_tab("number 21 written on a tag attached to it. ") 
+    # key added to inventory
     pause()
 
 def right_pocket(game = N_game()):
-    
-    loop = True
-    while loop:
-        game.game_map.pre = game.game_map.player_enter((0,3),game.game_map.pre)   
-        clear_screen()
-        # update text
-        print_tab(pr_colour("l_blue","-- RIGHT POCKET --") + "\n")
-        print_tab("keys tissue back")
-        print_tab("It looks like a " + pr_colour("l_blue", "Card Reader") + ". You can see the hallway beyond with a few doors ")
-        print_tab("leading off to either side.")
-        var = san_input()
-        
-        
-        if var == "keys":
-            keys(game)
-        
-        elif var == "tissue":
-            tissue(game)
-             
-        elif var == "back":
-            loop = False
-            # loop break value
-        
-        elif var == "<playername>":
-            print("inventory")
-        
-        elif var == "map":
-            clear_screen()
-            game.game_map.print_map()
-            pause()
-        
-        elif var == "hint":
-            clear_screen()
-            # custom help text for room
-        
-        else:
-            print("")
-            print_tab("Incorrect entry try again")
-            pause()
-    
-
-def keys(game = N_game()):
-    # 2nd Prioity - gaurd leave office
     clear_screen()
-    print_tab(pr_colour("l_blue","-- Keys --") + "\n")
-    print_tab("You walk over to the lift to take a closer look. There is a number pad and")
-    print_tab("a card reader next to the door however above them is a seemingly freshly")
-    print_tab("printed piece of paper taped to the wall saying “Out of Order”")
+    print_tab(pr_colour("l_blue","-- RIGHT POCKET --") + "\n")
+    print_tab("You put your hand quickly into the right pocket and bring it out to find it contains only a sticky old ")
+    print_tab("boiled sweet and some pocket lint which has now become stuck to your fingers.")
     pause()
-
-    
-def tissue(game = N_game()):
-    clear_screen()
-    print_tab(pr_colour("l_blue","-- TISSUE --") + "\n")
-    print_tab("You walk over to the lift to take a closer look. There is a number pad and")
-    print_tab("a card reader next to the door however above them is a seemingly freshly")
-    print_tab("printed piece of paper taped to the wall saying “Out of Order”")
-    pause()
-
 
 if __name__ == "__main__":
     game = N_game()
