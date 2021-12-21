@@ -26,7 +26,7 @@ def warehouse(game = N_game()):
         elif var == "damagedparcels":
             damaged_parcel_area(game)
                 
-        elif var == "office":
+        elif var == "loadingbay":
             loading_bay(game)
             
         elif var == "office":
