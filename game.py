@@ -12,6 +12,7 @@ class N_game:
         self.sec_gar_level = 0
         self.wait = 0
         self.preston = False
+        self.courier = pr_colour("orange","Amazon")
         
     def set_player_name(self, p_name):
         self.player_name = pr_colour( "l_blue",p_name)
