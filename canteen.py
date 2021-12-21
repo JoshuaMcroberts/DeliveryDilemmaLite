@@ -9,7 +9,6 @@ def canteen(game = N_game()):
         clear_screen()
         # update text
         print_tab(pr_colour("l_blue","-- CANTEEN --")+"\n")
-        print_tab("worker1 worker2 fridge coatrack bench ")
         print_tab("The Canteen is a small room with a " + pr_colour("l_blue","Bench") + " that starts against the right-hand wall and wraps around ")
         print_tab("the edge of the room to the back wall. A " + pr_colour("l_blue","Fridge") + " stands up-right against the back wall, pushed into ")
         print_tab("the left corner of the room. A " + pr_colour("l_blue","Coat Rack") + " seems to have been haphazardly attached to the wall on ")
@@ -255,7 +254,6 @@ def coat_rack_canteen(game = N_game()):
         clear_screen()
         # update text
         print_tab(pr_colour("l_blue","-- COAT RACK --") + "\n")
-        print_tab("coat back")
         print_tab("A brief glace at the coat rack informs you that there are two items of clothing hanging there. The ")
         print_tab("first of which being an old tattered high-vis vest and the second of which being a work " + pr_colour("l_blue","Coat") + ".")
         var = san_input()
@@ -293,7 +291,6 @@ def coat(game = N_game()):
         clear_screen()
         # update text
         print_tab(pr_colour("l_blue","-- Coat --") + "\n")
-        print_tab("leftpocket rightpocket")
         print_tab("The coat looks like it has been in use for some time. It has high-vis strips strategically sown onto it. It ")
         print_tab("seems to be a straight-forward design with a " + pr_colour("l_blue","Left Pocket") + " and " + pr_colour("l_blue","Right Pocket") + " the only two places ")
         var = san_input()
@@ -331,11 +328,10 @@ def coat(game = N_game()):
 def left_pocket(game = N_game()):
     clear_screen()
     print_tab(pr_colour("l_blue","-- LEFT POCKET --") + "\n")
-    print_tab("key back")
-    print_tab("When you simple your hand into the left pocket of the coat it immediately comes into contact with ")
+    print_tab("When you slip your hand into the left pocket of the coat it immediately comes into contact with ")
     print_tab("something cold and metallic. You withdraw your hand to find clutched in it a locker key with the ")
     print_tab("number 21 written on a tag attached to it. ") 
-    # key added to inventory
+    game.pc.add_inventory("Locker 21 - Key")
     pause()
 
 def right_pocket(game = N_game()):
