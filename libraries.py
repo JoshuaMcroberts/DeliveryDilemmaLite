@@ -198,7 +198,7 @@ def sec_lockers(game = N_game()):
             print_tab("Incorrect entry try again")
             pause()  
 
-def dialling():
+def dailing():
     for i in range(2):
         ast = 0
         
@@ -209,7 +209,7 @@ def dialling():
                 p_ast = p_ast + "∗ "
             time.sleep(0.4)
             clear_screen()
-            print("Phone Dialling " + p_ast)
+            print("Phone Dialing " + p_ast)
             ast += 1
     time.sleep(0.5)
     clear_screen()
