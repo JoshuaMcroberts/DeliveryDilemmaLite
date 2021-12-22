@@ -1,6 +1,7 @@
 from libraries import *
 from mmap import *
 from game import N_game       
+import time
              
 def sec_office(game = N_game()):
     
@@ -41,19 +42,10 @@ def sec_office(game = N_game()):
                 elif var == "nosec":
                     # REMOVE FROM FULL GAME
                     game.sec_gar = False
-                                
-                elif var == "back":
-                    loop = False
-                    
-                elif var == "map":
-                    clear_screen()
-                    game.game_map.print_map()
-                    pause()
                 
                 else:
-                    print("")
-                    print_tab("Incorrect entry try again")
-                    pause()             
+                    hint = "Don't lick icy lamp posts"
+                    loop = game.basic_game_func(var, hint)           
             else: 
                 loop = False
 
@@ -83,18 +75,10 @@ def sec_desk(game = N_game()):
             elif var == "phone":
                 print("phone(game)")
                 pause() 
-                            
-            elif var == "back":
-                loop = False
-                
-            elif var == "map":
-                clear_screen()
-                game.game_map.print_map()
-                pause()
             
             else:
-                print_tab("Incorrect entry try again")
-                pause()  
+                hint = "Don't lick icy lamp posts"
+                loop = game.basic_game_func(var, hint)
     else:
         clear_screen()
         print_tab(pr_colour("l_blue","-- DESK --")+"\n")
@@ -183,21 +167,35 @@ def monitor(game = N_game()):
         elif var == "phone":
             print("phone(game)")
             pause() 
-                        
-        elif var == "back":
-            loop = False
-            
-        elif var == "map":
-            clear_screen()
-            game.game_map.print_map()
-            pause()
         
         else:
-            print_tab("Incorrect entry try again")
-            pause()  
+            hint = "Don't lick icy lamp posts"
+            loop = game.basic_game_func(var, hint)
     
-# def sec_desk():
-#     print("")
+def dialling():
+    for i in range(2):
+        ast = 0
+        p_ast = ""
+        p_ast = p_ast + "∗ "
+        time.sleep(0.4)
+        clear_screen()
+        print("Phone Dialling " + p_ast)
+        ast += 1
+        time.sleep(0.5)
+        clear_screen()
+    print("Answered")  
+    time.sleep(2) 
+       
+def phone(game = N_game()):
+    loop = True
+    while loop:
+        clear_screen()
+        print_tab(pr_colour("l_blue","-- Phone --")+"\n")
+        print_tab("A closer look at the desk reveals a scattering of chocolate bar wrappers and empty drinks cans. ")
+        print_tab("There is a desk mounted " + pr_colour("l_blue","monitor") + " that sit in front of a keyboard. It seems to have been recently")
+        print_tab("used. A " + pr_colour("l_blue","bin") + " sits just to the right of the desk and is completely empty. A " + pr_colour("l_blue","phone") + " sits in the ")
+        print_tab("centre of the desk on the left of the monitor and keyboard.")
+        var = san_input()
     
 
 if __name__ == "__main__":
