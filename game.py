@@ -15,29 +15,32 @@ class N_game:
         self.courier = pr_colour("orange","Amazon")
         self.locker_21_empty = False
         self.get_key = False
-        self.objective = [pr_colour("l_green","Find Uncle Jock's Parcel"), pr_colour("l_green","Find Warehouse"")]
+        self.objective = [pr_colour("l_green","Find Uncle Jock's Parcel"), pr_colour("l_green","Find Warehouse")]
     
     def basic_game_func(self, var, hint):
         
         if var == "back":
-            loop = False
+            return False
 
         elif var == "map":
             clear_screen()
-            game.game_map.print_map()
+            self.game_map.print_map()
             pause()
             
         elif var == "objective":
             clear_screen()
+            print_tab("-- CURRENT OBJECTIVE --\n")
             self.display_cur_ob()
             pause()
             
         elif var == "whoami":
-            print_tab(self.pc.character_name)
+            print("")
+            print_tab("You are " + self.pc.character_name)
             pause()
         
-        elif var == self.pc.char_name:
-            game.pc.display_inventory()
+        elif var == san_text(self.pc.char_name):
+            clear_screen()
+            self.pc.display_inventory()
             pause()
         
         elif var == "hint":
@@ -49,19 +52,26 @@ class N_game:
             clear_screen()
             print_tab("-- HELP --")
             print_tab("You can use the follow options any time you see the '>' character:\n")
-            print_tab("back             - This will take you back out of the description you are in.")
-            print_tab("map              - This will show you the map and where you are on it.")
-            print_tab("objective        - This will show you what your current objective is.")    
-            print_tab("who am i         - This will show you your characters name.")   
-            print_tab("<character_name> - When you type your characters name this will list your inventory.")
-            print_tab("hint             - This will give you a hint for the location you are in.")  
+            print_tab("back             - This will take you back out of the description you are in.\n")
+            print_tab("map              - This will show you the map and where you are on it.\n")
+            print_tab("objective        - This will show you what your current objective is.\n")    
+            print_tab("who am i         - This will show you your characters name.\n")
+            
+            num = len(self.pc.char_name)
+            space = ""
+            while num < 16: 
+                space = space + " "
+                num = num + 1
+               
+            print_tab(self.pc.character_name + space +" - When you type your characters name, this will list your inventory.\n")
+            print_tab("hint             - This will give you a hint for the location you are in.\n")  
             pause()
         else: 
             print_tab("Incorrect entry try again")
             pause()  
     
     def set_new_ob(self, objective):
-        self.objective.append(objective)
+        self.objective.append(pr_colour("l_green", "- " +objective))
         print_tab(pr_colour("l_green","New Objective Added: " + objective))
         
     def display_cur_ob(self):
