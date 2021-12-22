@@ -15,7 +15,25 @@ class N_game:
         self.courier = pr_colour("orange","Amazon")
         self.locker_21_empty = False
         self.get_key = False
+        self.objective = ["Find Uncle Jock's Parcel", "Find Warehouse"]
+    
+    def set_new_ob(objective):
+        self.objective.append(objective)
+        print_tab(pr_colour("l_green","New Objective Added: " + objective))
         
+    def display_cur_ob():
+        ob = self.objective[-1]
+        print_tab(ob)
+    
+    def completed_cur_ob():
+        self.objective.pop()
+        
+    def completed_spec_ob(objective):
+        for ob in self.objectives:
+            if ob == objective:
+                ind = self.objective.index(objective)
+                self.objective.pop(ind)
+                
     def set_player_name(self, p_name):
         self.player_name = pr_colour( "l_blue",p_name)
     
