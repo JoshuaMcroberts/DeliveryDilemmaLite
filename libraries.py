@@ -1,266 +1,133 @@
-from libraries import *
-from mmap import *
-import time
 import os
-from game import N_game       
-             
-def sec_office(game = N_game()):
-    
-    
-        loop = True
-        while loop:
-            if(game.game_over == False):
-                game.game_map.pre = game.game_map.player_enter((4,2),game.game_map.pre)
-                clear_screen()
-                print_tab(pr_colour("l_blue","-- SECURITY OFFICE --")+"\n")
-                print_tab("An imposing array of monitors looms large over you on the right wall of the room as you enter.")
-                print("\tBathing everything in a pale blue light. " ,end="")
-                if(game.sec_gar == True):
-                    print("Lazily seated at a " + pr_colour("l_blue","Desk") + " below the wall of screens is a ")
-                    print("\tlone " + pr_colour("l_blue","Security Guard") + " snacking on a chocolate bar and looking at his phone. Directly opposite\n\t",end="")
-                else:
-                    print("Below the wall of screens sits a fairly unassuming " + pr_colour("l_blue","Desk")+ ".\n\tDirectly opposite ", end="")
-                print("the door a " + pr_colour("l_blue","Coat Rack")+" bears few garments and along the back wall stands a bank of ")
-                print_tab("four " +pr_colour("l_blue","Lockers") + ". The door behind you leads you " + pr_colour("l_blue","Back") + " the way you came.")
-                
-                var = san_input()
-            
-                # Navigation IF  
-                if var  == "desk":
-                    sec_desk(game)
-            
-                elif var == "securityguard":
-                    sec_guard(game)
-                    
-                    
-                elif var == "coatrack":
-                    coat_rack(game)
-                    
-                    
-                elif var == "lockers":
-                    sec_lockers(game)
-                    
-                elif var == "nosec":
-                    # REMOVE FROM FULL GAME
-                    game.sec_gar = False
-                                
-                elif var == "back":
-                    loop = False
-                    
-                elif var == "map":
-                    clear_screen()
-                    game.game_map.print_map()
-                    pause()
-                
-                else:
-                    print("")
-                    print_tab("Incorrect entry try again")
-                    pause()             
-            else: 
-                loop = False
 
-# Guard must leave room
-def sec_desk(game = N_game()):
+# COLORED TEXT
+# Example:
+# prcolor(1, "prints a red text here")
+def pr_colour(colour, text):
+    test = 0
+    colours = [("l_orange", '\033[38;5;209m'),
+               ("orange", '\033[38;5;208m'),
+               ("d_orange", '\033[38;5;202m'),
+               ("l_blue", '\033[38;5;74m'),
+               ("blue", '\033[38;5;26m'),
+               ("d_blue", '\033[38;5;18m'),
+               ("l_green", '\033[38;5;2m'),
+               ("green", '\033[38;5;28m'),
+               ("d_green", '\033[38;5;22m'),
+               ("l_yellow", '\033[38;5;227m'),
+               ("yellow", '\033[38;5;11m'),
+               ("d_yellow", '\033[38;5;178m'),
+               ("l_pink", '\033[38;5;177m'),
+               ("pink", '\033[38;5;163m'),
+               ("d_pink", '\033[38;5;161m'),
+               ("l_purple", '\033[38;5;91m'),
+               ("purple", '\033[38;5;54m'),
+               ("d_purple", '\033[38;5;53m'),
+               ("l_red", '\033[38;5;203m'),
+               ("red", '\033[38;5;9m'),
+               ("d_red", '\033[38;5;88m'),
+               ("brown", '\033[38;5;94m'),
+               ("olive", '\033[38;5;58m'),
+               ("black", '\033[38;5;232m'),
+               ("grey", '\033[38;5;241m'),
+               ("white", '\033[38;5;15m'),
+               ("cyan", '\033[38;5;6m'),
+               ("num_p", '\033[38;5;232m\033[48;5;184m\033[1m'),
+               ("amazon", '\033[38;5;166m\033[1m'),
+               ("prime", '\033[0m\033[38;5;166m\033[1m\033[4m'),
+               ("del", '\033[38;5;232m\033[48;5;153m\033[1m'),
+               ("p_force", '\033[38;5;195m\033[48;5;160m\033[1m'),
+               ("ups", '\033[38;5;11m\033[48;5;52m'),
+               ("fed", '\033[38;5;18m\033[48;5;153m\033[1m'),
+               ("ex", '\033[38;5;166m\033[48;5;153m\033[1m')
+               ]
     
-    if (game.sec_gar == False):
-        loop = True
-        while loop:
-            clear_screen()
-            print_tab(pr_colour("l_blue","-- DESK --")+"\n")
-            print_tab("A closer look at the desk reveals a scattering of chocolate bar wrappers and empty drinks cans. ")
-            print_tab("There is a desk mounted " + pr_colour("l_blue","monitor") + " that sit in front of a keyboard. It seems to have been recently")
-            print_tab("used. A " + pr_colour("l_blue","bin") + " sits just to the right of the desk and is completely empty.  A " + pr_colour("l_blue","phone") + " sits in the ")
-            print_tab("centre of the desk on the left of the monitor and keyboard.")
-            var = san_input()
+    for col in colours:
         
-            # Navigation IF  
-            if var  == "monitor":
-                monitor(game)
-                pause()
-                
-            elif var == "bin":
-                print("bin_can(game)")
-                pause()
-                
-            elif var == "phone":
-                print("phone(game)")
-                pause() 
-                            
-            elif var == "back":
-                loop = False
-                
-            elif var == "map":
-                clear_screen()
-                game.game_map.print_map()
-                pause()
+        if test == 1:
+            col_def = col[1]
+            print(col_def + "All of the Colours\033[0m")
+            # print("Col(0): {} Col(1): {} Colour: {}".format(col(0), col(1), colour))
             
+            
+        else:
+            if col[0] == colour:
+                col_out = col[1]
+                # print("Col(0): {} Col(1): {} Colour: {}".format(col[0], col_out, colour))
+                break
             else:
-                print_tab("Incorrect entry try again")
-                pause()  
+                col_out = '\033[00m'
+    # print(col_out + " " + text + '\033[00m')
+    if test == 1:
+        return "end \033[00m"
     else:
-        clear_screen()
-        print_tab(pr_colour("l_blue","-- DESK --")+"\n")
-        print_tab("As soon as you step up to the desk the Security guard sees you!\n")
-        angry_guard(game)
-        pause()
+        return col_out + text + '\033[00m'
 
-def angry_guard(game = N_game()):
-    game.sec_gar_level += 1
-    anger_level = game.sec_gar_level
+# CLEANS TEXT TO SIMPLE FORM
+def san_text(text):
+    text = text.lower()
+    text = text.replace(" ", "")
+    return text
+
+# TAKES IN INPUT ANS SIMPLIFIES IT
+def san_input():
+    var = input("\n\t> ")
+    var = san_text(var)
+    return var
     
-    if(anger_level < 2):
-        
-        print_tab('Guard: "Hey who are you and what are you doing in here?"')
-    
-    elif(anger_level < 3):
-        
-        print_tab('Guard: "You shouldn\'t be in here get out!"')
-        
-    elif(anger_level < 4):
-        
-        print_tab('Guard: "What are you doing snooping around in here?!')
-        
-    elif(anger_level < 5):
-        
-        print_tab('Guard: "Stop coming back in here! Get out!"')
-        
-    elif(anger_level < 6):
-        print_tab('Guard: "This is your last chance! If you come in here again I\'ll kick you out!"')
-        
+# CLEAR SCREEN
+def clear_screen(lines=100):
+    if os.name == 'posix':
+        os.system('clear')
+    elif os.name in ('nt', 'dos', 'ce'):
+        os.system('cls')
     else:
-        game.game_over = True
-        print_tab("The Security Guard escorts you off the premises, you got off easy this time, he could have called the Police!")
+        print('\n' * lines)
 
+# PRINT WITH TAB
+def print_tab(text):
+    print("\t" + text)
+
+# PAUSE FUNCTION 
+def pause():
+    input("\n\tPress Enter to Continue...")
     
-def sec_guard(game = N_game()):
-    clear_screen()
-    print_tab(pr_colour("l_blue","-- SECURITY GUARD --")+"\n")
-    print_tab("You take a few steps toward the Security Guard and clear your throat. He jumps from his seat!\n")
-    angry_guard(game)
-    pause()
+# Silent PAUSE FUNCTION 
+def s_pause():
+    input("...")
+    
 
-def coat_rack(game = N_game()):
-    if (game.sec_gar == False):
-        print("cr")
+# READ IN AND PARSE STRING TO STR AND INT
+def item_input():
+    text = input("\n\t> ")
+    text = text.lower()
+    var = text.split(" ")
+    if len(var) == 2:
+        locker = var[0]
+        number = int(var[1])
     else:
-        clear_screen()
-        print_tab(pr_colour("l_blue","-- COAT RACK --")+"\n")
-        print_tab("You move over to the coat rack but your movement disturbs the guard!\n")
-        angry_guard(game)
-        pause()
-    
-def sec_lockers(game = N_game()):
-    if (game.sec_gar == False):
-            print("sl")
-    else:
-        clear_screen()
-        print_tab(pr_colour("l_blue","-- LOCKERS --")+"\n")
-        print_tab("When opening the locker it makes a *clunk* noise. The Guard immediately swivels round in his chair and stands. \n")
-        angry_guard(game)
-        pause()
-    
+        locker = var[0]
+        number = int("0")
+    return locker, number
 
-
-
-# def monitor(game = N_game()):
-    loop = True
-    while loop:
-        clear_screen()
-        print_tab(pr_colour("l_blue","-- MONITER --")+"\n")
-        print_tab("A closer look at the desk reveals a scattering of chocolate bar wrappers and empty drinks cans. ")
-        print_tab("There is a desk mounted " + pr_colour("l_blue","monitor") + " that sit in front of a keyboard. It seems to have been recently")
-        print_tab("used. A " + pr_colour("l_blue","bin") + " sits just to the right of the desk and is completely empty. A " + pr_colour("l_blue","phone") + " sits in the ")
-        print_tab("centre of the desk on the left of the monitor and keyboard.")
-        var = san_input()
-    
-        # Navigation IF  
-        if var  == "monitor":
-            monitor()
-            pause()
-            
-        elif var == "bin":
-            print("bin_can(game)")
-            pause()
-            
-        elif var == "phone":
-            print("phone(game)")
-            pause() 
-                        
-        elif var == "back":
-            loop = False
-            
-        elif var == "map":
-            clear_screen()
-            game.game_map.print_map()
-            pause()
-        
-        else:
-            print_tab("Incorrect entry try again")
-            pause()  
-
-def dailing():
-    for i in range(2):
-        ast = 0
-        
-        for j in range(6):
-            
-            p_ast = ""
-            for i in range(ast):
-                p_ast = p_ast + "∗ "
-            time.sleep(0.4)
-            clear_screen()
-            print("Phone Dialing " + p_ast)
-            ast += 1
-    time.sleep(0.5)
-    clear_screen()
-    print("Answered")  
-    time.sleep(2) 
-       
-def phone(game = N_game()):
-    loop = True
-    while loop:
-        clear_screen()
-        print_tab(pr_colour("l_blue","-- Phone --")+"\n")
-        print_tab("A closer look at the desk reveals a scattering of chocolate bar wrappers and empty drinks cans. ")
-        print_tab("There is a desk mounted " + pr_colour("l_blue","monitor") + " that sit in front of a keyboard. It seems to have been recently")
-        print_tab("used. A " + pr_colour("l_blue","bin") + " sits just to the right of the desk and is completely empty. A " + pr_colour("l_blue","phone") + " sits in the ")
-        print_tab("centre of the desk on the left of the monitor and keyboard.")
-        var = san_input()
-        
-       
-        
-        
-        # Navigation IF  
-        if var  == "monitor":
-            monitor()
-            pause()
-            
-        elif var == "bin":
-            print("bin_can(game)")
-            pause()
-            
-        elif var == "phone":
-            print("phone(game)")
-            pause() 
-                        
-        elif var == "back":
-            loop = False
-            
-        elif var == "map":
-            clear_screen()
-            game.game_map.print_map()
-            pause()
-        
-        else:
-            print_tab("Incorrect entry try again")
-            pause()  
-            
-def sec_desk():
-    print("")
-    
 
 if __name__ == "__main__":
-    game = N_game()
-    sec_office(game)
-    print("test")
- 
+    
+    print("\nFORMAT OUTPUTS \n")
+    
+    # TEST PR_COLOUR
+    print("\nTEST pr_colour Examples:")
+    print(pr_colour("orange","1 RED"))
+    # print(pr_colour(2,"2 GREEN"))
+    # print(pr_colour(3,"3 YELLOW"))
+    # print(pr_colour(4,"4 BLUE"))
+    # print(pr_colour(5,"5 PINK"))\033[38;5;6m
+    # print(pr_colour(6,"6 CgreYAN"))
+    # print(pr_colour(7,"7 LIGHT GREY?"))
+    # print(pr_colour(8,"8 BLACK?"))
+    
+
+
+    # TEST PRINT TAB
+    print("\nTEST print_tab Example:")
+    print_tab("<Print Tabbed>")
