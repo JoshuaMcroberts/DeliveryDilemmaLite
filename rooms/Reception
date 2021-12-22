@@ -34,8 +34,7 @@ The receptionist looks busy. You should disturb her until you have something to 
 
 *if called already and appointment change
 <Character>: Hi there, I’m Mr/Miss Preston…
-Receptionist: Ah Hello its nice to meet you in person. Here is a Guest Pass. Be sure to return that to 
-          me before you leave. 
+Receptionist: Ah Hello, it’s nice to meet you in person. Here is your Guest Pass. Be sure to return that to me before you leave. 
 <character>: Sure thing, Thank you.
 + 1 Guest ID Card
 
@@ -44,10 +43,10 @@ Receptionist: Ah Hello its nice to meet you in person. Here is a Guest Pass. Be 
 (The Receptionist has a slightly puzzled look on his face)
 <character>: My name is Preston, Mr/Miss Preston. 
 Receptionist: Oh yes! Forgive me there is a lot on with the Christmas Rush. You appear to be a good bit earlier than expected…
-<character>: Ah Yes, Unfortunately my previous meeting was cancelled. I was hoping Mr Thompson would be free a little earlier.
+<character>: Ah Yes, unfortunately my previous meeting was cancelled. I was hoping Mr Thompson would be free a little earlier.
 Receptionist: I’m sorry but Mr Thompson won’t be in until 14:30 so you will have to wait for him. 
 <character>: Oh ok, would I be able to wait in his office?
-Receptionist: I’m sure that would be fine, his PA should be there already. I hope you don’t have to wait too long. 
+Receptionist: I’m sure that would be fine, his PA should be there already. Here is a Guest Pass, I hope you don’t have to wait too long. 
  <character>: I’m sure it’ll find some way to pass the time. Thank you again Anna.
 + 1 Guest ID Card
 
