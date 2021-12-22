@@ -15,20 +15,63 @@ class N_game:
         self.courier = pr_colour("orange","Amazon")
         self.locker_21_empty = False
         self.get_key = False
-        self.objective = ["Find Uncle Jock's Parcel", "Find Warehouse"]
+        self.objective = [pr_colour("l_green","Find Uncle Jock's Parcel"), pr_colour("l_green","Find Warehouse"")]
     
-    def set_new_ob(objective):
+    def basic_game_func(self, var, hint):
+        
+        if var == "back":
+            loop = False
+
+        elif var == "map":
+            clear_screen()
+            game.game_map.print_map()
+            pause()
+            
+        elif var == "objective":
+            clear_screen()
+            self.display_cur_ob()
+            pause()
+            
+        elif var == "whoami":
+            print_tab(self.pc.character_name)
+            pause()
+        
+        elif var == self.pc.char_name:
+            game.pc.display_inventory()
+            pause()
+        
+        elif var == "hint":
+            print_tab("-- HINT --")                                                                         
+            print_tab(hint)
+            pause()
+            
+        elif var == "help":
+            clear_screen()
+            print_tab("-- HELP --")
+            print_tab("You can use the follow options any time you see the '>' character:\n")
+            print_tab("back             - This will take you back out of the description you are in.")
+            print_tab("map              - This will show you the map and where you are on it.")
+            print_tab("objective        - This will show you what your current objective is.")    
+            print_tab("who am i         - This will show you your characters name.")   
+            print_tab("<character_name> - When you type your characters name this will list your inventory.")
+            print_tab("hint             - This will give you a hint for the location you are in.")  
+            pause()
+        else: 
+            print_tab("Incorrect entry try again")
+            pause()  
+    
+    def set_new_ob(self, objective):
         self.objective.append(objective)
         print_tab(pr_colour("l_green","New Objective Added: " + objective))
         
-    def display_cur_ob():
+    def display_cur_ob(self):
         ob = self.objective[-1]
         print_tab(ob)
     
-    def completed_cur_ob():
+    def completed_cur_ob(self):
         self.objective.pop()
         
-    def completed_spec_ob(objective):
+    def completed_spec_ob(self, objective):
         for ob in self.objectives:
             if ob == objective:
                 ind = self.objective.index(objective)
