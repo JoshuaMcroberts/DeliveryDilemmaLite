@@ -1,5 +1,5 @@
 from libraries import *
-from mmap import Plan
+from m_map import Plan
 
 class N_game:
     def __init__(self):
@@ -66,9 +66,11 @@ class N_game:
             print_tab(self.pc.character_name + space +" - When you type your characters name, this will list your inventory.\n")
             print_tab("hint             - This will give you a hint for the location you are in.\n")  
             pause()
-        else: 
+        else:
+            print("")
             print_tab("Incorrect entry try again")
-            pause()  
+            pause()
+            return True  
     
     def set_new_ob(self, objective):
         self.objective.append(pr_colour("l_green", "- " +objective))
