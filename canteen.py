@@ -33,26 +33,9 @@ def canteen(game = N_game()):
         elif var == "coatrack":
             coat_rack_canteen(game)
         
-        elif var == "back":
-            loop = False                # Back value
-            
-        elif var == "<playername>":
-            print("inventory")
-            # placeholder function
-            
-        elif var == "map":
-            clear_screen()
-            game.game_map.print_map()
-            pause()
-            
-        elif var == "hint":
-            clear_screen()
-            # custom help text for room
-        
         else:
-            print("")
-            print_tab("Incorrect entry try again")
-            pause()
+            hint = "Don't lick icy lamp posts"
+            loop = game.basic_game_func(var, hint)
             
 
 def worker_1(game = N_game()):
@@ -67,32 +50,14 @@ def worker_1(game = N_game()):
         print_tab("")
         var = san_input()
         
-       
         # Navigation IF  
         if var  == "talk":
             print("Convo Tree")
             pause()
         
-        elif var == "back":
-            loop = False                # Back value
-            
-        elif var == "<playername>":
-            print("inventory")
-            # placeholder function
-            
-        elif var == "map":
-            clear_screen()
-            game.game_map.print_map()
-            pause()
-            
-        elif var == "hint":
-            clear_screen()
-            # custom help text for room
-        
         else:
-            print("")
-            print_tab("Incorrect entry try again")
-            pause()
+            hint = "Don't lick icy lamp posts"
+            loop = game.basic_game_func(var, hint)
 
 def worker_2(game = N_game()):
     clear_screen()
@@ -119,26 +84,10 @@ def fridge(game = N_game()):
         elif var == "lunchbox":
             lunch_box(game)
 
-        elif var == "back":
-            loop = False                # Back value
-            
-        elif var == "<playername>":
-            print("inventory")
-            # placeholder function
-            
-        elif var == "map":
-            clear_screen()
-            game.game_map.print_map()
-            pause()
-            
-        elif var == "hint":
-            clear_screen()
-            # custom help text for room
         
         else:
-            print("")
-            print_tab("Incorrect entry try again")
-            pause()
+            hint = "Don't lick icy lamp posts"
+            loop = game.basic_game_func(var, hint)
             
 
 
@@ -169,33 +118,15 @@ def bench(game = N_game()):
         print_tab("")
         var = san_input()
         
-        
         if var == "microwave":
             microwave(game)
             
         elif var == "toaster":
             toaster(game)
-             
-        elif var == "back":
-            loop = False
-            # loop break value
-        
-        elif var == "<playername>":
-            print("inventory")
-        
-        elif var == "map":
-            clear_screen()
-            game.game_map.print_map()
-            pause()
-        
-        elif var == "hint":
-            clear_screen()
-            # custom help text for room
         
         else:
-            print("")
-            print_tab("Incorrect entry try again")
-            pause()
+            hint = "Don't lick icy lamp posts"
+            loop = game.basic_game_func(var, hint)
 
 def toaster(game = N_game()):
     clear_screen()
@@ -222,28 +153,10 @@ def microwave(game = N_game()):
             # coat(game)
             print_tab("heat")
             pause()
-            
-             
-        elif var == "back":
-            loop = False
-            # loop break value
-        
-        elif var == "<playername>":
-            print("inventory")
-        
-        elif var == "map":
-            clear_screen()
-            game.game_map.print_map()
-            pause()
-        
-        elif var == "hint":
-            clear_screen()
-            # custom help text for room
         
         else:
-            print("")
-            print_tab("Incorrect entry try again")
-            pause()
+            hint = "Don't lick icy lamp posts"
+            loop = game.basic_game_func(var, hint)
 
 
 
@@ -261,27 +174,10 @@ def coat_rack_canteen(game = N_game()):
         
         if var == "coat":
             coat(game)
-            
-        elif var == "back":
-            loop = False
-            # loop break value
-        
-        elif var == "<playername>":
-            print("inventory")
-        
-        elif var == "map":
-            clear_screen()
-            game.game_map.print_map()
-            pause()
-        
-        elif var == "hint":
-            clear_screen()
-            # custom help text for room
-        
+
         else:
-            print("")
-            print_tab("Incorrect entry try again")
-            pause()
+            hint = "Don't lick icy lamp posts"
+            loop = game.basic_game_func(var, hint)
 
 def coat(game = N_game()):
     
@@ -301,27 +197,10 @@ def coat(game = N_game()):
         
         elif var == "rightpocket":
             right_pocket(game)
-             
-        elif var == "back":
-            loop = False
-            # loop break value
-        
-        elif var == "<playername>":
-            print("inventory")
-        
-        elif var == "map":
-            clear_screen()
-            game.game_map.print_map()
-            pause()
-        
-        elif var == "hint":
-            clear_screen()
-            # custom help text for room
         
         else:
-            print("")
-            print_tab("Incorrect entry try again")
-            pause()
+            hint = "Don't lick icy lamp posts"
+            loop = game.basic_game_func(var, hint)
 
 
     

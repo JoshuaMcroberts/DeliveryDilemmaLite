@@ -27,6 +27,8 @@ def recep(game = N_game()):
             print_tab("On the left side of the room there is another door with the name plate on it saying, " + pr_colour("l_blue","Security Office") + ". ")
             print_tab("As you look to the right of the room, you see a " + pr_colour("l_blue","Lift") + " door and a " + pr_colour("l_blue","Waiting Area") + " which is ")
             print_tab("nestled back up against the glass front windows. ")
+            print("")
+            game.set_new_ob("Get to the Warehouse")
             var = san_input()
             
         
@@ -46,18 +48,13 @@ def recep(game = N_game()):
             elif var == "waitingarea":
                 waiting_area(game)
                 
-            elif var == "exit":
+            elif var == "exit": ## REMOVE FOMR FULL GAME
                 loop = False
                 
-            elif var == "map":
-                clear_screen()
-                game.game_map.print_map()
-                pause()
             
             else:
-                print("")
-                print_tab("Incorrect entry try again")
-                pause()
+                hint = "Don't lick icy lamp posts"
+                game.basic_game_func(var, hint)
         else:
             loop = False
 
@@ -82,19 +79,10 @@ def recep_desk(game = N_game()):
         elif var == "notepad":
             notepad()
             
-            
-        elif var == "back":
-            loop = False
-        
-        elif var == "map":
-            clear_screen()
-            game.game_map.print_map()
-            pause()
         
         else:
-            print("")
-            print_tab("Incorrect entry try again")
-            pause()
+                hint = "Don't lick icy lamp posts"
+                loop = game.basic_game_func(var, hint)
 
 def notepad(game = N_game()):
     clear_screen()
@@ -120,18 +108,9 @@ def glass_door(game = N_game()):
         if var == "cardreader":
             card_reader(game)
             
-        elif var == "back":
-            loop = False
-        
-        elif var == "map":
-            clear_screen()
-            game.game_map.print_map()
-            pause()
-        
         else:
-            print("")
-            print_tab("Incorrect entry try again")
-            pause()
+            hint = "Don't lick icy lamp posts"
+            loop = game.basic_game_func(var, hint)
 
 
 def card_reader(game = N_game()):
@@ -235,21 +214,10 @@ def waiting_area(game = N_game()):
                     pause()
                 
                 game.wait = wait    
-                
-            elif var == "back":
-                # not wait
-                print_tab("")    
-                loop = False
-                
-            elif var == "map":
-                clear_screen()
-                game.game_map.print_map()
-                pause()    
-                
+
             else:
-                clear_screen()
-                print_tab("Try typing 'Back'")
-                pause()
+                hint = "Don't lick icy lamp posts"
+                loop = game.basic_game_func(var, hint)
         else:
             loop = False
     

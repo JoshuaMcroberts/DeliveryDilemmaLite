@@ -23,32 +23,11 @@ def locker_room(game = N_game()):
         # Navigation IF  
         if var  == "lockers":
             print("")
-            # enter locker number you would like to search
             lockers(game)
-            
-        elif var == "back":
-            loop = False                # Back value
-            
-        elif var == san_text(game.pc.char_name):
-            clear_screen()
-            game.pc.display_inventory()
-            pause()
-            
-        elif var == "map":
-            clear_screen()
-            game.game_map.print_map()
-          
-            pause()
-            
-        elif var == "hint":
-            clear_screen()
-            # custom help text for room
         
         else:
-            print("")
-            print_tab("Incorrect entry try again")
-            
-            pause()
+            hint = "Don't lick icy lamp posts"
+            loop = game.basic_game_func(var, hint)
 
 
        
@@ -99,30 +78,10 @@ def lockers(game = N_game()):
                 print_tab(pr_colour("l_blue","-- LOCKER " + str(num) + " --") + "\n")
                 print_tab("You go to open " + pr_colour("l_blue","Locker " + str(num)) + " but it appears to be locked.")
                 pause()
-                           
-                
-        elif var == "back":
-            loop = False
-            # loop break value
-            
-        elif var == san_text(game.pc.char_name):
-            clear_screen()
-            game.pc.display_inventory()
-            pause()
-            
-        elif var == "map":
-            clear_screen()
-            game.game_map.print_map()
-            pause()
-            
-        elif var == "hint":
-            clear_screen()
-            # custom help text for room
             
         else:
-            print("")
-            print_tab("Incorrect entry try again, use the format: (Locker NUMBER)")
-            pause()
+            hint = "Don't lick icy lamp posts"
+            loop = game.basic_game_func(var, hint)
 
 def locker_21(game = N_game()):
     

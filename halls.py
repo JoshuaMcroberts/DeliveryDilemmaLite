@@ -25,26 +25,10 @@ def hall_1(game = N_game()):
             
         elif var == "adminoffice":
             admin_office(game)
-            
-        elif var == "back":
-            loop = False                # Back value
-            
-        elif var == game.pc.character_name:
-            print("inventory")
-            # placeholder function
-            
-        elif var == "map":
-            clear_screen()
-            game.game_map.print_map()
-            pause()
-        elif var == "hint":
-            clear_screen()
-            # custom help text for room
         
         else:
-            print("")
-            print_tab("Incorrect entry try again")
-            pause()
+            hint = "Don't lick icy lamp posts"
+            loop = game.basic_game_func(var, hint)
             
 def admin_office(game = N_game()):
     clear_screen()
@@ -71,27 +55,10 @@ def hall_2(game = N_game()):
             
         elif var == "forward":
             hall_3(game)
-             
-        elif var == "back":
-            loop = False
-            # loop break value
-        
-        elif var == "<playername>":
-            print("inventory")
-        
-        elif var == "map":
-            clear_screen()
-            game.game_map.print_map()
-            pause()
-        
-        elif var == "hint":
-            clear_screen()
-            # custom help text for room
         
         else:
-            print("")
-            print_tab("Incorrect entry try again")
-            pause()
+            hint = "Don't lick icy lamp posts"
+            loop = game.basic_game_func(var, hint)
 
 
 def hall_5(game = N_game()):
@@ -118,27 +85,10 @@ def hall_5(game = N_game()):
             
         elif var == "warehouse":
             warehouse_door(game)
-             
-        elif var == "back":
-            loop = False
-            # loop break value
-        
-        elif var == "<playername>":
-            print("inventory")
-        
-        elif var == "map":
-            clear_screen()
-            game.game_map.print_map()
-            pause()
-        
-        elif var == "hint":
-            clear_screen()
-            # custom help text for room
         
         else:
-            print("")
-            print_tab("Incorrect entry try again")
-            pause()
+            hint = "Don't lick icy lamp posts"
+            loop = game.basic_game_func(var, hint)
             
 def warehouse_door(game = N_game()):
     loop = True
@@ -151,19 +101,10 @@ def warehouse_door(game = N_game()):
                 
         if var == "cardreader":
             card_reader(game)
-            
-        elif var == "back":
-            loop = False
-        
-        elif var == "map":
-            clear_screen()
-            game.game_map.print_map()
-            pause()
         
         else:
-            print("")
-            print_tab("Incorrect entry try again")
-            pause()
+            hint = "Don't lick icy lamp posts"
+            loop = game.basic_game_func(var, hint)
 
 def card_reader(game = N_game()):
     clear_screen()
@@ -198,27 +139,10 @@ def hall_3(game = N_game()):
         
         elif var == "forward":
             hall_4(game)
-             
-        elif var == "back":
-            loop = False
-            # loop break value
-        
-        elif var == "<playername>":
-            print("inventory")
-        
-        elif var == "map":
-            clear_screen()
-            game.game_map.print_map()
-            pause()
-        
-        elif var == "hint":
-            clear_screen()
-            # custom help text for room
         
         else:
-            print("")
-            print_tab("Incorrect entry try again")
-            pause()
+            hint = "Don't lick icy lamp posts"
+            loop = game.basic_game_func(var, hint)
 
 
     
@@ -250,27 +174,10 @@ def hall_4(game = N_game()):
         
         elif var == "right":
             hall_6(game)
-             
-        elif var == "back":
-            loop = False
-            # loop break value
-        
-        elif var == "<playername>":
-            print("inventory")
-        
-        elif var == "map":
-            clear_screen()
-            game.game_map.print_map()
-            pause()
-        
-        elif var == "hint":
-            clear_screen()
-            # custom help text for room
         
         else:
-            print("")
-            print_tab("Incorrect entry try again")
-            pause()
+            hint = "Don't lick icy lamp posts"
+            loop = game.basic_game_func(var, hint)
     
 
 def stairs(game = N_game()):
@@ -302,27 +209,10 @@ def hall_6(game = N_game()):
         
         elif var == "fireexit":
             fire_exit(game)
-             
-        elif var == "back":
-            loop = False
-            # loop break value
-        
-        elif var == "<playername>":
-            print("inventory")
-        
-        elif var == "map":
-            clear_screen()
-            game.game_map.print_map()
-            pause()
-        
-        elif var == "hint":
-            clear_screen()
-            # custom help text for room
         
         else:
-            print("")
-            print_tab("Incorrect entry try again")
-            pause()
+            hint = "Don't lick icy lamp posts"
+            loop = game.basic_game_func(var, hint)
     
 def toilets(game = N_game()):
     # Not Complete
