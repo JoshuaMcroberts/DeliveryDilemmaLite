@@ -16,7 +16,23 @@ class N_game:
         self.locker_21_empty = False
         self.get_key = False
         self.objective = [pr_colour("l_green","Find Uncle Jock's Parcel"), pr_colour("l_green","Find Warehouse")]
+        self.boxes=[False, False, False, False, False, False, False, False, False]
     
+    def set_boxes(self,box):
+        box = box - 1
+        self.boxes[box] = True
+    
+    def check_boxes(self):
+        count = 0
+        for box in self.boxes:
+            if box == True:
+                count = count + 1
+        
+        if count > 6 :
+            return True
+        else:
+            return False
+        
     def basic_game_func(self, var, hint):
         
         if var == "back":
@@ -26,27 +42,33 @@ class N_game:
             clear_screen()
             self.game_map.print_map()
             pause()
+            return True  
             
         elif var == "objective":
             clear_screen()
             print_tab("-- CURRENT OBJECTIVE --\n")
             self.display_cur_ob()
             pause()
+            return True  
             
         elif var == "whoami":
             print("")
             print_tab("You are " + self.pc.character_name)
             pause()
+            return True  
         
         elif var == san_text(self.pc.char_name):
             clear_screen()
             self.pc.display_inventory()
             pause()
+            return True  
         
         elif var == "hint":
-            print_tab("-- HINT --")                                                                         
+            print("")
+            print("\tHint -", end="")                                                                         
             print_tab(hint)
             pause()
+            return True  
             
         elif var == "help":
             clear_screen()
@@ -66,6 +88,7 @@ class N_game:
             print_tab(self.pc.character_name + space +" - When you type your characters name, this will list your inventory.\n")
             print_tab("hint             - This will give you a hint for the location you are in.\n")  
             pause()
+            return True  
         else:
             print("")
             print_tab("Incorrect entry try again")
@@ -74,6 +97,7 @@ class N_game:
     
     def set_new_ob(self, objective):
         self.objective.append(pr_colour("l_green", "- " +objective))
+        print("")
         print_tab(pr_colour("l_green","New Objective Added: " + objective))
         
     def display_cur_ob(self):
@@ -243,10 +267,12 @@ class Character:
             self.pronoun1 = "his"
             self.pronoun2 = "he"
             self.pronoun3 = "him"
+            self.title = "Mr"
         else:
             self.pronoun1 = "her"
             self.pronoun2 = "she"
             self.pronoun3 = "her"
+            self.title = "Miss"
     
     def get_pronouns(self):
         return self.pronoun1, self.pronoun2, self.pronoun3
