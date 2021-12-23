@@ -50,6 +50,47 @@ Admin Login Info added into inventory
 
 SD - Security Phone (SP)
 
+
+distribution 
+*if no info
+Dialling
+Recepetionist: Hello, <reginoal office> <courier> Anna speaking, How can I help you?
+You quickly realise you have not though of a reason for your call. You quickly hang up the phone 
+*Call Disconnects*
+
+*if has info
+Dialling
+Recepetionist: Hello, <reginoal office> <courier> Anna speaking, How can I help you?
+1-	Ask after a made-up person
+2-	Impersonate Mr Preston
+
+1 Timmy: Hello Anna, I was wondering if you could help me with a quick query? I’m wondering if Joe 
+Smyth is in the office today? 
+1 Receptionist: I’m not sure I know him, I can check for you if you would like?
+1CH: That’s alright, I’ll see if I can get him directly on his office phone.
+(continue the conversation…)
+
+2 CH : Yes, I’m hoping you can. My name is James Preston, I’m supposed to be attending a meeting later on…
+2 receptionist: Ah yes, with Mr Barber, I believe the meeting it schedule for 14:45, is that correct?
+3-	Confirm the original meeting time
+4-	Change the meeting to before the real Mr/Miss Preston shows up.
+3 ch: Yes that is correct. I have another engagement elsewhere beforehand.
+3recp: Ok excellent, Is there anything else I can help you with?
+3 ch: nope that is everything
+3 recp: OK then see you later on. 
+3ch: Right Bye. *Call Disconnects*
+
+4 ch : No Actually, I was scheduled to have a meeting before the one with Mr Barber but it has been cancelled. So, I’m planning on coming in earlier. I haven’t had a chance to speak to his PA yet.
+4 recp: That should be fine, I can double check with his PA if you want?
+4 ch: Its fine, I don’t mind waiting it if comes to it. 
+4 recp: Ok then I’ll see you when you get here. Bye for now. 
+4 ch: Bye *Call Disconnects*
+
+
+
+
+
+
 R2 - Sec Lockers (SL) 
 L1 - 
 L2 -
