@@ -42,25 +42,24 @@ def lockers(game = N_game()):
         var, num = item_input()
               
         if var == "locker" and num > 0 and num < 31:
-        
+            clear_screen()
+            print_tab(pr_colour("l_blue","-- LOCKER " + str(num) + " --") + "\n")
+            
             if num < 14:
-                clear_screen()
-                print_tab(pr_colour("l_blue","-- LOCKER " + str(num) + " --") + "\n")
+                
                 print_tab("You open " + pr_colour("l_blue","Locker " + str(num)) + " and find that it is empty.")
-                pause()
+               
                            
             elif num < 21:
-                clear_screen()
-                print_tab(pr_colour("l_blue","-- LOCKER " + str(num) + " --") + "\n")
+               
+                
                 print_tab("You go to open " + pr_colour("l_blue","Locker " + str(num)) + " but it appears to be locked.")
-                pause()
+            
             
             elif num == 21:
                 locker_21(game)
                 
             elif num < 26:
-                clear_screen()
-                print_tab(pr_colour("l_blue","-- LOCKER " + str(num) + " --") + "\n")
                 
                 if game.get_key == False:
                     print_tab("As you open " + pr_colour("l_blue","Locker " + str(num)) + " you hear someone else enter the room. You pretend to be retrieving ")
@@ -71,13 +70,11 @@ def lockers(game = N_game()):
                     game.get_key = True
                 else:
                     print_tab("You open " + pr_colour("l_blue","Locker " + str(num)) + " and find that it is empty.")
-                pause()     
+               
                 
             elif num < 31:
-                clear_screen()
-                print_tab(pr_colour("l_blue","-- LOCKER " + str(num) + " --") + "\n")
                 print_tab("You go to open " + pr_colour("l_blue","Locker " + str(num)) + " but it appears to be locked.")
-                pause()
+            pause()
             
         else:
             hint = "Don't lick icy lamp posts"
@@ -85,8 +82,6 @@ def lockers(game = N_game()):
 
 def locker_21(game = N_game()):
     
-    clear_screen()
-    print_tab(pr_colour("l_blue","-- LOCKER 21 --") + "\n")
     bol = game.pc.check_inventory("Locker 21 - Key")
     
     if bol and game.locker_21_empty == False:
@@ -103,9 +98,7 @@ def locker_21(game = N_game()):
     
     else:
         print_tab("You go to open " + pr_colour("l_blue","Locker 21") + " but it appears to be locked.")
-    ## Locked
     
-    pause()
     
 
 
