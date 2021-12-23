@@ -1,5 +1,4 @@
 from libraries import *
-from mmap import *
 from game import N_game       
 import time
              
@@ -58,8 +57,8 @@ def sec_desk(game = N_game()):
             clear_screen()
             print_tab(pr_colour("l_blue","-- DESK --")+"\n")
             print_tab("A closer look at the desk reveals a scattering of chocolate bar wrappers and empty drinks cans. ")
-            print_tab("There is a desk mounted " + pr_colour("l_blue","monitor") + " that sit in front of a keyboard. It seems to have been recently")
-            print_tab("used. A " + pr_colour("l_blue","bin") + " sits just to the right of the desk and is completely empty.  A " + pr_colour("l_blue","phone") + " sits in the ")
+            print_tab("There is a desk mounted " + pr_colour("l_blue","Monitor") + " that sit in front of a keyboard. It seems to have been recently")
+            print_tab("used. A " + pr_colour("l_blue","Bin") + " sits just to the right of the desk and is completely empty.  A " + pr_colour("l_blue","Phone") + " sits in the ")
             print_tab("centre of the desk on the left of the monitor and keyboard.")
             var = san_input()
         
@@ -73,7 +72,7 @@ def sec_desk(game = N_game()):
                 pause()
                 
             elif var == "phone":
-                print("phone(game)")
+                dialling()
                 pause() 
             
             else:
@@ -165,7 +164,7 @@ def monitor(game = N_game()):
             pause()
             
         elif var == "phone":
-            print("phone(game)")
+            dialling()
             pause() 
         
         else:
@@ -174,31 +173,93 @@ def monitor(game = N_game()):
     
 def dialling():
     for i in range(2):
-        ast = 0
+        ast = 0 
         p_ast = ""
-        p_ast = p_ast + "∗ "
-        time.sleep(0.4)
-        clear_screen()
-        print("Phone Dialling " + p_ast)
-        ast += 1
-        time.sleep(0.5)
-        clear_screen()
-    print("Answered")  
-    time.sleep(2) 
+        sys.stdout.write("\033[K")
+        while ast < 6:
+           
+            p_ast = p_ast + "∗ "
+            print("\tPhone Dialling " + p_ast , end="\r")
+            time.sleep(0.4)
+            ast += 1
+    time.sleep(0.5)
        
 def phone(game = N_game()):
     loop = True
     while loop:
         clear_screen()
-        print_tab(pr_colour("l_blue","-- Phone --")+"\n")
-        print_tab("A closer look at the desk reveals a scattering of chocolate bar wrappers and empty drinks cans. ")
-        print_tab("There is a desk mounted " + pr_colour("l_blue","monitor") + " that sit in front of a keyboard. It seems to have been recently")
-        print_tab("used. A " + pr_colour("l_blue","bin") + " sits just to the right of the desk and is completely empty. A " + pr_colour("l_blue","phone") + " sits in the ")
-        print_tab("centre of the desk on the left of the monitor and keyboard.")
-        var = san_input()
-    
+        print_tab(pr_colour("l_blue","-- PHONE --")+"\n")
+        print_tab("You pick up the phone and dial the number for reception.")
+        pause()
+        clear_screen()
+        dialling()
+        clear_screen()
+        print_tab(pr_colour("l_blue","-- PHONE CONVERSATION WITH RECEPTION --")+"\n")
+        print_tab("Recepetionist: Hello, " + game.courier + " West Devonshire distribution center, Anna speaking, How can I help you?")
+        
+        if game.preston != True:
+            print("\tYou quickly realise you have not though of a reason for your call. You quickly hang up the phone")
+            print_tab("*Call Disconnects*")
+            s_pause()
+        
+        elif game.preston == True:
+            print("\n\t[1] Ask after a made-up person")
+            print_tab("[2] Impersonate Mr Preston\n")
+            print_tab("Pick an option.")
+            var = san_input()
+            
+            loop = True
+            while loop:    
+                if var == "1" or var == "2":
+                    
+                    if var == "1":
+                        clear_screen()
+                        print_tab(pr_colour("l_blue","-- PHONE CONVERSATION WITH RECEPTION --")+"\n")
+                        print_tab(game.pc.character_name +": Hello Anna, I was wondering if you could help me with a quick query? I'm wondering if Joe ")
+                        print_tab("Smyth is in the office today? ")
+                        s_pause()
+                        
+                        print_tab("Receptionist: I'm not sure I know him, I can check for you if you would like?")
+                        s_pause()
+                        
+                        print_tab(game.pc.character_name +": That's alright, I'll see if I can get him directly on his office phone.")
+                        s_pause()
+                        
+                        while var != "2":
+                            clear_screen()
+                            print_tab(pr_colour("l_blue","-- PHONE CONVERSATION WITH RECEPTION --")+"\n")
+                            print_tab("Continue the conversation...\n")
+                            print_tab("[2] Impersonate Mr Preston\n")
+                            print_tab("Pick an option")
+                            var = san_input()
+                            
+                            if var !="2":
+                                print_tab("Incorrect entry try again")
+                                pause()                    
+                        
+                    if var == "2":
+                        clear_screen()
+                        print_tab(pr_colour("l_blue","-- PHONE CONVERSATION WITH RECEPTION --")+"\n")
+                        print_tab(game.pc.character_name +": Yes, I'm hoping you can. My name is James Preston, I'm supposed to be attending a meeting later on…")
+                        s_pause()
+                        
+                        print_tab("")
+                        
+                        print_tab("")
+                        print_tab("")
+                        print_tab("")
+                        print_tab("")
+                        print_tab("")
+                        print_tab("")
+                        
+                        loop = False
+                        
+                        
+                else:
+                    loop = True
 
 if __name__ == "__main__":
     game = N_game()
+    game.preston = True
     sec_office(game)
-
+    # phone(game)
