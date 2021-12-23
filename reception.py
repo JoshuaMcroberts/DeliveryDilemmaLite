@@ -27,7 +27,6 @@ def recep(game = N_game()):
             print_tab("On the left side of the room there is another door with the name plate on it saying, " + pr_colour("l_blue","Security Office") + ". ")
             print_tab("As you look to the right of the room, you see a " + pr_colour("l_blue","Lift") + " door and a " + pr_colour("l_blue","Waiting Area") + " which is ")
             print_tab("nestled back up against the glass front windows. ")
-            print("")
             game.set_new_ob("Get to the Warehouse")
             var = san_input()
             
@@ -77,7 +76,7 @@ def recep_desk(game = N_game()):
             print("")
             
         elif var == "notepad":
-            notepad()
+            notepad(game)
             
         
         else:
@@ -88,9 +87,9 @@ def notepad(game = N_game()):
     clear_screen()
     print_tab(pr_colour("l_blue","-- Notepad --") + "\n")
     print_tab("Reading the notepad upside down and slightly sideways, you see the words written: “Guest Pass for  new ")
-    print_tab("salesman Mr Preston - Expected @14:45”. This gives you an idea! You could call reception and pretend to ")
-    print_tab("be 'Mr Preston'. Now all you have to do is find another phone! ")
-    print_tab("(New objective)")
+    print_tab("salesman " + game.pc.title + " Preston - Expected @14:45”. This gives you an idea! You could call reception and pretend to ")
+    print_tab("be '" + game.pc.title + " Preston'. Now all you have to do is find another phone! ")
+    game.set_new_ob("Find a Phone to call Reception as " + game.pc.title + " Preston")
     game.preston = True
     pause()
  
@@ -225,5 +224,7 @@ def waiting_area(game = N_game()):
 if __name__ == "__main__":
     game = N_game()
     game.pc.add_inventory("Guest - ID Card")
+    game.pc.set_pronouns("male")
+    print(game.pc.title)
     recep(game)
 
