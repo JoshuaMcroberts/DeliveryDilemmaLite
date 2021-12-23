@@ -1,4 +1,5 @@
 import os
+import sys
 
 # COLORED TEXT
 # Example:
@@ -94,8 +95,10 @@ def pause():
     
 # Silent PAUSE FUNCTION 
 def s_pause():
-    input("...")
-    
+    print("\n\tPress Enter to Continue...",end="\r")
+    input()
+    sys.stdout.write("\033[F")
+
 
 # READ IN AND PARSE STRING TO STR AND INT
 def item_input():
