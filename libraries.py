@@ -97,7 +97,7 @@ def pause():
 def s_pause():
     print("\n\tPress Enter to Continue...",end="\r")
     input()
-    sys.stdout.write("\033[F")
+    sys.stdout.write("\033[F\033[K")
 
 
 # READ IN AND PARSE STRING TO STR AND INT
