@@ -58,7 +58,7 @@ def sec_desk(game = N_game()):
             print_tab(pr_colour("l_blue","-- DESK --")+"\n")
             print_tab("A closer look at the desk reveals a scattering of chocolate bar wrappers and empty drinks cans. ")
             print_tab("There is a desk mounted " + pr_colour("l_blue","Monitor") + " that sit in front of a keyboard. It seems to have been recently")
-            print_tab("used. A " + pr_colour("l_blue","Bin") + " sits just to the right of the desk and is completely empty.  A " + pr_colour("l_blue","Phone") + " sits in the ")
+            print_tab("used. A " + pr_colour("l_blue","Bin") + " sits just to the right of the desk and is completely empty. A " + pr_colour("l_blue","Phone") + " sits in the ")
             print_tab("centre of the desk on the left of the monitor and keyboard.")
             var = san_input()
         
@@ -72,8 +72,7 @@ def sec_desk(game = N_game()):
                 pause()
                 
             elif var == "phone":
-                dialling()
-                pause() 
+                phone(game)
             
             else:
                 hint = "Don't lick icy lamp posts"
@@ -164,8 +163,7 @@ def monitor(game = N_game()):
             pause()
             
         elif var == "phone":
-            dialling()
-            pause() 
+            phone()
         
         else:
             hint = "Don't lick icy lamp posts"
@@ -185,81 +183,192 @@ def dialling():
     time.sleep(0.5)
        
 def phone(game = N_game()):
-    loop = True
-    while loop:
-        clear_screen()
-        print_tab(pr_colour("l_blue","-- PHONE --")+"\n")
-        print_tab("You pick up the phone and dial the number for reception.")
-        pause()
-        clear_screen()
-        dialling()
-        clear_screen()
-        print_tab(pr_colour("l_blue","-- PHONE CONVERSATION WITH RECEPTION --")+"\n")
-        print_tab("Recepetionist: Hello, " + game.courier + " West Devonshire distribution center, Anna speaking, How can I help you?")
+    
+    space = "              "
+    
+    name_len = len(game.pc.char_name) 
+    if name_len < 12:
         
-        if game.preston != True:
-            print("\tYou quickly realise you have not though of a reason for your call. You quickly hang up the phone")
-            print_tab("*Call Disconnects*")
-            s_pause()
+        loop = 12 - name_len
+        c_name = game.pc.character_name
         
-        elif game.preston == True:
-            print("\n\t[1] Ask after a made-up person")
-            print_tab("[2] Impersonate Mr Preston\n")
+        while loop != 0:
+            c_name =  c_name + " "
+            loop = loop -1
+            
+    else:
+        c_name = game.pc.character_name
+    
+    clear_screen()
+    print_tab(pr_colour("l_blue","-- PHONE --")+"\n")
+    print_tab("You pick up the phone and dial the number for reception.")
+    pause()
+    clear_screen()
+    print_tab(pr_colour("l_blue","-- PHONE CONVERSATION WITH RECEPTION --")+"\n")
+    dialling()
+    clear_screen()
+    print_tab(pr_colour("l_blue","-- PHONE CONVERSATION WITH RECEPTION --")+"\n")
+    print_tab(game.recep +": Hello, " + game.courier + " West Devonshire distribution center, Anna speaking, How can I help you?")
+    
+    if game.preston != True:
+        s_pause()
+        print("\tYou quickly realise you have not though of a reason for your call. You quickly hang up the phone.")
+        s_pause()
+        print_tab("*Call Disconnects*")
+        s_pause()
+    
+    elif game.preston == True:
+        con_1 = False
+        contin = False
+        first = True
+        game.called = True
+        while not contin :
+            clear_screen()
+            print_tab(pr_colour("l_blue","-- PHONE CONVERSATION WITH RECEPTION --")+"\n")
+            print_tab(game.recep +": Hello, " + game.courier + " West Devonshire distribution center, Anna speaking, How can I help you?")
+            if first :
+                s_pause()
+            else:
+                print("")
+            print_tab("[1] Ask after a made-up person")
+            print_tab("[2] Impersonate " + game.pc.title + " Preston\n")
             print_tab("Pick an option.")
             var = san_input()
+            first = False
             
-            loop = True
-            while loop:    
-                if var == "1" or var == "2":
-                    
-                    if var == "1":
-                        clear_screen()
-                        print_tab(pr_colour("l_blue","-- PHONE CONVERSATION WITH RECEPTION --")+"\n")
-                        print_tab(game.pc.character_name +": Hello Anna, I was wondering if you could help me with a quick query? I'm wondering if Joe ")
-                        print_tab("Smyth is in the office today? ")
-                        s_pause()
-                        
-                        print_tab("Receptionist: I'm not sure I know him, I can check for you if you would like?")
-                        s_pause()
-                        
-                        print_tab(game.pc.character_name +": That's alright, I'll see if I can get him directly on his office phone.")
-                        s_pause()
-                        
-                        while var != "2":
-                            clear_screen()
-                            print_tab(pr_colour("l_blue","-- PHONE CONVERSATION WITH RECEPTION --")+"\n")
-                            print_tab("Continue the conversation...\n")
-                            print_tab("[2] Impersonate Mr Preston\n")
-                            print_tab("Pick an option")
-                            var = san_input()
-                            
-                            if var !="2":
-                                print_tab("Incorrect entry try again")
-                                pause()                    
-                        
-                    if var == "2":
-                        clear_screen()
-                        print_tab(pr_colour("l_blue","-- PHONE CONVERSATION WITH RECEPTION --")+"\n")
-                        print_tab(game.pc.character_name +": Yes, I'm hoping you can. My name is James Preston, I'm supposed to be attending a meeting later on…")
-                        s_pause()
-                        
-                        print_tab("")
-                        
-                        print_tab("")
-                        print_tab("")
-                        print_tab("")
-                        print_tab("")
-                        print_tab("")
-                        print_tab("")
-                        
-                        loop = False
-                        
-                        
+            if var == "1" or var == "2":
+                contin = True
+            else:
+                clear_screen()
+                print("")
+                print_tab("Incorrect entry. Type 1 or 2")
+                pause() 
+        
+
+                
+        if var == "1":
+            clear_screen()
+            print_tab(pr_colour("l_blue","-- PHONE CONVERSATION WITH RECEPTION --")+"\n")
+            print_tab(c_name +": Hello Anna, I was wondering if you could help me with a quick query? I'm wondering  ")
+            print_tab(space + "if Joe Smyth is in the office today? ")
+            s_pause()
+            
+            print_tab(game.recep +": I'm not sure I know him, I can check for you if you would like?")
+            s_pause()
+            
+            print_tab(c_name +": That's alright, I'll see if I can get him directly on his office phone.")
+            s_pause()
+            
+            first = True
+            var = "0"
+            while var != "2":
+                clear_screen()
+                print_tab(pr_colour("l_blue","-- PHONE CONVERSATION WITH RECEPTION --")+"\n")
+                print_tab("(Continue the conversation...)")
+                if first :
+                    s_pause()
                 else:
-                    loop = True
+                    print("")
+                print_tab("[2] Impersonate " + game.pc.title + " Preston\n")
+                print_tab("Pick an option")
+                var = san_input()
+                first = False
+                
+                if var !="2":
+                    print_tab("Incorrect entry. Type 2")
+                    pause()  
+            con_1 = True                  
+
+            
+        if var == "2":
+            clear_screen()
+            print_tab(pr_colour("l_blue","-- PHONE CONVERSATION WITH RECEPTION --")+"\n")
+            if con_1:
+                convo = c_name +": Oh by the way,"
+            else:
+                convo = c_name + ": Yes, I'm hoping you can."
+            print_tab( convo + " My name is " + game.pc.p_name + " Preston, I'm supposed to be attending a  ")
+            print_tab(space + "meeting later on…")
+            s_pause()
+            
+            first = True
+            contin = False
+            while not contin:
+                if not first: 
+                    print_tab(pr_colour("l_blue","-- PHONE CONVERSATION WITH RECEPTION --")+"\n")
+                print_tab(game.recep +": Ah yes, with Mr Barber, I believe the meeting it schedule for 14:45, is that correct?")
+                if first :
+                    s_pause()
+                else:
+                    print("")
+                print_tab("[3] Confrim the original meeting time")
+                print_tab("[4] Change the meeting to before the real " + game.pc.title + " Preston shows up.\n")
+                print_tab("Pick an option")
+                var = san_input()
+                first = False
+                if var == "3" or var == "4":
+                    contin= True
+                else:
+                    clear_screen()
+                    print("")
+                    print_tab("Incorrect entry. Type 3 or 4")
+                    pause()
+                    clear_screen() 
+                    
+            if var == "3":
+                clear_screen()
+                print_tab(pr_colour("l_blue","-- PHONE CONVERSATION WITH RECEPTION --")+"\n")
+                print_tab(c_name +": Yes that is correct. I have another engagement elsewhere beforehand.")
+                s_pause()
+                
+                print_tab(game.recep +": Ok excellent, Is there anything else I can help you with?")
+                s_pause()
+                
+                print_tab(c_name +": Nope, that is everything")
+                s_pause()
+
+                print_tab(game.recep +": Ok, see you later on then.")
+                s_pause()
+                
+                print_tab(c_name +": Right, Bye")
+                s_pause()
+                
+                print_tab("*Call Disconnects*")
+                s_pause()
+            
+            elif var == "4":
+                clear_screen()
+                print_tab(pr_colour("l_blue","-- PHONE CONVERSATION WITH RECEPTION --")+"\n")
+                print_tab(c_name +": No Actually, I was scheduled to have a meeting before the one with Mr Barber but it ")
+                print_tab(space + "has been cancelled. So, I'm planning on coming in earlier. I haven't had a chance ")
+                print_tab(space + "to speak to his PA yet.")
+                s_pause()
+                
+                print_tab(game.recep +": That should be fine, I can double check with his PA if you want?")
+                s_pause()
+                
+                print_tab(c_name +": Its fine, I don't mind waiting it if comes to it. ")
+                s_pause()
+
+                print_tab(game.recep +": Ok then I'll see you when you get here. Bye for now. ")
+                s_pause()
+                
+                print_tab(c_name +": See you then, Bye")
+                s_pause()
+                
+                print_tab("*Call Disconnects*")
+                s_pause()
+                game.time_change = True
+            
+        game.completed_spec_ob("Find a Phone to call Reception as " + game.pc.title + " Preston")        
+        
+        game.set_new_ob("Talk to the Receptionist to get ID Card")        
+
+        s_pause()
 
 if __name__ == "__main__":
     game = N_game()
+    game.pc.set_pronouns("male")
     game.preston = True
     sec_office(game)
     # phone(game)
