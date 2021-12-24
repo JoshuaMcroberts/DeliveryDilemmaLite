@@ -20,6 +20,7 @@ class N_game:
         self.boxes=[False, False, False, False, False, False, False, False, False]
         self.time_changed = False
         self.called = False 
+        self.worker = True
         self.recep = pr_colour("pink","Receptionist")
     
     def set_boxes(self,box):
@@ -50,6 +51,7 @@ class N_game:
             
         elif var == "objectives":
             clear_screen()
+            print("")
             print_tab("-- CURRENT OBJECTIVES --\n")
             self.display_ob_list()
             pause()
@@ -76,6 +78,7 @@ class N_game:
             
         elif var == "help":
             clear_screen()
+            print("")
             print_tab("-- HELP --")
             print_tab("You can use the follow options any time you see the '>' character:\n")
             print_tab("back        - This will take you back out of the description you are in.\n")
@@ -155,11 +158,13 @@ class N_game:
     # ENTER PLAYER NAME - CHECK FOR NUMBER PLATE PLAYER
     def enter_name(self):
         
-        tup_list = [("daniel"," PLATE1 "),("rebecca"," PLATE2 "),("andrew"," PLATE3 "),("joel"," PLATE4 "),("nathanael"," PLATE5 ")]
+        tup_list = [("daniel"," R44 REP "),("rebecca"," FX05 YAJ "),("andrew"," KLZ 9890 "),("joel"," T229 RGP "),("nathanael"," PLZ 8101 ")]
         
         correct = False
         while not correct:
             clear_screen()
+            print("")
+            print_tab(pr_colour("l_blue","-- GAME SETUP--") + "\n")
             en_name = input("\tPlease enter your "+ pr_colour( "l_yellow","First Name") +": ")
             en_name = pr_colour("l_blue", en_name)
             
@@ -167,13 +172,17 @@ class N_game:
             val2 = False
             while not val2:
                 clear_screen()
+                print("")
+                print_tab(pr_colour("l_blue","-- GAME SETUP--") + "\n")
                 print_tab("You have entered: " + en_name)
                 val = input("\tIs this correct? (Y/N): ")
                 
-                if val == "Y":
+                val = san_text(val)
+                
+                if val == "y":
                     correct = True
                     val2 = True
-                elif val == "N":
+                elif val == "n":
                     correct = False
                     val2 = True
                 else:
@@ -210,6 +219,8 @@ class N_game:
         correct = False
         while not correct:
             clear_screen()
+            print("")
+            print_tab(pr_colour("l_blue","-- GAME SETUP --") + "\n")
             character_name = input("\tPlease enter your "+ pr_colour( "l_yellow","Characters name") +": ")
             character_name = pr_colour("l_blue", character_name)
             
@@ -217,13 +228,17 @@ class N_game:
             val2 = False
             while not val2:
                 clear_screen()
+                print("")
+                print_tab(pr_colour("l_blue","-- GAME SETUP --") + "\n")
                 print_tab("You have entered: " + character_name)
                 val = input("\tIs this correct? (Y/N): ")
                 
-                if val == "Y":
+                val = san_text(val)
+                
+                if val == "y":
                     correct = True
                     val2 = True
-                elif val == "N":
+                elif val == "n":
                     correct = False
                     val2 = True
                 else:
@@ -241,6 +256,8 @@ class N_game:
         valid = False
         while not valid:
             clear_screen()
+            print("")
+            print_tab(pr_colour("l_blue","-- GAME SETUP --") + "\n")
             gen = input("\tIs your Character {} or {}?: ".format(pr_colour("l_yellow", "male"), pr_colour("l_yellow","female")))
             gen = san_text(gen)
             
@@ -309,6 +326,7 @@ class Character:
         return check
 
     def display_inventory(self):
+        print("")
         print_tab("-- INVENTROY --\n")
         if len(self.inventory) > 0:
 
