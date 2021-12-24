@@ -7,7 +7,7 @@ def warehouse(game = N_game()):
     while loop:
         game.game_map.pre = game.game_map.player_enter((2,1),game.game_map.pre)   
         clear_screen()
-        # update text
+        print("")
         print_tab(pr_colour("l_blue","-- WAREHOUSE --")+"\n")
         print_tab("The warehouse is a cavernous open space with concrete floors painted a pale blue colour.")
         print_tab("Red lines clearly mark out walk ways from fork lift drive paths. The warehouse appears to")
@@ -43,7 +43,7 @@ def shelves(game = N_game()):
     while loop:
         game.game_map.pre = game.game_map.player_enter((2,0),game.game_map.pre)   
         clear_screen()
-        # update text
+        print("")
         print_tab(pr_colour("l_blue","-- SORTING AREA --") + "\n")
         print_tab("The sorting area is broken down into postcodes and forwarding piles. Some to be shipped to other")
         print_tab("distribution centres and others to be delivered to the local area. In the forwarding section ")
@@ -66,7 +66,7 @@ def damaged_parcel_area(game = N_game()):
     while loop:
         game.game_map.pre = game.game_map.player_enter((2,2),game.game_map.pre)   
         clear_screen()
-        # update text
+        print("")
         print_tab(pr_colour("l_blue","-- PARCEL REPAIR STATION --") + "\n")
         print_tab("On the desk sits two parcels that seem a little worst for wear. The " + pr_colour("l_blue", "Parcel 1") + " seems to have")
         print_tab("been dropped as one of the corners has the characteristic signs of landing face first. ")
@@ -78,6 +78,8 @@ def damaged_parcel_area(game = N_game()):
         if var == "parcel1":
             
             clear_screen()
+            print("")
+            print_tab(pr_colour("l_blue","-- PARCEL 1 --") + "\n")
             print_tab("The address label on the parcel reads:\n")
             print_tab("\t┌────────────────────┐")
             print_tab("\t│ Hollie Walker      │")
@@ -94,6 +96,8 @@ def damaged_parcel_area(game = N_game()):
             
         elif var == "parcel2":
             clear_screen()
+            print("")
+            print_tab(pr_colour("l_blue","-- PARCEL 2 --") + "\n")
             print_tab("The address on this label appears to be ripped:\n")
             print_tab("\t           ─────────┐")
             print_tab("\t         _\Roberts  │")
@@ -118,7 +122,7 @@ def loading_bay(game = N_game()):
     while loop:
         game.game_map.pre = game.game_map.player_enter((1,3),game.game_map.pre)   
         clear_screen()
-        # update text
+        print("")
         print_tab(pr_colour("l_blue","-- LOADING BAY --") + "\n")
         print_tab("The loading bay has a fairly simple layout. A wheeled cage trolley can be easily wheeled from")
         print_tab("the sorting area to the smaller entrances which then allows for easy loading of the delivery")
@@ -139,7 +143,7 @@ def rollercage(game = N_game()):
     loop = True
     while loop:  
         clear_screen()
-        # update text
+        print("")
         print_tab(pr_colour("l_blue","-- ROLLER CAGE --") + "\n")
         print_tab("Three parcel lie in an almost tower like structure in the bottom of the Roller Cage. Most of ")
         print_tab("the labels are obscured. You can take a closer look at each parcel to see its shipping label.")
@@ -160,12 +164,12 @@ def office(game = N_game()):
     while loop:
         game.game_map.pre = game.game_map.player_enter((0,3),game.game_map.pre)   
         clear_screen()
-        # update text
+        print("")
         print_tab(pr_colour("l_blue","-- WAREHOUSE OFFICE --") + "\n")
         
         if game.worker == True:
             print_tab("As you get closer to the office you see there is someone inside it. They would recognise ")
-            print_tab("instantly that you weren’t supposed to be here. You best search elsewhere until they leave. ")
+            print_tab("instantly that you weren't supposed to be here. You best search elsewhere until they leave. ")
             pause()
             loop = False
         else:
@@ -187,6 +191,7 @@ def office(game = N_game()):
 
 def computer(game = N_game()):
     clear_screen()
+    print("")
     print_tab(pr_colour("l_blue","-- COMPUTER --")+"\n")
     print_tab("You unlock the computer to find a parcel management system loaded on the screen. On the display ")
     print_tab("different numbers show how many parcels will be shipped to each of the surrounding towns. ")
@@ -202,6 +207,7 @@ def computer(game = N_game()):
     s_pause()
     
     clear_screen()
+    print("")
     print_tab(pr_colour("l_blue","-- PARCEL RECORD --") + "\n")
     print_tab("┌──────────────────────────────────────────────────────────────┐")
     print_tab("│ Parcel Number:    B42 8472 3189 6439 10                      │")
@@ -222,6 +228,7 @@ def computer(game = N_game()):
     
     
     clear_screen()
+    print("")
     print_tab(pr_colour("l_blue","-- COMPUTER --")+"\n")
     print_tab("After skimming over the details you realise that the parcel in no longer in the warehouse but ")
     print_tab("instead in a vehicle waiting to be delivered.")
@@ -231,6 +238,7 @@ def computer(game = N_game()):
     s_pause()
     
     clear_screen()
+    print("")
     print_tab(pr_colour("l_blue","-- VEHICLE RECORD --") + "\n")
     print_tab("┌───────────────────────────────┐")
     print_tab("│ Vehicle ID:    00001372       │")
@@ -246,17 +254,15 @@ def computer(game = N_game()):
     pause()
     
     clear_screen()
+    print("")
     print_tab(pr_colour("l_blue","-- COMPUTER --")+"\n")
-    print_tab("You not have the vehicle information. "+ game.player_name +" it is up to you! ")
+    print_tab("You now have the vehicle information. "+ game.player_name +" it is up to you! ")
     s_pause()
     
     game.set_new_ob("Find Uncle Jock's Parcel in the Vehicle with the REG: " + game.number_plate )
     
+    s_pause()
     
-    
-    
-  
-
     
 def boxes( opt , num, game = N_game() ):
     
@@ -264,6 +270,8 @@ def boxes( opt , num, game = N_game() ):
         
         if num == 1 :
             clear_screen()
+            print("")
+            print_tab(pr_colour("l_blue","-- PARCEL "+ str(num) +" --") + "\n")
             print_tab("The address label on the parcel reads:\n")
             print_tab("\t┌────────────────────┐")
             print_tab("\t│ Bradley Reid       │")
@@ -280,6 +288,8 @@ def boxes( opt , num, game = N_game() ):
 
         elif num == 2:
             clear_screen()
+            print("")
+            print_tab(pr_colour("l_blue","-- PARCEL "+ str(num) +" --") + "\n")
             print_tab("The address label on the parcel reads:\n")
             print_tab("\t┌────────────────────┐")
             print_tab("\t│ Mark Powell        │")
@@ -295,6 +305,8 @@ def boxes( opt , num, game = N_game() ):
                         
         elif num == 3:
             clear_screen()
+            print("")
+            print_tab(pr_colour("l_blue","-- PARCEL "+ str(num) +" --") + "\n")
             print_tab("The address label on the parcel reads:\n")
             print_tab("\t┌────────────────────┐")
             print_tab("\t│ Mandy Matthews     │")
@@ -310,6 +322,8 @@ def boxes( opt , num, game = N_game() ):
                         
         elif num == 4:
             clear_screen()
+            print("")
+            print_tab(pr_colour("l_blue","-- PARCEL "+ str(num) +" --") + "\n")
             print_tab("The address label on the parcel reads:\n")
             print_tab("\t┌────────────────────┐")
             print_tab("\t│ Bethany Hunt       │")
@@ -326,6 +340,8 @@ def boxes( opt , num, game = N_game() ):
     else:
         if num == 1 :
             clear_screen()
+            print("")
+            print_tab(pr_colour("l_blue","-- PARCEL "+ str(num) +" --") + "\n")
             print_tab("The address label on the parcel reads:\n")
             print_tab("\t┌────────────────────┐")
             print_tab("\t│ Donna Reynolds     │")
@@ -341,6 +357,8 @@ def boxes( opt , num, game = N_game() ):
  
         elif num == 2:
             clear_screen()
+            print("")
+            print_tab(pr_colour("l_blue","-- PARCEL "+ str(num) +" --") + "\n")
             print_tab("The address label on the parcel reads:\n")
             print_tab("\t┌────────────────────┐")
             print_tab("\t│ Yvonne Price       │")
@@ -356,6 +374,8 @@ def boxes( opt , num, game = N_game() ):
        
         elif num == 3:
             clear_screen()
+            print("")
+            print_tab(pr_colour("l_blue","-- PARCEL "+ str(num) +" --") + "\n")
             print_tab("The address label on the parcel reads:\n")
             print_tab("\t┌────────────────────┐")
             print_tab("\t│ David Graham       │")
@@ -374,44 +394,19 @@ def office_empty(game = N_game()):
     empty = game.check_boxes()
     if empty == True:
         clear_screen()
+        print("")
         print_tab(pr_colour("l_blue","-- SEARCHING --") + "\n")
         print_tab("As you set down the parcel you are looking at you glance across the warehouse to the office.")
         print_tab("You notice the worker that was in the office has left it and is heading out the door to the ")
         print_tab("main building. Now is your chance to have a look inside.")
         game.set_new_ob("Search the Office")
+        game.worker = False
         pause()
             
-def search_parcel(game = N_game()):
-    
-    loop = True
-    while loop:
-        game.game_map.pre = game.game_map.player_enter((0,4),game.game_map.pre)   
-        clear_screen()
-        # update text
-        print_tab(pr_colour("l_blue","-- SEARCH FOR PARCEL --") + "\n")
-        print_tab("search back.")
-        print_tab("")
-        print_tab("")
-        print_tab("")
-        print_tab("")
-        print_tab("")
-        print_tab("")
-        print_tab("")
-        print_tab("")
-        print_tab("")
-        print_tab("")
-        var = san_input()
-        
-        
-        if var == "search":
-            search_parcel(game)
-        
-        else:
-            hint = "Don't lick icy lamp posts"
-            loop = game.basic_game_func(var, hint)
 
 if __name__ == "__main__":
     game = N_game()
-    # warehouse(game)
+   
     game.set_num_plate("KLZ 9890")
     computer(game)
+    # warehouse(game)
