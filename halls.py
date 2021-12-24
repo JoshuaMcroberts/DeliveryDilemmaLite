@@ -11,7 +11,7 @@ def hall_1(game = N_game()):
     while loop:
         game.game_map.pre = game.game_map.player_enter((3,3),game.game_map.pre)   
         clear_screen()
-        # update text
+        print("")
         print_tab(pr_colour("l_blue","-- HALL WAY (1) --")+"\n")
         print_tab("The walls of the hallway are decorated with commemorative plaques with the names of the employ")
         print_tab("of the year engraved on them. There is a door on the right with the words " + pr_colour("l_blue","Admin Office"))
@@ -32,6 +32,7 @@ def hall_1(game = N_game()):
             
 def admin_office(game = N_game()):
     clear_screen()
+    print("")
     print_tab(pr_colour("l_blue","-- ADMIN OFFICE --") + "\n")
     print_tab("You try the Admin Office door and it is locked.")
     pause()
@@ -42,7 +43,7 @@ def hall_2(game = N_game()):
     while loop:
         game.game_map.pre = game.game_map.player_enter((2,3),game.game_map.pre)   
         clear_screen()
-        # update text
+        print("")
         print_tab(pr_colour("l_blue","-- HALL WAY (2) --") + "\n")
         print_tab("left forward back")
         print_tab("The hallway continues on until another corridor branches off from it to the " + pr_colour("l_blue", "Left") + ". The corridor also ")
@@ -67,7 +68,7 @@ def hall_5(game = N_game()):
     while loop:
         game.game_map.pre = game.game_map.player_enter((2,2),game.game_map.pre)   
         clear_screen()
-        
+        print("")
         print_tab(pr_colour("l_blue","-- HALL WAY (5) --") + "\n")
         print_tab("canteen lockerroom door back.")
         print_tab("The corridor ends with 3 doors, the one directly ahead has nothing on it however above it on the ")
@@ -94,6 +95,7 @@ def warehouse_door(game = N_game()):
     loop = True
     while loop:
         clear_screen()
+        print("")
         print_tab(pr_colour("l_blue","-- WAREHOUSE DOOR --") + "\n")
         print_tab("As you stand in front of the warehouse do you see an all too familiar " + pr_colour("l_blue", "Card Reader") + " placed on the")
         print_tab("wall on the left of the door. ")
@@ -108,6 +110,7 @@ def warehouse_door(game = N_game()):
 
 def card_reader(game = N_game()):
     clear_screen()
+    print("")
     print_tab(pr_colour("l_blue","-- CARD READER --") + "\n")
     check = game.pc.check_inventory("Warehouse - ID Card")
     if check:
@@ -126,7 +129,7 @@ def hall_3(game = N_game()):
     while loop:
         game.game_map.pre = game.game_map.player_enter((1,3),game.game_map.pre)   
         clear_screen()
-        # update text
+        print("")
         print_tab(pr_colour("l_blue","-- HALL WAY (3) --") + "\n")
         print_tab("supplycart forward back.")
         print_tab("")
@@ -149,10 +152,11 @@ def hall_3(game = N_game()):
 def supply_cart(game = N_game()):
     # Not Complete
     clear_screen()
+    print("")
     print_tab(pr_colour("l_blue","-- CLEANING SUPPLY CART --") + "\n")
-    print_tab("You walk over to the lift to take a closer look. There is a number pad and")
-    print_tab("a card reader next to the door however above them is a seemingly freshly")
-    print_tab("printed piece of paper taped to the wall saying “Out of Order”")
+    print_tab("")
+    print_tab("")
+    print_tab("")
     pause()
 
 def hall_4(game = N_game()):
@@ -161,11 +165,11 @@ def hall_4(game = N_game()):
     while loop:
         game.game_map.pre = game.game_map.player_enter((0,3),game.game_map.pre)   
         clear_screen()
-        # update text
+        print("")
         print_tab(pr_colour("l_blue","-- HALL WAY (4) --") + "\n")
         print_tab("stairs right back.")
-        print_tab("It looks like a " + pr_colour("l_blue", "Card Reader") + ". You can see the hallway beyond with a few doors ")
-        print_tab("leading off to either side.")
+        print_tab("")
+        print_tab("")
         var = san_input()
         
         
@@ -183,10 +187,11 @@ def hall_4(game = N_game()):
 def stairs(game = N_game()):
     # Not Complete
     clear_screen()
+    print("")
     print_tab(pr_colour("l_blue","-- STAIR WELL --") + "\n")
-    print_tab("You walk over to the lift to take a closer look. There is a number pad and")
-    print_tab("a card reader next to the door however above them is a seemingly freshly")
-    print_tab("printed piece of paper taped to the wall saying “Out of Order”")
+    print_tab("")
+    print_tab("")
+    print_tab("")
     pause()
 
        
@@ -196,11 +201,11 @@ def hall_6(game = N_game()):
     while loop:
         game.game_map.pre = game.game_map.player_enter((0,4),game.game_map.pre)   
         clear_screen()
-        # update text
+        print("")
         print_tab(pr_colour("l_blue","-- HALL WAY (6) --") + "\n")
         print_tab("toilets fireexit back.")
-        print_tab("It looks like a " + pr_colour("l_blue", "Card Reader") + ". You can see the hallway beyond with a few doors ")
-        print_tab("leading off to either side.")
+        print_tab("")
+        print_tab("")
         var = san_input()
         
         
@@ -217,19 +222,21 @@ def hall_6(game = N_game()):
 def toilets(game = N_game()):
     # Not Complete
     clear_screen()
+    print("")
     print_tab(pr_colour("l_blue","-- TOILETS --") + "\n")
-    print_tab("You walk over to the lift to take a closer look. There is a number pad and")
-    print_tab("a card reader next to the door however above them is a seemingly freshly")
-    print_tab("printed piece of paper taped to the wall saying “Out of Order”")
+    print_tab("")
+    print_tab("")
+    print_tab("")
     pause()
     
 def fire_exit(game = N_game()):
     # Not Complete
     clear_screen()
+    print("")
     print_tab(pr_colour("l_blue","-- FIRE EXIT --") + "\n")
-    print_tab("You walk over to the lift to take a closer look. There is a number pad and")
-    print_tab("a card reader next to the door however above them is a seemingly freshly")
-    print_tab("printed piece of paper taped to the wall saying “Out of Order”")
+    print_tab("")
+    print_tab("")
+    print_tab("")
     pause()
 
 

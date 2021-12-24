@@ -10,6 +10,7 @@ def sec_office(game = N_game()):
             if(game.game_over == False):
                 game.game_map.pre = game.game_map.player_enter((4,2),game.game_map.pre)
                 clear_screen()
+                print("")
                 print_tab(pr_colour("l_blue","-- SECURITY OFFICE --")+"\n")
                 print_tab("An imposing array of monitors looms large over you on the right wall of the room as you enter.")
                 print("\tBathing everything in a pale blue light. " ,end="")
@@ -55,6 +56,7 @@ def sec_desk(game = N_game()):
         loop = True
         while loop:
             clear_screen()
+            print("")
             print_tab(pr_colour("l_blue","-- DESK --")+"\n")
             print_tab("A closer look at the desk reveals a scattering of chocolate bar wrappers and empty drinks cans. ")
             print_tab("There is a desk mounted " + pr_colour("l_blue","Monitor") + " that sit in front of a keyboard. It seems to have been recently")
@@ -79,6 +81,7 @@ def sec_desk(game = N_game()):
                 loop = game.basic_game_func(var, hint)
     else:
         clear_screen()
+        print("")
         print_tab(pr_colour("l_blue","-- DESK --")+"\n")
         print_tab("As soon as you step up to the desk the Security guard sees you!\n")
         angry_guard(game)
@@ -114,6 +117,7 @@ def angry_guard(game = N_game()):
     
 def sec_guard(game = N_game()):
     clear_screen()
+    print("")
     print_tab(pr_colour("l_blue","-- SECURITY GUARD --")+"\n")
     print_tab("You take a few steps toward the Security Guard and clear your throat. He jumps from his seat!\n")
     angry_guard(game)
@@ -124,6 +128,7 @@ def coat_rack(game = N_game()):
         print("cr")
     else:
         clear_screen()
+        print("")
         print_tab(pr_colour("l_blue","-- COAT RACK --")+"\n")
         print_tab("You move over to the coat rack but your movement disturbs the guard!\n")
         angry_guard(game)
@@ -134,6 +139,7 @@ def sec_lockers(game = N_game()):
             print("sl")
     else:
         clear_screen()
+        print("")
         print_tab(pr_colour("l_blue","-- LOCKERS --")+"\n")
         print_tab("When opening the locker it makes a *clunk* noise. The Guard immediately swivels round in his chair and stands. \n")
         angry_guard(game)
@@ -146,6 +152,7 @@ def monitor(game = N_game()):
     loop = True
     while loop:
         clear_screen()
+        print("")
         print_tab(pr_colour("l_blue","-- MONITER --")+"\n")
         print_tab("A closer look at the desk reveals a scattering of chocolate bar wrappers and empty drinks cans. ")
         print_tab("There is a desk mounted " + pr_colour("l_blue","monitor") + " that sit in front of a keyboard. It seems to have been recently")
@@ -200,13 +207,16 @@ def phone(game = N_game()):
         c_name = game.pc.character_name
     
     clear_screen()
+    print("")
     print_tab(pr_colour("l_blue","-- PHONE --")+"\n")
     print_tab("You pick up the phone and dial the number for reception.")
     pause()
     clear_screen()
+    print("")
     print_tab(pr_colour("l_blue","-- PHONE CONVERSATION WITH RECEPTION --")+"\n")
     dialling()
     clear_screen()
+    print("")
     print_tab(pr_colour("l_blue","-- PHONE CONVERSATION WITH RECEPTION --")+"\n")
     print_tab(game.recep +": Hello, " + game.courier + " West Devonshire distribution center, Anna speaking, How can I help you?")
     
@@ -224,6 +234,7 @@ def phone(game = N_game()):
         game.called = True
         while not contin :
             clear_screen()
+            print("")
             print_tab(pr_colour("l_blue","-- PHONE CONVERSATION WITH RECEPTION --")+"\n")
             print_tab(game.recep +": Hello, " + game.courier + " West Devonshire distribution center, Anna speaking, How can I help you?")
             if first :
@@ -248,6 +259,7 @@ def phone(game = N_game()):
                 
         if var == "1":
             clear_screen()
+            print("")
             print_tab(pr_colour("l_blue","-- PHONE CONVERSATION WITH RECEPTION --")+"\n")
             print_tab(c_name +": Hello Anna, I was wondering if you could help me with a quick query? I'm wondering  ")
             print_tab(space + "if Joe Smyth is in the office today? ")
@@ -263,6 +275,7 @@ def phone(game = N_game()):
             var = "0"
             while var != "2":
                 clear_screen()
+                print("")
                 print_tab(pr_colour("l_blue","-- PHONE CONVERSATION WITH RECEPTION --")+"\n")
                 print_tab("(Continue the conversation...)")
                 if first :
@@ -282,6 +295,7 @@ def phone(game = N_game()):
             
         if var == "2":
             clear_screen()
+            print("")
             print_tab(pr_colour("l_blue","-- PHONE CONVERSATION WITH RECEPTION --")+"\n")
             if con_1:
                 convo = c_name +": Oh by the way,"
@@ -294,7 +308,8 @@ def phone(game = N_game()):
             first = True
             contin = False
             while not contin:
-                if not first: 
+                if not first:
+                    print("") 
                     print_tab(pr_colour("l_blue","-- PHONE CONVERSATION WITH RECEPTION --")+"\n")
                 print_tab(game.recep +": Ah yes, with Mr Barber, I believe the meeting it schedule for 14:45, is that correct?")
                 if first :
@@ -317,6 +332,7 @@ def phone(game = N_game()):
                     
             if var == "3":
                 clear_screen()
+                print("")
                 print_tab(pr_colour("l_blue","-- PHONE CONVERSATION WITH RECEPTION --")+"\n")
                 print_tab(c_name +": Yes that is correct. I have another engagement elsewhere beforehand.")
                 s_pause()
@@ -338,6 +354,7 @@ def phone(game = N_game()):
             
             elif var == "4":
                 clear_screen()
+                print("")
                 print_tab(pr_colour("l_blue","-- PHONE CONVERSATION WITH RECEPTION --")+"\n")
                 print_tab(c_name +": No Actually, I was scheduled to have a meeting before the one with Mr Barber but it ")
                 print_tab(space + "has been cancelled. So, I'm planning on coming in earlier. I haven't had a chance ")

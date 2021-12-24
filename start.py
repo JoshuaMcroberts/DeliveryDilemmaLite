@@ -17,7 +17,11 @@ def about_text():
 
 # DISPLAY ASCII ART
 def game_intro():
-    print_tab("Delviery Dilemma\n")
+    clear_screen()
+    # ascii_del_dil()
+    
+    print(pr_colour("l_blue","\n\tWelcome to Delviery Dilemma"))
+    s_pause()
 
 
 # GAME FUNCTION
@@ -31,46 +35,19 @@ def new_game():
     cour = game.get_courier()
     
     pause()
-    # Game ACT 1
     act_1_intro(cour, pc)
-    game.game_map.print_map()
     recep(game)
-    # Game ACT 2
-    # - Getting in  
-    # - Sec Office
-    # - Reception 
-    # - Outside main enterence
-    # - Outside Firedoor
-    # - Outside loading bay enterence
-    
-    # Game ACT 3 
-    # - Hall 1
-    # -- Admin Offices
-    # - Hall 2
-    # -- Hall 5
-    # - Hall 3
-    # -- Unknown Room
-    # - Hall 4 
-    # -- Stairs
-    # -- Fire door
-    # -- Toilets
-    # - Hall 5
-    # -- Locker Room
-    # -- Canteen/Lounge
 
-
-# MAIN FUNCTION
-def main():
-
-    game_intro()
+def menu():
     ext = False
     while not ext:
         clear_screen()
-        print_tab("Main Menu")
-        print_tab("[1] Start")
-        print_tab("[2] Help")
-        print_tab("[3] About")
-        print_tab("[4] Exit")
+        print("")
+        print_tab(pr_colour("l_blue","-- MAIN MENU --") + "\n")
+        print_tab("[1] Start\n")
+        print_tab("[2] Help\n")
+        print_tab("[3] About\n")
+        print_tab("[4] Exit\n")
 
         try:
             main_op = int(input("\tEnter Option: "))
@@ -93,6 +70,13 @@ def main():
             print_tab("Select a Number from 1-4")
             pause()
 
+
+# MAIN FUNCTION
+def main():
+
+    game_intro()
+    
+    menu()
   
 if __name__ == "__main__":
     main()
