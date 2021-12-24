@@ -184,34 +184,79 @@ def office(game = N_game()):
                 hint = "Don't lick icy lamp posts"
                 loop = game.basic_game_func(var, hint)
        
+
 def computer(game = N_game()):
+    clear_screen()
+    print_tab(pr_colour("l_blue","-- COMPUTER --")+"\n")
+    print_tab("You unlock the computer to find a parcel management system loaded on the screen. On the display ")
+    print_tab("different numbers show how many parcels will be shipped to each of the surrounding towns. ")
+    s_pause()
     
-    loop = True
-    while loop:
-        game.game_map.pre = game.game_map.player_enter((0,4),game.game_map.pre)   
-        clear_screen()
-        # update text
-        print_tab(pr_colour("l_blue","-- COMPUTER --") + "\n")
-        print_tab("search back.")
-        print_tab("")
-        print_tab("")
-        print_tab("")
-        print_tab("")
-        print_tab("")
-        print_tab("")
-        print_tab("")
-        print_tab("")
-        print_tab("")
-        print_tab("")
-        var = san_input()
-        
-        
-        if var == "search":
-            search_parcel(game)
-        
-        else:
-            hint = "Don't lick icy lamp posts"
-            loop = game.basic_game_func(var, hint)
+    print_tab("You select the search function and enter the tracking number of Uncle Jocks parcel.")
+    s_pause()
+    
+    print_tab("An incorrect value error appears on the screen and then blinks out.")
+    s_pause()
+    
+    print_tab("You try entering the parcel ID number and immediately an item record opens up.")
+    s_pause()
+    
+    clear_screen()
+    print_tab(pr_colour("l_blue","-- PARCEL RECORD --") + "\n")
+    print_tab("┌──────────────────────────────────────────────────────────────┐")
+    print_tab("│ Parcel Number:    B42 8472 3189 6439 10                      │")
+    print_tab("│                                                              │")
+    print_tab("│ Tracking Number:  A2K6U9-2893-G2GU96                         │")
+    print_tab("│                                                              │")
+    print_tab("│ Delivery Address: Jock Thistlewaite Angus MacTavish III      │")
+    print_tab("│                   3 Pennyworth Rd                            │")
+    print_tab("│                   Aderfeldy                                  │")
+    print_tab("│                   Perthshire                                 │")
+    print_tab("│                   BXA2XW                                     │")
+    print_tab("│                                                              │")
+    print_tab("│ Delivery Date:    Tomorrow - 24/12/2021                      │")
+    print_tab("│                                                              │")
+    print_tab("│ Current Location: In Vehicle for delivery                    │")
+    print_tab("└──────────────────────────────────────────────────────────────┘")
+    pause()
+    
+    
+    clear_screen()
+    print_tab(pr_colour("l_blue","-- COMPUTER --")+"\n")
+    print_tab("After skimming over the details you realise that the parcel in no longer in the warehouse but ")
+    print_tab("instead in a vehicle waiting to be delivered.")
+    s_pause()
+    
+    print_tab("You select the Current Location field and a vehicle record opens.")
+    s_pause()
+    
+    clear_screen()
+    print_tab(pr_colour("l_blue","-- VEHICLE RECORD --") + "\n")
+    print_tab("┌───────────────────────────────┐")
+    print_tab("│ Vehicle ID:    00001372       │")
+    # print_tab("│                               │")
+    print_tab("│ Driver Name:   Sidney         │")
+    print_tab("│ Miles:         100,263        │")
+    print_tab("│                               │")
+    print_tab("│ Serviced Last: 30/09/2021     │")
+    print_tab("│ MOT due:       22/01/2022     │")
+    print_tab("│                               │")
+    print_tab("│ REG:           " + game.unformated_plate + "       │")
+    print_tab("└───────────────────────────────┘")
+    pause()
+    
+    clear_screen()
+    print_tab(pr_colour("l_blue","-- COMPUTER --")+"\n")
+    print_tab("You not have the vehicle information. "+ game.player_name +" it is up to you! ")
+    s_pause()
+    
+    game.set_new_ob("Find Uncle Jock's Parcel in the Vehicle with the REG: " + game.number_plate )
+    
+    
+    
+    
+  
+
     
 def boxes( opt , num, game = N_game() ):
     
@@ -367,5 +412,6 @@ def search_parcel(game = N_game()):
 
 if __name__ == "__main__":
     game = N_game()
-    warehouse(game)
-    
+    # warehouse(game)
+    game.set_num_plate("KLZ 9890")
+    computer(game)
