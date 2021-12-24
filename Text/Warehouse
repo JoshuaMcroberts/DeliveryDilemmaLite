@@ -50,3 +50,38 @@ that span the length of the side. The bottom edges of the window frames are coat
 layer of dust which appears to have been disturbed in places where people have lent against it.
 On a table that faces into the warehouse sits a <Computer> with it password and username handily
 stored on a post-it note stuck to the top left-hand corner of the screen. 
+
+
+Computer
+You unlock the computer to find a parcel management system loaded on the screen. On the display different numbers show how many parcels will be shipped to each of the surrounding towns. 
+
+You select the search function and enter the tracking number of Uncle Jocks parcel.
+
+An incorrect value error appears on the screen and then blinks out.
+
+You try entering the parcel ID number and immediately an item record opens up.
+
+Parcel Number: B42 8472 3189 6439 10
+Customer Tracking Number : A2K6U9-2893-G2GU96
+Address:	Jock Thistlewaite Angus MacTavish III
+		3 Pennyworth Rd
+		Aderfeldy
+		Perthshire
+		BXA2XW
+Delivery Date: Tomorrow - 24/12/2021
+Current Location: Vehicle for delivery 
+
+After skimming over the details you realise that the parcel in no longer in the warehouse but instead in a vehicle waiting to be delivered.
+
+You select the Current Location field and a vehicle record opens.
+
+Vehicle ID:
+Driver Name:
+Miles: 
+Serviced Last:
+MOT due:
+Reg:
+
+You not have the vehicle information. <Player> it is up to you! 
+
+New objective:  Go outside and find Uncle Jock’s Parcel in the vehicle with the REG: <reg> 
