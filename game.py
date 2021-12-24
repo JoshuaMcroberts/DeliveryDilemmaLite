@@ -5,6 +5,7 @@ class N_game:
     def __init__(self):
         self.player_name = ""
         self.number_plate = ""
+        self.unformated_plate = ""
         self.pc = Character()
         self.game_map = Plan()
         self.game_over = False
@@ -15,8 +16,11 @@ class N_game:
         self.courier = pr_colour("orange","Amazon")
         self.locker_21_empty = False
         self.get_key = False
-        self.objective = [pr_colour("l_green","Find Uncle Jock's Parcel"), pr_colour("l_green","Find Warehouse")]
+        self.objectives = [pr_colour("l_green","Find Uncle Jock's Parcel"), pr_colour("l_green","Find Warehouse")]
         self.boxes=[False, False, False, False, False, False, False, False, False]
+        self.time_changed = False
+        self.called = False 
+        self.recep = pr_colour("pink","Receptionist")
     
     def set_boxes(self,box):
         box = box - 1
@@ -44,10 +48,10 @@ class N_game:
             pause()
             return True  
             
-        elif var == "objective":
+        elif var == "objectives":
             clear_screen()
-            print_tab("-- CURRENT OBJECTIVE --\n")
-            self.display_cur_ob()
+            print_tab("-- CURRENT OBJECTIVES --\n")
+            self.display_ob_list()
             pause()
             return True  
             
@@ -57,7 +61,7 @@ class N_game:
             pause()
             return True  
         
-        elif var == san_text(self.pc.char_name):
+        elif var == "inventory":
             clear_screen()
             self.pc.display_inventory()
             pause()
@@ -74,19 +78,12 @@ class N_game:
             clear_screen()
             print_tab("-- HELP --")
             print_tab("You can use the follow options any time you see the '>' character:\n")
-            print_tab("back             - This will take you back out of the description you are in.\n")
-            print_tab("map              - This will show you the map and where you are on it.\n")
-            print_tab("objective        - This will show you what your current objective is.\n")    
-            print_tab("who am i         - This will show you your characters name.\n")
-            
-            num = len(self.pc.char_name)
-            space = ""
-            while num < 16: 
-                space = space + " "
-                num = num + 1
-               
-            print_tab(self.pc.character_name + space +" - When you type your characters name, this will list your inventory.\n")
-            print_tab("hint             - This will give you a hint for the location you are in.\n")  
+            print_tab("back        - This will take you back out of the description you are in.\n")
+            print_tab("map         - This will show you the map and where you are on it.\n")
+            print_tab("objectives  - This will show a list of current objectives is.\n")    
+            print_tab("who am i    - This will show you your characters name.\n")      
+            print_tab("inventory   - This will list all the items you have.\n")
+            print_tab("hint        - This will give you a hint for the location you are in.\n")  
             pause()
             return True  
         else:
@@ -96,22 +93,31 @@ class N_game:
             return True  
     
     def set_new_ob(self, objective):
-        self.objective.append(pr_colour("l_green", "- " +objective))
+        self.objectives.append(pr_colour("l_green", objective))
         print("")
-        print_tab(pr_colour("l_green","New Objective Added: " + objective))
+        print(pr_colour("l_green","\t\tNew Objective Added: \t" + objective))
         
     def display_cur_ob(self):
-        ob = self.objective[-1]
+        ob = self.objectives[-1]
         print_tab(ob)
+        
+    def display_ob_list(self):
+
+        for ob in self.objectives:
+           print_tab(pr_colour("l_green", "- ") + ob + "\n") 
     
     def completed_cur_ob(self):
-        self.objective.pop()
+        objective = self.objectives.pop()
+        print("")
+        print(pr_colour("l_green","\t\tObjective Completed: \t" + objective))
         
     def completed_spec_ob(self, objective):
         for ob in self.objectives:
             if ob == objective:
-                ind = self.objective.index(objective)
-                self.objective.pop(ind)
+                ind = self.objectives.index(objective)
+                self.objectives.pop(ind)
+        print("")
+        print(pr_colour("l_green","\t\tObjective Completed: \t" + objective))
                 
     def set_player_name(self, p_name):
         self.player_name = pr_colour( "l_blue",p_name)
@@ -121,6 +127,7 @@ class N_game:
 
     def set_num_plate(self, num_plate):
         self.number_plate = pr_colour("num_p", num_plate)
+        self.unformated_plate = num_plate
         
     def get_num_plate(self):
         return self.number_plate    
@@ -268,11 +275,13 @@ class Character:
             self.pronoun2 = "he"
             self.pronoun3 = "him"
             self.title = "Mr"
+            self.p_name = "James"
         else:
             self.pronoun1 = "her"
             self.pronoun2 = "she"
             self.pronoun3 = "her"
             self.title = "Miss"
+            self.p_name = "Gina"
     
     def get_pronouns(self):
         return self.pronoun1, self.pronoun2, self.pronoun3
@@ -304,7 +313,7 @@ class Character:
         if len(self.inventory) > 0:
 
             for item in self.inventory:
-                print_tab(pr_colour("yellow",item))
+                print_tab(pr_colour("yellow","- " + item + "\n"))
             
         else:
             print_tab("Inventory is empty")
