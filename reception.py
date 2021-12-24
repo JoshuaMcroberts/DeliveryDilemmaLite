@@ -27,7 +27,7 @@ def recep(game = N_game()):
             print_tab("On the left side of the room there is another door with the name plate on it saying, " + pr_colour("l_blue","Security Office") + ". ")
             print_tab("As you look to the right of the room, you see a " + pr_colour("l_blue","Lift") + " door and a " + pr_colour("l_blue","Waiting Area") + " which is ")
             print_tab("nestled back up against the glass front windows. ")
-            game.set_new_ob("Get to the Warehouse")
+            # game.set_new_ob("Get to the Warehouse")
             var = san_input()
             
         
@@ -62,17 +62,17 @@ def recep_desk(game = N_game()):
     while loop:
         clear_screen()
         print_tab(pr_colour("l_blue","-- RECEPTION DESK --") + "\n")
-        print_tab("As you approach the Reception desk you see a brown haired " + pr_colour("l_blue","receptionist") +" wearing intelligent")
+        print_tab("As you approach the Reception desk you see a brown haired " + pr_colour("l_blue","Receptionist") +" wearing intelligent")
         print_tab("looking yet elegant round frame glasses. She appears to be engrossed in her work and doesn't notice")
         print_tab("you immediately. You take the opportunity to glance over the top edge of the desk, down at the")
         print_tab("items on the desk top. There seems to be a number of post-it notes scattered around, normally ")
         print_tab("just out of view. A phone sits on the far side of the desk, where a second receptionist would more ")
-        print_tab("easily be able to answer it and a " + pr_colour("l_blue","notepad") +", with something written on it is placed within easy ")
+        print_tab("easily be able to answer it and a " + pr_colour("l_blue","Notepad") +", with something written on it is placed within easy ")
         print_tab("reaching distance of the receptionist.")
         var = san_input()
         
         if var == "receptionist":
-            # receptionist()
+            receptionist(game)
             print("")
             
         elif var == "notepad":
@@ -83,10 +83,121 @@ def recep_desk(game = N_game()):
                 hint = "Don't lick icy lamp posts"
                 loop = game.basic_game_func(var, hint)
 
+
+def receptionist(game = N_game()):
+    clear_screen()
+    print_tab(pr_colour("l_blue","-- RECEPTIONIST --")+"\n")
+    print_tab("The receptionist is lost in her work and doesn't seem to notice you standing at the desk. ")
+    
+    space = "              "
+    
+    name_len = len(game.pc.char_name) 
+    if name_len < 12:
+        
+        loop = 12 - name_len
+        c_name = game.pc.character_name
+        
+        while loop != 0:
+            c_name =  c_name + " "
+            loop = loop -1
+            
+    else:
+        c_name = game.pc.character_name
+    
+    if game.called != True:
+        s_pause()
+        print("\tThe receptionist looks very busy you should probably not disturb her without a good reason. ")
+        s_pause()
+        
+    else:
+        
+        if game.time_changed == True:
+            clear_screen()
+            print_tab(pr_colour("l_blue","-- CONVERSATION WITH RECEPTIONIST --")+"\n")
+            print_tab(c_name +": Hi there, I'm " + game.pc.title +" Preston…")
+            s_pause()
+            
+            print_tab(game.recep +": Ah yes, Hello " + game.pc.title +" Preston. I'm afraid to tell you that Mr Barber will be in at 14:30 ")
+            print_tab(space +"and is unreachable until then. You can wait for him in his office, his PA should be")
+            print_tab(space + "there.")
+            s_pause()
+            
+            
+            print_tab(c_name +": Oh that's a shame, but yes I'll do that.")
+            s_pause()
+             
+            print_tab(game.recep +": OK, here is your Guest Pass, make sure to return that to me when you are leaving.")
+            game.pc.add_inventory("Guest - ID Card")
+            s_pause()
+
+            print_tab(c_name +": Will do!")
+            s_pause()
+            
+            print_tab(game.recep +": Do you know where the Mr Barbers office is?")
+            s_pause()
+            
+            print_tab(c_name +": I'm sure I'll manage to find my way")
+            s_pause()
+             
+            print_tab(game.recep +": OK, Have a good meeting.")
+            s_pause()
+
+            print_tab(c_name+": Thank you!")
+            s_pause()
+        
+        else:
+            clear_screen()
+            print_tab(pr_colour("l_blue","-- CONVERSATION WITH RECEPTIONIST --")+"\n")
+            print_tab(c_name +": Hello there Anna, I do believe we spoken on the phone earlier.")
+            s_pause()
+            
+            print_tab("(The receptionist looks up slightly confused…)")
+            s_pause()
+            
+            print_tab(c_name +": I'm " + game.pc.title + " Preston. We spoke on the phone?")
+            s_pause()
+             
+            print_tab(game.recep +": Oh Yes sorry, everything is crazy with the Christmas rush, our last deliveries are ")
+            print_tab(space + "due to go out next week. Are you not a bit earlier than your appointment?")
+            s_pause()
+            
+            print_tab(c_name +": Ah yes, unfortunately my pervious engagement was cancelled so I thought I might come   ")
+            print_tab(space + "down here early to see if Mr Barber was available now.")
+            s_pause()
+            
+            
+            print_tab(game.recep +": I'm sorry to have to tell you this but Mr Barber won't be in the office until 14:30 ")
+            print_tab(space + "at the earliest.")
+            s_pause()
+            
+            print_tab(c_name +": In that case, is it alright if I wait for him in his office?")
+            s_pause()
+            
+            
+            print_tab(game.recep +": That shouldn't be a problem. His PA should be there. ")
+            s_pause()
+
+            print_tab(c_name+": Thats great, Thank you.")
+            s_pause()
+            
+            print_tab(game.recep +": Ok, here is your Guest ID Card. Make sure to leave that in with me on your way out.")
+            game.pc.add_inventory("Guest - ID Card")
+            s_pause()
+
+            print_tab(c_name+": OK I'll try not to forget.")
+            s_pause()
+            
+            print_tab(game.recep +": I hope you don't get too bored waiting.")
+            s_pause()
+
+            print_tab(c_name+": I'm sure I'll find some way of passing the time.")
+            s_pause()
+            
+            
 def notepad(game = N_game()):
     clear_screen()
     print_tab(pr_colour("l_blue","-- Notepad --") + "\n")
-    print_tab("Reading the notepad upside down and slightly sideways, you see the words written: “Guest Pass for  new ")
+    print_tab("Reading the notepad upside down and slightly sideways, you see the words written: “Guest Pass for new ")
     print_tab("salesman " + game.pc.title + " Preston - Expected @14:45”. This gives you an idea! You could call reception and pretend to ")
     print_tab("be '" + game.pc.title + " Preston'. Now all you have to do is find another phone! ")
     game.set_new_ob("Find a Phone to call Reception as " + game.pc.title + " Preston")
@@ -164,6 +275,7 @@ def waiting_area(game = N_game()):
                     print_tab(char_name + " rests in the waiting area for half an hour. As you are about to get up the Security")
                     print_tab("Guard leaves his office, scans his card at the glass door and passes through.") 
                     print_tab("Best take your chance to check out the Security office!")
+                    game.set_new_ob("Search the Office befroe the Guard Returns")
                     wait += 1
                     game.sec_gar = False
                     pause()
@@ -223,8 +335,10 @@ def waiting_area(game = N_game()):
 
 if __name__ == "__main__":
     game = N_game()
-    game.pc.add_inventory("Guest - ID Card")
+    # game.pc.add_inventory("Guest - ID Card")
     game.pc.set_pronouns("male")
-    print(game.pc.title)
+    # game.called = True
+    # game.time_changed =True
     recep(game)
+    # receptionist(game)
 
