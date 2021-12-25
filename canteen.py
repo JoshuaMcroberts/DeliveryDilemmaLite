@@ -210,15 +210,20 @@ def left_pocket(game = N_game()):
     clear_screen()
     print("")
     print_tab(pr_colour("l_blue","-- LEFT POCKET --") + "\n")
-    print_tab("When you slip your hand into the left pocket of the coat it immediately comes into contact with ")
-    print_tab("something cold and metallic. You withdraw your hand to find clutched in it a locker key with the ")
-    print_tab("number 21 written on a tag attached to it. ") 
-    game.pc.add_inventory("Locker 21 - Key")
-    s_pause()
-    game.completed_spec_ob("Follow the worker and find a way to get his locker key")
-    s_pause()
-    game.set_new_ob("Open Locker 21")
-    pause()
+    if game.get_key == False:
+        print_tab("When you slip your hand into the left pocket of the coat it immediately comes into contact with ")
+        print_tab("something cold and metallic. You withdraw your hand to find clutched in it a locker key with the ")
+        print_tab("number 21 written on a tag attached to it. ") 
+        game.pc.add_inventory("Locker 21 - Key")
+        game.get_key = True
+        s_pause()
+        game.completed_spec_ob("Follow the worker and find a way to get his locker key")
+        s_pause()
+        game.set_new_ob("Open Locker 21")
+        pause()
+    else:
+        print_tab("The left pocket is empty.")
+        pause()
 
 def right_pocket(game = N_game()):
     clear_screen()
