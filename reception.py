@@ -108,7 +108,7 @@ def receptionist(game = N_game()):
         while loop != 0:
             gap =  gap + " "
             loop -= 1
-            
+        gap = gap + ":"
     else:
         c_name = game.pc.character_name
     
