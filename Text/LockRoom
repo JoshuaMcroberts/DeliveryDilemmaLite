@@ -1,0 +1,29 @@
+Locker Room (LR)
+The room is narrow and bordering three walls are a collection of storage lockers. 
+Ten full size lockers are against the right-hand wall with a matching Ten opposite 
+them against the left-hand wall. The wall towards the back of the room is roughly 
+half the size of the other two walls and therefore has two rows of five half-sized 
+lockers which had been stacked to give in total an additional Ten lockers. 
+Each locker is sequentially numbered.
+
+
+lockers 1-13 & - open/empty
+You open locker <number> and find that it is empty.
+
+lockers 14-17 & 24-30 – locked
+You go to open locker <number> but it appears to be locked.
+
+Locker 18-23 – open + progression once
+As you open locker <number> you hear someone else enter the room. You pretend to be retrieving 
+something from your non-existent bag in the empty locker. The person passes behind you and goes 
+further down your row. Out of the corner of your eye you see them take their pass from around 
+their neck and put it inside the locker. They then take out a lunch box and locking their locker behind 
+them. As they exit the room they slip their locker key into the pocket of their worn work coat. 
+
+locker 21 – Unlockable
+*if no key 
+You go to open locker <number> but it appears to be locked.
+*if key
+You slide the key for locker 21 into the lock and open it. Inside the locker is a black backpack which is 
+open and a security pass with the words ‘ Marvin Bleak – Warehouse Opts ’ on it. You take the pass 
+and relock the locker. 
