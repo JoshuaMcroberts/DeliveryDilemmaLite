@@ -17,7 +17,9 @@ def recep(game = N_game()):
                 print_tab("Just rounding the corner into the main corridor on his return journey. That was good timing, another minute")
                 print_tab("and he would have caught you. Step into the centre of the reception as he enters and quickly moves past you")
                 print_tab("back to the Security Office")
-                pause()
+                s_pause()
+                game.completed_spec_ob("Search the Office before the Guard Returns")
+                s_pause()
                 
             game.game_map.pre = game.game_map.player_enter((4,3),game.game_map.pre)   
             clear_screen()
@@ -256,7 +258,7 @@ def lift(game = N_game()):
     print_tab(pr_colour("l_blue","-- LIFT --") + "\n")
     print_tab("You walk over to the lift to take a closer look. There is a number pad and")
     print_tab("a card reader next to the door however above them is a seemingly freshly")
-    print_tab("printed piece of paper taped to the wall saying “Out of Order”")
+    print_tab("printed piece of paper taped to the wall saying “Out of Order - Use stairs”")
     pause()
     
 def waiting_area(game = N_game()):
