@@ -165,7 +165,7 @@ def act_1_intro(courier, pc = Character()):
         print_tab("  parts of the building. \n")
         print_tab("- As you move from room to room you will see objects highlighted like " + pr_colour("l_blue","This") + ".")
         print_tab("  You can type these words to interact with the room or object highlighted.\n")
-        print_tab("- Type " + pr_colour("l_blue","Help") + " any time you see '>' for information on basic commands.\n")
+        print_tab("- Type " + pr_colour("l_blue","Help") + " anytime you see '>' for information on basic commands.\n")
         print_tab("Type " + pr_colour("l_blue","Ready") + " to continue.")
         var = input("\n\t: ")
         var = san_text(var)

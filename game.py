@@ -80,8 +80,8 @@ class N_game:
         elif var == "help":
             clear_screen()
             print("")
-            print_tab("-- HELP --")
-            print_tab("You can use the follow options any time you see the '>' character:\n")
+            print_tab(pr_colour("l_blue","-- HELP --")+"\n")
+            print_tab("You can use the following options anytime you see the '>' character:\n")
             print_tab("back        - This will take you back out of the description you are in.\n")
             print_tab("map         - This will show you the map and where you are on it.\n")
             print_tab("objectives  - This will show a list of current objectives is.\n")    
