@@ -97,7 +97,7 @@ def receptionist(game = N_game()):
     print_tab("The receptionist is lost in her work and doesn't seem to notice you standing at the desk. ")
     
     space = "              "
-    
+    gap = ""
     name_len = len(game.pc.char_name) 
     
     if name_len < 12:
@@ -106,7 +106,7 @@ def receptionist(game = N_game()):
         c_name = game.pc.character_name
         
         while loop != 0:
-            c_name =  c_name + " "
+            gap =  gap + " "
             loop -= 1
             
     else:
@@ -132,46 +132,46 @@ def receptionist(game = N_game()):
             s_pause()
             
             
-            print_tab(c_name +": Oh that's a shame, but yes I'll do that.")
+            print_tab(c_name + gap + ": Oh that's a shame, but yes I'll do that.")
             s_pause()
              
             print_tab(game.recep +": OK, here is your Guest Pass, make sure to return that to me when you are leaving.")
             game.pc.add_inventory("Guest - ID Card")
             s_pause()
 
-            print_tab(c_name +": Will do!")
+            print_tab(c_name + gap + ": Will do!")
             s_pause()
             
             print_tab(game.recep +": Do you know where the Mr Barbers office is?")
             s_pause()
             
-            print_tab(c_name +": I'm sure I'll manage to find my way")
+            print_tab(c_name + gap + ": I'm sure I'll manage to find my way")
             s_pause()
              
             print_tab(game.recep +": OK, Have a good meeting.")
             s_pause()
 
-            print_tab(c_name+": Thank you!")
+            print_tab(c_name + gap + ": Thank you!")
             s_pause()
         
         else:
             clear_screen()
             print("")
             print_tab(pr_colour("l_blue","-- CONVERSATION WITH RECEPTIONIST --")+"\n")
-            print_tab(c_name +": Hello there Anna, I do believe we spoken on the phone earlier.")
+            print_tab(c_name + gap + ": Hello there Anna, I do believe we spoken on the phone earlier.")
             s_pause()
             
             print_tab("(The receptionist looks up slightly confused…)")
             s_pause()
             
-            print_tab(c_name +": I'm " + game.pc.title + " Preston. We spoke on the phone?")
+            print_tab(c_name + gap + ": I'm " + game.pc.title + " Preston. We spoke on the phone?")
             s_pause()
              
             print_tab(game.recep +": Oh Yes sorry, everything is crazy with the Christmas rush, our last deliveries are ")
             print_tab(space + "due to go out next week. Are you not a bit earlier than your appointment?")
             s_pause()
             
-            print_tab(c_name +": Ah yes, unfortunately my pervious engagement was cancelled so I thought I might come   ")
+            print_tab(c_name + gap + ": Ah yes, unfortunately my pervious engagement was cancelled so I thought I might come   ")
             print_tab(space + "down here early to see if Mr Barber was available now.")
             s_pause()
             
@@ -180,27 +180,27 @@ def receptionist(game = N_game()):
             print_tab(space + "at the earliest.")
             s_pause()
             
-            print_tab(c_name +": In that case, is it alright if I wait for him in his office?")
+            print_tab(c_name + gap + ": In that case, is it alright if I wait for him in his office?")
             s_pause()
             
             
             print_tab(game.recep +": That shouldn't be a problem. His PA should be there. ")
             s_pause()
 
-            print_tab(c_name+": Thats great, Thank you.")
+            print_tab(c_name + gap + ": Thats great, Thank you.")
             s_pause()
             
             print_tab(game.recep +": Ok, here is your Guest ID Card. Make sure to leave that in with me on your way out.")
             game.pc.add_inventory("Guest - ID Card")
             s_pause()
 
-            print_tab(c_name+": OK I'll try not to forget.")
+            print_tab(c_name + gap + ": OK I'll try not to forget.")
             s_pause()
             
             print_tab(game.recep +": I hope you don't get too bored waiting.")
             s_pause()
 
-            print_tab(c_name+": I'm sure I'll find some way of passing the time.")
+            print_tab(c_name + gap + ": I'm sure I'll find some way of passing the time.")
             s_pause()
             
         game.completed_spec_ob("Talk to the Receptionist to get ID Card")   

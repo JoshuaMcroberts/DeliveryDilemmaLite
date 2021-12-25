@@ -324,7 +324,7 @@ def dialling():
 def phone(game = N_game()):
     
     space = "              "
-    
+    gap = ""
     name_len = len(game.pc.char_name) 
     # print_tab(str(name_len))
     # s_pause()
@@ -334,7 +334,7 @@ def phone(game = N_game()):
         c_name = game.pc.character_name
         
         while loop != 0:
-            c_name =  c_name + " "
+            gap = gap + " "
             loop = loop -1
         
             
@@ -396,14 +396,14 @@ def phone(game = N_game()):
             clear_screen()
             print("")
             print_tab(pr_colour("l_blue","-- PHONE CONVERSATION WITH RECEPTION --")+"\n")
-            print_tab(c_name +": Hello Anna, I was wondering if you could help me with a quick query? I'm wondering  ")
+            print_tab(c_name + gap + ": Hello Anna, I was wondering if you could help me with a quick query? I'm wondering  ")
             print_tab(space + "if Joe Smyth is in the office today? ")
             s_pause()
             
             print_tab(game.recep +": I'm not sure I know him, I can check for you if you would like?")
             s_pause()
             
-            print_tab(c_name +": That's alright, I'll see if I can get him directly on his office phone.")
+            print_tab(c_name + gap + ": That's alright, I'll see if I can get him directly on his office phone.")
             s_pause()
             
             first = True
@@ -433,9 +433,9 @@ def phone(game = N_game()):
             print("")
             print_tab(pr_colour("l_blue","-- PHONE CONVERSATION WITH RECEPTION --")+"\n")
             if con_1:
-                convo = c_name +": Oh by the way,"
+                convo = c_name + gap + ": Oh by the way,"
             else:
-                convo = c_name + ": Yes, I'm hoping you can."
+                convo = c_name + gap + ": Yes, I'm hoping you can."
             print_tab( convo + " My name is " + game.pc.p_name + " Preston, I'm supposed to be attending a  ")
             print_tab(space + "meeting later on…")
             s_pause()
@@ -469,19 +469,19 @@ def phone(game = N_game()):
                 clear_screen()
                 print("")
                 print_tab(pr_colour("l_blue","-- PHONE CONVERSATION WITH RECEPTION --")+"\n")
-                print_tab(c_name +": Yes that is correct. I have another engagement elsewhere beforehand.")
+                print_tab(c_name + gap + ": Yes that is correct. I have another engagement elsewhere beforehand.")
                 s_pause()
                 
                 print_tab(game.recep +": Ok excellent, Is there anything else I can help you with?")
                 s_pause()
                 
-                print_tab(c_name +": Nope, that is everything")
+                print_tab(c_name + gap + ": Nope, that is everything")
                 s_pause()
 
                 print_tab(game.recep +": Ok, see you later on then.")
                 s_pause()
                 
-                print_tab(c_name +": Right, Bye")
+                print_tab(c_name + gap + ": Right, Bye")
                 s_pause()
                 
                 print_tab("*Call Disconnects*")
@@ -491,7 +491,7 @@ def phone(game = N_game()):
                 clear_screen()
                 print("")
                 print_tab(pr_colour("l_blue","-- PHONE CONVERSATION WITH RECEPTION --")+"\n")
-                print_tab(c_name +": No Actually, I was scheduled to have a meeting before the one with Mr Barber but it ")
+                print_tab(c_name + gap + ": No Actually, I was scheduled to have a meeting before the one with Mr Barber but it ")
                 print_tab(space + "has been cancelled. So, I'm planning on coming in earlier. I haven't had a chance ")
                 print_tab(space + "to speak to his PA yet.")
                 s_pause()
@@ -499,13 +499,13 @@ def phone(game = N_game()):
                 print_tab(game.recep +": That should be fine, I can double check with his PA if you want?")
                 s_pause()
                 
-                print_tab(c_name +": Its fine, I don't mind waiting it if comes to it. ")
+                print_tab(c_name + gap + ": Its fine, I don't mind waiting it if comes to it. ")
                 s_pause()
 
                 print_tab(game.recep +": Ok then I'll see you when you get here. Bye for now. ")
                 s_pause()
                 
-                print_tab(c_name +": See you then, Bye")
+                print_tab(c_name + gap + ": See you then, Bye")
                 s_pause()
                 
                 print_tab("*Call Disconnects*")
