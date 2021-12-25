@@ -107,7 +107,11 @@ def item_input():
     var = text.split(" ")
     if len(var) == 2:
         locker = var[0]
-        number = int(var[1])
+        try:
+            number = int(var[1])
+        except:
+            locker = var[0]
+            number = int("0")
     else:
         locker = var[0]
         number = int("0")
