@@ -26,7 +26,7 @@ def sec_office(game = N_game()):
             
                 # Navigation IF  
                 if var  == "desk":
-                    sec_desk(game)
+                    loop =  sec_desk(game)
             
                 elif var == "securityguard":
                     sec_guard(game)
@@ -44,7 +44,7 @@ def sec_office(game = N_game()):
                     game.sec_gar = False
                 
                 else:
-                    hint = "Don't lick icy lamp posts"
+                    hint = "You might have to go outside the Security Office and WAIT for the guard to leave. "
                     loop = game.basic_game_func(var, hint)           
             else: 
                 loop = False
@@ -58,8 +58,11 @@ def sec_desk(game = N_game()):
             clear_screen()
             print("")
             print_tab(pr_colour("l_blue","-- DESK --")+"\n")
-            print_tab("A closer look at the desk reveals a scattering of chocolate bar wrappers and empty drinks cans. ")
-            print_tab("There is a desk mounted " + pr_colour("l_blue","Monitor") + " that sit in front of a keyboard. It seems to have been recently")
+            if game.full_bin == False:
+                print_tab("A closer look at the desk reveals a scattering of chocolate bar wrappers and empty drinks cans. ")
+            else:
+                print_tab("An inspection of the desk shows a tidy consturction made form the finest wood IKEA could find. ")
+            print_tab("There is a desk mounted " + pr_colour("l_blue","Monitor") + " that sits in front of a keyboard. It seems to have been recently")
             print_tab("used. A " + pr_colour("l_blue","Bin") + " sits just to the right of the desk and is completely empty. A " + pr_colour("l_blue","Phone") + " sits in the ")
             print_tab("centre of the desk on the left of the monitor and keyboard.")
             var = san_input()
@@ -70,8 +73,7 @@ def sec_desk(game = N_game()):
                 pause()
                 
             elif var == "bin":
-                print("bin_can(game)")
-                pause()
+                bin_can(game)
                 
             elif var == "phone":
                 phone(game)
@@ -79,12 +81,57 @@ def sec_desk(game = N_game()):
             else:
                 hint = "Don't lick icy lamp posts"
                 loop = game.basic_game_func(var, hint)
+        return True
     else:
         clear_screen()
         print("")
         print_tab(pr_colour("l_blue","-- DESK --")+"\n")
         print_tab("As soon as you step up to the desk the Security guard sees you!\n")
         angry_guard(game)
+        pause()
+        return False
+
+def bin_can(game = N_game()):
+    contin = False
+    first = True
+    while not contin :
+        if game.full_bin == False:
+            clear_screen()
+            print("")
+            print_tab(pr_colour("l_blue","-- BIN --")+"\n")
+            print_tab("You have a choice:")
+            if first :
+                s_pause()
+            else:
+                print("")
+            print_tab("[1] Tidy the desk")
+            print_tab("[2] Leave it as it is\n")
+            print_tab("Pick an option.")
+            var = san_input()
+            first = False
+            
+            if var == "1" or var == "2":
+                contin = True
+            else:
+                clear_screen()
+                print("")
+                print_tab("Incorrect entry. Type 1 or 2")
+                pause() 
+        else:
+            var = "1"
+    
+    if var == "1":
+        clear_screen()
+        print("")
+        print_tab(pr_colour("l_blue","-- BIN --")+"\n")
+        print_tab("The desk, which was a mess, has been tidied by " + game.pc.character_name + " and now the bin is full.")
+        pause()
+        game.full_bin = True
+    else:
+        clear_screen()
+        print("")
+        print_tab(pr_colour("l_blue","-- BIN --")+"\n")
+        print_tab("You do nothing with the bin and leave the desk in a mess")
         pause()
 
 def angry_guard(game = N_game()):
@@ -125,7 +172,22 @@ def sec_guard(game = N_game()):
 
 def coat_rack(game = N_game()):
     if (game.sec_gar == False):
-        print("cr")
+        loop = True
+        while loop:  
+            clear_screen()
+            print("")
+            print_tab(pr_colour("l_blue","-- COAT RACK --") + "\n")
+            print_tab("Looking at the coat rack you see one heavy " + pr_colour("l_blue","Winter Coat") + " hanging up on it. There is also a scarf")
+            print_tab("that has been drapped on a peg with a flat cap then put on top of it.")
+            var = san_input()
+            
+            
+            if var == "wintercoat":
+                coat(game)
+
+            else:
+                hint = "Don't lick icy lamp posts"
+                loop = game.basic_game_func(var, hint)
     else:
         clear_screen()
         print("")
@@ -133,10 +195,96 @@ def coat_rack(game = N_game()):
         print_tab("You move over to the coat rack but your movement disturbs the guard!\n")
         angry_guard(game)
         pause()
+
+def coat(game = N_game()):
+    
+    loop = True
+    while loop:
+        clear_screen()
+        print("")
+        print_tab(pr_colour("l_blue","-- WINTER COAT --") + "\n")
+        print_tab("The coat looks like it is fairly new. It has a slight tear on one of the cuffs no doubt caused by  ")
+        print_tab("a trip and fall. I have two large exterior pockets both " + pr_colour("l_blue","Left") + " and " + pr_colour("l_blue","Right") + ".")
+        var = san_input()
+        
+        
+        if var == "left":
+            left_pocket(game)
+        
+        elif var == "right":
+            right_pocket(game)
+        
+        else:
+            hint = "Don't lick icy lamp posts"
+            loop = game.basic_game_func(var, hint)
+
+
+    
+def left_pocket(game = N_game()):
+    clear_screen()
+    print("")
+    print_tab(pr_colour("l_blue","-- LEFT POCKET --") + "\n")
+    print_tab("You feel the left pocket from the outside and note that something makes a crinkling noise. You put")
+    print_tab("your hand inside and pull it out with a packet of Wine Gums held in its grasp. You think better of")
+    print_tab("the unhealth snack and stash it back where it came from. ") 
+    pause()
+
+def right_pocket(game = N_game()):
+    clear_screen()
+    print("")
+    print_tab(pr_colour("l_blue","-- RIGHT POCKET --") + "\n")
+    print_tab("The right pocket brings forth a number of items when shacken including, a set of car keys, a packet ")
+    print_tab("extra minty chowing gum and a used tissue. All of which are deemed not useful and swiftly returned.")
+    pause()    
     
 def sec_lockers(game = N_game()):
     if (game.sec_gar == False):
-            print("sl")
+        loop = True
+        while loop:  
+            clear_screen()
+            print("")
+            print_tab(pr_colour("l_blue","-- Lockers --") + "\n")
+            print_tab("You walk over to the lockers and take a cursory glance at them. The " + pr_colour("l_blue","Locker 1") + " and " + pr_colour("l_blue","Locker 4"))
+            print_tab("both their doors slightly open. " + pr_colour("l_blue","Locker 2") + " and " + pr_colour("l_blue","Locker 3") + " appear to be closed and locked. There is")
+            print_tab("a thin coat of dust on the lockers and an open cardboard box sits on top of them.")
+            var = san_input()
+            
+            
+            if var == "locker1":
+                clear_screen()
+                print("")
+                print_tab(pr_colour("l_blue","-- Locker 1 --") + "\n")
+                print_tab("Locker 1 is completely empty except for name badge that reads 'Name: P Blart'. You move on.")
+                pause()
+            
+            elif var == "locker2":
+                clear_screen()
+                print("")
+                print_tab(pr_colour("l_blue","-- Locker 2 --") + "\n")
+                print_tab("As assumed Locker 2 is locked. No point in wasting anymore time with it.")
+                pause()
+            
+            
+            elif var == "locker3":
+                clear_screen()
+                print("")
+                print_tab(pr_colour("l_blue","-- Locker 3 --") + "\n")
+                print_tab("The latch on Locker 3 turns but the mechanism seems to be jammed. You guess that this locker hasn't.")
+                print_tab("been used in a long time.")
+                pause()
+            
+            
+            elif var == "locker4":
+                clear_screen()
+                print("")
+                print_tab(pr_colour("l_blue","-- Locker 3 --") + "\n")
+                print_tab("Locker 4 seems to have some old newspapers in it. The door opened easily however there appears to be.")
+                print_tab("some form of mold growing in the top left corner inside the locker. You shut the door and move on.")
+                pause()
+                
+            else:
+                hint = "Not many hints to be had"
+                loop = game.basic_game_func(var, hint)
     else:
         clear_screen()
         print("")
@@ -154,27 +302,11 @@ def monitor(game = N_game()):
         clear_screen()
         print("")
         print_tab(pr_colour("l_blue","-- MONITER --")+"\n")
-        print_tab("A closer look at the desk reveals a scattering of chocolate bar wrappers and empty drinks cans. ")
-        print_tab("There is a desk mounted " + pr_colour("l_blue","monitor") + " that sit in front of a keyboard. It seems to have been recently")
-        print_tab("used. A " + pr_colour("l_blue","bin") + " sits just to the right of the desk and is completely empty. A " + pr_colour("l_blue","phone") + " sits in the ")
-        print_tab("centre of the desk on the left of the monitor and keyboard.")
-        var = san_input()
-    
-        # Navigation IF  
-        if var  == "monitor":
-            monitor()
-            pause()
-            
-        elif var == "bin":
-            print("bin_can(game)")
-            pause()
-            
-        elif var == "phone":
-            phone()
-        
-        else:
-            hint = "Don't lick icy lamp posts"
-            loop = game.basic_game_func(var, hint)
+        print_tab(game.pc.character_name + " looks at the monitor and sees a Word Document is opened with the title of")
+        print_tab("'How Can Planes Fly Upside Down?'. There doesn't seem to have been much progress made.")
+        print_tab("A couple of tabs in the browser show some signs of the pursuit of the thesis however ")
+        print_tab("the user seems to have been distracted by cat videos on YouTube. Not much of value here.")
+        pause()
     
 def dialling():
     for i in range(2):
