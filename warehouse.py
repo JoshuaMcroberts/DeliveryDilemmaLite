@@ -249,7 +249,7 @@ def computer(game = N_game()):
     print_tab("│ Serviced Last: 30/09/2021     │")
     print_tab("│ MOT due:       22/01/2022     │")
     print_tab("│                               │")
-    print_tab("│ REG:           " + game.unformated_plate + "       │")
+    print_tab("│ REG:          " + game.unformated_plate + "      │")
     print_tab("└───────────────────────────────┘")
     pause()
     
@@ -406,7 +406,6 @@ def office_empty(game = N_game()):
 
 if __name__ == "__main__":
     game = N_game()
-   
-    game.set_num_plate("KLZ 9890")
+    game.set_num_plate(" KLZ 9890 ")
     computer(game)
     # warehouse(game)
