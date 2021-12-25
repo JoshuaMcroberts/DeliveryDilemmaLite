@@ -153,7 +153,7 @@ def act_1_intro(courier, pc = Character()):
     print_tab(pr_colour("l_blue","-- THE BEGINNING --") + "\n")
     print_tab(char_name + " takes a long drive to the " + courier + " distribution center in West Devonshire. There is a slight ")
     print_tab("nip in the air as "+ pronoun2 +" parks on the street in front of the building which is set a bit off the road. Briskly, "+ pronoun2 )
-    print_tab("Briskly, "+ pronoun2 +" walk towards the entrance. Passing through the front door and entering the reception area. ")
+    print_tab("walk towards the entrance. Passing through the front door and entering the reception area. ")
     pause()
 
     contin = False
