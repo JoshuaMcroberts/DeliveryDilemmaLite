@@ -1,0 +1,87 @@
+Warehouse 
+The warehouse is a cavernous open space with concrete floors painted a pale blue colour.
+Red lines clearly mark out walk ways from fork lift drive paths. The warehouse appears to
+have been broken down into sections to the front of the warehouse there are two plastic 
+sheeting covered holes in the wall, the space behind them is clear however after that on 
+the wall can be found the word <Sorting Area>. Looking to the opposite side of the room 
+you can see six smaller gaps in he wall covered by the same plastic sheeting as the others. 
+The wall beside this area reads <Loading Bay>. Next to you there is a desk that has been 
+labelled <Parcel Repair>. This seems to be were damaged parcels go when they need fixing. 
+The last feature of the warehouse is a window surround <Office> in the near right hand corner. 
+
+
+
+Sorting Shelving 
+The sorting area is broken down into postcodes and forwarding piles. Some to be shipped to other
+distribution centres and others to be delivered to the local area. In the forwarding section 
+there are a number of parcels to be sent however only four of them match the size of the parcel
+you are looking for. You can take a look if you wish. 
+
+(Enter the box number to look at its shipping details)
+
+
+Loading Bay 
+The loading bay has a fairly simple layout. A wheeled cage trolley can be easily wheeled from 
+the sorting area to the smaller entrances which then allows for easy loading of the delivery 
+vans when they are getting ready for their delivery runs. There is a single <Roller Cage> 
+sitting off to the side of one of the loading areas.
+
+Roller Cage
+Three parcel lie in an almost tower like structure in the bottom of the Roller Cage. Most of 
+the labels are obscured. You can take a closer look at each box to see its shipping label.
+
+
+Damaged Parcels Area
+On the desk sits two parcels that seem a little worst for wear. The <Box 1> seems to have 
+been dropped as one of the corners has the characteristic signs of landing face first. 
+<Box 2> seems to have been crashed by another parcel significantly heavier then if could 
+withstand. All around its side are the wrinkles in the cardboard formed when it buckled 
+under the weight which also seems to have caused the corners to spilt.  
+
+
+Office
+*if not searched
+As you get closer to the office you see there is someone inside it. They would recognise 
+instantly that you weren’t supposed to be here. You best search else where until they leave. 
+*if office empty
+you enter the office and find cluttered space. On a table in the back of the room semi-ordered 
+stacks of paper climb the wall. Three of the four sides of the boxy room have glass windows 
+that span the length of the side. The bottom edges of the window frames are coated with a thin
+layer of dust which appears to have been disturbed in places where people have lent against it.
+On a table that faces into the warehouse sits a <Computer> with it password and username handily
+stored on a post-it note stuck to the top left-hand corner of the screen. 
+
+
+Computer
+You unlock the computer to find a parcel management system loaded on the screen. On the display different numbers show how many parcels will be shipped to each of the surrounding towns. 
+
+You select the search function and enter the tracking number of Uncle Jocks parcel.
+
+An incorrect value error appears on the screen and then blinks out.
+
+You try entering the parcel ID number and immediately an item record opens up.
+
+Parcel Number: B42 8472 3189 6439 10
+Customer Tracking Number : A2K6U9-2893-G2GU96
+Address:	Jock Thistlewaite Angus MacTavish III
+		3 Pennyworth Rd
+		Aderfeldy
+		Perthshire
+		BXA2XW
+Delivery Date: Tomorrow - 24/12/2021
+Current Location: Vehicle for delivery 
+
+After skimming over the details you realise that the parcel in no longer in the warehouse but instead in a vehicle waiting to be delivered.
+
+You select the Current Location field and a vehicle record opens.
+
+Vehicle ID:
+Driver Name:
+Miles: 
+Serviced Last:
+MOT due:
+Reg:
+
+You not have the vehicle information. <Player> it is up to you! 
+
+New objective:  Go outside and find Uncle Jock’s Parcel in the vehicle with the REG: <reg> 

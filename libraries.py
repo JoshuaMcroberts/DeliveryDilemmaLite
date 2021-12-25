@@ -1,5 +1,5 @@
-# Defines common routines
 import os
+import sys
 
 # COLORED TEXT
 # Example:
@@ -64,6 +64,18 @@ def pr_colour(colour, text):
     else:
         return col_out + text + '\033[00m'
 
+# CLEANS TEXT TO SIMPLE FORM
+def san_text(text):
+    text = text.lower()
+    text = text.replace(" ", "")
+    return text
+
+# TAKES IN INPUT ANS SIMPLIFIES IT
+def san_input():
+    var = input("\n\t> ")
+    var = san_text(var)
+    return var
+    
 # CLEAR SCREEN
 def clear_screen(lines=100):
     if os.name == 'posix':
@@ -79,12 +91,28 @@ def print_tab(text):
 
 # PAUSE FUNCTION 
 def pause():
-    input("\n\tHit Enter to Continue...")
+    input("\n\tPress Enter to Continue...")
     
 # Silent PAUSE FUNCTION 
 def s_pause():
-    input("...")
-    
+    print("\n\tPress Enter to Continue...",end="\r")
+    input()
+    sys.stdout.write("\033[F\033[K")
+
+
+# READ IN AND PARSE STRING TO STR AND INT
+def item_input():
+    text = input("\n\t> ")
+    text = text.lower()
+    var = text.split(" ")
+    if len(var) == 2:
+        locker = var[0]
+        number = int(var[1])
+    else:
+        locker = var[0]
+        number = int("0")
+    return locker, number
+
 
 if __name__ == "__main__":
     
@@ -106,14 +134,3 @@ if __name__ == "__main__":
     # TEST PRINT TAB
     print("\nTEST print_tab Example:")
     print_tab("<Print Tabbed>")
-    
-    
-    # words = '\033[33  
-    var ='\033[38;5;232m\033[48;5;184m\033[1m' + " RAM 3467 " + '\033[0m'
-    print(var)
-    
-    # col_fb = '\033[38;5;166m\033[48;5;153m\033[1m A\033[38;5;166m\033[48;5;153m\033[1m\033[4mmaz\033[0m\033[38;5;166m\033[48;5;153m\033[1mon \033[0m'
-    # print(col_fb + pr_colour("del","Prime Delivery "))
-    # print(pr_colour("fed", " Fed") + pr_colour("ex","Ex ") )
-    # print(pr_colour("p_force", " Parcel Force "))
-    # print(pr_colour("ups"," UPS "))

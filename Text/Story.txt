@@ -1,3 +1,5 @@
+Story Intro
+
 It was the night before the delivery deadline before Christmas... and all through the house 
 was heard the soft clicking and whirring of printer and mouse.
 Parcels lay strewn in every which way,
@@ -29,16 +31,16 @@ A swift hustle and bustle of parcels to van,
 and a thank you mince pie for the delivery man.
 
 Now time to relax with a good job well done. 
-Every last parcel away! But wait, what’s this one?
+Every last parcel away! But wait, what's this one?
 With shock and surprise after slightest delay, 
 remembered was the unopened gift from yesterday.
 
 With unwrapping  the gift came confusion and shock,
 “This is the tea cosy and puzzle book for Great Uncle Jock?!”
 At once the error was clear as can be,
-“I’ve sent a parcel to him, that was meant for me!”
+“I've sent a parcel to him, that was meant for me!”
 
-“That’s Christmas Ruined! I must get it on track!
+“That's Christmas Ruined! I must get it on track!
 I must find a way to get that parcel back!”
 With fleetest of fingers and no delay,
 On to <named courier service> website to try save the day!
@@ -46,7 +48,7 @@ On to <named courier service> website to try save the day!
 A scuffle of papers on desk had unveiled,
 the tracking information of the gift wrongly mailed.
 On the <courier> website there was a pop-up  you see,
-and with a click of ‘reject all cookies’ <character> thought “They’re not tracking me!”
+and with a click of 'reject all cookies' <character> thought “They're not tracking me!”
 
 With a quick search in the parcel tracking bar,
 an HTTP request was sent over the wire. 
@@ -61,10 +63,12 @@ As a local of sunny Weston-on-Trent,
 With no time left for a return and resend,
 <character> found <pro>self at <pro2> whist end!
 And then in a split second an idea did appear,
-“I’ll go there, switch the parcel then be in the clear!”
+“I'll go there, switch the parcel then be in the clear!”
 
 
 A Delivery Dilemma so hard to compound, 
 would require <pro> to put <pro2> boots on the ground.
 With the solution to the problem not an easy one,
-<character>’s Christmas Adventure had just begun!
+<character>'s Christmas Adventure had just begun!
+
+

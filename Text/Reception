@@ -1,0 +1,152 @@
+Reception (R1) 
+RD - *
+GD - *
+SO - *
+LF - *
+WA - *
+The foyer of the building stretches out in a large oval with the narrow ends on the left and right. 
+A semi-circler, tall <reception desk> is prominently placed against the back wall of the room with a 
+large double <glass door> to its left which leads further into the building. 
+On the left side of the room there is another door with the name plate on it saying, <Security Office>. 
+As you look to the right of the room, you see a <2 - lift> door and a <2 - waiting area> which is 
+nestled to back up against the glass front windows. 
+
+
+In reception:
+
+ 
+R1 - Reception Desk (RD)
+RE -
+PN -
+PH -
+NP - 
+As you approach the Reception desk you see a brown haired <receptionist> wearing intelligent 
+looking yet elegant round frame glasses. She appears to be engrossed in her work and doesn't notice 
+you immediately. You take the opportunity to glance over the top edge of the desk, down at the 
+items on the desk top. There seems to be a number of <post-it notes> scattered around, normally 
+just out of view. A <phone> sits on the far side of the desk, where a second receptionist would more 
+easily be able to answer it and a <notepad>, with something written on it is placed within easy 
+reaching distance of the receptionist.
+
+RD - Receptionist Conversation tree
+*if not called
+The receptionist looks busy. You should disturb her until you have something to say.
+
+*if called already and appointment change
+<Character>: Hi there, I’m Mr/Miss Preston…
+Receptionist: Ah Hello, it’s nice to meet you in person. Here is your Guest Pass. Be sure to return that to me before you leave. 
+<character>: Sure thing, Thank you.
++ 1 Guest ID Card
+
+*if called and appointment not changed
+<character>: Hello, can you help me please? I believe we spoke on the phone earlier.
+(The Receptionist has a slightly puzzled look on his face)
+<character>: My name is Preston, Mr/Miss Preston. 
+Receptionist: Oh yes! Forgive me there is a lot on with the Christmas Rush. You appear to be a good bit earlier than expected…
+<character>: Ah Yes, unfortunately my previous meeting was cancelled. I was hoping Mr Barber would be free a little earlier.
+Receptionist: I’m sorry but Mr Barber won’t be in until 14:30 so you will have to wait for him. 
+<character>: Oh ok, would I be able to wait in his office?
+Receptionist: I’m sure that would be fine, his PA should be there already. Here is a Guest Pass, I hope you don’t have to wait too long. 
+ <character>: I’m sure it’ll find some way to pass the time. Thank you again Anna.
++ 1 Guest ID Card
+
+
+#### COMPARE TO ABOVE
+Recep convo tree
+The receptionist is lost in her work and doesn’t seem to notice you standing at the desk. You start a conversation with her:
+*if no phone call
+The receptionist looks very busy you should probably not disturb her without a good reason. 
+*if change time
+Ch: Hello there, I’m Mrs/Miss Preston…
+Recp: Ah yes, Hello Mr/Miss Preston. I’m afraid to tell you that Mr Barber will be in at 14:30 and is unreachable until then. You can wait for him in his office, his PA should be there.
+Ch: Oh that’s a shame, but yes I’ll do that.
+Recp: OK, here is your Guest Pass, make sure to return that to me when you are leaving. 
+Ch: Will do
+Recp: Do you know where the Mr Barbers office is?
+Ch: I’m sure I’ll manage to find my way
+Recp: OK, see you later then.
+*if no change time
+Ch: Hello there Anna, I do believe we spoken on the phone earlier.
+The receptionist looks up slightly confused…
+Ch: I’m Mr/Miss Preston. We spoke on the phone?
+Recp: Oh Yes sorry, everything is crazy with the Christmas rush, our last deliveries are due to go out next week. Are you not a bit earlier than your appointment?
+Ch: Ah yes, unfortunately my pervious engagement was cancelled so I thought I might come down here early to see if Mr Barber was available now.
+Recp: I’m sorry to have to tell you this but Mr Barber won’t be in the office until 14:30 at the earliest.
+Ch: In that case, is it alright if I wait for him in his office?
+Recp: That shouldn’t be a problem. His PA should be there. 
+CH: That’s great, Thank you.
+Recp: Ok, here is your Guest ID Card. Make sure to leave that in with me on your way out.
+Ch: OK I’ll try not to forget.
+Recp: I hope you don’t get too bored waiting.
+Ch: I’m sure I’ll find some way of passing the time.
+
+
+
+RD - Phone
+
+RD - Post-it notes
+
+ 
+RD - Notepad
+Reading the notepad upside down and slightly sideways, you see the words written: “Guest Pass for  new 
+salesman Mr Preston – Expected @14:45”. This gives you an idea! You could call reception and pretend to 
+be ‘Mr Preston’. Now all you have to do is find another phone! 
+(New objective) 
+
+
+R1 - Glass door (GD)
+CR - *
+You approach the glass door and see next to it on the wall a small electronic pad.
+It looks like a <card reader>. You can see the hallway beyond with a few doors leading off to either side.  
+
+GD - Card Reader (CR)
+** Check inventory method needed
+*if have no card*
+You have no card to scan. 
+(Auto Go Back)
+*If have card*
+You scan the ID Card and the card reader makes a short affirmative *boop*.
+With that the two glass panels glide apart and you pass through. 
+(Auto Hall 1)
+
+
+R1 - Waiting area (WA)
+W8.1 - *
+W8.2 - *
+W8.3 - *
+W8.4 - *
+W8.5 - *
+W8.6 - *
+The waiting area consists of three tan leather sofas set in a U shape, with the open end facing the main entrance. This gives each sofa a varying view, from the reception to the those entering through the main door and the final facing out the window to the carpark area outside. There are a few magazines laid out on a short coffee table in the middle of the U shape to help pass the <wait> .
+WA - Wait 1 (W8.1) 
+<character> rests in the waiting area for half an hour. Nothing happens.
+(Auto go back)
+
+WA - Wait 2 (W8.2)
+<character> rests in the waiting area for half an hour. The Receptionist gets up, scans her pass and leaves through the glass door, only to return 5 mins later with a cup of coffee and a small piece of fruit. 
+(Auto go back)
+
+WA – Wait 2a (W8.2a)
+<character> rests in the waiting area for half an hour. As you are about to get up the Security Guard leaves his office, scans his card at the glass door and passes through. Best take your chance to check out the Security office!
+
+WA - Wait 3 (W8.3)
+<character> rests in the waiting area for half an hour. A delivery man enters the reception and drags a sack truck across the floor which appears to have one flat wheel. The security guard emerges from his office and escorts the delivery man through the glass door and then back out again after another 10 minutes has passed.
+(Auto go back)
+
+WA - Wait 4 (W8.4)
+<character> grows tired of waiting. Another half hour passes.
+(Auto go back)
+
+WA - Wait 5 (W8.5)
+<character> rests in the waiting area for half an hour. Closing time approaches.
+(Auto go back)
+
+WA - Wait 6 (W8.6)
+<character> rests in the waiting area. The Security Guard emerges from his office and escorts <character> out of the building as it is closing time. 
+(game failed) 
+
+
+R1 - Lift (LF)
+You walk over to the lift to take a closer look. There is a number pad and a card read next to the door 
+however above them is a seemly freshly printed piece of paper typed to the wall saying “Lift Out of Order”
+(Auto Go Back)
