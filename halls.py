@@ -117,7 +117,7 @@ def card_reader(game = N_game()):
         print_tab("You scan the Warehouse ID Card and an affirmative *beep* comes from the Card Reader." )
         print_tab("Pushing the door open, you enter the Warehouse.")
         pause()
-        warehouse()
+        warehouse(game)
     else:
         print_tab("You can try using your Guest ID Card however a down beat *boop* sound tells you that" )
         print_tab("it doesn't have an access level high enough to enter the Warehouse." )
