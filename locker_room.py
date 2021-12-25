@@ -38,8 +38,13 @@ def lockers(game = N_game()):
         print("")
         print_tab(pr_colour("l_blue","-- LOCKERS --") + "\n")
         print_tab("Enter the locker number you wish to search:" )
+        print_tab("You may need a " + pr_colour("l_blue","Hint") + " to start your search.")
         var, num = item_input()
-              
+        
+        if str(type(num)) != "<class 'int'>":
+            
+            var = san_text(var + str(num))
+        
         if var == "locker" and num > 0 and num < 31:
             clear_screen()
             print("")
@@ -79,7 +84,7 @@ def lockers(game = N_game()):
             pause()
             
         else:
-            hint = "Don't lick icy lamp posts"
+            hint = "Type: Locker 1"
             loop = game.basic_game_func(var, hint)
 
 def locker_21(game = N_game()):
