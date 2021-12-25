@@ -336,7 +336,7 @@ def phone(game = N_game()):
         while loop != 0:
             gap = gap + " "
             loop = loop -1
-        gap = gap + ":"
+        
             
     else:
         c_name = game.pc.character_name
@@ -510,9 +510,10 @@ def phone(game = N_game()):
                 
                 print_tab("*Call Disconnects*")
                 s_pause()
-                game.time_change = True
+                game.time_changed = True
             
         game.completed_spec_ob("Find a Phone to call Reception as " + game.pc.title + " Preston")        
+        s_pause()
         
         game.set_new_ob("Talk to the Receptionist to get ID Card")        
 
