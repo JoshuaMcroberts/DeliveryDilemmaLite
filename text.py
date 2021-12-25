@@ -151,7 +151,7 @@ def act_1_intro(courier, pc = Character()):
     clear_screen()
     print("")
     print_tab(pr_colour("l_blue","-- THE BEGINNING --") + "\n")
-    print_tab(char_name + "takes a long drive to the " + courier + " distribution center in West Devonshire. There is a slight ")
+    print_tab(char_name + " takes a long drive to the " + courier + " distribution center in West Devonshire. There is a slight ")
     print_tab("nip in the air as "+ pronoun2 +" parks on the street in front of the building which is set a bit off the road. Briskly, "+ pronoun2 )
     print_tab("Briskly, "+ pronoun2 +" walk towards the entrance. Passing through the front door and entering the reception area. ")
     pause()
@@ -164,10 +164,11 @@ def act_1_intro(courier, pc = Character()):
         print_tab("- Your goal is to find Uncle Jock's Parcel. To do this you must gain access to and search different")
         print_tab("  parts of the building. \n")
         print_tab("- As you move from room to room you will see objects highlighted like " + pr_colour("l_blue","This") + ".")
-        print_tab("  You can type these words interact with the room or object.\n")
+        print_tab("  You can type these words to interact with the room or object highlighted.\n")
         print_tab("- Type " + pr_colour("l_blue","Help") + " any time you see '>' for information on basic commands.\n")
         print_tab("Type " + pr_colour("l_blue","Ready") + " to continue.")
-        var = san_input()
+        var = input("\n\t: ")
+        var = san_text(var)
         
         if var == "ready":
             contin = True

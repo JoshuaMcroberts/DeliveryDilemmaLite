@@ -10,7 +10,6 @@ def locker_room(game = N_game()):
         clear_screen()
         print("")
         print_tab(pr_colour("l_blue","-- LOCKER ROOM --")+"\n")
-        print_tab("lockers")
         print_tab("The room is narrow and bordering three walls are a collection of storage lockers. ")
         print_tab("Ten full size " + pr_colour("l_blue","Lockers") + " are against the right-hand wall with a matching Ten opposite ")
         print_tab("them against the left-hand wall. The wall towards the back of the room is roughly ")
@@ -69,6 +68,8 @@ def lockers(game = N_game()):
                     print_tab("their neck and put it inside the locker. They then take out a lunch box and locking their locker behind ")
                     print_tab("them. As they exit the room they slip their locker key into the pocket of their worn work coat. ")
                     game.get_key = True
+                    game.set_new_ob("Follow the worker and find a way to get his locker key")
+                    s_pause()
                 else:
                     print_tab("You open " + pr_colour("l_blue","Locker " + str(num)) + " and find that it is empty.")
                
@@ -90,7 +91,15 @@ def locker_21(game = N_game()):
         print_tab("open and a security pass with the words 'Marvin Bleak - Warehouse Opts' on it. You take the pass ")
         print_tab("and relock the locker. ")
         game.locker_21_empty = True
+        s_pause()
+        game.completed_spec_ob("Open Locker 21")
+        s_pause()
+        # game.completed_spec_ob("Search Nearby for a Warehouse ID")
+        # s_pause()
+        game.set_new_ob("Enter the Warehouse")
+        s_pause()
         game.pc.add_inventory("Warehouse - ID Card")
+        
         
    
     elif bol and game.locker_21_empty:

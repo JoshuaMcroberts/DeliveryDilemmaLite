@@ -326,6 +326,8 @@ def phone(game = N_game()):
     space = "              "
     
     name_len = len(game.pc.char_name) 
+    # print_tab(str(name_len))
+    # s_pause()
     if name_len < 12:
         
         loop = 12 - name_len
@@ -334,6 +336,7 @@ def phone(game = N_game()):
         while loop != 0:
             c_name =  c_name + " "
             loop = loop -1
+        
             
     else:
         c_name = game.pc.character_name

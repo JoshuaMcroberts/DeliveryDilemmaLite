@@ -16,7 +16,7 @@ class N_game:
         self.courier = pr_colour("orange","Amazon")
         self.locker_21_empty = False
         self.get_key = False
-        self.objectives = [pr_colour("l_green","Find Uncle Jock's Parcel"), pr_colour("l_green","Find Warehouse")]
+        self.objectives = ["Find Uncle Jock's Parcel", "Find Warehouse"]
         self.boxes=[False, False, False, False, False, False, False, False, False]
         self.time_changed = False
         self.called = False 
@@ -107,8 +107,8 @@ class N_game:
         
     def display_ob_list(self):
 
-        for ob in self.objectives:
-           print_tab(pr_colour("l_green", "- ") + ob + "\n") 
+        for ob in reversed(self.objectives):
+           print_tab(pr_colour("l_green", "- " + ob + "\n")) 
     
     def completed_cur_ob(self):
         objective = self.objectives.pop()

@@ -88,7 +88,7 @@ def hall_5(game = N_game()):
             warehouse_door(game)
         
         else:
-            hint = "Don't lick icy lamp posts"
+            hint = "Make a good search of the locker room"
             loop = game.basic_game_func(var, hint)
             
 def warehouse_door(game = N_game()):
@@ -121,7 +121,10 @@ def card_reader(game = N_game()):
     else:
         print_tab("You can try using your Guest ID Card however a down beat *boop* sound tells you that" )
         print_tab("it doesn't have an access level high enough to enter the Warehouse." )
+        # s_pause()
+        # game.set_new_ob("Search Nearby for a Warehouse ID")      
         pause()  
+        
           
 def hall_3(game = N_game()):
     # Not Complete

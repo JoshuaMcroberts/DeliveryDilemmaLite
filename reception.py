@@ -99,6 +99,7 @@ def receptionist(game = N_game()):
     space = "              "
     
     name_len = len(game.pc.char_name) 
+    
     if name_len < 12:
         
         loop = 12 - name_len
@@ -106,7 +107,7 @@ def receptionist(game = N_game()):
         
         while loop != 0:
             c_name =  c_name + " "
-            loop = loop -1
+            loop -= 1
             
     else:
         c_name = game.pc.character_name
@@ -202,6 +203,8 @@ def receptionist(game = N_game()):
             print_tab(c_name+": I'm sure I'll find some way of passing the time.")
             s_pause()
             
+        game.completed_spec_ob("Talk to the Receptionist to get ID Card")   
+        s_pause()
             
 def notepad(game = N_game()):
     clear_screen()
