@@ -119,6 +119,7 @@ def bin_can(game = N_game()):
                 pause() 
         else:
             var = "1"
+            contin = True
     
     if var == "1":
         clear_screen()
@@ -297,16 +298,14 @@ def sec_lockers(game = N_game()):
 
 
 def monitor(game = N_game()):
-    loop = True
-    while loop:
-        clear_screen()
-        print("")
-        print_tab(pr_colour("l_blue","-- MONITER --")+"\n")
-        print_tab(game.pc.character_name + " looks at the monitor and sees a Word Document is opened with the title of")
-        print_tab("'How Can Planes Fly Upside Down?'. There doesn't seem to have been much progress made.")
-        print_tab("A couple of tabs in the browser show some signs of the pursuit of the thesis however ")
-        print_tab("the user seems to have been distracted by cat videos on YouTube. Not much of value here.")
-        pause()
+    clear_screen()
+    print("")
+    print_tab(pr_colour("l_blue","-- MONITER --")+"\n")
+    print_tab(game.pc.character_name + " looks at the monitor and sees a Word Document is opened with the title of")
+    print_tab("'How Can Planes Fly Upside Down?'. There doesn't seem to have been much progress made.")
+    print_tab("A couple of tabs in the browser show some signs of the pursuit of the thesis however ")
+    print_tab("the user seems to have been distracted by cat videos on YouTube. Not much of value here.")
+    pause()
     
 def dialling():
     for i in range(2):
