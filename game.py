@@ -22,6 +22,7 @@ class N_game:
         self.called = False 
         self.worker = True
         self.recep = pr_colour("pink","Receptionist")
+        self.full_bin = False
     
     def set_boxes(self,box):
         box = box - 1
@@ -96,7 +97,7 @@ class N_game:
             return True  
     
     def set_new_ob(self, objective):
-        self.objectives.append(pr_colour("l_green", objective))
+        self.objectives.append(objective)
         print("")
         print(pr_colour("l_green","\t\tNew Objective Added: \t" + objective))
         
