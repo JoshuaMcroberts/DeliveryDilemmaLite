@@ -70,6 +70,12 @@ class N_game:
             pause()
             return True  
         
+        elif var == "state":
+            clear_screen()
+            self.display_game_state()
+            pause()
+            return True  
+        
         elif var == "hint":
             print("")
             print("\tHint -", end="")                                                                         
@@ -167,6 +173,7 @@ class N_game:
             print("")
             print_tab(pr_colour("l_blue","-- GAME SETUP--") + "\n")
             en_name = input("\tPlease enter your "+ pr_colour( "l_yellow","First Name") +": ")
+            plate_name = san_text(en_name)
             en_name = pr_colour("l_blue", en_name)
             
             
@@ -190,10 +197,7 @@ class N_game:
                     print()
                     print_tab("Enter Y for Yes or N for No")
                     pause()
-        
-        
-        plate_name = san_text(en_name)
-        
+                
         num_plate = 0
         for name, num in tup_list:
             if plate_name == name:
@@ -213,7 +217,38 @@ class N_game:
         self.pc.set_char_name(name)
         self.pc.set_pronouns(gen)
         
+    def display_game_state(self):
+        clear_screen()
+        print_tab("__ GAME STATE __")
+        print_tab("Player Name       : " + str(self.player_name))
+        print_tab("Number Plate      : " + str(self.number_plate))
+        print_tab("Number Plate Unfor: " + str(self.unformated_plate))
+        print_tab("Game Over         : " + str(self.game_over))
+        print_tab("Sec Guard         : " + str(self.sec_gar ))
+        print_tab("Sec Guard Ang     : " + str(self.sec_gar_level))
+        print_tab("Wait              : " + str(self.wait))
+        print_tab("Preston           : " + str(self.preston))
+        print_tab("Courier           : " + str(self.courier))
+        print_tab("Locker 21         : " + str(self.locker_21_empty))
+        print_tab("Get Key           : " + str(self.get_key))
         
+        print_tab("Boxes             : " + str(self.boxes))
+        print_tab("Time Changed      : " + str(self.time_changed))
+        print_tab("Phone call        : " + str(self.called))
+        print_tab("Bin Full          : " + str(self.full_bin ))
+             
+        print_tab("Character Name    : " + str(self.pc.character_name))
+        print_tab("Char Name         : " + str(self.pc.char_name))
+        print_tab("Gender            : " + str(self.pc.gender ))
+        print_tab("Pro 1             : " + str(self.pc.pronoun1))
+        print_tab("Pro 2             : " + str(self.pc.pronoun2))
+        print_tab("Pro 3             : " + str(self.pc.pronoun3))
+        print_tab("Title             : " + str(self.pc.title))
+        print_tab("Preston First     : " + str(self.pc.p_name))
+        self.pc.display_inventory()
+        self.display_ob_list()
+        
+       
     # ENTER CHARACTER NAME    
     def enter_character_name(self):
         
@@ -223,15 +258,14 @@ class N_game:
             print("")
             print_tab(pr_colour("l_blue","-- GAME SETUP --") + "\n")
             character_name = input("\tPlease enter your "+ pr_colour( "l_yellow","Characters name") +": ")
-            character_name = pr_colour("l_blue", character_name)
-            
+                       
             
             val2 = False
             while not val2:
                 clear_screen()
                 print("")
                 print_tab(pr_colour("l_blue","-- GAME SETUP --") + "\n")
-                print_tab("You have entered: " + character_name)
+                print_tab("You have entered: " + pr_colour("l_blue", character_name))
                 val = input("\tIs this correct? (Y/N): ")
                 
                 val = san_text(val)
