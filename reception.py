@@ -326,7 +326,7 @@ def waiting_area(game = N_game()):
                     print("")
                     print_tab(pr_colour("l_blue","-- WAIT " + str(wait+1) +" --") + "\n")
                     print_tab(char_name + " rests in the waiting area for half an hour. A delivery man enters the reception and drags a")
-                    print_tab("sack truck across the floor which appears to have one flat wheeintelligentl. The security guard emerges from")
+                    print_tab("sack truck across the floor which appears to have one flat wheel. The security guard emerges from")
                     print_tab("his office and escorts the delivery man through the glass door and then back out again after another")
                     print_tab("10 minutes has passed.")
                     wait += 1
