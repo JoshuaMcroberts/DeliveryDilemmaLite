@@ -131,9 +131,8 @@ def hall_3(game = N_game()):
         clear_screen()
         print("")
         print_tab(pr_colour("l_blue","-- HALL WAY (3) --") + "\n")
-        print_tab("supplycart forward back.")
-        print_tab("")
-        print_tab("")
+        print_tab("The corridor continues on " + pr_colour("l_blue","Forward") + " with the odd light overhead having blown its bulb. A few paces")
+        print_tab("ahead of you a janitors " + pr_colour("l_blue","Supply Cart") + " sits unattended. Apart of it this section of the hallway is bare.")
         var = san_input()
         
         
@@ -154,9 +153,8 @@ def supply_cart(game = N_game()):
     clear_screen()
     print("")
     print_tab(pr_colour("l_blue","-- CLEANING SUPPLY CART --") + "\n")
-    print_tab("")
-    print_tab("")
-    print_tab("")
+    print_tab("The supply cart has a number of different items used to resupply toilets, A few toilet rolls, some")
+    print_tab("liquid soap refills and a three packs of paper towel refills. ")
     pause()
 
 def hall_4(game = N_game()):
@@ -167,9 +165,8 @@ def hall_4(game = N_game()):
         clear_screen()
         print("")
         print_tab(pr_colour("l_blue","-- HALL WAY (4) --") + "\n")
-        print_tab("stairs right back.")
-        print_tab("")
-        print_tab("")
+        print_tab("At this point the long straight main corridor comes to a stop in its forward direction. It carries on to")
+        print_tab("the " + pr_colour("l_blue","Right") + "a bit further. On the left there is a door marked as " + pr_colour("l_blue","Stairs") + ".")
         var = san_input()
         
         
@@ -188,10 +185,9 @@ def stairs(game = N_game()):
     # Not Complete
     clear_screen()
     print("")
-    print_tab(pr_colour("l_blue","-- STAIR WELL --") + "\n")
-    print_tab("")
-    print_tab("")
-    print_tab("")
+    print_tab(pr_colour("l_blue","-- DOOR TO STAIRS --") + "\n")
+    print_tab("On closer inspection the door to the stairs appears to have a notice posted on it. The notice reads:")
+    print_tab("'Stairs out of use due to construction. Please use Lift.'")
     pause()
 
        
@@ -203,9 +199,9 @@ def hall_6(game = N_game()):
         clear_screen()
         print("")
         print_tab(pr_colour("l_blue","-- HALL WAY (6) --") + "\n")
-        print_tab("toilets fireexit back.")
-        print_tab("")
-        print_tab("")
+        print_tab("This section of the corridor is a bit colder than the others and a draft makes the hairs on the back of")
+        print_tab("you're neck stand on end. You look ahead and see a " + pr_colour("l_blue","Fire Exit") + ". You assume this is what it creating")
+        print_tab("the draft. On your left are a set of doors marked as " + pr_colour("l_blue","Toilets") + " one for men and one for women. ")
         var = san_input()
         
         
@@ -224,9 +220,8 @@ def toilets(game = N_game()):
     clear_screen()
     print("")
     print_tab(pr_colour("l_blue","-- TOILETS --") + "\n")
-    print_tab("")
-    print_tab("")
-    print_tab("")
+    print_tab("The door of the male toilets looks more used with the paint around the bottom chipping from")
+    print_tab("impacts with work boots. You don’t feel any need to use the toilets so you move on.")
     pause()
     
 def fire_exit(game = N_game()):
@@ -234,9 +229,9 @@ def fire_exit(game = N_game()):
     clear_screen()
     print("")
     print_tab(pr_colour("l_blue","-- FIRE EXIT --") + "\n")
-    print_tab("")
-    print_tab("")
-    print_tab("")
+    print_tab("Stepping up to the Fire Exit you see that a strip of foam that had be excluding the draft has come")
+    print_tab("away from the bottom of the door. A sticker on the door reads: ‘Warning: This door is Alarmed’.")
+    print_tab("Not knowing what you did to alarm the door, you step back into the corridor. ")
     pause()
 
 
