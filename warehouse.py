@@ -48,9 +48,12 @@ def shelves(game = N_game()):
         print_tab("The sorting area is broken down into postcodes and forwarding piles. Some to be shipped to other")
         print_tab("distribution centres and others to be delivered to the local area. In the forwarding section ")
         print_tab("there are a number of parcels to be sent however only four of them match the size of the parcel")
-        print_tab("you are looking for. Have a look around at the parcels.")
+        print_tab("you are looking for. Have a look around at the parcels. You may need a " + pr_colour("l_blue","Hint") + " to start your search.")
         var, num = item_input()
- 
+    
+        if str(type(num)) != "<class 'int'>":
+            
+            var = san_text(var + str(num))
         
         if var == "parcel" and num < 5 and num > 0:
             boxes(1 ,num, game)
@@ -147,8 +150,12 @@ def rollercage(game = N_game()):
         print_tab(pr_colour("l_blue","-- ROLLER CAGE --") + "\n")
         print_tab("Three parcel lie in an almost tower like structure in the bottom of the Roller Cage. Most of ")
         print_tab("the labels are obscured. You can take a closer look at each parcel to see its shipping label.")
+        print_tab("You may need a " + pr_colour("l_blue","Hint") + " to start your search.")
         var, num = item_input()
- 
+
+        if str(type(num)) != "<class 'int'>":
+            
+            var = san_text(var + str(num))
 
         if var == "parcel" and num <4 and num > 0:
             boxes( 2 ,num, game)
@@ -407,5 +414,5 @@ def office_empty(game = N_game()):
 if __name__ == "__main__":
     game = N_game()
     game.set_num_plate(" KLZ 9890 ")
-    computer(game)
-    # warehouse(game)
+    # computer(game)
+    warehouse(game)
