@@ -40,7 +40,8 @@ def pr_colour(colour, text):
                ("p_force", '\033[38;5;195m\033[48;5;160m\033[1m'),
                ("ups", '\033[38;5;11m\033[48;5;52m'),
                ("fed", '\033[38;5;18m\033[48;5;153m\033[1m'),
-               ("ex", '\033[38;5;166m\033[48;5;153m\033[1m')
+               ("ex", '\033[38;5;166m\033[48;5;153m\033[1m'),
+               ("l_blue_blink",'\033[5m\033[38;5;74m' )
                ]
     
     for col in colours:
@@ -124,14 +125,10 @@ if __name__ == "__main__":
     
     # TEST PR_COLOUR
     print("\nTEST pr_colour Examples:")
-    print(pr_colour("orange","1 RED"))
-    # print(pr_colour(2,"2 GREEN"))
-    # print(pr_colour(3,"3 YELLOW"))
-    # print(pr_colour(4,"4 BLUE"))
-    # print(pr_colour(5,"5 PINK"))\033[38;5;6m
-    # print(pr_colour(6,"6 CgreYAN"))
-    # print(pr_colour(7,"7 LIGHT GREY?"))
-    # print(pr_colour(8,"8 BLACK?"))
+    print(pr_colour("blue_blink","1 RED"))
+
+    for i in range(25):
+        print("\033["+str(i)+"mWords"+str(i)+"\033[0m")
     
 
 
