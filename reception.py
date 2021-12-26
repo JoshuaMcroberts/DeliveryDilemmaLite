@@ -221,37 +221,41 @@ def notepad(game = N_game()):
 def glass_door(game = N_game()):
     loop = True
     while loop:
-        clear_screen()
-        print("")
-        print_tab(pr_colour("l_blue","-- GLASS DOOR --") + "\n")
-        print_tab("You approach the glass door and see next to it on the wall a small electronic pad.")
-        print_tab("It looks like a " + pr_colour("l_blue", "Card Reader") + ". You can see the hallway beyond with a few doors ")
-        print_tab("leading off to either side.")
-        var = san_input()
-        
-        
-        if var == "cardreader":
-            card_reader(game)
+        if(game.game_over == False):
+            clear_screen()
+            print("")
+            print_tab(pr_colour("l_blue","-- GLASS DOOR --") + "\n")
+            print_tab("You approach the glass door and see next to it on the wall a small electronic pad.")
+            print_tab("It looks like a " + pr_colour("l_blue", "Card Reader") + ". You can see the hallway beyond with a few doors ")
+            print_tab("leading off to either side.")
+            var = san_input()
             
+            
+            if var == "cardreader":
+                card_reader(game)
+                
+            else:
+                hint = "Don't lick icy lamp posts"
+                loop = game.basic_game_func(var, hint)
         else:
-            hint = "Don't lick icy lamp posts"
-            loop = game.basic_game_func(var, hint)
+            loop = False
 
 
 def card_reader(game = N_game()):
-    clear_screen()
-    print("")
-    print_tab(pr_colour("l_blue","-- CARD READER --") + "\n")
-    check = game.pc.check_inventory("Guest - ID Card")
-    if check:
-        print_tab("You scan the ID Card and the card reader makes a short affirmative *beep*." )
-        print_tab("With that the two glass panels glide apart and you pass through into the" )
-        print_tab("hallway beyond.")
-        pause()      
-        hall_1(game)
-    else:
-        print_tab("You have no card to scan." )
-        pause()
+    if(game.game_over == False):
+        clear_screen()
+        print("")
+        print_tab(pr_colour("l_blue","-- CARD READER --") + "\n")
+        check = game.pc.check_inventory("Guest - ID Card")
+        if check:
+            print_tab("You scan the ID Card and the card reader makes a short affirmative *beep*." )
+            print_tab("With that the two glass panels glide apart and you pass through into the" )
+            print_tab("hallway beyond.")
+            pause()      
+            hall_1(game)
+        else:
+            print_tab("You have no card to scan." )
+            pause()
         
     
 
@@ -352,7 +356,7 @@ def waiting_area(game = N_game()):
                     clear_screen()
                     print("")
                     print_tab(pr_colour("l_blue","-- WAIT " + str(wait+1) +" --") + "\n")
-                    print_tab(char_name + " rests in the waiting area. The Security Guard emerges from his office and escorts <character>")
+                    print_tab(char_name + " rests in the waiting area. The Security Guard emerges from his office and escorts " + char_name)
                     print_tab("out of the building as it is closing time. ")
                     print_tab("Game Over")
                     game.game_over = True
