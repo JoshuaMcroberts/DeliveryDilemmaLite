@@ -23,6 +23,7 @@ class N_game:
         self.worker = True
         self.recep = pr_colour("pink","Receptionist")
         self.full_bin = False
+        
     
     def set_boxes(self,box):
         box = box - 1
@@ -329,12 +330,14 @@ class Character:
             self.pronoun3 = "him"
             self.title = "Mr"
             self.p_name = "James"
+            self.bi_gen = "man"
         else:
             self.pronoun1 = "her"
             self.pronoun2 = "she"
             self.pronoun3 = "her"
             self.title = "Miss"
             self.p_name = "Gina"
+            self.bi_gen = "woman"
     
     def get_pronouns(self):
         return self.pronoun1, self.pronoun2, self.pronoun3
