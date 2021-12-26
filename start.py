@@ -23,6 +23,9 @@ def game_intro():
     print(pr_colour("l_blue","\n\tWelcome to Delviery Dilemma"))
     s_pause()
 
+# DISPLAYS AME OVER ASCII ART
+def game_over():
+    ascii_game_over()
 
 # GAME FUNCTION
 def new_game():
@@ -37,6 +40,7 @@ def new_game():
     pause()
     act_1_intro(cour, pc)
     recep(game)
+    game_over()
 
 def menu():
     ext = False
