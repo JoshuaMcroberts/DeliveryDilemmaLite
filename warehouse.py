@@ -48,10 +48,11 @@ def shelves(game = N_game()):
         clear_screen()
         print("")
         print_tab(pr_colour("l_blue","-- SORTING AREA --") + "\n")
-        print_tab("The sorting area is broken down into postcodes and forwarding piles. Some to be shipped to other")
-        print_tab("distribution centres and others to be delivered to the local area. In the forwarding section ")
-        print_tab("there are a number of parcels to be sent however only four of them match the size of the parcel")
-        print_tab("you are looking for. Have a look around at the parcels. You may need a " + pr_colour("l_blue","Hint") + " to start your search.")
+        print_tab("The sorting area is broken down into postcodes and forwarding piles. Some to be shipped to ")
+        print_tab("other distribution centres and others to be delivered to the local area. In the forwarding  ")
+        print_tab("section there are a number of parcels to be sent however only four of them match the size of ")
+        print_tab("the parcel you are looking for. Have a look around at the parcels. You may need a " + pr_colour("l_blue","Hint") + " to ")
+        print_tab("start your search.")
         var, num = item_input()
     
         if str(type(num)) != "<class 'int'>":
@@ -206,8 +207,9 @@ def computer(game = N_game()):
     clear_screen()
     print("")
     print_tab(pr_colour("l_blue","-- COMPUTER --")+"\n")
-    print_tab("You unlock the computer to find a parcel management system loaded on the screen. On the display ")
-    print_tab("different numbers show how many parcels will be shipped to each of the surrounding towns. ")
+    print_tab("You unlock the computer to find a parcel management system loaded on the screen. On the  ")
+    print_tab("display different numbers show how many parcels will be shipped to each of the surrounding  ")
+    print_tab("towns.")
     s_pause()
     
     print_tab("You select the search function and enter the tracking number of Uncle Jocks parcel.")
@@ -243,8 +245,8 @@ def computer(game = N_game()):
     clear_screen()
     print("")
     print_tab(pr_colour("l_blue","-- COMPUTER --")+"\n")
-    print_tab("After skimming over the details you realise that the parcel in no longer in the warehouse but ")
-    print_tab("instead in a vehicle waiting to be delivered.")
+    print_tab("After skimming over the details you realise that the parcel in no longer in the warehouse ")
+    print_tab("but instead in a vehicle waiting to be delivered.")
     s_pause()
     
     print_tab("You select the Current Location field and a vehicle record opens.")
@@ -272,7 +274,7 @@ def computer(game = N_game()):
     print_tab("You now have the vehicle information. "+ game.player_name +" it is up to you! ")
     s_pause()
     
-    game.set_new_ob("Find Uncle Jock's Parcel in the Vehicle with the REG: " + game.number_plate )
+    game.set_new_ob("Find Uncle Jock's Parcel in a Vehicle with REG: " + game.number_plate )
     
     s_pause()
     loop = True
@@ -445,5 +447,5 @@ def office_empty(game = N_game()):
 if __name__ == "__main__":
     game = N_game()
     game.set_num_plate(" KLZ 9890 ")
-    # computer(game)
-    warehouse(game)
+    computer(game)
+    # warehouse(game)

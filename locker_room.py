@@ -92,9 +92,9 @@ def locker_21(game = N_game()):
     bol = game.pc.check_inventory("Locker 21 - Key")
     
     if bol and game.locker_21_empty == False:
-        print_tab("You slide the key for locker 21 into the lock and open it. Inside the locker is a black backpack which is ")
-        print_tab("open and a security pass with the words 'Marvin Bleak - Warehouse Opts' on it. You take the pass ")
-        print_tab("and relock the locker. ")
+        print_tab("You slide the key for locker 21 into the lock and open it. Inside the locker is a black ")
+        print_tab("backpack which is open and a security pass with the words 'Marvin Bleak - Warehouse Opts' ")
+        print_tab("on it. You take the pass and relock the locker. ")
         game.locker_21_empty = True
         s_pause()
         game.completed_spec_ob("Open Locker 21")
@@ -108,9 +108,9 @@ def locker_21(game = N_game()):
         
    
     elif bol and game.locker_21_empty:
-        print_tab("You slide the key for locker 21 into the lock and open it. Inside the locker is a black backpack which is ")
-        print_tab("open and seems to have had a box removed from it. Nothing useful here, you close and relock the locker.")
-    
+        print_tab("You slide the key for locker 21 into the lock and open it. Inside the locker is a black  ")
+        print_tab("backpack which is open and seems to have had a box removed from it. Nothing useful here, ")
+        print_tab("you close and relock the locker.")
     else:
         print_tab("You go to open " + pr_colour("l_blue","Locker 21") + " but it appears to be locked.")
     

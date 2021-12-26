@@ -127,16 +127,17 @@ def receptionist(game = N_game()):
             print_tab(c_name + gap +": Hi there, I'm " + game.pc.title +" Preston…")
             s_pause()
             
-            print_tab(game.recep +": Ah yes, Hello " + game.pc.title +" Preston. I'm afraid to tell you that Mr Barber will be in at 14:30 ")
-            print_tab(space +"and is unreachable until then. You can wait for him in his office, his PA should be")
-            print_tab(space + "there.")
+            print_tab(game.recep +": Ah yes, Hello " + game.pc.title +" Preston. I'm afraid to tell you that Mr Barber will be in at")
+            print_tab(space +"14:30 and is unreachable until then. You can wait for him in his office, his ")
+            print_tab(space + "PA should be there.")
             s_pause()
             
             
             print_tab(c_name + gap + ": Oh that's a shame, but yes I'll do that.")
             s_pause()
              
-            print_tab(game.recep +": OK, here is your Guest Pass, make sure to return that to me when you are leaving.")
+            print_tab(game.recep +": OK, here is your Guest Pass, make sure to return that to me when you are ")
+            print_tab(space + "leaving.")
             game.pc.add_inventory("Guest - ID Card")
             s_pause()
 
@@ -168,17 +169,17 @@ def receptionist(game = N_game()):
             print_tab(c_name + gap + ": I'm " + game.pc.title + " Preston. We spoke on the phone?")
             s_pause()
              
-            print_tab(game.recep +": Oh Yes sorry, everything is crazy with the Christmas rush, our last deliveries are ")
-            print_tab(space + "due to go out next week. Are you not a bit earlier than your appointment?")
+            print_tab(game.recep +": Oh Yes sorry, everything is crazy with the Christmas rush, our last deliveries  ")
+            print_tab(space + "are due to go out next week. Are you not a bit earlier than your appointment?")
             s_pause()
             
-            print_tab(c_name + gap + ": Ah yes, unfortunately my pervious engagement was cancelled so I thought I might come   ")
-            print_tab(space + "down here early to see if Mr Barber was available now.")
+            print_tab(c_name + gap + ": Ah yes, unfortunately my pervious engagement was cancelled so I thought I might   ")
+            print_tab(space + "come down here early to see if Mr Barber was available now.")
             s_pause()
             
             
-            print_tab(game.recep +": I'm sorry to have to tell you this but Mr Barber won't be in the office until 14:30 ")
-            print_tab(space + "at the earliest.")
+            print_tab(game.recep +": I'm sorry to have to tell you this but Mr Barber won't be in the office until ")
+            print_tab(space + "14:30 at the earliest.")
             s_pause()
             
             print_tab(c_name + gap + ": In that case, is it alright if I wait for him in his office?")
@@ -191,7 +192,8 @@ def receptionist(game = N_game()):
             print_tab(c_name + gap + ": Thats great, Thank you.")
             s_pause()
             
-            print_tab(game.recep +": Ok, here is your Guest ID Card. Make sure to leave that in with me on your way out.")
+            print_tab(game.recep +": Ok, here is your Guest ID Card. Make sure to leave that in with me on your ")
+            print_tab(space + "way out.")
             game.pc.add_inventory("Guest - ID Card")
             s_pause()
 
@@ -211,9 +213,9 @@ def notepad(game = N_game()):
     clear_screen()
     print("")
     print_tab(pr_colour("l_blue","-- Notepad --") + "\n")
-    print_tab("Reading the notepad upside down and slightly sideways, you see the words written: “Guest Pass for new ")
-    print_tab("salesman " + game.pc.title + " Preston - Expected @14:45”. This gives you an idea! You could call reception and pretend to ")
-    print_tab("be '" + game.pc.title + " Preston'. Now all you have to do is find another phone! ")
+    print_tab("Reading the notepad upside down and slightly sideways, you see the words written: “Guest ")
+    print_tab("Pass for new sales" + game.pc.bi_gen + " " + game.pc.title + " Preston - Expected @14:45”. This gives you an idea! You could call ")
+    print_tab("reception and pretend to be '" + game.pc.title + " Preston'. Now all you have to do is find another phone! ")
     game.set_new_ob("Find a Phone to call Reception as " + game.pc.title + " Preston")
     game.preston = True
     pause()
@@ -329,10 +331,10 @@ def waiting_area(game = N_game()):
                     clear_screen()
                     print("")
                     print_tab(pr_colour("l_blue","-- WAIT " + str(wait+1) +" --") + "\n")
-                    print_tab(char_name + " rests in the waiting area for half an hour. A delivery man enters the reception and drags a")
-                    print_tab("sack truck across the floor which appears to have one flat wheel. The security guard emerges from")
-                    print_tab("his office and escorts the delivery man through the glass door and then back out again after another")
-                    print_tab("10 minutes has passed.")
+                    print_tab(char_name + " rests in the waiting area for half an hour. A delivery man enters the reception and ")
+                    print_tab("drags a sack truck across the floor which appears to have one flat wheel. The security guard ")
+                    print_tab("emerges from his office and escorts the delivery man through the glass door and then back out ")
+                    print_tab("again after another 10 minutes has passed.")
                     wait += 1
                     pause()
                     
@@ -358,7 +360,8 @@ def waiting_area(game = N_game()):
                     print_tab(pr_colour("l_blue","-- WAIT " + str(wait+1) +" --") + "\n")
                     print_tab(char_name + " rests in the waiting area. The Security Guard emerges from his office and escorts " + char_name)
                     print_tab("out of the building as it is closing time. ")
-                    print_tab("Game Over")
+                    s_pause()
+                    print_tab("Your attempt has failed.")
                     game.game_over = True
                     pause()
                 
@@ -376,8 +379,9 @@ if __name__ == "__main__":
     game.pc.add_inventory("Guest - ID Card")
     game.pc.add_inventory("Warehouse - ID Card")
     game.pc.set_pronouns("male")
-    # game.called = True
-    # game.time_changed =True
-    recep(game)
-    # receptionist(game)
+    # game.
+    game.called = True
+    game.time_changed = False
+    # recep(game)
+    receptionist(game)
 
