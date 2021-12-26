@@ -13,7 +13,10 @@
 
 4. Find the file 'start.py' and run it with the following command.
 
-    python3 start.py
+   ```
+   python3 start.py
+   
+   ```
 ## Coloured Text
 https://misc.flogisoft.com/bash/tip_colors_and_formatting
 
