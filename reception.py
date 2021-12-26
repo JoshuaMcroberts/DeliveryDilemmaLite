@@ -124,7 +124,7 @@ def receptionist(game = N_game()):
             clear_screen()
             print("")
             print_tab(pr_colour("l_blue","-- CONVERSATION WITH RECEPTIONIST --")+"\n")
-            print_tab(c_name +": Hi there, I'm " + game.pc.title +" Preston…")
+            print_tab(c_name + gap +": Hi there, I'm " + game.pc.title +" Preston…")
             s_pause()
             
             print_tab(game.recep +": Ah yes, Hello " + game.pc.title +" Preston. I'm afraid to tell you that Mr Barber will be in at 14:30 ")
