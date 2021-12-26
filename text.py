@@ -1,5 +1,6 @@
 from libraries import *
 from game import Character
+import time
 
 def ascii_del_dil():
     row_1 = "\n      ____       __ _                         ____  _ __                              \n"
@@ -10,6 +11,34 @@ def ascii_del_dil():
     row_6 = "                                 /____/                                               \n"
     title = row_1 + row_2 + row_3 + row_4 + row_5 + row_6
     print(pr_colour("l_blue",title))
+
+def ascii_game_over():
+    row_1 = "\n                   ______                        ____                 \n"
+    row_2 = "                  / ____/___ _____ ___  ___     / __ \_   _____  _____\n"
+    row_3 = "                 / / __/ __ `/ __ `__ \/ _ \   / / / / | / / _ \/ ___/\n"
+    row_4 = "                / /_/ / /_/ / / / / / /  __/  / /_/ /| |/ /  __/ /    \n"
+    row_5 = "                \____/\__,_/_/ /_/ /_/\___/   \____/ |___/\___/_/     \n"
+    row_6 = "\n"
+    game_over = row_1 + row_2 + row_3 + row_4 + row_5 + row_6
+    
+    row_1 = "\n   _____ __             __                      ___                __          _          \n"
+    row_2 = "  /_  __/ /  ___ ____  / /__  __ _____  __ __  / _/__  ____  ___  / /__ ___ __/_/__  ___ _\n"
+    row_3 = "   / / / _ \/ _ `/ _ \/  '_/ / // / _ \/ // / / _/ _ \/ __/ / _ \/ / _ `/ // / / _ \/ _ `/\n"
+    row_4 = "  /_/ /_//_/\_,_/_//_/_/\_\  \_, /\___/\_,_/ /_/ \___/_/   / .__/_/\_,_/\_, /_/_//_/\_, / \n"
+    row_5 = "                            /___/                         /_/          /___/       /___/  \n"
+    row_6 = "\n"
+    thanks = row_1 + row_2 + row_3 + row_4 + row_5 + row_6
+    
+    clear_screen()
+    print(pr_colour("l_blue_blink",game_over))
+    print(pr_colour("l_blue",thanks))
+    time.sleep(5)
+    clear_screen()
+    print(pr_colour("l_blue",game_over))
+    print(pr_colour("l_blue",thanks))                                              
+    s_pause()
+    print_tab(pr_colour("l_blue","If you did not find the Parcel retry and make smarter choices this time round!"))
+    s_pause()
 
 def act_1_intro(courier, pc = Character()):
     
@@ -178,11 +207,8 @@ def act_1_intro(courier, pc = Character()):
             print_tab("Incorrect entry. Type 'Ready'")
             pause()
     
-
-     
-    
-    
      
     
 if __name__ == "__main__":
-    act_1_intro("Bob", "his", "he", "him", " UPS ")
+    #act_1_intro("Bob", "his", "he", "him", " UPS ")
+    ascii_game_over()
