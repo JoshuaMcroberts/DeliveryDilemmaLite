@@ -44,7 +44,7 @@ def worker_1(game = N_game()):
         
         clear_screen()
         print("")
-        print_tab(pr_colour("l_blue","-- Worker 1 --")+"\n")
+        print_tab(pr_colour("l_blue","-- WORKER 1 --")+"\n")
         print_tab("worker1 worker2 fridge coatrack bench ")
         print_tab("")
         print_tab("")
@@ -65,30 +65,14 @@ def worker_2(game = N_game()):
     pause()
 
 def fridge(game = N_game()):
-    loop = True
-    while loop:
-        
-        clear_screen()
-        print("")
-        print_tab(pr_colour("l_blue","-- FRIDGE --")+"\n")
-        print_tab("egg lunchbox back ")
-        print_tab("")
-        print_tab("")
-        var = san_input()
-        
-       
-        # Navigation IF  
-        if var  == "egg":
-            egg(game)
-            
-        elif var == "lunchbox":
-            lunch_box(game)
-
-        
-        else:
-            hint = "Don't lick icy lamp posts"
-            loop = game.basic_game_func(var, hint)
-            
+    clear_screen()
+    print("")
+    print_tab(pr_colour("l_blue","-- FRIDGE --")+"\n")
+    print_tab("You move over to the fridge and notice that the exterior hasn’t been wiped down in a long while.")
+    print_tab("You open the door and take note that there is a plastic case of eggs and a single loaf of bread. In")
+    print_tab("contrast with the exterior, the interior of the fridge looks like it is cleaned out regularly. Not much")
+    print_tab("of use in here.")
+    pause()
 
 
 
@@ -113,10 +97,11 @@ def bench(game = N_game()):
     while loop:
         clear_screen()
         print("")
-        print_tab(pr_colour("l_blue","-- Bench --") + "\n")
-        print_tab("microwave toaster back")
-        print_tab("")
-        print_tab("")
+        print_tab(pr_colour("l_blue","-- BENCH --") + "\n")
+        print_tab("Wrapping the back wall and round to the right hand side of the room, the bench creates a convenient")
+        print_tab("area for people to stand around for a coffee break or an adequate work top for food preparation.")
+        print_tab("Setting on the bench are two electrical appliances. One being a " + pr_colour("l_blue","Toaster")+ " and the other being a")
+        print_tab(pr_colour("l_blue","Microwave")+ ". Both look a little worse for ware.  ")
         var = san_input()
         
         if var == "microwave":
@@ -133,32 +118,23 @@ def toaster(game = N_game()):
     clear_screen()
     print("")
     print_tab(pr_colour("l_blue","-- TOASTER --") + "\n")
-    print_tab("You walk over to the lift to take a closer look. There is a number pad and")
-    print_tab("a card reader next to the door however above them is a seemingly freshly")
-    print_tab("printed piece of paper taped to the wall saying “Out of Order”")
+    print_tab("You look into the toaster and see a lifetimes accumulation of bread crumbs gathered at the bottom")
+    print_tab("of it bread toasting wells. You think to yourself that it is a fire just waiting to happen. Looking at the")
+    print_tab("power cable also makes you bristle as you see the cable has been cut and spliced onto a different")
+    print_tab("plug and some electrical tape has been crudely employed as to cover up the poor workmanship. You")
+    print_tab("stop inspecting the toaster and step back tot he centre of the room.")
     pause()
 
 def microwave(game = N_game()):
-    
-    loop = True
-    while loop:  
-        clear_screen()
-        print("")
-        print_tab(pr_colour("l_blue","-- MICROWAVE --") + "\n")
-        print_tab("heat back")
-        print_tab("It looks like a " + pr_colour("l_blue", "Card Reader") + ". You can see the hallway beyond with a few doors ")
-        print_tab("leading off to either side.")
-        var = san_input()
-        
-        
-        if var == "heat":
-           
-            print_tab("heat")
-            pause()
-        
-        else:
-            hint = "Don't lick icy lamp posts"
-            loop = game.basic_game_func(var, hint)
+    clear_screen()
+    print("")
+    print_tab(pr_colour("l_blue","-- MICROWAVE --") + "\n")
+    print_tab("You open the microwave to take a look and find it is by far the most well used appliance in the")
+    print_tab("canteen. You draw this conclusion from the numerous different colours of stains on its interior that")
+    print_tab("mark each time a new food stuff has been heated or over heated inside it. You quickly shut the")
+    print_tab("microwave door and step back just in time as a stale heated smell starts to rise to your nose. You")
+    print_tab("probably shouldn’t open that again.")
+    pause()
 
 
 
