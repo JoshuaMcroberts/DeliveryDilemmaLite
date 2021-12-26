@@ -16,7 +16,7 @@ class N_game:
         self.courier = pr_colour("orange","Amazon")
         self.locker_21_empty = False
         self.get_key = False
-        self.objectives = ["Find Uncle Jock's Parcel", "Find Warehouse"]
+        self.objectives = []
         self.boxes=[False, False, False, False, False, False, False, False, False]
         self.time_changed = False
         self.called = False 
@@ -75,13 +75,6 @@ class N_game:
             self.display_game_state()
             pause()
             return True  
-        
-        elif var == "hint":
-            print("")
-            print("\tHint -", end="")                                                                         
-            print_tab(hint)
-            pause()
-            return True  
             
         elif var == "help":
             clear_screen()
@@ -96,6 +89,14 @@ class N_game:
             print_tab("hint        - This will give you a hint for the location you are in.\n")  
             pause()
             return True  
+        
+        elif var == "hint":
+            print("")
+            print("\tHint -", end="")                                                                         
+            print_tab(hint)
+            pause()
+            return True 
+        
         else:
             print("")
             print_tab("Incorrect entry try again")
