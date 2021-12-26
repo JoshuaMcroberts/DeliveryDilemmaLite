@@ -5,38 +5,41 @@ from game import N_game
 def warehouse(game = N_game()):
     loop = True
     while loop:
-        game.game_map.pre = game.game_map.player_enter((2,1),game.game_map.pre)   
-        clear_screen()
-        print("")
-        print_tab(pr_colour("l_blue","-- WAREHOUSE --")+"\n")
-        print_tab("The warehouse is a cavernous open space with concrete floors painted a pale blue colour.")
-        print_tab("Red lines clearly mark out walk ways from fork lift drive paths. The warehouse appears to")
-        print_tab("have been broken down into sections to the front of the warehouse there are two plastic ")
-        print_tab("sheeting covered holes in the wall, the space behind them is clear however after that on")
-        print_tab("the wall can be found the word " + pr_colour("l_blue", "Sorting Area") + ". Looking to the opposite side of the room")
-        print_tab("you can see six smaller gaps in he wall covered by the same plastic sheeting as the others.")
-        print_tab("The wall beside this area reads " + pr_colour("l_blue", "Loading Bay") + ". Next to you there is a desk that has been")
-        print_tab("labelled " + pr_colour("l_blue", "Parcel Repair") + ". This seems to be were damaged parcels go when they need fixing. ")
-        print_tab("The last feature of the warehouse is a window surround " + pr_colour("l_blue", "Office") + " in the near right hand corner. ")
-        var = san_input()  
-       
-        # Navigation IF  
-        if var  == "sortingarea":
-            shelves(game)
+        if(game.game_over == False):
+            game.game_map.pre = game.game_map.player_enter((2,1),game.game_map.pre)   
+            clear_screen()
+            print("")
+            print_tab(pr_colour("l_blue","-- WAREHOUSE --")+"\n")
+            print_tab("The warehouse is a cavernous open space with concrete floors painted a pale blue colour.")
+            print_tab("Red lines clearly mark out walk ways from fork lift drive paths. The warehouse appears to")
+            print_tab("have been broken down into sections to the front of the warehouse there are two plastic ")
+            print_tab("sheeting covered holes in the wall, the space behind them is clear however after that on")
+            print_tab("the wall can be found the word " + pr_colour("l_blue", "Sorting Area") + ". Looking to the opposite side of the room")
+            print_tab("you can see six smaller gaps in he wall covered by the same plastic sheeting as the others.")
+            print_tab("The wall beside this area reads " + pr_colour("l_blue", "Loading Bay") + ". Next to you there is a desk that has been")
+            print_tab("labelled " + pr_colour("l_blue", "Parcel Repair") + ". This seems to be were damaged parcels go when they need fixing. ")
+            print_tab("The last feature of the warehouse is a window surround " + pr_colour("l_blue", "Office") + " in the near right hand corner. ")
+            var = san_input()  
         
-        elif var == "parcelrepair":
-            damaged_parcel_area(game)
-                
-        elif var == "loadingbay":
-            loading_bay(game)
+            # Navigation IF  
+            if var  == "sortingarea":
+                shelves(game)
             
-        elif var == "office":
-            office(game)
-        
+            elif var == "parcelrepair":
+                damaged_parcel_area(game)
+                    
+            elif var == "loadingbay":
+                loading_bay(game)
+                
+            elif var == "office":
+                office(game)
+            
+            else:
+                hint = "Look around for Uncle Jock's Parcel"
+                loop = game.basic_game_func(var, hint)
         else:
-            hint = "Look around for Uncle Jock's Parcel"
-            loop = game.basic_game_func(var, hint)
-       
+            loop = False
+            
 def shelves(game = N_game()):
     
     loop = True
@@ -169,31 +172,34 @@ def office(game = N_game()):
     
     loop = True
     while loop:
-        game.game_map.pre = game.game_map.player_enter((0,3),game.game_map.pre)   
-        clear_screen()
-        print("")
-        print_tab(pr_colour("l_blue","-- WAREHOUSE OFFICE --") + "\n")
-        
-        if game.worker == True:
-            print_tab("As you get closer to the office you see there is someone inside it. They would recognise ")
-            print_tab("instantly that you weren't supposed to be here. You best search elsewhere until they leave. ")
-            pause()
-            loop = False
-        else:
-            print_tab("You enter the office and find cluttered space. On a table in the back of the room semi-ordered ")
-            print_tab("stacks of paper climb the wall. Three of the four sides of the boxy room have glass windows ")
-            print_tab("that span the length of the side. The bottom edges of the window frames are coated with a thin")
-            print_tab("layer of dust which appears to have been disturbed in places where people have lent against it.")
-            print_tab("On a table that faces into the warehouse sits a " + pr_colour("l_blue","Computer") + " with it password and username handily")
-            print_tab("stored on a post-it note stuck to the top left-hand corner of the screen. ")
-            var = san_input()
-
-            if var == "computer":
-                computer(game)
+        if(game.game_over == False):
+            game.game_map.pre = game.game_map.player_enter((0,3),game.game_map.pre)   
+            clear_screen()
+            print("")
+            print_tab(pr_colour("l_blue","-- WAREHOUSE OFFICE --") + "\n")
             
+            if game.worker == True:
+                print_tab("As you get closer to the office you see there is someone inside it. They would recognise ")
+                print_tab("instantly that you weren't supposed to be here. You best search elsewhere until they leave. ")
+                pause()
+                loop = False
             else:
-                hint = "Don't lick icy lamp posts"
-                loop = game.basic_game_func(var, hint)
+                print_tab("You enter the office and find cluttered space. On a table in the back of the room semi-ordered ")
+                print_tab("stacks of paper climb the wall. Three of the four sides of the boxy room have glass windows ")
+                print_tab("that span the length of the side. The bottom edges of the window frames are coated with a thin")
+                print_tab("layer of dust which appears to have been disturbed in places where people have lent against it.")
+                print_tab("On a table that faces into the warehouse sits a " + pr_colour("l_blue","Computer") + " with it password and username handily")
+                print_tab("stored on a post-it note stuck to the top left-hand corner of the screen. ")
+                var = san_input()
+
+                if var == "computer":
+                    computer(game)
+                
+                else:
+                    hint = "Don't lick icy lamp posts"
+                    loop = game.basic_game_func(var, hint)
+        else:
+            loop = False
        
 
 def computer(game = N_game()):
@@ -269,6 +275,31 @@ def computer(game = N_game()):
     game.set_new_ob("Find Uncle Jock's Parcel in the Vehicle with the REG: " + game.number_plate )
     
     s_pause()
+    loop = True
+    while loop:
+        clear_screen()
+        print("")
+        print_tab(pr_colour("l_blue","-- COMPUTER --")+"\n")
+        print_tab("Did you find Uncle Jock's parcel in the delivery vehicle? Type YES to continue.")
+        var = san_input()
+
+        if var == "yes":
+            loop = False
+
+        elif var == "hint":
+            print("")
+            hint = "Call the game maker if you can't find the"
+            print("\tHint -", end="")                                                                         
+            print_tab(hint)
+            pause()
+             
+        else:
+            print("")
+            print_tab("Incorrect entry try again")
+            pause()
+    
+    game.game_over = True
+    
     
     
 def boxes( opt , num, game = N_game() ):
