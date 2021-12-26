@@ -26,18 +26,18 @@ def sec_office(game = N_game()):
             
                 # Navigation IF  
                 if var  == "desk":
-                    loop =  sec_desk(game)
+                    loop = sec_desk(game)
             
                 elif var == "securityguard":
-                    sec_guard(game)
+                    loop = sec_guard(game)
                     
                     
                 elif var == "coatrack":
-                    coat_rack(game)
+                    loop = coat_rack(game)
                     
                     
                 elif var == "lockers":
-                    sec_lockers(game)
+                    loop = sec_lockers(game)
                     
                 elif var == "nosec":
                     # REMOVE FROM FULL GAME
@@ -170,6 +170,7 @@ def sec_guard(game = N_game()):
     print_tab("You take a few steps toward the Security Guard and clear your throat. He jumps from his seat!\n")
     angry_guard(game)
     pause()
+    return False
 
 def coat_rack(game = N_game()):
     if (game.sec_gar == False):
@@ -189,6 +190,7 @@ def coat_rack(game = N_game()):
             else:
                 hint = "Don't lick icy lamp posts"
                 loop = game.basic_game_func(var, hint)
+            return True
     else:
         clear_screen()
         print("")
@@ -196,6 +198,7 @@ def coat_rack(game = N_game()):
         print_tab("You move over to the coat rack but your movement disturbs the guard!\n")
         angry_guard(game)
         pause()
+        return False
 
 def coat(game = N_game()):
     
@@ -286,6 +289,7 @@ def sec_lockers(game = N_game()):
             else:
                 hint = "Not many hints to be had"
                 loop = game.basic_game_func(var, hint)
+            return True
     else:
         clear_screen()
         print("")
@@ -293,6 +297,7 @@ def sec_lockers(game = N_game()):
         print_tab("When opening the locker it makes a *clunk* noise. The Guard immediately swivels round in his chair and stands. \n")
         angry_guard(game)
         pause()
+        return False
     
 
 
