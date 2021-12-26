@@ -67,8 +67,8 @@ def menu():
             about_text()
             pause()
         elif main_op == 4:
-            print_tab(pr_colour("purple","Bye Bye"))
-           
+            print("")
+            print_tab(pr_colour("l_orange","Bye Bye\n"))
             ext = True
         else:
             print_tab("Select a Number from 1-4")
