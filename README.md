@@ -15,7 +15,6 @@
 
    ```
    python3 start.py
-   
    ```
 ## Coloured Text
 https://misc.flogisoft.com/bash/tip_colors_and_formatting
