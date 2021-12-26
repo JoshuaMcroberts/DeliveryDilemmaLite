@@ -9,26 +9,29 @@ from canteen import *
 def hall_1(game = N_game()):
     loop = True
     while loop:
-        game.game_map.pre = game.game_map.player_enter((3,3),game.game_map.pre)   
-        clear_screen()
-        print("")
-        print_tab(pr_colour("l_blue","-- HALL WAY (1) --")+"\n")
-        print_tab("The walls of the hallway are decorated with commemorative plaques with the names of the employ")
-        print_tab("of the year engraved on them. There is a door on the right with the words " + pr_colour("l_blue","Admin Office"))
-        print_tab("on it. The corridor also continues " + pr_colour("l_blue","Forward") +".")
-        var = san_input()
-        
-       
-        # Navigation IF  
-        if var  == "forward":
-            hall_2(game)
+        if(game.game_over == False):
+            game.game_map.pre = game.game_map.player_enter((3,3),game.game_map.pre)   
+            clear_screen()
+            print("")
+            print_tab(pr_colour("l_blue","-- HALL WAY (1) --")+"\n")
+            print_tab("The walls of the hallway are decorated with commemorative plaques with the names of the employ")
+            print_tab("of the year engraved on them. There is a door on the right with the words " + pr_colour("l_blue","Admin Office"))
+            print_tab("on it. The corridor also continues " + pr_colour("l_blue","Forward") +".")
+            var = san_input()
             
-        elif var == "adminoffice":
-            admin_office(game)
-        
+            
+            # Navigation IF  
+            if var  == "forward":
+                hall_2(game)
+                
+            elif var == "adminoffice":
+                admin_office(game)
+            
+            else:
+                hint = "Don't lick icy lamp posts"
+                loop = game.basic_game_func(var, hint)
         else:
-            hint = "Don't lick icy lamp posts"
-            loop = game.basic_game_func(var, hint)
+            loop = False
             
 def admin_office(game = N_game()):
     clear_screen()
@@ -41,89 +44,98 @@ def hall_2(game = N_game()):
     
     loop = True
     while loop:
-        game.game_map.pre = game.game_map.player_enter((2,3),game.game_map.pre)   
-        clear_screen()
-        print("")
-        print_tab(pr_colour("l_blue","-- HALL WAY (2) --") + "\n")
-        print_tab("left forward back")
-        print_tab("The hallway continues on until another corridor branches off from it to the " + pr_colour("l_blue", "Left") + ". The corridor also ")
-        print_tab("continues " + pr_colour("l_blue", "Forward") + " with pictures on the wall, of the different logos " + game.courier + " had used in the past.")
-        var = san_input()
-        
-        
-        if var == "left":
-            hall_5(game)
+        if(game.game_over == False):
+            game.game_map.pre = game.game_map.player_enter((2,3),game.game_map.pre)   
+            clear_screen()
+            print("")
+            print_tab(pr_colour("l_blue","-- HALL WAY (2) --") + "\n")
+            print_tab("left forward back")
+            print_tab("The hallway continues on until another corridor branches off from it to the " + pr_colour("l_blue", "Left") + ". The corridor also ")
+            print_tab("continues " + pr_colour("l_blue", "Forward") + " with pictures on the wall, of the different logos " + game.courier + " had used in the past.")
+            var = san_input()
             
-        elif var == "forward":
-            hall_3(game)
-        
+            
+            if var == "left":
+                hall_5(game)
+                
+            elif var == "forward":
+                hall_3(game)
+            
+            else:
+                hint = "Don't lick icy lamp posts"
+                loop = game.basic_game_func(var, hint)
         else:
-            hint = "Don't lick icy lamp posts"
-            loop = game.basic_game_func(var, hint)
-
+            loop = False
 
 def hall_5(game = N_game()):
     
     loop = True
     while loop:
-        game.game_map.pre = game.game_map.player_enter((2,2),game.game_map.pre)   
-        clear_screen()
-        print("")
-        print_tab(pr_colour("l_blue","-- HALL WAY (5) --") + "\n")
-        print_tab("canteen lockerroom door back.")
-        print_tab("The corridor ends with 3 doors, the one directly ahead has nothing on it however above it on the ")
-        print_tab("brick work, in spray painted stencil font, is the word " + pr_colour("l_blue","Warehouse") + ". The Door to the left has a metal ")
-        print_tab("plate screwed to it with the words " + pr_colour("l_blue","Locker Room") + " etched into it. The door on the right has on it a ")
-        print_tab("plate that matches the opposing Locker Room door with the one change that it displays the word ")
-        print_tab(pr_colour("l_blue","Canteen") + " on it.")
-        var = san_input()
-        
-        if var == "canteen":
-            canteen(game)
+        if(game.game_over == False):
+            game.game_map.pre = game.game_map.player_enter((2,2),game.game_map.pre)   
+            clear_screen()
+            print("")
+            print_tab(pr_colour("l_blue","-- HALL WAY (5) --") + "\n")
+            print_tab("canteen lockerroom door back.")
+            print_tab("The corridor ends with 3 doors, the one directly ahead has nothing on it however above it on the ")
+            print_tab("brick work, in spray painted stencil font, is the word " + pr_colour("l_blue","Warehouse") + ". The Door to the left has a metal ")
+            print_tab("plate screwed to it with the words " + pr_colour("l_blue","Locker Room") + " etched into it. The door on the right has on it a ")
+            print_tab("plate that matches the opposing Locker Room door with the one change that it displays the word ")
+            print_tab(pr_colour("l_blue","Canteen") + " on it.")
+            var = san_input()
             
-        elif var == "lockerroom":
-            locker_room(game)
+            if var == "canteen":
+                canteen(game)
+                
+            elif var == "lockerroom":
+                locker_room(game)
+                
+            elif var == "warehouse":
+                warehouse_door(game)
             
-        elif var == "warehouse":
-            warehouse_door(game)
-        
+            else:
+                hint = "Make a good search of the locker room"
+                loop = game.basic_game_func(var, hint)
         else:
-            hint = "Make a good search of the locker room"
-            loop = game.basic_game_func(var, hint)
+            loop = False
             
 def warehouse_door(game = N_game()):
     loop = True
     while loop:
-        clear_screen()
-        print("")
-        print_tab(pr_colour("l_blue","-- WAREHOUSE DOOR --") + "\n")
-        print_tab("As you stand in front of the warehouse do you see an all too familiar " + pr_colour("l_blue", "Card Reader") + " placed on the")
-        print_tab("wall on the left of the door. ")
-        var = san_input()
-                
-        if var == "cardreader":
-            card_reader(game)
-        
+        if(game.game_over == False):
+            clear_screen()
+            print("")
+            print_tab(pr_colour("l_blue","-- WAREHOUSE DOOR --") + "\n")
+            print_tab("As you stand in front of the warehouse do you see an all too familiar " + pr_colour("l_blue", "Card Reader") + " placed on the")
+            print_tab("wall on the left of the door. ")
+            var = san_input()
+                    
+            if var == "cardreader":
+                card_reader(game)
+            
+            else:
+                hint = "Don't lick icy lamp posts"
+                loop = game.basic_game_func(var, hint)
         else:
-            hint = "Don't lick icy lamp posts"
-            loop = game.basic_game_func(var, hint)
+            loop = False
 
 def card_reader(game = N_game()):
-    clear_screen()
-    print("")
-    print_tab(pr_colour("l_blue","-- CARD READER --") + "\n")
-    check = game.pc.check_inventory("Warehouse - ID Card")
-    if check:
-        print_tab("You scan the Warehouse ID Card and an affirmative *beep* comes from the Card Reader." )
-        print_tab("Pushing the door open, you enter the Warehouse.")
-        pause()
-        warehouse(game)
-    else:
-        print_tab("You can try using your Guest ID Card however a down beat *boop* sound tells you that" )
-        print_tab("it doesn't have an access level high enough to enter the Warehouse." )
-        # s_pause()
-        # game.set_new_ob("Search Nearby for a Warehouse ID")      
-        pause()  
+    if(game.game_over == False):
+        clear_screen()
+        print("")
+        print_tab(pr_colour("l_blue","-- CARD READER --") + "\n")
+        check = game.pc.check_inventory("Warehouse - ID Card")
+        if check:
+            print_tab("You scan the Warehouse ID Card and an affirmative *beep* comes from the Card Reader." )
+            print_tab("Pushing the door open, you enter the Warehouse.")
+            pause()
+            warehouse(game)
+        else:
+            print_tab("You can try using your Guest ID Card however a down beat *boop* sound tells you that" )
+            print_tab("it doesn't have an access level high enough to enter the Warehouse." )
+            # s_pause()
+            # game.set_new_ob("Search Nearby for a Warehouse ID")      
+            pause()  
         
           
 def hall_3(game = N_game()):
