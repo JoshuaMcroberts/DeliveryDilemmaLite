@@ -165,8 +165,8 @@ def coat(game = N_game()):
         clear_screen()
         print("")
         print_tab(pr_colour("l_blue","-- Coat --") + "\n")
-        print_tab("The coat looks like it has been in use for some time. It has high-vis strips strategically sown onto it. It ")
-        print_tab("seems to be a straight-forward design with a " + pr_colour("l_blue","Left Pocket") + " and " + pr_colour("l_blue","Right Pocket") + " the only two places ")
+        print_tab("The coat looks like it has been in use for some time. It has high-vis strips strategically sown onto ")
+        print_tab("it. It seems to be a straight-forward design with a " + pr_colour("l_blue","Left Pocket") + " and " + pr_colour("l_blue","Right Pocket") + " the only two places ")
         var = san_input()
         
         
