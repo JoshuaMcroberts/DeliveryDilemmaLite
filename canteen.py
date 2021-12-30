@@ -12,8 +12,8 @@ def canteen(game = N_game()):
         print_tab("The Canteen is a small room with a " + pr_colour("l_blue","Bench") + " that starts against the right-hand wall and wraps ")
         print_tab("around the edge of the room to the back wall. A " + pr_colour("l_blue","Fridge") + " stands up-right against the back wall, ")
         print_tab("pushed into the left corner of the room. A " + pr_colour("l_blue","Coat Rack") + " seems to have been haphazardly attached  ")
-        print_tab("to the wall on the left of the door as you enter the room. Two workers sit in the at one of ")
-        print_tab("the two tables in the room staring at their phones. ")
+        print_tab("to the wall on the left of the door as you enter the room. Two workers sit at one of the two ")
+        print_tab("tables in the room staring at their phones. ")
         var = san_input()
         
        
@@ -189,14 +189,14 @@ def left_pocket(game = N_game()):
     clear_screen()
     print("")
     print_tab(pr_colour("l_blue","-- LEFT POCKET --") + "\n")
-    if game.get_key == False:
+    if game.got_key == False:
         print_tab("When you slip your hand into the left pocket of the coat it immediately comes into contact ")
         print_tab("with something cold and metallic. You withdraw your hand to find clutched in it a locker key ")
         print_tab("with the number 21 written on a tag attached to it. ") 
         game.pc.add_inventory("Locker 21 - Key")
-        game.get_key = True
+        game.got_key = True
         s_pause()
-        game.completed_spec_ob("Follow the worker and find a way to get his locker key")
+        game.completed_spec_ob("Follow the worker and find a way to get their locker key")
         s_pause()
         game.set_new_ob("Open Locker 21")
         pause()
