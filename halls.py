@@ -105,7 +105,7 @@ def warehouse_door(game = N_game()):
             clear_screen()
             print("")
             print_tab(pr_colour("l_blue","-- WAREHOUSE DOOR --") + "\n")
-            print_tab("As you stand in front of the warehouse do you see an all too familiar " + pr_colour("l_blue", "Card Reader") + " placed on ")
+            print_tab("As you stand in front of the warehouse you see an all too familiar " + pr_colour("l_blue", "Card Reader") + " placed on ")
             print_tab("the wall on the left of the door. ")
             var = san_input()
                     
