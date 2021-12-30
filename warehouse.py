@@ -12,13 +12,13 @@ def warehouse(game = N_game()):
             print_tab(pr_colour("l_blue","-- WAREHOUSE --")+"\n")
             print_tab("The warehouse is a cavernous open space with concrete floors painted a pale blue colour.")
             print_tab("Red lines clearly mark out walk ways from fork lift drive paths. The warehouse appears to")
-            print_tab("have been broken down into sections to the front of the warehouse there are two plastic ")
-            print_tab("sheeting covered holes in the wall, the space behind them is clear however after that on")
+            print_tab("have been broken down into sections. To the front of the warehouse there are two plastic ")
+            print_tab("sheeting, covered holes in the wall. The space behind them is clear, however after that on")
             print_tab("the wall can be found the word " + pr_colour("l_blue", "Sorting Area") + ". Looking to the opposite side of the room")
-            print_tab("you can see six smaller gaps in he wall covered by the same plastic sheeting as the others.")
+            print_tab("you can see six smaller gaps in the wall covered by the same plastic sheeting as the others.")
             print_tab("The wall beside this area reads " + pr_colour("l_blue", "Loading Bay") + ". Next to you there is a desk that has been")
             print_tab("labelled " + pr_colour("l_blue", "Parcel Repair") + ". This seems to be were damaged parcels go when they need fixing. ")
-            print_tab("The last feature of the warehouse is a window surround " + pr_colour("l_blue", "Office") + " in the near right hand corner. ")
+            print_tab("The last feature of the warehouse is a window surrounded " + pr_colour("l_blue", "Office") + " in the near right hand corner. ")
             var = san_input()  
         
             # Navigation IF  
