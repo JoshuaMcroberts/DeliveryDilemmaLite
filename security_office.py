@@ -13,7 +13,7 @@ def sec_office(game = N_game()):
                 print("")
                 print_tab(pr_colour("l_blue","-- SECURITY OFFICE --")+"\n")
                 print_tab("An imposing array of monitors looms large over you on the right wall of the room as you ")
-                print("\tenter. Bathing everything in a pale blue light. " ,end="")
+                print("\tenter, bathing everything in a pale blue light. " ,end="")
                 if(game.sec_gar == True):
                     print("Lazily seated at a " + pr_colour("l_blue","Desk") + " below the wall of ")
                     print("\tscreens is a lone " + pr_colour("l_blue","Security Guard") + " snacking on a chocolate bar and looking at his phone. ")
@@ -52,7 +52,7 @@ def sec_office(game = N_game()):
             else: 
                 loop = False
 
-# Guard must leave room
+
 def sec_desk(game = N_game()):
     
     if (game.sec_gar == False):
@@ -61,12 +61,19 @@ def sec_desk(game = N_game()):
             clear_screen()
             print("")
             print_tab(pr_colour("l_blue","-- DESK --")+"\n")
+            
             if game.full_bin == False:
                 print_tab("A closer look at the desk reveals a scattering of chocolate bar wrappers and empty drinks cans. ")
             else:
                 print_tab("An inspection of the desk shows a tidy consturction made form the finest wood IKEA could find. ")
+            
             print_tab("There is a desk mounted " + pr_colour("l_blue","Monitor") + " that sits in front of a keyboard. It seems to have been recently")
-            print_tab("used. A " + pr_colour("l_blue","Bin") + " sits just to the right of the desk and is completely empty. A " + pr_colour("l_blue","Phone") + " sits in the ")
+            
+            if game.full_bin:
+                print_tab("used. A " + pr_colour("l_blue","Bin") + " sits just to the right of the desk and is completely full. A " + pr_colour("l_blue","Phone") + " sits in the ")
+            else:
+                print_tab("used. A " + pr_colour("l_blue","Bin") + " sits just to the right of the desk and is completely empty. A " + pr_colour("l_blue","Phone") + " sits in the ")
+            
             print_tab("centre of the desk on the left of the monitor and keyboard.")
             var = san_input()
         
@@ -194,7 +201,9 @@ def coat_rack(game = N_game()):
             else:
                 hint = "Don't lick icy lamp posts"
                 loop = game.basic_game_func(var, hint)
-            return True
+                
+        return True 
+            
     else:
         clear_screen()
         print("")
@@ -211,8 +220,8 @@ def coat(game = N_game()):
         clear_screen()
         print("")
         print_tab(pr_colour("l_blue","-- WINTER COAT --") + "\n")
-        print_tab("The coat looks like it is fairly new. It has a slight tear on one of the cuffs no doubt caused by  ")
-        print_tab("a trip and fall. I have two large exterior pockets both " + pr_colour("l_blue","Left") + " and " + pr_colour("l_blue","Right") + ".")
+        print_tab("The coat looks like it is fairly new. It has a slight tear on one of the cuffs, no doubt caused by  ")
+        print_tab("a trip and fall. It has two large exterior pockets both " + pr_colour("l_blue","Left") + " and " + pr_colour("l_blue","Right") + ".")
         var = san_input()
         
         
@@ -242,7 +251,7 @@ def right_pocket(game = N_game()):
     print("")
     print_tab(pr_colour("l_blue","-- RIGHT POCKET --") + "\n")
     print_tab("The right pocket brings forth a number of items when shacken including, a set of car keys, a packet ")
-    print_tab("extra minty chowing gum and a used tissue. All of which are deemed not useful and swiftly returned.")
+    print_tab("extra minty chewing gum and a used tissue. All of which are deemed not useful and swiftly returned.")
     pause()    
     
 def sec_lockers(game = N_game()):
@@ -293,7 +302,8 @@ def sec_lockers(game = N_game()):
             else:
                 hint = "Not many hints to be had"
                 loop = game.basic_game_func(var, hint)
-            return True
+        return True
+    
     else:
         clear_screen()
         print("")
