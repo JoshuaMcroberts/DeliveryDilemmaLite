@@ -206,7 +206,7 @@ class N_game:
                 num_plate = num
 
         if num_plate == 0:
-            num_plate = " REG MISSING "
+            num_plate = " HJW 8264 "
 
         self.set_player_name(en_name)
         self.set_num_plate(num_plate)
