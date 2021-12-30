@@ -32,7 +32,6 @@ def recep(game = N_game()):
             print_tab("the name plate on it saying, " + pr_colour("l_blue","Security Office") + ". As you look to the right of the room,")
             print_tab("you see a " + pr_colour("l_blue","Lift") + " door and a " + pr_colour("l_blue","Waiting Area") + " which is nestled back up against the")
             print_tab("glass front windows. ")
-            # game.set_new_ob("Get to the Warehouse")
             var = san_input()
             
         
@@ -57,7 +56,7 @@ def recep(game = N_game()):
                 
             
             else:
-                hint = "Search for Information you can use to get further int the building"
+                hint = "Search for Information you can use to get further into the building"
                 game.basic_game_func(var, hint)
         else:
             loop = False
@@ -144,7 +143,7 @@ def receptionist(game = N_game()):
             print_tab(c_name + gap + ": Will do!")
             s_pause()
             
-            print_tab(game.recep +": Do you know where the Mr Barbers office is?")
+            print_tab(game.recep +": Do you know where Mr Barbers office is?")
             s_pause()
             
             print_tab(c_name + gap + ": I'm sure I'll manage to find my way")
@@ -216,7 +215,9 @@ def notepad(game = N_game()):
     print_tab("Reading the notepad upside down and slightly sideways, you see the words written: “Guest ")
     print_tab("Pass for new sales" + game.pc.bi_gen + " " + game.pc.title + " Preston - Expected @14:45”. This gives you an idea! You could call ")
     print_tab("reception and pretend to be '" + game.pc.title + " Preston'. Now all you have to do is find another phone! ")
-    game.set_new_ob("Find a Phone to call Reception as " + game.pc.title + " Preston")
+    objective = "Find a Phone to call Reception as " + game.pc.title + " Preston"
+    if not game.check_ob(objective):
+        game.set_new_ob(objective)
     game.preston = True
     pause()
  
@@ -282,9 +283,9 @@ def waiting_area(game = N_game()):
             print_tab(pr_colour("l_blue","-- WAITING AREA --") + "\n")
             print_tab("The waiting area consists of three tan leather sofas set in a U shape, with the open")
             print_tab("end facing the main entrance. This gives each sofa a varying view, from the reception")
-            print_tab("to the those entering through the main door and the final facing out the window to ")
-            print_tab("the carpark area outside. There are a few magazines laid out on a short coffee table")
-            print_tab("in the middle of the U shape to help pass the " + pr_colour("l_blue","Wait") + ".")
+            print_tab("to those entering through the main door and the final facing out the window to the")
+            print_tab("carpark area outside. There are a few magazines laid out on a short coffee table in ")
+            print_tab("the middle of the U shape to help pass the " + pr_colour("l_blue","Wait") + ".")
             var = san_input()
             char_name = game.pc.character_name
             if var == "wait":
@@ -382,6 +383,6 @@ if __name__ == "__main__":
     # game.
     game.called = True
     game.time_changed = False
-    # recep(game)
-    receptionist(game)
+    recep(game)
+    # receptionist(game)
 
