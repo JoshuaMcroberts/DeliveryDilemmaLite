@@ -56,25 +56,28 @@ def lockers(game = N_game()):
                
                            
             elif num < 21:
-               
                 
                 print_tab("You go to open " + pr_colour("l_blue","Locker " + str(num)) + " but it appears to be locked.")
             
             
             elif num == 21:
                 locker_21(game)
+            
+            elif num < 24:
                 
-            elif num < 26:
+                print_tab("You go to open " + pr_colour("l_blue","Locker " + str(num)) + " but it appears to be locked.")
+                
+            elif num < 28:
                 
                 if game.get_key == False:
                     print_tab("As you open " + pr_colour("l_blue","Locker " + str(num)) + " you hear someone else enter the room. You pretend to be retrieving ")
                     print_tab("something from your non-existent bag in the empty locker. The person passes behind you and goes ")
                     print_tab("further down your row. Out of the corner of your eye you see them take their pass from around ")
-                    print_tab("their neck and put it inside the locker. They then take out a lunch box and locking their locker behind ")
+                    print_tab("their neck and put it inside the locker. They then take out a lunch box and lock their locker behind ")
                     print_tab("them. As they exit the room they slip their locker key into the pocket of their worn work coat. ")
                     game.get_key = True
-                    game.set_new_ob("Follow the worker and find a way to get his locker key")
-                    s_pause()
+                    game.set_new_ob("Follow the worker and find a way to get their locker key")
+                    
                 else:
                     print_tab("You open " + pr_colour("l_blue","Locker " + str(num)) + " and find that it is empty.")
                
@@ -99,8 +102,6 @@ def locker_21(game = N_game()):
         s_pause()
         game.completed_spec_ob("Open Locker 21")
         s_pause()
-        # game.completed_spec_ob("Search Nearby for a Warehouse ID")
-        # s_pause()
         game.set_new_ob("Enter the Warehouse")
         s_pause()
         game.pc.add_inventory("Warehouse - ID Card")
