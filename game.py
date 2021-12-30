@@ -15,6 +15,7 @@ class N_game:
         self.preston = False
         self.courier = pr_colour("orange","Amazon")
         self.locker_21_empty = False
+        self.got_key = False
         self.get_key = False
         self.objectives = []
         self.boxes=[False, False, False, False, False, False, False, False, False]
@@ -117,6 +118,14 @@ class N_game:
 
         for ob in reversed(self.objectives):
            print_tab(pr_colour("l_green", "- " + ob + "\n")) 
+    
+    def check_ob(self, objective):
+        check = False
+        for ob in self.objectives:
+            if ob == objective:
+                check = True
+        
+        return check
     
     def completed_cur_ob(self):
         objective = self.objectives.pop()
@@ -222,23 +231,28 @@ class N_game:
     def display_game_state(self):
         clear_screen()
         print_tab("__ GAME STATE __")
-        print_tab("Player Name       : " + str(self.player_name))
-        print_tab("Number Plate      : " + str(self.number_plate))
-        print_tab("Number Plate Unfor: " + str(self.unformated_plate))
-        print_tab("Game Over         : " + str(self.game_over))
-        print_tab("Sec Guard         : " + str(self.sec_gar ))
-        print_tab("Sec Guard Ang     : " + str(self.sec_gar_level))
-        print_tab("Wait              : " + str(self.wait))
+       
         print_tab("Preston           : " + str(self.preston))
-        print_tab("Courier           : " + str(self.courier))
-        print_tab("Locker 21         : " + str(self.locker_21_empty))
-        print_tab("Get Key           : " + str(self.get_key))
-        
-        print_tab("Boxes             : " + str(self.boxes))
+        print_tab("Sec Guard         : " + str(self.sec_gar ))
         print_tab("Time Changed      : " + str(self.time_changed))
         print_tab("Phone call        : " + str(self.called))
         print_tab("Bin Full          : " + str(self.full_bin ))
-             
+       
+        print_tab("Got Key           : " + str(self.got_key))
+        print_tab("Locker 21         : " + str(self.locker_21_empty))
+        print_tab("Boxes             : " + str(self.boxes))
+        print_tab("Game Over         : " + str(self.game_over))
+ 
+        print_tab("Sec Guard Ang     : " + str(self.sec_gar_level))
+        print_tab("Wait              : " + str(self.wait))
+        
+        print_tab("\n\t__ PLAYER INFO __")
+        print_tab("Player Name       : " + str(self.player_name))
+        print_tab("Number Plate      : " + str(self.number_plate))
+        print_tab("Number Plate Unfor: " + str(self.unformated_plate))
+        print_tab("Courier           : " + str(self.courier))
+        
+        print_tab("\n\t__ CHARACTER INFO __")
         print_tab("Character Name    : " + str(self.pc.character_name))
         print_tab("Char Name         : " + str(self.pc.char_name))
         print_tab("Gender            : " + str(self.pc.gender ))
