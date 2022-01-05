@@ -2,7 +2,8 @@
 
 ## Required Install
 - [Python 3](https://www.python.org/downloads/) 
-
+On Windows
+- [Windows Terminal] Found on Microsoft Store
 ## Install and Run
 
 1. Download the file as a .zip
@@ -15,6 +16,12 @@
 
    ```
    python3 start.py
+   ```
+   
+   or 
+   
+   ```
+   python start.py
    ```
 ## Coloured Text
 https://misc.flogisoft.com/bash/tip_colors_and_formatting
