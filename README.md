@@ -2,6 +2,7 @@
 
 ## Required Install
 - [Python 3](https://www.python.org/downloads/) 
+
 On Windows
 - [Windows Terminal](https://www.microsoft.com/en-gb/p/windows-terminal/9n0dx20hk701#activetab=pivot:overviewtab) (Found on Microsoft Store)
 ## Install and Run
