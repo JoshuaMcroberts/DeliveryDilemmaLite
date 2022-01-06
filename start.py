@@ -12,8 +12,13 @@ def help_text():
 # DISPLAY ABOUT TEXT
 def about_text():
     clear_screen()
-    print_tab("About text will go here!")
-
+    print_tab(pr_colour("l_green","-- CREDITS --"))
+    print_tab("Intro Story Reviewers - C. Cadden, J. Harrower, S. Kavuri ")
+    print_tab("Receptionsist Name    - S. Kavuri")
+    print_tab("Alpha Testers         - R. McRoberts, D. McRoberts, A. McRoberts")
+    print_tab("Beta Testers          - J. Smyth, N. Smyth")
+    print_tab("User Testers          - P. Shields, N. Scott-Murphy")
+    
 
 # DISPLAY ASCII ART
 def game_intro():
@@ -50,7 +55,7 @@ def menu():
         print_tab(pr_colour("l_blue","-- MAIN MENU --") + "\n")
         print_tab("[1] Start\n")
         print_tab("[2] Help\n")
-        print_tab("[3] About\n")
+        print_tab("[3] Credits\n")
         print_tab("[4] Exit\n")
 
         try:
