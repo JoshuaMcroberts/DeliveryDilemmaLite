@@ -10,7 +10,7 @@ def help_text():
 
 
 # DISPLAY ABOUT TEXT
-def about_text():
+def cred_text():
     clear_screen()
     print_tab(pr_colour("l_green","-- CREDITS --"))
     print_tab("Intro Story Reviewers - C. Cadden, J. Harrower, S. Kavuri ")
@@ -69,7 +69,7 @@ def menu():
             help_text()
             pause()
         elif main_op == 3:
-            about_text()
+            cred_text()
             pause()
         elif main_op == 4:
             print("")
