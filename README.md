@@ -3,6 +3,8 @@
 ## Required Install
 - [Python 3](https://www.python.org/downloads/) 
 
+On Windows
+- [Windows Terminal](https://www.microsoft.com/en-gb/p/windows-terminal/9n0dx20hk701#activetab=pivot:overviewtab) (Found on Microsoft Store)
 ## Install and Run
 
 1. Download the file as a .zip
@@ -15,6 +17,12 @@
 
    ```
    python3 start.py
+   ```
+   
+   or 
+   
+   ```
+   python start.py
    ```
 ## Coloured Text
 https://misc.flogisoft.com/bash/tip_colors_and_formatting

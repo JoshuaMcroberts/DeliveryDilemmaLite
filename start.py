@@ -10,8 +10,9 @@ def help_text():
 
 
 # DISPLAY ABOUT TEXT
-def about_text():
+def cred_text():
     clear_screen()
+<<<<<<< HEAD
     print_tab("About text will go here!")
     
 # DISPLAY ABOUT TEXT
@@ -19,6 +20,15 @@ def cred_text():
     clear_screen()
     print_tab("Credits\n Srimukhi - Character name for receptionist")
 
+=======
+    print_tab(pr_colour("l_green","-- CREDITS --"))
+    print_tab("Intro Story Reviewers - C. Cadden, J. Harrower, S. Kavuri ")
+    print_tab("Receptionsist Name    - S. Kavuri")
+    print_tab("Alpha Testers         - R. McRoberts, D. McRoberts, A. McRoberts")
+    print_tab("Beta Testers          - J. Smyth, N. Smyth")
+    print_tab("User Testers          - P. Shields, N. Scott-Murphy")
+    
+>>>>>>> daac96edc140c82695b7d4103b1ecddf2742d1e6
 
 # DISPLAY ASCII ART
 def game_intro():
@@ -55,9 +65,8 @@ def menu():
         print_tab(pr_colour("l_blue","-- MAIN MENU --") + "\n")
         print_tab("[1] Start\n")
         print_tab("[2] Help\n")
-        print_tab("[3] About\n")
-        print_tab("[4] Credits\n")
-        print_tab("[5] Exit\n")
+        print_tab("[3] Credits\n")
+        print_tab("[4] Exit\n")
 
         try:
             main_op = int(input("\tEnter Option: "))
@@ -70,7 +79,7 @@ def menu():
             help_text()
             pause()
         elif main_op == 3:
-            about_text()
+            cred_text()
             pause()
         elif main_op == 4:
             cred_text()
