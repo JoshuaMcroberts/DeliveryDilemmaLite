@@ -13,6 +13,11 @@ def help_text():
 def about_text():
     clear_screen()
     print_tab("About text will go here!")
+    
+# DISPLAY ABOUT TEXT
+def cred_text():
+    clear_screen()
+    print_tab("Credits\n Srimukhi - Character name for receptionist")
 
 
 # DISPLAY ASCII ART
@@ -51,7 +56,8 @@ def menu():
         print_tab("[1] Start\n")
         print_tab("[2] Help\n")
         print_tab("[3] About\n")
-        print_tab("[4] Exit\n")
+        print_tab("[4] Credits\n")
+        print_tab("[5] Exit\n")
 
         try:
             main_op = int(input("\tEnter Option: "))
@@ -67,6 +73,9 @@ def menu():
             about_text()
             pause()
         elif main_op == 4:
+            cred_text()
+            pause()
+        elif main_op == 5:
             print("")
             print_tab(pr_colour("l_orange","Bye Bye\n"))
             ext = True
