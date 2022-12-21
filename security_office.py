@@ -296,7 +296,7 @@ def sec_lockers(game = N_game()):
             elif var == "locker4":
                 clear_screen()
                 print("")
-                print_tab(pr_colour("l_blue","-- Locker 3 --") + "\n")
+                print_tab(pr_colour("l_blue","-- Locker 4 --") + "\n")
                 print_tab("Locker 4 seems to have some old newspapers in it. The door opened easily however there appears to be.")
                 print_tab("some form of mold growing in the top left corner inside the locker. You shut the door and move on.")
                 pause()
