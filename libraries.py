@@ -34,6 +34,7 @@ def pr_colour(colour, text):
                ("white", '\033[38;5;15m'),
                ("cyan", '\033[38;5;6m'),
                ("num_p", '\033[38;5;232m\033[48;5;184m\033[1m'),
+               ("us_num_p", '\033[7;5;44m\033[1m'),
                ("amazon", '\033[38;5;166m\033[1m'),
                ("prime", '\033[0m\033[38;5;166m\033[1m\033[4m'),
                ("del", '\033[38;5;232m\033[48;5;153m\033[1m'),
@@ -125,10 +126,11 @@ if __name__ == "__main__":
     
     # TEST PR_COLOUR
     print("\nTEST pr_colour Examples:")
-    print(pr_colour("blue_blink","1 RED"))
+    print("________")
+    print(pr_colour("us_num_p"," JKZ" + u'\xB7'+ "8620 "))
 
-    for i in range(25):
-        print("\033["+str(i)+"mWords"+str(i)+"\033[0m")
+    for i in range(10):
+        print("\033[7;5;"+str(i)+"mWords"+str(i)+"\033[0m")
     
 
 

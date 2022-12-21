@@ -146,8 +146,13 @@ class N_game:
     def get_player_name(self):
         return self.player_name
 
-    def set_num_plate(self, num_plate):
-        self.number_plate = pr_colour("num_p", num_plate)
+    def set_num_plate(self, num_plate, nationality):
+         
+        if nationality == "us":
+            self.number_plate = pr_colour("us_num_p", num_plate)
+        else:
+            self.number_plate = pr_colour("num_p", num_plate)
+              
         self.unformated_plate = num_plate
         
     def get_num_plate(self):
@@ -176,7 +181,7 @@ class N_game:
     # ENTER PLAYER NAME - CHECK FOR NUMBER PLATE PLAYER
     def enter_name(self):
         
-        tup_list = [("daniel"," R44 REP "),("rebecca"," FX05 YAJ "),("andrew"," KLZ 9890 "),("joel"," T229 RGP "),("nathanael"," PLZ 8101 ")]
+        tup_list = [("daniel"," R44 REP ", "uk"),("rebecca"," FX05 YAJ ", "uk"),("andrew"," KLZ 9890 ", "uk"),("joel"," T229 RGP ", "uk"),("nathanael"," PLZ 8101 ", "uk"),("caroline"," JKZ" + u'\xB7'+ "8620 ", "us")]
         
         correct = False
         while not correct:
@@ -210,7 +215,7 @@ class N_game:
                     pause()
                 
         num_plate = 0
-        for name, num in tup_list:
+        for name, num, nationality in tup_list:
             if plate_name == name:
                 num_plate = num
 
@@ -218,7 +223,7 @@ class N_game:
             num_plate = " HJW 8264 "
 
         self.set_player_name(en_name)
-        self.set_num_plate(num_plate)
+        self.set_num_plate(num_plate, nationality)
     
     
     def create_char(self):
