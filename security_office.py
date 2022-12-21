@@ -65,7 +65,7 @@ def sec_desk(game = N_game()):
             if game.full_bin == False:
                 print_tab("A closer look at the desk reveals a scattering of chocolate bar wrappers and empty drinks cans. ")
             else:
-                print_tab("An inspection of the desk shows a tidy consturction made form the finest wood IKEA could find. ")
+                print_tab("An inspection of the desk shows a tidy construction made from the finest wood IKEA could find. ")
             
             print_tab("There is a desk mounted " + pr_colour("l_blue","Monitor") + " that sits in front of a keyboard. It seems to have been recently")
             
@@ -191,7 +191,7 @@ def coat_rack(game = N_game()):
             print("")
             print_tab(pr_colour("l_blue","-- COAT RACK --") + "\n")
             print_tab("Looking at the coat rack you see one heavy " + pr_colour("l_blue","Winter Coat") + " hanging up on it. There is also a scarf")
-            print_tab("that has been drapped on a peg with a flat cap then put on top of it.")
+            print_tab("that has been draped on a peg with a flat cap then put on top of it.")
             var = san_input()
             
             
@@ -243,15 +243,15 @@ def left_pocket(game = N_game()):
     print_tab(pr_colour("l_blue","-- LEFT POCKET --") + "\n")
     print_tab("You feel the left pocket from the outside and note that something makes a crinkling noise. You put")
     print_tab("your hand inside and pull it out with a packet of Wine Gums held in its grasp. You think better of")
-    print_tab("the unhealth snack and stash it back where it came from. ") 
+    print_tab("the unhealthy snack and stash it back where it came from. ") 
     pause()
 
 def right_pocket(game = N_game()):
     clear_screen()
     print("")
     print_tab(pr_colour("l_blue","-- RIGHT POCKET --") + "\n")
-    print_tab("The right pocket brings forth a number of items when shacken including, a set of car keys, a packet ")
-    print_tab("extra minty chewing gum and a used tissue. All of which are deemed not useful and swiftly returned.")
+    print_tab("The right pocket brings forth a number of items when shaken including, a set of car keys, a packet ")
+    print_tab("of extra minty chewing gum and a used tissue. All of which are deemed not useful and swiftly returned.")
     pause()    
     
 def sec_lockers(game = N_game()):
@@ -271,7 +271,9 @@ def sec_lockers(game = N_game()):
                 clear_screen()
                 print("")
                 print_tab(pr_colour("l_blue","-- Locker 1 --") + "\n")
-                print_tab("Locker 1 is completely empty except for name badge that reads 'Name: P Blart'. You move on.")
+                print_tab("Locker 1 has a couple of stickers stuck to its door, one of which reads 'Come visit West Orange ")
+                print_tab("Pavilion Mall'. Inside the locker there are only a few discarded items, a clip-on tie, a couple ")
+                print_tab("of pixie sticks and a name badge that reads 'Name: P Blart'. You move on.")
                 pause()
             
             elif var == "locker2":
@@ -372,11 +374,11 @@ def phone(game = N_game()):
     clear_screen()
     print("")
     print_tab(pr_colour("l_blue","-- PHONE CONVERSATION WITH RECEPTION --")+"\n")
-    print_tab(game.recep +": Hello, " + game.courier + " West Devonshire distribution center, Anna speaking,")
+    print_tab(game.recep +": Hello, " + game.courier + " West Devonshire distribution centre, Anna speaking,")
     print_tab(space + "How can I help you?")
     if game.preston != True:
         s_pause()
-        print("\tYou quickly realise you have not though of a reason for your call. You quickly hang up the phone.")
+        print("\tYou quickly realise you have not thought of a reason for your call. You quickly hang up the phone.")
         s_pause()
         print_tab("*Call Disconnects*")
         s_pause()
@@ -390,7 +392,7 @@ def phone(game = N_game()):
             clear_screen()
             print("")
             print_tab(pr_colour("l_blue","-- PHONE CONVERSATION WITH RECEPTION --")+"\n")
-            print_tab(game.recep +": Hello, " + game.courier + " West Devonshire distribution center, Anna speaking, ")
+            print_tab(game.recep +": Hello, " + game.courier + " West Devonshire distribution centre, Anna speaking, ")
             print_tab(space + "How can I help you?")
             if first :
                 s_pause()
@@ -469,7 +471,7 @@ def phone(game = N_game()):
                     s_pause()
                 else:
                     print("")
-                print_tab("[3] Confrim the original meeting time")
+                print_tab("[3] Confirm the original meeting time")
                 print_tab("[4] Change the meeting to before the real " + game.pc.title + " Preston shows up.\n")
                 print_tab("Pick an option")
                 var = san_input()

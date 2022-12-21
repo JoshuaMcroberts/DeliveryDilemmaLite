@@ -100,8 +100,8 @@ def bench(game = N_game()):
         print_tab(pr_colour("l_blue","-- BENCH --") + "\n")
         print_tab("Wrapping the back wall and round to the right hand side of the room, the bench creates a ")
         print_tab("convenient area for people to stand around for a coffee break or an adequate work top for ")
-        print_tab("food preparation. Setting on the bench are two electrical appliances. One being a " + pr_colour("l_blue","Toaster"))
-        print_tab("and the other being a " + pr_colour("l_blue","Microwave")+ ". Both look a little worse for ware.  ")
+        print_tab("food preparation. Sitting on the bench are two electrical appliances. One being a " + pr_colour("l_blue","Toaster"))
+        print_tab("and the other being a " + pr_colour("l_blue","Microwave")+ ". Both look a little worse for wear.  ")
         var = san_input()
         
         if var == "microwave":
@@ -119,10 +119,10 @@ def toaster(game = N_game()):
     print("")
     print_tab(pr_colour("l_blue","-- TOASTER --") + "\n")
     print_tab("You look into the toaster and see a lifetimes accumulation of bread crumbs gathered at the ")
-    print_tab("bottom of it bread toasting wells. You think to yourself that it is a fire just waiting to ")
+    print_tab("bottom of its bread toasting wells. You think to yourself that it is a fire just waiting to ")
     print_tab("happen. Looking at the power cable also makes you bristle as you see the cable has been cut ")
     print_tab("and spliced onto a different plug and some electrical tape has been crudely employed as to")
-    print_tab("cover up the poor workmanship. You stop inspecting the toaster and step back tot he centre ")
+    print_tab("cover up the poor workmanship. You stop inspecting the toaster and step back to the centre ")
     print_tab("of the room.")
     pause()
 
@@ -146,7 +146,7 @@ def coat_rack_canteen(game = N_game()):
         clear_screen()
         print("")
         print_tab(pr_colour("l_blue","-- COAT RACK --") + "\n")
-        print_tab("A brief glace at the coat rack informs you that there are two items of clothing hanging")
+        print_tab("A brief glance at the coat rack informs you that there are two items of clothing hanging")
         print_tab("there. The first of which being an old tattered high-vis vest and the second of which being" )
         print_tab("a work " + pr_colour("l_blue","Coat") + ".")
         var = san_input()

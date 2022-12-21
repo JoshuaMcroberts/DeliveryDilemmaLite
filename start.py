@@ -12,23 +12,14 @@ def help_text():
 # DISPLAY ABOUT TEXT
 def cred_text():
     clear_screen()
-<<<<<<< HEAD
-    print_tab("About text will go here!")
-    
-# DISPLAY ABOUT TEXT
-def cred_text():
-    clear_screen()
-    print_tab("Credits\n Srimukhi - Character name for receptionist")
-
-=======
     print_tab(pr_colour("l_green","-- CREDITS --"))
-    print_tab("Intro Story Reviewers - C. Cadden, J. Harrower, S. Kavuri ")
-    print_tab("Receptionsist Name    - S. Kavuri")
-    print_tab("Alpha Testers         - R. McRoberts, D. McRoberts, A. McRoberts")
-    print_tab("Beta Testers          - J. Smyth, N. Smyth")
-    print_tab("User Testers          - P. Shields, N. Scott-Murphy")
+    print()
+    print_tab("Intro Story Reviewers - C. Cadden, J. Harrower, S. Kavuri \n")
+    print_tab("Receptionsist Name    - S. Kavuri\n")
+    print_tab("Alpha Testers         - R. McRoberts, D. McRoberts, A. McRoberts\n")
+    print_tab("Beta Testers          - J. Smyth, N. Smyth\n")
+    print_tab("User Testers          - P. Shields, N. Scott-Murphy\n")
     
->>>>>>> daac96edc140c82695b7d4103b1ecddf2742d1e6
 
 # DISPLAY ASCII ART
 def game_intro():
@@ -38,7 +29,7 @@ def game_intro():
     print(pr_colour("l_blue","\n\tWelcome to Delviery Dilemma"))
     s_pause()
 
-# DISPLAYS AME OVER ASCII ART
+# DISPLAYS GAME OVER ASCII ART
 def game_over():
     ascii_game_over()
 
@@ -82,11 +73,8 @@ def menu():
             cred_text()
             pause()
         elif main_op == 4:
-            cred_text()
-            pause()
-        elif main_op == 5:
             print("")
-            print_tab(pr_colour("l_orange","Bye Bye\n"))
+            print_tab(pr_colour("l_orange","Thanks for playing, Bye for Now!\n"))
             ext = True
         else:
             print_tab("Select a Number from 1-4")

@@ -15,7 +15,7 @@ def recep(game = N_game()):
                 print_tab(pr_colour("l_blue","-- LEAVING THE SECURITY OFFICE --")+"\n")
                 print_tab("As you exit the security office you look through the Glass door down the hallway. You see the Security Guard")
                 print_tab("Just rounding the corner into the main corridor on his return journey. That was good timing, another minute")
-                print_tab("and he would have caught you. Step into the centre of the reception as he enters and quickly moves past you")
+                print_tab("and he would have caught you. You step into the centre of the reception as he enters and quickly moves past you")
                 print_tab("back to the Security Office")
                 s_pause()
                 game.completed_spec_ob("Search the Office before the Guard Returns")
@@ -114,7 +114,7 @@ def receptionist(game = N_game()):
     
     if game.called != True:
         s_pause()
-        print("\tThe receptionist looks very busy you should probably not disturb her without a good reason. ")
+        print("\tShe looks very busy you should probably not disturb her without a good reason. ")
         s_pause()
         
     else:

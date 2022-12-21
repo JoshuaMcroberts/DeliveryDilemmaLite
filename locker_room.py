@@ -14,7 +14,7 @@ def locker_room(game = N_game()):
         print_tab("Ten full size " + pr_colour("l_blue","Lockers") + " are against the right-hand wall with a matching Ten opposite ")
         print_tab("them against the left-hand wall. The wall towards the back of the room is roughly ")
         print_tab("half the size of the other two walls and therefore has two rows of five half-sized ")
-        print_tab("lockers which had been stacked to give in total an additional Ten lockers. ")
+        print_tab("lockers which had been stacked to give in total an additional Ten lockers, 30 in total.")
         print_tab("Each locker is sequentially numbered.")
         var = san_input()
         

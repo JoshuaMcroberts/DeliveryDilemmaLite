@@ -245,7 +245,7 @@ def fire_exit(game = N_game()):
     clear_screen()
     print("")
     print_tab(pr_colour("l_blue","-- FIRE EXIT --") + "\n")
-    print_tab("Stepping up to the Fire Exit you see that a strip of foam that had be excluding the draft ")
+    print_tab("Stepping up to the Fire Exit you see that a strip of foam that had been excluding the draft ")
     print_tab("has come away from the bottom of the door. A sticker on the door reads: ‘Warning: This door ")
     print_tab("is Alarmed’. Not knowing what you did to alarm the door, you step back into the corridor. ")
     pause()
