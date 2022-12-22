@@ -10,7 +10,7 @@ def sec_office(game = N_game()):
             if(game.game_over == False):
                 game.game_map.pre = game.game_map.player_enter((4,2),game.game_map.pre)
                 clear_screen()
-                print("")
+                printNew()
                 print_tab(pr_colour("l_blue","-- SECURITY OFFICE --")+"\n")
                 print_tab("An imposing array of monitors looms large over you on the right wall of the room as you ")
                 print("\tenter, bathing everything in a pale blue light. " ,end="")
@@ -59,7 +59,7 @@ def sec_desk(game = N_game()):
         loop = True
         while loop:
             clear_screen()
-            print("")
+            printNew()
             print_tab(pr_colour("l_blue","-- DESK --")+"\n")
             
             if game.full_bin == False:
@@ -94,7 +94,7 @@ def sec_desk(game = N_game()):
         return True
     else:
         clear_screen()
-        print("")
+        printNew()
         print_tab(pr_colour("l_blue","-- DESK --")+"\n")
         print_tab("As soon as you step up to the desk the Security guard sees you!\n")
         angry_guard(game)
@@ -107,7 +107,7 @@ def bin_can(game = N_game()):
     while not contin :
         if game.full_bin == False:
             clear_screen()
-            print("")
+            printNew()
             print_tab(pr_colour("l_blue","-- BIN --")+"\n")
             print_tab("You have a choice:")
             if first :
@@ -133,14 +133,14 @@ def bin_can(game = N_game()):
     
     if var == "1":
         clear_screen()
-        print("")
+        printNew()
         print_tab(pr_colour("l_blue","-- BIN --")+"\n")
         print_tab("The desk, which was a mess, has been tidied by " + game.pc.character_name + " and now the bin is full.")
         pause()
         game.full_bin = True
     else:
         clear_screen()
-        print("")
+        printNew()
         print_tab(pr_colour("l_blue","-- BIN --")+"\n")
         print_tab("You do nothing with the bin and leave the desk in a mess")
         pause()
@@ -176,7 +176,7 @@ def angry_guard(game = N_game()):
     
 def sec_guard(game = N_game()):
     clear_screen()
-    print("")
+    printNew()
     print_tab(pr_colour("l_blue","-- SECURITY GUARD --")+"\n")
     print_tab("You take a few steps toward the Security Guard and clear your throat. He jumps from his seat!\n")
     angry_guard(game)
@@ -188,7 +188,7 @@ def coat_rack(game = N_game()):
         loop = True
         while loop:  
             clear_screen()
-            print("")
+            printNew()
             print_tab(pr_colour("l_blue","-- COAT RACK --") + "\n")
             print_tab("Looking at the coat rack you see one heavy " + pr_colour("l_blue","Winter Coat") + " hanging up on it. There is also a scarf")
             print_tab("that has been draped on a peg with a flat cap then put on top of it.")
@@ -206,7 +206,7 @@ def coat_rack(game = N_game()):
             
     else:
         clear_screen()
-        print("")
+        printNew()
         print_tab(pr_colour("l_blue","-- COAT RACK --")+"\n")
         print_tab("You move over to the coat rack but your movement disturbs the guard!\n")
         angry_guard(game)
@@ -218,7 +218,7 @@ def coat(game = N_game()):
     loop = True
     while loop:
         clear_screen()
-        print("")
+        printNew()
         print_tab(pr_colour("l_blue","-- WINTER COAT --") + "\n")
         print_tab("The coat looks like it is fairly new. It has a slight tear on one of the cuffs, no doubt caused by  ")
         print_tab("a trip and fall. It has two large exterior pockets both " + pr_colour("l_blue","Left") + " and " + pr_colour("l_blue","Right") + ".")
@@ -239,7 +239,7 @@ def coat(game = N_game()):
     
 def left_pocket(game = N_game()):
     clear_screen()
-    print("")
+    printNew()
     print_tab(pr_colour("l_blue","-- LEFT POCKET --") + "\n")
     print_tab("You feel the left pocket from the outside and note that something makes a crinkling noise. You put")
     print_tab("your hand inside and pull it out with a packet of Wine Gums held in its grasp. You think better of")
@@ -248,7 +248,7 @@ def left_pocket(game = N_game()):
 
 def right_pocket(game = N_game()):
     clear_screen()
-    print("")
+    printNew()
     print_tab(pr_colour("l_blue","-- RIGHT POCKET --") + "\n")
     print_tab("The right pocket brings forth a number of items when shaken including, a set of car keys, a packet ")
     print_tab("of extra minty chewing gum and a used tissue. All of which are deemed not useful and swiftly returned.")
@@ -259,7 +259,7 @@ def sec_lockers(game = N_game()):
         loop = True
         while loop:  
             clear_screen()
-            print("")
+            printNew()
             print_tab(pr_colour("l_blue","-- Lockers --") + "\n")
             print_tab("You walk over to the lockers and take a cursory glance at them. The " + pr_colour("l_blue","Locker 1") + " and " + pr_colour("l_blue","Locker 4"))
             print_tab("both their doors slightly open. " + pr_colour("l_blue","Locker 2") + " and " + pr_colour("l_blue","Locker 3") + " appear to be closed and locked. There is")
@@ -269,7 +269,7 @@ def sec_lockers(game = N_game()):
             
             if var == "locker1":
                 clear_screen()
-                print("")
+                printNew()
                 print_tab(pr_colour("l_blue","-- Locker 1 --") + "\n")
                 print_tab("Locker 1 has a couple of stickers stuck to its door, one of which reads 'Come visit West Orange ")
                 print_tab("Pavilion Mall'. Inside the locker there are only a few discarded items, a clip-on tie, a couple ")
@@ -278,7 +278,7 @@ def sec_lockers(game = N_game()):
             
             elif var == "locker2":
                 clear_screen()
-                print("")
+                printNew()
                 print_tab(pr_colour("l_blue","-- Locker 2 --") + "\n")
                 print_tab("As assumed Locker 2 is locked. No point in wasting anymore time with it.")
                 pause()
@@ -286,7 +286,7 @@ def sec_lockers(game = N_game()):
             
             elif var == "locker3":
                 clear_screen()
-                print("")
+                printNew()
                 print_tab(pr_colour("l_blue","-- Locker 3 --") + "\n")
                 print_tab("The latch on Locker 3 turns but the mechanism seems to be jammed. You guess that this locker hasn't.")
                 print_tab("been used in a long time.")
@@ -295,7 +295,7 @@ def sec_lockers(game = N_game()):
             
             elif var == "locker4":
                 clear_screen()
-                print("")
+                printNew()
                 print_tab(pr_colour("l_blue","-- Locker 4 --") + "\n")
                 print_tab("Locker 4 seems to have some old newspapers in it. The door opened easily however there appears to be.")
                 print_tab("some form of mold growing in the top left corner inside the locker. You shut the door and move on.")
@@ -308,7 +308,7 @@ def sec_lockers(game = N_game()):
     
     else:
         clear_screen()
-        print("")
+        printNew()
         print_tab(pr_colour("l_blue","-- LOCKERS --")+"\n")
         print_tab("When opening the locker it makes a *clunk* noise. The Guard immediately swivels round in his ")
         print_tab("chair and stands. \n")
@@ -321,7 +321,7 @@ def sec_lockers(game = N_game()):
 
 def monitor(game = N_game()):
     clear_screen()
-    print("")
+    printNew("")
     print_tab(pr_colour("l_blue","-- MONITER --")+"\n")
     print_tab(game.pc.character_name + " looks at the monitor and sees a Word Document is opened with the title of")
     print_tab("'How Can Planes Fly Upside Down?'. There doesn't seem to have been much progress made.")
@@ -363,16 +363,16 @@ def phone(game = N_game()):
         c_name = game.pc.character_name
     
     clear_screen()
-    print("")
+    printNew()
     print_tab(pr_colour("l_blue","-- PHONE --")+"\n")
     print_tab("You pick up the phone and dial the number for reception.")
     pause()
     clear_screen()
-    print("")
+    printNew()
     print_tab(pr_colour("l_blue","-- PHONE CONVERSATION WITH RECEPTION --")+"\n")
     dialling()
     clear_screen()
-    print("")
+    printNew()
     print_tab(pr_colour("l_blue","-- PHONE CONVERSATION WITH RECEPTION --")+"\n")
     print_tab(game.recep +": Hello, " + game.courier + " West Devonshire distribution centre, Anna speaking,")
     print_tab(space + "How can I help you?")
@@ -390,7 +390,7 @@ def phone(game = N_game()):
         game.called = True
         while not contin :
             clear_screen()
-            print("")
+            printNew()
             print_tab(pr_colour("l_blue","-- PHONE CONVERSATION WITH RECEPTION --")+"\n")
             print_tab(game.recep +": Hello, " + game.courier + " West Devonshire distribution centre, Anna speaking, ")
             print_tab(space + "How can I help you?")
@@ -416,7 +416,7 @@ def phone(game = N_game()):
                 
         if var == "1":
             clear_screen()
-            print("")
+            printNew()
             print_tab(pr_colour("l_blue","-- PHONE CONVERSATION WITH RECEPTION --")+"\n")
             print_tab(c_name + gap + ": Hello Anna, I was wondering if you could help me with a quick query? ")
             print_tab(space + "I'm wondering  if Joe Smyth is in the office today? ")
@@ -432,7 +432,7 @@ def phone(game = N_game()):
             var = "0"
             while var != "2":
                 clear_screen()
-                print("")
+                printNew()
                 print_tab(pr_colour("l_blue","-- PHONE CONVERSATION WITH RECEPTION --")+"\n")
                 print_tab("(Continue the conversation...)")
                 print("")
@@ -449,7 +449,7 @@ def phone(game = N_game()):
             
         if var == "2":
             clear_screen()
-            print("")
+            printNew()
             print_tab(pr_colour("l_blue","-- PHONE CONVERSATION WITH RECEPTION --")+"\n")
             if con_1:
                 convo = c_name + gap + ": Oh by the way,"
@@ -463,7 +463,7 @@ def phone(game = N_game()):
             contin = False
             while not contin:
                 if not first:
-                    print("") 
+                    printNew() 
                     print_tab(pr_colour("l_blue","-- PHONE CONVERSATION WITH RECEPTION --")+"\n")
                 print_tab(game.recep +": Ah yes, with Mr Barber, I believe the meeting it schedule for 14:45, is that")
                 print_tab(space + "correct?")
@@ -487,7 +487,7 @@ def phone(game = N_game()):
                     
             if var == "3":
                 clear_screen()
-                print("")
+                printNew()
                 print_tab(pr_colour("l_blue","-- PHONE CONVERSATION WITH RECEPTION --")+"\n")
                 print_tab(c_name + gap + ": Yes that is correct. I have another engagement elsewhere beforehand.")
                 s_pause()
@@ -509,7 +509,7 @@ def phone(game = N_game()):
             
             elif var == "4":
                 clear_screen()
-                print("")
+                printNew()
                 print_tab(pr_colour("l_blue","-- PHONE CONVERSATION WITH RECEPTION --")+"\n")
                 print_tab(c_name + gap + ": No Actually, I was scheduled to have a meeting before the one with Mr Barber  ")
                 print_tab(space + "but it has been cancelled. So, I'm planning on coming in earlier. I haven't  ")

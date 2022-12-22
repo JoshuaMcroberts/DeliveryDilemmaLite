@@ -8,7 +8,7 @@ def locker_room(game = N_game()):
     while loop:
         game.game_map.pre = game.game_map.player_enter((3,2),game.game_map.pre)   
         clear_screen()
-        print("")
+        printNew()
         print_tab(pr_colour("l_blue","-- LOCKER ROOM --")+"\n")
         print_tab("The room is narrow and bordering three walls are a collection of storage lockers. ")
         print_tab("Ten full size " + pr_colour("l_blue","Lockers") + " are against the right-hand wall with a matching Ten opposite ")
@@ -21,7 +21,6 @@ def locker_room(game = N_game()):
        
         # Navigation IF  
         if var  == "lockers":
-            print("")
             lockers(game)
         
         else:
@@ -35,7 +34,7 @@ def lockers(game = N_game()):
     loop = True
     while loop:  
         clear_screen()
-        print("")
+        printNew()
         print_tab(pr_colour("l_blue","-- LOCKERS --") + "\n")
         print_tab("Enter the locker number you wish to search:" )
         print_tab("You may need a " + pr_colour("l_blue","Hint") + " to start your search.")
@@ -47,7 +46,7 @@ def lockers(game = N_game()):
         
         if var == "locker" and num > 0 and num < 31:
             clear_screen()
-            print("")
+            printNew()
             print_tab(pr_colour("l_blue","-- LOCKER " + str(num) + " --") + "\n")
             
             if num < 14:

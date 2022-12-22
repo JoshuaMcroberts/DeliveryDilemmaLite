@@ -46,7 +46,7 @@ def act_1_intro(courier, pc = Character()):
     pronoun1, pronoun2, pronoun3 = pc.get_pronouns()
       
     clear_screen()
-    print("")
+    printNew()
     print_tab(pr_colour("l_blue","-- INTRO STORY --") + "\n")
     print_tab("It was the night before the delivery deadline before Christmas and all through the house,")
     print_tab("was heard the soft clicking and whirring of printer and mouse.")
@@ -55,7 +55,7 @@ def act_1_intro(courier, pc = Character()):
     pause()
 
     clear_screen()
-    print("")
+    printNew()
     print_tab(pr_colour("l_blue","-- INTRO STORY --") + "\n")
     print_tab("The rush was on for the Christmas deadline, you see")
     print_tab("and " + char_name + " had left the parcel packing until after " + pronoun1 + " tea.")
@@ -64,7 +64,7 @@ def act_1_intro(courier, pc = Character()):
     pause()
     
     clear_screen()
-    print("")
+    printNew()
     print_tab(pr_colour("l_blue","-- INTRO STORY --") + "\n")
     print_tab("In the midst of the chaos the doorbell did ring, ")
     print_tab("“Who could that be?” " + char_name + " thought as " + pronoun2 + " tied up a string.")
@@ -73,7 +73,7 @@ def act_1_intro(courier, pc = Character()):
     pause()
 
     clear_screen()
-    print("")
+    printNew()
     print_tab(pr_colour("l_blue","-- INTRO STORY --") + "\n")
     print_tab("With the parcel signed for, and Courier on his way,")
     print_tab(char_name + " went back to " + pronoun1 + " very busy wrapping day.")
@@ -82,7 +82,7 @@ def act_1_intro(courier, pc = Character()):
     pause()
 
     clear_screen()
-    print("")
+    printNew()
     print_tab(pr_colour("l_blue","-- INTRO STORY --") + "\n")
     print_tab("A call from an Auntie that put time off track, ")
     print_tab("Left our protagonist trying to pick up the slack.")
@@ -91,7 +91,7 @@ def act_1_intro(courier, pc = Character()):
     pause()
 
     clear_screen()
-    print("")
+    printNew()
     print_tab(pr_colour("l_blue","-- INTRO STORY --") + "\n")
     print_tab("Wrenched from a dream as a good bit drew near,")
     print_tab("By a rap on a door? Ah the Courier is here! ")
@@ -100,7 +100,7 @@ def act_1_intro(courier, pc = Character()):
     pause()
 
     clear_screen()
-    print("")
+    printNew()
     print_tab(pr_colour("l_blue","-- INTRO STORY --") + "\n")
     print_tab("Now time to relax with a good job well done. ")
     print_tab("Every last parcel away! But wait, what’s this one?")
@@ -110,7 +110,7 @@ def act_1_intro(courier, pc = Character()):
 
 
     clear_screen()
-    print("")
+    printNew()
     print_tab(pr_colour("l_blue","-- INTRO STORY --") + "\n")
     print_tab("With unwrapping the gift came confusion and shock,")
     print_tab("“This is the tea cosy and puzzle book for Great Uncle Jock?!”")
@@ -119,7 +119,7 @@ def act_1_intro(courier, pc = Character()):
     pause()
 
     clear_screen()
-    print("")
+    printNew()
     print_tab(pr_colour("l_blue","-- INTRO STORY --") + "\n")
     print_tab("“That’s Christmas Ruined! I must get it on track!")
     print_tab("I must find a way to get that parcel back!”")
@@ -128,7 +128,7 @@ def act_1_intro(courier, pc = Character()):
     pause()
 
     clear_screen()
-    print("")
+    printNew()
     print_tab(pr_colour("l_blue","-- INTRO STORY --") + "\n")
     print_tab("A scuffle of papers on desk had unveiled,")
     print_tab("the tracking information of the gift wrongly mailed.")
@@ -137,7 +137,7 @@ def act_1_intro(courier, pc = Character()):
     pause()
 
     clear_screen()
-    print("")
+    printNew()
     print_tab(pr_colour("l_blue","-- INTRO STORY --") + "\n")
     print_tab("With a quick search in the parcel tracking bar,")
     print_tab("an HTTP request was sent over the wire.")
@@ -146,7 +146,7 @@ def act_1_intro(courier, pc = Character()):
     pause()
 
     clear_screen()
-    print("")
+    printNew()
     print_tab(pr_colour("l_blue","-- INTRO STORY --") + "\n")
     print_tab("It popped up on the screen, the information was clear,")
     print_tab("The delivery van was headed to West Devonshire.")
@@ -155,7 +155,7 @@ def act_1_intro(courier, pc = Character()):
     pause()
 
     clear_screen()
-    print("")
+    printNew()
     print_tab(pr_colour("l_blue","-- INTRO STORY --") + "\n")
     print_tab("With no time left for a return and resend,")
     print_tab(char_name + " found " + pronoun3 + "self at " + pronoun1 + " wits end!")
@@ -164,7 +164,7 @@ def act_1_intro(courier, pc = Character()):
     pause()
 
     clear_screen()
-    print("")
+    printNew()
     print_tab(pr_colour("l_blue","-- INTRO STORY --") + "\n")
     print_tab("A Delivery Dilemma so hard to compound, ")
     print_tab("would require " + pronoun3 + " to put " + pronoun1 + " boots on the ground.")
@@ -173,12 +173,12 @@ def act_1_intro(courier, pc = Character()):
     pause()
 
     clear_screen()
-    print("")
+    printNew()
     ascii_del_dil()
     pause()
     
     clear_screen()
-    print("")
+    printNew()
     print_tab(pr_colour("l_blue","-- THE BEGINNING --") + "\n")
     print_tab(char_name + " takes a long drive to the " + courier + " distribution centre in West Devonshire. There is a slight ")
     print_tab("nip in the air as "+ pronoun2 +" parks on the street in front of the building which is set a bit off the road. Briskly, "+ pronoun2 )
@@ -188,7 +188,7 @@ def act_1_intro(courier, pc = Character()):
     contin = False
     while contin == False:
         clear_screen()
-        print("")
+        printNew()
         print_tab(pr_colour("l_blue","-- INSTRUCTIONS --") + "\n")
         print_tab("- Your goal is to find Uncle Jock's Parcel. To do this you must gain access to and search different")
         print_tab("  parts of the building. \n")

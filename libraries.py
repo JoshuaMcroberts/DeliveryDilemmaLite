@@ -74,7 +74,7 @@ def san_text(text):
 
 # TAKES IN INPUT ANS SIMPLIFIES IT
 def san_input():
-    var = input("\n\t> ")
+    var = input("\n\t\t> ")
     var = san_text(var)
     return var
     
@@ -89,15 +89,20 @@ def clear_screen(lines=100):
 
 # PRINT WITH TAB
 def print_tab(text):
-    print("\t" + text)
+    print("\t\t" + text)
 
+# PRINT DOUBLE NEW LINE
+def printNew():
+    print("\n\n")
+    
+    
 # PAUSE FUNCTION 
 def pause():
-    input("\n\tPress Enter to Continue...")
+    input("\n\t\tPress Enter to Continue...")
     
 # Silent PAUSE FUNCTION 
 def s_pause():
-    print("\n\tPress Enter to Continue...",end="\r")
+    print("\n\t\tPress Enter to Continue...",end="\r")
     input()
     sys.stdout.write("\033[F\033[K")
 

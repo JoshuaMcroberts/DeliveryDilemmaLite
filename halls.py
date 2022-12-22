@@ -12,7 +12,7 @@ def hall_1(game = N_game()):
         if(game.game_over == False):
             game.game_map.pre = game.game_map.player_enter((3,3),game.game_map.pre)   
             clear_screen()
-            print("")
+            printNew()
             print_tab(pr_colour("l_blue","-- HALL WAY (1) --")+"\n")
             print_tab("The walls of the hallway are decorated with commemorative plaques with the names of the ")
             print_tab("employee of the year engraved on them. There is a door on the right with the words " )
@@ -35,7 +35,7 @@ def hall_1(game = N_game()):
             
 def admin_office(game = N_game()):
     clear_screen()
-    print("")
+    printNew()
     print_tab(pr_colour("l_blue","-- ADMIN OFFICE --") + "\n")
     print_tab("You try the Admin Office door and it is locked.")
     pause()
@@ -47,7 +47,7 @@ def hall_2(game = N_game()):
         if(game.game_over == False):
             game.game_map.pre = game.game_map.player_enter((2,3),game.game_map.pre)   
             clear_screen()
-            print("")
+            printNew()
             print_tab(pr_colour("l_blue","-- HALL WAY (2) --") + "\n")
             print_tab("The hallway continues on until another corridor branches off from it to the " + pr_colour("l_blue", "Left") + ". The  ")
             print_tab("corridor also continues " + pr_colour("l_blue", "Forward") + " with pictures on the wall, of the different logos " + game.courier )
@@ -74,7 +74,7 @@ def hall_5(game = N_game()):
         if(game.game_over == False):
             game.game_map.pre = game.game_map.player_enter((2,2),game.game_map.pre)   
             clear_screen()
-            print("")
+            printNew()
             print_tab(pr_colour("l_blue","-- HALL WAY (5) --") + "\n")
             print_tab("The corridor ends with 3 doors, the one directly ahead has nothing on it however above it on ")
             print_tab("the brick work, in spray painted stencil font, is the word " + pr_colour("l_blue","Warehouse") + ". The Door to the left ")
@@ -103,7 +103,7 @@ def warehouse_door(game = N_game()):
     while loop:
         if(game.game_over == False):
             clear_screen()
-            print("")
+            printNew()
             print_tab(pr_colour("l_blue","-- WAREHOUSE DOOR --") + "\n")
             print_tab("As you stand in front of the warehouse you see an all too familiar " + pr_colour("l_blue", "Card Reader") + " placed on ")
             print_tab("the wall on the left of the door. ")
@@ -121,7 +121,7 @@ def warehouse_door(game = N_game()):
 def card_reader(game = N_game()):
     if(game.game_over == False):
         clear_screen()
-        print("")
+        printNew()
         print_tab(pr_colour("l_blue","-- CARD READER --") + "\n")
         check = game.pc.check_inventory("Warehouse - ID Card")
         if check:
@@ -143,7 +143,7 @@ def hall_3(game = N_game()):
     while loop:
         game.game_map.pre = game.game_map.player_enter((1,3),game.game_map.pre)   
         clear_screen()
-        print("")
+        printNew()
         print_tab(pr_colour("l_blue","-- HALL WAY (3) --") + "\n")
         print_tab("The corridor continues on " + pr_colour("l_blue","Forward") + " with the odd light overhead having blown its bulb. A few ")
         print_tab("paces ahead of you a janitors " + pr_colour("l_blue","Supply Cart") + " sits unattended. Apart of it this section of the ")
@@ -166,7 +166,7 @@ def hall_3(game = N_game()):
 def supply_cart(game = N_game()):
     # Not Complete
     clear_screen()
-    print("")
+    printNew()
     print_tab(pr_colour("l_blue","-- CLEANING SUPPLY CART --") + "\n")
     print_tab("The supply cart has a number of different items used to resupply toilets, A few toilet rolls, ")
     print_tab("some liquid soap refills and a three packs of paper towel refills. ")
@@ -178,7 +178,7 @@ def hall_4(game = N_game()):
     while loop:
         game.game_map.pre = game.game_map.player_enter((0,3),game.game_map.pre)   
         clear_screen()
-        print("")
+        printNew()
         print_tab(pr_colour("l_blue","-- HALL WAY (4) --") + "\n")
         print_tab("At this point the long straight main corridor comes to a stop in its forward direction. It ")
         print_tab("carries on to the " + pr_colour("l_blue","Right") + " a bit further. On the left there is a door marked as " + pr_colour("l_blue","Stairs") + ".")
@@ -199,7 +199,7 @@ def hall_4(game = N_game()):
 def stairs(game = N_game()):
     # Not Complete
     clear_screen()
-    print("")
+    printNew()
     print_tab(pr_colour("l_blue","-- DOOR TO STAIRS --") + "\n")
     print_tab("On closer inspection the door to the stairs appears to have a notice posted on it. The ")
     print_tab("notice reads: 'Stairs out of use due to construction. Please use Lift.'")
@@ -212,7 +212,7 @@ def hall_6(game = N_game()):
     while loop:
         game.game_map.pre = game.game_map.player_enter((0,4),game.game_map.pre)   
         clear_screen()
-        print("")
+        printNew()
         print_tab(pr_colour("l_blue","-- HALL WAY (6) --") + "\n")
         print_tab("This section of the corridor is a bit colder than the others and a draft makes the hairs on ")
         print_tab("the back of you're neck stand on end. You look ahead and see a " + pr_colour("l_blue","Fire Exit") + ". You assume this is ")
@@ -234,7 +234,7 @@ def hall_6(game = N_game()):
 def toilets(game = N_game()):
     # Not Complete
     clear_screen()
-    print("")
+    printNew()
     print_tab(pr_colour("l_blue","-- TOILETS --") + "\n")
     print_tab("The door of the male toilets looks more used with the paint around the bottom chipping from")
     print_tab("impacts with work boots. You don’t feel any need to use the toilets so you move on.")
@@ -243,7 +243,7 @@ def toilets(game = N_game()):
 def fire_exit(game = N_game()):
     # Not Complete
     clear_screen()
-    print("")
+    printNew()
     print_tab(pr_colour("l_blue","-- FIRE EXIT --") + "\n")
     print_tab("Stepping up to the Fire Exit you see that a strip of foam that had been excluding the draft ")
     print_tab("has come away from the bottom of the door. A sticker on the door reads: ‘Warning: This door ")

@@ -11,7 +11,7 @@ def recep(game = N_game()):
             if (game.sec_gar == False and game.game_map.pre == (4,2)):
                 game.sec_gar = True
                 clear_screen()
-                print("")
+                printNew()
                 print_tab(pr_colour("l_blue","-- LEAVING THE SECURITY OFFICE --")+"\n")
                 print_tab("As you exit the security office you look through the Glass door down the hallway. You see the Security Guard")
                 print_tab("Just rounding the corner into the main corridor on his return journey. That was good timing, another minute")
@@ -23,7 +23,7 @@ def recep(game = N_game()):
                 
             game.game_map.pre = game.game_map.player_enter((4,3),game.game_map.pre)   
             clear_screen()
-            print("")
+            printNew()
             print_tab(pr_colour("l_blue","-- RECEPTION --")+"\n")
             print_tab("The foyer of the building stretches out in a large oval with the narrow ends on the ")
             print_tab("left and right. A semi-circler, tall " + pr_colour("l_blue","Reception Desk") + " is prominently placed against ")
@@ -65,7 +65,7 @@ def recep_desk(game = N_game()):
     loop = True
     while loop:
         clear_screen()
-        print("")
+        printNew()
         print_tab(pr_colour("l_blue","-- RECEPTION DESK --") + "\n")
         print_tab("As you approach the Reception desk you see a brown haired " + pr_colour("l_blue","Receptionist") +" wearing ")
         print_tab("intelligent looking yet elegant round frame glasses. She appears to be engrossed in  ")
@@ -79,7 +79,6 @@ def recep_desk(game = N_game()):
         
         if var == "receptionist":
             receptionist(game)
-            print("")
             
         elif var == "notepad":
             notepad(game)
@@ -92,7 +91,7 @@ def recep_desk(game = N_game()):
 
 def receptionist(game = N_game()):
     clear_screen()
-    print("")
+    printNew()
     print_tab(pr_colour("l_blue","-- RECEPTIONIST --")+"\n")
     print_tab("The receptionist is lost in her work and doesn't seem to notice you standing at the desk. ")
     
@@ -121,7 +120,7 @@ def receptionist(game = N_game()):
         
         if game.time_changed == True:
             clear_screen()
-            print("")
+            printNew()
             print_tab(pr_colour("l_blue","-- CONVERSATION WITH RECEPTIONIST --")+"\n")
             print_tab(c_name + gap +": Hi there, I'm " + game.pc.title +" Preston…")
             s_pause()
@@ -157,7 +156,7 @@ def receptionist(game = N_game()):
         
         else:
             clear_screen()
-            print("")
+            printNew()
             print_tab(pr_colour("l_blue","-- CONVERSATION WITH RECEPTIONIST --")+"\n")
             print_tab(c_name + gap + ": Hello there Anna, I do believe we spoken on the phone earlier.")
             s_pause()
@@ -210,7 +209,7 @@ def receptionist(game = N_game()):
             
 def notepad(game = N_game()):
     clear_screen()
-    print("")
+    printNew()
     print_tab(pr_colour("l_blue","-- Notepad --") + "\n")
     print_tab("Reading the notepad upside down and slightly sideways, you see the words written: “Guest ")
     print_tab("Pass for new sales" + game.pc.bi_gen + " " + game.pc.title + " Preston - Expected @14:45”. This gives you an idea! You could call ")
@@ -226,7 +225,7 @@ def glass_door(game = N_game()):
     while loop:
         if(game.game_over == False):
             clear_screen()
-            print("")
+            printNew()
             print_tab(pr_colour("l_blue","-- GLASS DOOR --") + "\n")
             print_tab("You approach the glass door and see next to it on the wall a small electronic pad.")
             print_tab("It looks like a " + pr_colour("l_blue", "Card Reader") + ". You can see the hallway beyond with a few doors ")
@@ -247,7 +246,7 @@ def glass_door(game = N_game()):
 def card_reader(game = N_game()):
     if(game.game_over == False):
         clear_screen()
-        print("")
+        printNew()
         print_tab(pr_colour("l_blue","-- CARD READER --") + "\n")
         check = game.pc.check_inventory("Guest - ID Card")
         if check:
@@ -265,7 +264,7 @@ def card_reader(game = N_game()):
     
 def lift(game = N_game()):
     clear_screen()
-    print("")
+    printNew()
     print_tab(pr_colour("l_blue","-- LIFT --") + "\n")
     print_tab("You walk over to the lift to take a closer look. There is a number pad and")
     print_tab("a card reader next to the door however above them is a seemingly freshly")
@@ -279,7 +278,7 @@ def waiting_area(game = N_game()):
     while loop:
         if(game.game_over == False):
             clear_screen()
-            print("")
+            printNew()
             print_tab(pr_colour("l_blue","-- WAITING AREA --") + "\n")
             print_tab("The waiting area consists of three tan leather sofas set in a U shape, with the open")
             print_tab("end facing the main entrance. This gives each sofa a varying view, from the reception")
@@ -291,7 +290,7 @@ def waiting_area(game = N_game()):
             if var == "wait":
                 if wait < 1:
                     clear_screen()
-                    print("")
+                    printNew()
                     print_tab(pr_colour("l_blue","-- WAIT " + str(wait+1) +" --") + "\n")
                     print_tab(char_name + " rests in the waiting area for half an hour. Nothing happens.")
                     wait += 1
@@ -299,7 +298,7 @@ def waiting_area(game = N_game()):
                     
                 elif wait < 2:
                     clear_screen()
-                    print("")
+                    printNew()
                     print_tab(pr_colour("l_blue","-- WAIT " + str(wait+1) +" --") + "\n")
                     print_tab(char_name + " rests in the waiting area for half an hour. As you are about to get up the Security")
                     print_tab("Guard leaves his office, scans his card at the glass door and passes through.") 
@@ -311,7 +310,7 @@ def waiting_area(game = N_game()):
                 
                 elif wait < 3:
                     clear_screen()
-                    print("")
+                    printNew()
                     print_tab(pr_colour("l_blue","-- WAIT " + str(wait+1) +" --") + "\n")
                     print_tab(char_name + " rests in the waiting area for half an hour. Nothing happens.")
                     wait += 1
@@ -320,7 +319,7 @@ def waiting_area(game = N_game()):
                     # notepad option change wait < 4 to 3
                 elif wait < 5:
                     clear_screen()
-                    print("")
+                    printNew()
                     print_tab(pr_colour("l_blue","-- WAIT " + str(wait+1) +" --") + "\n")
                     print_tab(char_name + " rests in the waiting area for half an hour. The Receptionist gets up, scans")
                     print_tab("her pass and leaves through the glass door, only to return 5 mins later with a cup")
@@ -330,7 +329,7 @@ def waiting_area(game = N_game()):
                     
                 elif wait < 6:
                     clear_screen()
-                    print("")
+                    printNew()
                     print_tab(pr_colour("l_blue","-- WAIT " + str(wait+1) +" --") + "\n")
                     print_tab(char_name + " rests in the waiting area for half an hour. A delivery man enters the reception and ")
                     print_tab("drags a sack truck across the floor which appears to have one flat wheel. The security guard ")
@@ -341,7 +340,7 @@ def waiting_area(game = N_game()):
                     
                 elif wait < 8:
                     clear_screen()
-                    print("")
+                    printNew()
                     print_tab(pr_colour("l_blue","-- WAIT " + str(wait+1) +" --") + "\n")
                     print_tab(char_name + " grows tired of waiting. Another half hour passes.")
                     wait += 1
@@ -349,7 +348,7 @@ def waiting_area(game = N_game()):
                     
                 elif wait < 9:
                     clear_screen()
-                    print("")
+                    printNew()
                     print_tab(pr_colour("l_blue","-- WAIT " + str(wait+1) +" --") + "\n")
                     print_tab(char_name + " rests in the waiting area for half an hour. Closing time approaches.")
                     wait += 1
@@ -357,7 +356,7 @@ def waiting_area(game = N_game()):
                     
                 else:
                     clear_screen()
-                    print("")
+                    printNew()
                     print_tab(pr_colour("l_blue","-- WAIT " + str(wait+1) +" --") + "\n")
                     print_tab(char_name + " rests in the waiting area. The Security Guard emerges from his office and escorts " + char_name)
                     print_tab("out of the building as it is closing time. ")
