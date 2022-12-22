@@ -3,6 +3,7 @@ from text import *
 from game import *
 from reception import recep
 import TimeLock
+import os
 
 # DISPLAY HELP TEXT
 def help_text():
@@ -25,9 +26,7 @@ def cred_text():
 # DISPLAY ASCII ART
 def game_intro():
     clear_screen()
-    # ascii_del_dil()
-    
-    print(pr_colour("l_blue","\n\tWelcome to Delviery Dilemma"))
+    ascii_del_dil()
     s_pause()
 
 # DISPLAYS GAME OVER ASCII ART
@@ -85,7 +84,11 @@ def menu():
 # MAIN FUNCTION
 def main():
     
-    TimeLock.timeCheck(True)
+    cmd ="mode con cols=140 lines=40"
+    
+    os.system(cmd)
+    
+    TimeLock.timeCheck(True) # Set True for testing
     
     game_intro()
     

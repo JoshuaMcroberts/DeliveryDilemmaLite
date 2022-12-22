@@ -1,16 +1,18 @@
 from libraries import *
 from game import Character
 import time
+from ArtDisplay import *
 
-def ascii_del_dil():
-    row_1 = "\n      ____       __ _                         ____  _ __                              \n"
-    row_2 = "     / __ \___  / /_/   _____  _______  __   / __ \/_/ /__  ____ ___  ____ ___  ____ _\n"
-    row_3 = "    / / / / _ \/ / / | / / _ \/ ___/ / / /  / / / / / / _ \/ __ `__ \/ __ `__ \/ __ `/\n"
-    row_4 = "   / /_/ /  __/ / /| |/ /  __/ /  / /_/ /  / /_/ / / /  __/ / / / / / / / / / / /_/ / \n"
-    row_5 = "  /_____/\___/_/_/ |___/\___/_/   \__, /  /_____/_/_/\___/_/ /_/ /_/_/ /_/ /_/\__,_/  \n"
-    row_6 = "                                 /____/                                               \n"
-    title = row_1 + row_2 + row_3 + row_4 + row_5 + row_6
-    print(pr_colour("l_blue",title))
+# def ascii_del_dil():
+#     deldil =[
+#             FB + "      ____       __ _                         ____  _ __                              ",
+#             "     / __ \___  / /_/   _____  _______  __   / __ \/_/ /__  ____ ___  ____ ___  ____ _",
+#             "    / / / / _ \/ / / | / / _ \/ ___/ / / /  / / / / / / _ \/ __ `__ \/ __ `__ \/ __ `/",
+#             "   / /_/ /  __/ / /| |/ /  __/ /  / /_/ /  / /_/ / / /  __/ / / / / / / / / / / /_/ / ",
+#             "  /_____/\___/_/_/ |___/\___/_/   \__, /  /_____/_/_/\___/_/ /_/ /_/_/ /_/ /_/\__,_/  ",
+#             "                                 /____/                                               "]
+#     cols, lines = screen_size()
+#     printArt(deldil, int(cols/2 - (len(deldil[0])/2)), int(lines/2-(len(deldil)/2)))
 
 def ascii_game_over():
     row_1 = "\n                   ______                        ____                 \n"
@@ -194,13 +196,28 @@ def act_1_intro(courier, pc = Character()):
         print_tab("  parts of the building. \n")
         print_tab("- As you move from room to room you will see objects highlighted like " + pr_colour("l_blue","This") + ".")
         print_tab("  You can type these words to interact with the room or object highlighted.\n")
-        print_tab("- Type " + pr_colour("l_blue","Help") + " anytime you see '>' for information on basic commands.\n")
+        print_tab("- Type " + pr_colour("l_blue","Help") + " anytime you see '>' for information on basic commands.\n\n")
         print_tab("Type " + pr_colour("l_blue","Ready") + " to continue.")
-        var = input("\n\t: ")
-        var = san_text(var)
+        var = san_input()
+        
         
         if var == "ready":
             contin = True
+            
+        elif var == "help":
+            
+            clear_screen()
+            printNew()
+            print_tab(pr_colour("l_blue","-- HELP --")+"\n")
+            print_tab("You can use the following options anytime you see the '>' character:\n")
+            print_tab("back        - This will take you back out of the description you are in.\n")
+            print_tab("map         - This will show you the map and where you are on it.\n")
+            print_tab("objectives  - This will show a list of current objectives is.\n")    
+            print_tab("who am i    - This will show you your characters name.\n")      
+            print_tab("inventory   - This will list all the items you have.\n")
+            print_tab("hint        - This will give you a hint for the location you are in.\n")  
+            pause()
+              
             
         else:
             print("")

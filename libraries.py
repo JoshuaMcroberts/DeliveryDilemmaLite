@@ -78,6 +78,11 @@ def san_input():
     var = san_text(var)
     return var
     
+# GETS TERMINAL SIZE
+def screen_size():
+    cols, lines = os.get_terminal_size()
+    return cols, lines
+
 # CLEAR SCREEN
 def clear_screen(lines=100):
     if os.name == 'posix':
@@ -127,18 +132,20 @@ def item_input():
 
 if __name__ == "__main__":
     
-    print("\nFORMAT OUTPUTS \n")
+    # print("\nFORMAT OUTPUTS \n")
     
-    # TEST PR_COLOUR
-    print("\nTEST pr_colour Examples:")
-    print("________")
-    print(pr_colour("us_num_p"," JKZ" + u'\xB7'+ "8620 "))
+    # # TEST PR_COLOUR
+    # print("\nTEST pr_colour Examples:")
+    # print("________")
+    # print(pr_colour("us_num_p"," JKZ" + u'\xB7'+ "8620 "))
 
-    for i in range(10):
-        print("\033[7;5;"+str(i)+"mWords"+str(i)+"\033[0m")
+    # for i in range(10):
+    #     print("\033[7;5;"+str(i)+"mWords"+str(i)+"\033[0m")
     
 
 
-    # TEST PRINT TAB
-    print("\nTEST print_tab Example:")
-    print_tab("<Print Tabbed>")
+    # # TEST PRINT TAB
+    # print("\nTEST print_tab Example:")
+    # print_tab("<Print Tabbed>")
+    
+    pr_colour("blue","word")

@@ -2,7 +2,7 @@
 from datetime import datetime, timedelta
 from time import sleep
 import sys
-from colorama import *
+# from colorama import *
 import os
 from NumberDisplay import *
 import ArtDisplay
@@ -101,7 +101,7 @@ def lockScreen(openTime):
 def timeCheck(test):
     present = datetime.now()
     
-    test = datetime(2022, 12,22, 18, 30, 30)
+    test = datetime(2022, 12,22, 22, 34, 30)
     c_date = datetime(2022,12,24,23,59,59,00)
     
     if test:
@@ -127,7 +127,7 @@ if (__name__ == "__main__"):
     # countdown(padLeft,padTop+3)
     present = datetime.now()
     
-    test = datetime(2022, 12,22, 18, 25, 30)
+    test = datetime(2022, 12,22, 22, 25, 30)
     c_date = datetime(2022,12,24,23,59,59,00)
     openTime = test
     

@@ -1,18 +1,45 @@
 from colorama import *
+from time import sleep
 import TerminalTools
 import random
-FR = Fore.RED + Style.NORMAL
-FY = Fore.YELLOW + Style.NORMAL
-FBL = Fore.BLUE + Style.NORMAL
-FG = Fore.GREEN + Style.NORMAL
-FW = Fore.WHITE + Style.NORMAL
-FGY = Fore.BLACK + Style.BRIGHT # Fore.WHITE + Style.DIM
-SB = Style.BRIGHT
-SN = Style.NORMAL
-SD = Style.DIM
-RS = Style.RESET_ALL
+from libraries import *
+# FR = Fore.RED + Style.NORMAL
+# FY = Fore.YELLOW + Style.NORMAL
+# FBL = Fore.BLUE + Style.NORMAL
+# FG = Fore.GREEN + Style.NORMAL
+# FW = Fore.WHITE + Style.NORMAL
+# FGY = Fore.BLACK + Style.BRIGHT # Fore.WHITE + Style.DIM
+# SB = Style.BRIGHT
+# SN = Style.NORMAL
+# SD = Style.DIM
+# RS = Style.RESET_ALL
+
+FR = '\033[38;5;9m'
+FY = '\033[38;5;178m'
+FDY = '\033[38;5;94m'
+FBL = '\033[38;5;26m'
+FLB = '\033[38;5;74m'
+FG = '\033[38;5;2m'
+FW = '\033[38;5;15m'
+FGY = '\033[38;5;241m'
+RS = '\033[00m'
 
 
+def ascii_del_dil():
+    deldil =[
+            RS+FLB + "      ____       __ _                         ____  _ __                              ",
+            FLB + "     / __ \___  / /_/   _____  _______  __   / __ \/_/ /__  ____ ___  ____ ___  ____ _",
+            FLB + "    / / / / _ \/ / / | / / _ \/ ___/ / / /  / / / / / / _ \/ __ `__ \/ __ `__ \/ __ `/",
+            FLB + "   / /_/ /  __/ / /| |/ /  __/ /  / /_/ /  / /_/ / / /  __/ / / / / / / / / / / /_/ / ",
+            FLB + "  /_____/\___/_/_/ |___/\___/_/   \__, /  /_____/_/_/\___/_/ /_/ /_/_/ /_/ /_/\__,_/  ",
+            FLB + "                                 /____/                                               "]
+    cols, lines = screen_size()
+    sleep(1)
+    printText(FLB+"Welcome to..."+RS,int(cols/2 - (len(deldil[0])/2)-2), int(lines/2-(len(deldil)/2)-2))
+    sleep(1)
+    printArt(deldil, int(cols/2 - (len(deldil[0])/2)+4), int(lines/2-(len(deldil)/2)))
+    sleep(1)
+    printText("",int(cols/2 - (len(deldil[0])/2)+20), int(lines/2-(len(deldil)/2)+5))
 def text(name):
     
     nln =[
@@ -92,8 +119,8 @@ def bell(dir):
     FY+" /    "+FR+"__..."+FY+"\\",
     FY+"'  "+FR+".-'__....\\"+FY,  
     FY+" \\"+FR+"' -'"+FY+"_...--.;", 
-    FR+"  \\'"+FY+".'"+SD+"  \\\\_ "+SN+"  `.",
-    FY+"   /     "+ SD+"(_)"+SN+"   /",
+    FR+"  \\'"+FY+".'"+FDY+"  \\\\_ "+FY+"  `.",
+    FY+"   /     "+ FDY+"(_)"+FY+"   /",
     FY+"   |         .'",
     FY+"    '-...--'`",
 
@@ -105,8 +132,8 @@ def bell(dir):
            FY+"    /"+FR+"...__    "+FY+"\\",
            FR+"   /....__'-.  "+FY+"'",
            FY+"  ;.--..._"+FR+"'- '"+FY+"/",
-           FY+".`    "+SD+"_//"+SN+" '."+FR+"'/",
-           FY+"\\    "+SD+"(_)"+SN+"    \\",
+           FY+".`    "+FDY+"_//"+FY+" '."+FR+"'/",
+           FY+"\\    "+FDY+"(_)"+FY+"    \\",
            FY+" '.         |",
            FY+"   `'--...-'",
     ]
@@ -191,7 +218,7 @@ def DisplayAll():
 def printArt(art, x, y):
     l=0
     for i in art:
-        print(TerminalTools.pos(x, y+l) + i + Style.RESET_ALL)
+        print(TerminalTools.pos(x, y+l) + i + RS)
         l +=1
 
 def nice(x,y):
