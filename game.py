@@ -188,7 +188,7 @@ class N_game:
             clear_screen()
             printNew()
             print_tab(pr_colour("l_blue","-- GAME SETUP--") + "\n")
-            en_name = input("\tPlease enter your "+ pr_colour( "l_yellow","First Name") +": ")
+            en_name = input("\t\tPlease enter your "+ pr_colour( "l_yellow","First Name") +": ")
             plate_name = san_text(en_name)
             en_name = pr_colour("l_blue", en_name)
             
@@ -199,7 +199,7 @@ class N_game:
                 printNew()
                 print_tab(pr_colour("l_blue","-- GAME SETUP--") + "\n")
                 print_tab("You have entered: " + en_name)
-                val = input("\tIs this correct? (Y/N): ")
+                val = input("\t\tIs this correct? (Y/N): ")
                 
                 val = san_text(val)
                 
@@ -278,7 +278,7 @@ class N_game:
             clear_screen()
             printNew()
             print_tab(pr_colour("l_blue","-- GAME SETUP --") + "\n")
-            character_name = input("\tPlease enter your "+ pr_colour( "l_yellow","Characters name") +": ")
+            character_name = input("\t\tPlease enter your "+ pr_colour( "l_yellow","Characters name") +": ")
                        
             
             val2 = False
@@ -287,7 +287,7 @@ class N_game:
                 printNew()
                 print_tab(pr_colour("l_blue","-- GAME SETUP --") + "\n")
                 print_tab("You have entered: " + pr_colour("l_blue", character_name))
-                val = input("\tIs this correct? (Y/N): ")
+                val = input("\t\tIs this correct? (Y/N): ")
                 
                 val = san_text(val)
                 
@@ -314,7 +314,7 @@ class N_game:
             clear_screen()
             printNew()
             print_tab(pr_colour("l_blue","-- GAME SETUP --") + "\n")
-            gen = input("\tIs your Character {} or {}?: ".format(pr_colour("l_yellow", "male"), pr_colour("l_yellow","female")))
+            gen = input("\t\tIs your Character {} or {}?: ".format(pr_colour("l_blue", "male"), pr_colour("l_pink","female")))
             gen = san_text(gen)
             
             if gen == "male" or gen == "female":
