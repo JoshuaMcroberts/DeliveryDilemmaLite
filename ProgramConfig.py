@@ -12,6 +12,8 @@ clear()
 def ConfigTest():
     clear()
     cols, lines = os.get_terminal_size()
+    
+    
 # print("window Size Cols:{}, Lines:{}".format(cols,lines))
 
     padLeft = (cols - 130)/2
