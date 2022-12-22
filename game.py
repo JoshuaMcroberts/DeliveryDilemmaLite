@@ -199,7 +199,7 @@ class N_game:
                 printNew()
                 print_tab(pr_colour("l_blue","-- GAME SETUP--") + "\n")
                 print_tab("You have entered: " + en_name)
-                val = input("\t\tIs this correct? (Y/N): ")
+                val = input("\n\t\tIs this correct? (Y/N): ")
                 
                 val = san_text(val)
                 
@@ -287,7 +287,7 @@ class N_game:
                 printNew()
                 print_tab(pr_colour("l_blue","-- GAME SETUP --") + "\n")
                 print_tab("You have entered: " + pr_colour("l_blue", character_name))
-                val = input("\t\tIs this correct? (Y/N): ")
+                val = input("\n\t\tIs this correct? (Y/N): ")
                 
                 val = san_text(val)
                 
