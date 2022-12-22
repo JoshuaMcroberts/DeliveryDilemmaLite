@@ -2,6 +2,7 @@ from libraries import *
 from text import *
 from game import *
 from reception import recep
+import TimeLock
 
 # DISPLAY HELP TEXT
 def help_text():
@@ -52,7 +53,7 @@ def menu():
     ext = False
     while not ext:
         clear_screen()
-        print("")
+        printNew()
         print_tab(pr_colour("l_blue","-- MAIN MENU --") + "\n")
         print_tab("[1] Start\n")
         print_tab("[2] Help\n")
@@ -60,7 +61,7 @@ def menu():
         print_tab("[4] Exit\n")
 
         try:
-            main_op = int(input("\tEnter Option: "))
+            main_op = int(input("\t\tEnter Option: "))
         except:
             main_op = 10   
 
@@ -73,7 +74,7 @@ def menu():
             cred_text()
             pause()
         elif main_op == 4:
-            print("")
+            printNew()
             print_tab(pr_colour("l_orange","Thanks for playing, Bye for Now!\n"))
             ext = True
         else:
@@ -83,7 +84,9 @@ def menu():
 
 # MAIN FUNCTION
 def main():
-
+    
+    TimeLock.timeCheck(True)
+    
     game_intro()
     
     menu()
