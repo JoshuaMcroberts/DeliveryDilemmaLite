@@ -26,7 +26,7 @@ def recep(game = N_game()):
             printNew()
             print_tab(pr_colour("l_blue","-- RECEPTION --")+"\n")
             print_tab("The foyer of the building stretches out in a large oval with the narrow ends on the ")
-            print_tab("left and right. A semi-circler, tall " + pr_colour("l_blue","Reception Desk") + " is prominently placed against ")
+            print_tab("left and right. A semi-circler, tall " + pr_colour("l_blue","Reception Desk") + " is prominently placed agaAccess Content ")
             print_tab("the back wall of the room with a large double " + pr_colour("l_blue","Glass Door") + " to its left which leads ")
             print_tab("further into the building. On the left side of the room there is another door with ")
             print_tab("the name plate on it saying, " + pr_colour("l_blue","Security Office") + ". As you look to the right of the room,")
@@ -51,7 +51,7 @@ def recep(game = N_game()):
             elif var == "waitingarea":
                 waiting_area(game)
                 
-            elif var == "exit": ## REMOVE FOMR FULL GAME
+            elif var == "exit": ## REMOVE FORM FULL GAME
                 loop = False
                 
             
@@ -286,9 +286,21 @@ def waiting_area(game = N_game()):
             print_tab("carpark area outside. There are a few magazines laid out on a short coffee table in ")
             print_tab("the middle of the U shape to help pass the " + pr_colour("l_blue","Wait") + ".")
             var = san_input()
+            
             char_name = game.pc.character_name
+            
             if var == "wait":
                 if wait < 1:
+                    clear_screen()
+                    printNew()
+                    print_tab(pr_colour("l_blue","-- WAIT " + str(wait+1) +" --") + "\n")
+                    print_tab(char_name + " rests in the waiting area for half an hour. The Receptionist gets up, scans")
+                    print_tab("her pass and leaves through the glass door, only to return 5 mins later with a cup")
+                    print_tab("of coffee and a small piece of fruit.")
+                    wait += 1
+                    pause()
+                    
+                elif wait < 2:
                     clear_screen()
                     printNew()
                     print_tab(pr_colour("l_blue","-- WAIT " + str(wait+1) +" --") + "\n")
@@ -296,7 +308,7 @@ def waiting_area(game = N_game()):
                     wait += 1
                     pause()
                     
-                elif wait < 2:
+                elif wait < 3:
                     clear_screen()
                     printNew()
                     print_tab(pr_colour("l_blue","-- WAIT " + str(wait+1) +" --") + "\n")
@@ -308,7 +320,7 @@ def waiting_area(game = N_game()):
                     game.sec_gar = False
                     pause()
                 
-                elif wait < 3:
+                elif wait < 4:
                     clear_screen()
                     printNew()
                     print_tab(pr_colour("l_blue","-- WAIT " + str(wait+1) +" --") + "\n")
@@ -321,9 +333,11 @@ def waiting_area(game = N_game()):
                     clear_screen()
                     printNew()
                     print_tab(pr_colour("l_blue","-- WAIT " + str(wait+1) +" --") + "\n")
-                    print_tab(char_name + " rests in the waiting area for half an hour. The Receptionist gets up, scans")
-                    print_tab("her pass and leaves through the glass door, only to return 5 mins later with a cup")
-                    print_tab("of coffee and a small piece of fruit.")
+                    print_tab(char_name + " rests in the waiting area for half an hour. There is a muffled beep and a")
+                    print_tab("quiet swish as the glass door sides open and a man walks out. He is dressed in a blue")
+                    print_tab("shirt and has a red cap on his head. He looks over at the reception desk with a smile")
+                    print_tab("and then crosses the reception area with a spring in his step. He greets you with a smile")
+                    print_tab("and a slight inclination of the head as he passes then exits through the front door.")
                     wait += 1
                     pause()
                     
@@ -331,10 +345,31 @@ def waiting_area(game = N_game()):
                     clear_screen()
                     printNew()
                     print_tab(pr_colour("l_blue","-- WAIT " + str(wait+1) +" --") + "\n")
+                    print_tab(char_name + " rests in the waiting area for half an hour. You have closed your eyes and")
+                    print_tab("area enjoying the quiet atmosphere when the front door is opened briskly, jarring you from")
+                    print_tab("your rest. Its the happy red capped men. He strides through the reception bearing vase")
+                    print_tab("of roses in one hand and a fast food take away bag in the other. He steps up to the reception")
+                    print_tab("desk and sets both items gently on the desk top. He is rewarded with a radiant smile from the")
+                    print_tab("receptionist. They then share a few quiet words and he scans his card, moving back into the")
+                    print_tab("main building")
+                    wait += 1
+                    pause()
+                    
+                elif wait < 7:
+                    clear_screen()
+                    printNew()
+                    print_tab(pr_colour("l_blue","-- WAIT " + str(wait+1) +" --") + "\n")
                     print_tab(char_name + " rests in the waiting area for half an hour. A delivery man enters the reception and ")
-                    print_tab("drags a sack truck across the floor which appears to have one flat wheel. The security guard ")
-                    print_tab("emerges from his office and escorts the delivery man through the glass door and then back out ")
-                    print_tab("again after another 10 minutes has passed.")
+                    if game.sec_gar:
+                        print_tab("drags a sack truck across the floor which appears to have one flat wheel. The security guard ")
+                        print_tab("emerges from his office and escorts the delivery man through the glass door.")
+                        print_tab("Best take your chance to check out the Security office!")
+                        game.set_new_ob("Search the Office before the Guard Returns")
+                        game.sec_gar = False
+                    else:
+                        print_tab("drags a sack truck across the floor which appears to have one flat wheel. The receptionist ")
+                        print_tab("steps out from behind the desk scans her pass. The delivery man walks through the glass door")
+                        print_tab("dragging his sack truck with him and emerges again after another 10 minutes has passed.")
                     wait += 1
                     pause()
                     
@@ -361,7 +396,7 @@ def waiting_area(game = N_game()):
                     print_tab(char_name + " rests in the waiting area. The Security Guard emerges from his office and escorts " + char_name)
                     print_tab("out of the building as it is closing time. ")
                     s_pause()
-                    print_tab("Your attempt has failed.")
+                    print_tab("Your attempt to save Christmas has "+ pr_colour("red","failed")+" due to "+ pr_colour("l_yellow","over resting."))
                     game.game_over = True
                     pause()
                 
