@@ -37,7 +37,12 @@ def admin_office(game = N_game()):
     clear_screen()
     printNew()
     print_tab(pr_colour("l_blue","-- ADMIN OFFICE --") + "\n")
-    print_tab("You try the Admin Office door and it is locked.")
+    print_tab("You approach the Admin Office door and notice some movement inside through the window. One")
+    print_tab("Of the office workers seems to be contently but cautiously wrapping the all the items on one")
+    print_tab("of the many desks. Taking a closer look you notice that they have already managed to completely")
+    print_tab("cover the desk in a jolly red christmas wrapping paper. You chuckle to yourself, Imagining the")
+    print_tab("reaction when their pranked co-worker finds out. You then step away from the window in the door and")
+    print_tab("back to the centre of the hallway.")
     pause()
        
 def hall_2(game = N_game()):
@@ -169,7 +174,10 @@ def supply_cart(game = N_game()):
     printNew()
     print_tab(pr_colour("l_blue","-- CLEANING SUPPLY CART --") + "\n")
     print_tab("The supply cart has a number of different items used to resupply toilets, A few toilet rolls, ")
-    print_tab("some liquid soap refills and a three packs of paper towel refills. ")
+    print_tab("some liquid soap refills and a three packs of paper towels. There is also a clip board which ")
+    print_tab("appears to have a cleaning rota on it. By the looks of things it is Killian's turn to clean the")
+    print_tab("toilets, Lilly has been charged with tidying the kitchen area in the canteen and Mark has the job")
+    print_tab("of mopping the whole place down after hours. Not much else of use here")
     pause()
 
 def hall_4(game = N_game()):
