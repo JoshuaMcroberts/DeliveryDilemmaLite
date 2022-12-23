@@ -190,7 +190,7 @@ class N_game:
             print_tab(pr_colour("l_blue","-- GAME SETUP--") + "\n")
             en_name = input("\t\tPlease enter your "+ pr_colour( "l_yellow","First Name") +": ")
             plate_name = san_text(en_name)
-            en_name = pr_colour("l_blue", en_name)
+            en_name = pr_colour("l_yellow", en_name)
             
             
             val2 = False
@@ -229,8 +229,14 @@ class N_game:
     def create_char(self):
         name = self.enter_character_name()
         gen = self.enter_char_gender()
+        
+        if gen == "male":
+            c_name = pr_colour("blue",name)
+        else:
+            c_name = pr_colour("l_pink",name)
+            
         self.pc = Character()
-        self.pc.set_char_name(name)
+        self.pc.set_char_name(c_name, name)
         self.pc.set_pronouns(gen)
         
     def display_game_state(self):
@@ -314,7 +320,7 @@ class N_game:
             clear_screen()
             printNew()
             print_tab(pr_colour("l_blue","-- GAME SETUP --") + "\n")
-            gen = input("\t\tIs your Character {} or {}?: ".format(pr_colour("l_blue", "male"), pr_colour("l_pink","female")))
+            gen = input("\t\tIs your Character {} or {}?: ".format(pr_colour("blue", "male"), pr_colour("l_pink","female")))
             gen = san_text(gen)
             
             if gen == "male" or gen == "female":
@@ -333,9 +339,9 @@ class Character:
         self.char_name = "Timmy"
         
         
-    def set_char_name(self, c_name):
-        self.character_name = pr_colour( "l_blue" , c_name )
-        self.char_name = c_name
+    def set_char_name(self, c_name, name):
+        self.character_name = c_name
+        self.char_name = name
 
     def get_char_name(self):
         return self.character_name
@@ -363,7 +369,7 @@ class Character:
     
     def add_inventory(self, item):
         self.inventory.append(item)
-        print_tab(pr_colour("yellow","\n\t+1 [{}] has been added to your inventory".format(item)))
+        print_tab(pr_colour("yellow","\n\t\t+1 [{}] has been added to your inventory".format(item)))
 
     def remove_inventory(self, item):
         try:
