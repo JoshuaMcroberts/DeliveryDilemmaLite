@@ -101,7 +101,7 @@ def lockScreen(openTime):
 def timeCheck(test):
     present = datetime.now()
     
-    test = datetime(2022, 12,22, 22, 34, 30)
+    test = datetime.now() + timedelta(seconds=15)
     c_date = datetime(2022,12,24,23,59,59,00)
     
     if test:
@@ -111,6 +111,8 @@ def timeCheck(test):
         
     if  openTime > present:
         lockScreen(openTime)
+    else:
+        lockScreen(test)
 
 
 if (__name__ == "__main__"):
