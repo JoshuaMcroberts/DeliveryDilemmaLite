@@ -1,6 +1,6 @@
 from libraries import *
 from game import N_game
-
+from time import sleep
 
 def warehouse(game = N_game()):
     loop = True
@@ -214,7 +214,13 @@ def computer(game = N_game()):
     print_tab("You select the search function and enter the tracking number of Uncle Jocks parcel.")
     s_pause()
     
-    print_tab("An incorrect value error appears on the screen and then blinks out.")
+    print_tab("An incorrect value error appears on the screen.")
+    print("")
+    sleep(1)
+    print_tab(pr_colour("l_red","┌───────────────────────────────────────────────┐"))
+    print_tab(pr_colour("l_red","│         ERROR: INCORRECT VALUE ENTERED        │"))
+    print_tab(pr_colour("l_red","└───────────────────────────────────────────────┘"))
+    sleep(1.5)
     s_pause()
     
     print_tab("You try entering the parcel ID number and immediately an item record opens up.")
@@ -441,6 +447,6 @@ def office_empty(game = N_game()):
 
 if __name__ == "__main__":
     game = N_game()
-    game.set_num_plate(" KLZ 9890 ")
+    game.set_num_plate(" KLZ 9890 ", "us")
     computer(game)
     # warehouse(game)
