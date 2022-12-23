@@ -169,7 +169,7 @@ def coat(game = N_game()):
         print_tab(pr_colour("l_blue","-- Coat --") + "\n")
         print_tab("The coat looks like it has been in use for some time. It has high-vis strips strategically ")
         print_tab("sown onto it. It seems to be a straight-forward design with a " + pr_colour("l_blue","Left Pocket") + " and " + pr_colour("l_blue","Right Pocket"))
-        print_tab("the only two places ")
+        print_tab("the only two places anything can be stored.")
         var = san_input()
         
         
