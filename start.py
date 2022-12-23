@@ -7,8 +7,16 @@ import os
 
 # DISPLAY HELP TEXT
 def help_text():
-    clear_screen()
-    print_tab("Help text will go here!")
+    print_tab(pr_colour("l_blue","-- HELP --")+"\n")
+    print_tab("You can use the following options anytime you see the '>' character:\n")
+    print_tab("back        - This will take you back out of the description you are in.\n")
+    print_tab("map         - This will show you the map and where you are on it.\n")
+    print_tab("objectives  - This will show a list of current objectives is.\n")    
+    print_tab("who am i    - This will show you your characters name.\n")      
+    print_tab("inventory   - This will list all the items you have.\n")
+    print_tab("hint        - This will give you a hint for the location you are in.\n")  
+    pause()
+              
 
 
 # DISPLAY ABOUT TEXT
@@ -90,7 +98,7 @@ def main():
     
     TimeLock.timeCheck(True) # Set True for testing
     
-    game_intro()
+    # game_intro()
     
     menu()
   
