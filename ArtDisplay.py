@@ -40,6 +40,35 @@ def ascii_del_dil():
     printArt(deldil, int(cols/2 - (len(deldil[0])/2)+4), int(lines/2-(len(deldil)/2)))
     sleep(1)
     printText("",int(cols/2 - (len(deldil[0])/2)+20), int(lines/2-(len(deldil)/2)+5))
+    
+    
+def ascii_game_over():
+    F1= FR
+    F2 = FG
+    game_over = [
+    RS+F1+"   ______                        ____                 ",
+    F1+"  / ____/___ _____ ___  ___     / __ \_   _____  _____",
+    F1+" / / __/ __ `/ __ `__ \/ _ \   / / / / | / / _ \/ ___/",
+    F1+"/ /_/ / /_/ / / / / / /  __/  / /_/ /| |/ /  __/ /    ",
+    F1+"\____/\__,_/_/ /_/ /_/\___/   \____/ |___/\___/_/     "]
+    
+    thanks =[
+    F2+"   _____ __             __                      ___                __          _          ",
+    F2+"  /_  __/ /  ___ ____  / /__  __ _____  __ __  / _/__  ____  ___  / /__ ___ __/_/__  ___ _",
+    F2+"   / / / _ \/ _ `/ _ \/  '_/ / // / _ \/ // / / _/ _ \/ __/ / _ \/ / _ `/ // / / _ \/ _ `/",
+    F2+"  /_/ /_//_/\_,_/_//_/_/\_\  \_, /\___/\_,_/ /_/ \___/_/   / .__/_/\_,_/\_, /_/_//_/\_, / ",
+    F2+"                            /___/                         /_/          /___/       /___/  "]
+    
+    cols, lines = screen_size()
+    clear_screen()
+    printArt(game_over, int(cols/2 - (len(game_over[1])/2)+4), int(lines/2-(len(game_over)/2)-3))
+    sleep(1)
+    printArt(thanks, int(cols/2 - (len(thanks[1])/2)+4), int(lines/2-(len(thanks)/2)+3))                                             
+    sleep(2)
+    print()
+    print_tab(pr_colour("l_blue","If you did not find the Parcel retry and make smarter choices this time round!"))
+    s_pause()
+    
 def text(name):
     
     nln =[
@@ -269,6 +298,8 @@ if __name__ == "__main__":
     # introArt(cols, lines)
     # printArt(hol,45, 7 ) 
     print("No Main Functions running")
+    
+    ascii_game_over()
     
     
 
