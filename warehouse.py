@@ -273,7 +273,7 @@ def computer(game = N_game()):
     print_tab("You now have the vehicle information. "+ game.player_name +" it is up to you! ")
     s_pause()
     
-    game.set_new_ob("Find Uncle Jock's Parcel in a Vehicle with REG: " + game.number_plate )
+    game.set_new_ob("Find Uncle Jock's Parcel in a Vehicle with REG: "+'\033[00m' + game.number_plate )
     
     s_pause()
     loop = True
