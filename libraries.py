@@ -114,7 +114,7 @@ def s_pause():
 
 # READ IN AND PARSE STRING TO STR AND INT
 def item_input():
-    text = input("\n\t> ")
+    text = input("\n\t\t> ")
     text = text.lower()
     var = text.split(" ")
     if len(var) == 2:
@@ -137,7 +137,7 @@ if __name__ == "__main__":
     # # TEST PR_COLOUR
     # print("\nTEST pr_colour Examples:")
     # print("________")
-    # print(pr_colour("us_num_p"," JKZ" + u'\xB7'+ "8620 "))
+    print(pr_colour("us_num_p"," JKZ" + u'\xB7'+ "8620 "))
 
     # for i in range(10):
     #     print("\033[7;5;"+str(i)+"mWords"+str(i)+"\033[0m")
@@ -148,4 +148,4 @@ if __name__ == "__main__":
     # print("\nTEST print_tab Example:")
     # print_tab("<Print Tabbed>")
     
-    pr_colour("blue","word")
+    # pr_colour("blue","word")
