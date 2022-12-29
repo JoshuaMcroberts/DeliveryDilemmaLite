@@ -1,4 +1,4 @@
-from colorama import *
+# from colorama import *Hey sorry  about that
 from time import sleep
 import TerminalTools
 import random
