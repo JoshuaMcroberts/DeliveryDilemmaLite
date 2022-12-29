@@ -24,7 +24,7 @@ def locker_room(game = N_game()):
             lockers(game)
         
         else:
-            hint = "Don't lick icy lamp posts"
+            hint = "Take a closer look at the Lockers"
             loop = game.basic_game_func(var, hint)
 
 
@@ -37,7 +37,7 @@ def lockers(game = N_game()):
         printNew()
         print_tab(pr_colour("l_blue","-- LOCKERS --") + "\n")
         print_tab("Enter the locker number you wish to search:" )
-        print_tab("You may need a " + pr_colour("l_blue","Hint") + " to start your search.")
+        print_tab("You may need a " + pr_colour("l_blue","Clue") + " to start your search.")
         var, num = item_input()
         
         if str(type(num)) != "<class 'int'>":
@@ -84,9 +84,13 @@ def lockers(game = N_game()):
             elif num < 31:
                 print_tab("You go to open " + pr_colour("l_blue","Locker " + str(num)) + " but it appears to be locked.")
             pause()
-            
+        elif var == "clue": 
+            print()
+            print_tab("TYPE: Locker 1")
+            pause()
+        
         else:
-            hint = "Type: Locker 1"
+            hint = "Try Lockers in the 20's"
             loop = game.basic_game_func(var, hint)
 
 def locker_21(game = N_game()):
