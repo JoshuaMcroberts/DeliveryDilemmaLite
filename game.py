@@ -93,9 +93,8 @@ class N_game:
             return True  
         
         elif var == "hint":
-            print("")
-            print("\t\tHint -", end="")                                                                         
-            print_tab(hint)
+            print("")                                                         
+            print_tab("Hint -   " +hint)
             pause()
             return True 
         
@@ -326,7 +325,8 @@ class N_game:
             if gen == "male" or gen == "female":
                 valid = True
             else:
-                print_tab("\n\tType MALE or FEMALE")
+                print()
+                print_tab("Type MALE or FEMALE")
                 pause()
         return gen
     
