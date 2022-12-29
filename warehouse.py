@@ -196,7 +196,7 @@ def office(game = N_game()):
                     computer(game)
                 
                 else:
-                    hint = "Don't lick icy lamp posts"
+                    hint = "Take a closer look at the computer"
                     loop = game.basic_game_func(var, hint)
         else:
             loop = False
@@ -287,7 +287,11 @@ def computer(game = N_game()):
         clear_screen()
         printNew()
         print_tab(pr_colour("l_blue","-- COMPUTER --")+"\n")
-        print_tab("Did you find Uncle Jock's parcel in the delivery vehicle? Type YES to continue.")
+        print_tab("Did you find Uncle Jock's parcel in the delivery vehicle?")
+        print_tab("YES  - to continue")
+        print_tab("NO   - if you didn't find it ")
+        print_tab("HINT - for a clue")
+        
         var = san_input()
 
         if var == "yes":
@@ -295,11 +299,15 @@ def computer(game = N_game()):
 
         elif var == "hint":
             print("")
-            hint = "Call the game maker if you can't find the"
-            print("\tHint -", end="")                                                                         
-            print_tab(hint)
+            print_tab("Hint - Ask the present hider, that is definitely a hardware problem")                                                                         
             pause()
-             
+        
+        
+        elif var == "no":
+            print("")
+            print_tab("Try looking for the vehicle outside!")                                                                         
+            pause()
+                 
         else:
             print("")
             print_tab("Incorrect entry try again")
