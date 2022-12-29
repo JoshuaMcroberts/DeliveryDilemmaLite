@@ -98,13 +98,13 @@ def lockScreen(openTime):
     
     countdown(openTime, padLeft,padTop+3)
 
-def timeCheck(test):
+def timeCheck(testing):
     present = datetime.now()
     
     test = datetime.now() + timedelta(seconds=15)
     c_date = datetime(2022,12,24,23,59,59,00)
     
-    if test:
+    if testing:
         openTime = test
     else:
         openTime = c_date
