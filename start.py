@@ -90,18 +90,18 @@ def menu():
 
 
 # MAIN FUNCTION
-def main():
+def main(test):
     
     cmd ="mode con cols=140 lines=40"
     
     os.system(cmd)
     
-    TimeLock.timeCheck(True) # Set True for testing
+    TimeLock.timeCheck(test) # Set True for testing
     
     # game_intro()
     
     menu()
   
 if __name__ == "__main__":
-    main()
+    main(True)
     
