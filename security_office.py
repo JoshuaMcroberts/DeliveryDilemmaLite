@@ -47,7 +47,10 @@ def sec_office(game = N_game()):
                     game.sec_gar = False
                 
                 else:
-                    hint = "You might have to go outside the Security Office and WAIT for the guard to leave. "
+                    if game.sec_gar:
+                        hint = "You might have to go outside the Security Office and WAIT for the guard to leave. "
+                    else:
+                        hint = "There must be a phone in here somewhere! "
                     loop = game.basic_game_func(var, hint)           
             else: 
                 loop = False
@@ -324,7 +327,7 @@ def sec_lockers(game = N_game()):
 
 def monitor(game = N_game()):
     clear_screen()
-    printNew("")
+    print("")
     print_tab(pr_colour("l_blue","-- MONITER --")+"\n")
     print_tab(game.pc.character_name + " looks at the monitor and sees a blog post is being written with the title of")
     print_tab("'DAILY WIRE, Modern Menace!'. There doesn't seem to have been much progress made.")
@@ -340,7 +343,7 @@ def dialling():
         sys.stdout.write("\033[K")
         while ast < 6:
            
-            p_ast = p_ast + "∗ "
+            p_ast = p_ast + ". "
             print("\t\tPhone Dialling " + p_ast , end="\r")
             time.sleep(0.4)
             ast += 1
