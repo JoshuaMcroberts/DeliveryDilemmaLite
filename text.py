@@ -14,33 +14,33 @@ from ArtDisplay import *
 #     cols, lines = screen_size()
 #     printArt(deldil, int(cols/2 - (len(deldil[0])/2)), int(lines/2-(len(deldil)/2)))
 
-def ascii_game_over():
-    row_1 = "\n                   ______                        ____                 \n"
-    row_2 = "                  / ____/___ _____ ___  ___     / __ \_   _____  _____\n"
-    row_3 = "                 / / __/ __ `/ __ `__ \/ _ \   / / / / | / / _ \/ ___/\n"
-    row_4 = "                / /_/ / /_/ / / / / / /  __/  / /_/ /| |/ /  __/ /    \n"
-    row_5 = "                \____/\__,_/_/ /_/ /_/\___/   \____/ |___/\___/_/     \n"
-    row_6 = "\n"
-    game_over = row_1 + row_2 + row_3 + row_4 + row_5 + row_6
+# def ascii_game_over():
+#     row_1 = "\n                   ______                        ____                 \n"
+#     row_2 = "                  / ____/___ _____ ___  ___     / __ \_   _____  _____\n"
+#     row_3 = "                 / / __/ __ `/ __ `__ \/ _ \   / / / / | / / _ \/ ___/\n"
+#     row_4 = "                / /_/ / /_/ / / / / / /  __/  / /_/ /| |/ /  __/ /    \n"
+#     row_5 = "                \____/\__,_/_/ /_/ /_/\___/   \____/ |___/\___/_/     \n"
+#     row_6 = "\n"
+#     game_over = row_1 + row_2 + row_3 + row_4 + row_5 + row_6
     
-    row_1 = "\n   _____ __             __                      ___                __          _          \n"
-    row_2 = "  /_  __/ /  ___ ____  / /__  __ _____  __ __  / _/__  ____  ___  / /__ ___ __/_/__  ___ _\n"
-    row_3 = "   / / / _ \/ _ `/ _ \/  '_/ / // / _ \/ // / / _/ _ \/ __/ / _ \/ / _ `/ // / / _ \/ _ `/\n"
-    row_4 = "  /_/ /_//_/\_,_/_//_/_/\_\  \_, /\___/\_,_/ /_/ \___/_/   / .__/_/\_,_/\_, /_/_//_/\_, / \n"
-    row_5 = "                            /___/                         /_/          /___/       /___/  \n"
-    row_6 = "\n"
-    thanks = row_1 + row_2 + row_3 + row_4 + row_5 + row_6
+#     row_1 = "\n   _____ __             __                      ___                __          _          \n"
+#     row_2 = "  /_  __/ /  ___ ____  / /__  __ _____  __ __  / _/__  ____  ___  / /__ ___ __/_/__  ___ _\n"
+#     row_3 = "   / / / _ \/ _ `/ _ \/  '_/ / // / _ \/ // / / _/ _ \/ __/ / _ \/ / _ `/ // / / _ \/ _ `/\n"
+#     row_4 = "  /_/ /_//_/\_,_/_//_/_/\_\  \_, /\___/\_,_/ /_/ \___/_/   / .__/_/\_,_/\_, /_/_//_/\_, / \n"
+#     row_5 = "                            /___/                         /_/          /___/       /___/  \n"
+#     row_6 = "\n"
+#     thanks = row_1 + row_2 + row_3 + row_4 + row_5 + row_6
     
-    clear_screen()
-    print(pr_colour("l_blue_blink",game_over))
-    print(pr_colour("l_blue",thanks))
-    time.sleep(5)
-    clear_screen()
-    print(pr_colour("l_blue",game_over))
-    print(pr_colour("l_blue",thanks))                                              
-    s_pause()
-    print_tab(pr_colour("l_blue","If you did not find the Parcel retry and make smarter choices this time round!"))
-    s_pause()
+    # clear_screen()
+    # print(pr_colour("l_blue_blink",game_over))
+    # print(pr_colour("l_blue",thanks))
+    # time.sleep(5)
+    # clear_screen()
+    # print(pr_colour("l_blue",game_over))
+    # print(pr_colour("l_blue",thanks))                                              
+    # s_pause()
+    # print_tab(pr_colour("l_blue","If you did not find the Parcel retry and make smarter choices this time round!"))
+    # s_pause()
 
 def act_1_intro(courier, pc = Character()):
     
@@ -182,9 +182,10 @@ def act_1_intro(courier, pc = Character()):
     clear_screen()
     printNew()
     print_tab(pr_colour("l_blue","-- THE BEGINNING --") + "\n")
-    print_tab(char_name + " takes a long drive to the " + courier + " distribution centre in West Devonshire. There is a slight ")
-    print_tab("nip in the air as "+ pronoun2 +" parks on the street in front of the building which is set a bit off the road. Briskly, "+ pronoun2 )
-    print_tab("walks towards the entrance. Passing through the front door and entering the reception area. ")
+    print_tab(char_name + " takes a long drive to the " + courier + " distribution centre in West Devonshire.")
+    print_tab("There is a slight nip in the air as "+ pronoun2 +" parks on the street in front of ")
+    print_tab("the building which is set a bit off the road. Briskly, "+ pronoun2 +" walks towards the entrance.")
+    print_tab("Passing through the front door and entering the reception area. ")
     pause()
 
     contin = False
