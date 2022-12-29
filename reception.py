@@ -14,7 +14,7 @@ def recep(game = N_game()):
                 printNew()
                 print_tab(pr_colour("l_blue","-- LEAVING THE SECURITY OFFICE --")+"\n")
                 print_tab("As you exit the security office you look through the Glass door down the hallway.") 
-                print_tab("You see the Security Guard ust rounding the corner into the main corridor on his ")
+                print_tab("You see the Security Guard just rounding the corner into the main corridor on his ")
                 print_tab("return journey. That was good timing, another minute and he would have caught you. ")
                 print_tab("You step into the centre of the reception as he enters and quickly moves past you")
                 print_tab("back to the Security Office")
