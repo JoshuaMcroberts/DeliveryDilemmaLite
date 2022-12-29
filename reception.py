@@ -13,9 +13,10 @@ def recep(game = N_game()):
                 clear_screen()
                 printNew()
                 print_tab(pr_colour("l_blue","-- LEAVING THE SECURITY OFFICE --")+"\n")
-                print_tab("As you exit the security office you look through the Glass door down the hallway. You see the Security Guard")
-                print_tab("Just rounding the corner into the main corridor on his return journey. That was good timing, another minute")
-                print_tab("and he would have caught you. You step into the centre of the reception as he enters and quickly moves past you")
+                print_tab("As you exit the security office you look through the Glass door down the hallway.") 
+                print_tab("You see the Security Guard ust rounding the corner into the main corridor on his ")
+                print_tab("return journey. That was good timing, another minute and he would have caught you. ")
+                print_tab("You step into the centre of the reception as he enters and quickly moves past you")
                 print_tab("back to the Security Office")
                 s_pause()
                 game.completed_spec_ob("Search the Office before the Guard Returns")
@@ -26,7 +27,7 @@ def recep(game = N_game()):
             printNew()
             print_tab(pr_colour("l_blue","-- RECEPTION --")+"\n")
             print_tab("The foyer of the building stretches out in a large oval with the narrow ends on the ")
-            print_tab("left and right. A semi-circler, tall " + pr_colour("l_blue","Reception Desk") + " is prominently placed agaAccess Content ")
+            print_tab("left and right. A semi-circler, tall " + pr_colour("l_blue","Reception Desk") + " is prominently placed against")
             print_tab("the back wall of the room with a large double " + pr_colour("l_blue","Glass Door") + " to its left which leads ")
             print_tab("further into the building. On the left side of the room there is another door with ")
             print_tab("the name plate on it saying, " + pr_colour("l_blue","Security Office") + ". As you look to the right of the room,")
@@ -85,7 +86,7 @@ def recep_desk(game = N_game()):
             
         
         else:
-                hint = "Don't lick icy lamp posts"
+                hint = "Check out the Notepad"
                 loop = game.basic_game_func(var, hint)
 
 
@@ -194,6 +195,10 @@ def receptionist(game = N_game()):
             print_tab(space + "way out.")
             game.pc.add_inventory("Guest - ID Card")
             s_pause()
+            
+            clear_screen()
+            printNew()
+            print_tab(pr_colour("l_blue","-- CONVERSATION WITH RECEPTIONIST --")+"\n")
 
             print_tab(c_name + gap + ": OK I'll try not to forget.")
             s_pause()
@@ -403,7 +408,7 @@ def waiting_area(game = N_game()):
                 game.wait = wait    
 
             else:
-                hint = "Don't lick icy lamp posts"
+                hint = "Patience is a virtue, and also the key!"
                 loop = game.basic_game_func(var, hint)
         else:
             loop = False
