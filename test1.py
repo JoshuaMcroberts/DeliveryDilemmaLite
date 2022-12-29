@@ -1,4 +1,4 @@
 import start
 
 if __name__ == "__main__":
-    start.main()
+    start.main(True)
