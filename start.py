@@ -4,6 +4,7 @@ from game import *
 from reception import recep
 import TimeLock
 import os
+import TerminalTools
 
 # DISPLAY HELP TEXT
 def help_text():
@@ -88,6 +89,38 @@ def menu():
             print_tab("Select a Number from 1-4")
             pause()
 
+def windowConfig():
+    TerminalTools.getWinSize()
+    # for y in range(140):
+    next = False
+    while next == False:
+        for y in range(40):
+            
+            if y == 0:
+                for x in  range(140):
+                        
+                    print("+", end="")
+            else:
+                print(y)
+            
+                
+        printText("Did it work?",10, 10)
+        var = san_input()
+        
+        if var == "next":
+            next = True
+        else: 
+            clear_screen()
+        
+def resize_window(cols, lines):
+    
+    loop = True
+    
+    cols = 140
+    
+    while loop == True:
+        cmd ="mode con cols="+cols+" lines="+ lines
+        os.system(cmd)
 
 # MAIN FUNCTION
 def main(test):
@@ -95,6 +128,8 @@ def main(test):
     cmd ="mode con cols=140 lines=40"
     
     os.system(cmd)
+    
+    # windowConfig()
     
     TimeLock.timeCheck(test) # Set True for testing
     
