@@ -180,7 +180,7 @@ class N_game:
     # ENTER PLAYER NAME - CHECK FOR NUMBER PLATE PLAYER
     def enter_name(self):
         
-        tup_list = [("daniel"," R44 REP ", "uk"),("rebecca"," FX05 YAJ ", "uk"),("andrew"," KLZ 9890 ", "uk"),("joel"," T229 RGP ", "uk"),("nathanael"," PLZ 8101 ", "uk"),("caroline"," JKZ" + u'\xB7'+ "8620 ", "us")]
+        tup_list = [("daniel"," R34 NOP ", "uk"),("rebecca"," FX05 YAJ ", "uk"),("andrew"," KLZ 9890 ", "uk"),("joel"," T219 RCP ", "uk"),("nathanael"," PLZ 8203 ", "uk"),("caroline"," JLZ" + u'\xB7'+ "8121 ", "us")]
         
         correct = False
         while not correct:
